@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.PackageManager;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,6 +15,7 @@ public class DSMultipleChoiceNode : DSNode
 {
     private Button _addChoiceButton;
     private Button _changeNodeType;
+    private Button _addEventButton; // EVENT
     private TextField _statedNodeField;
     private List<Port> _choicePorts = new List<Port>();
     private Dictionary<Port, TextField> _choicePortsTextField = new Dictionary<Port, TextField>();
@@ -93,6 +97,36 @@ public class DSMultipleChoiceNode : DSNode
         RefreshExpandedState();
     }
 
+    private void CreateEventSection()
+    {
+        Saves.hasEvent = true;
+        //ShowEventButton(true);
+
+        extensionContainer.Add(CreateFoldoutEvent());
+    }
+
+
+    // TO EDIT (ranger ici  ou ds node)
+    private void ShowEventButton(bool show)
+    {
+        if (show)
+        {
+            mainContainer.Remove(_addEventButton);
+
+            Saves.hasEvent = false;
+            ShowEventButton(true);
+
+        }
+        else
+        {
+            _addEventButton = DSElementUtility.CreateButton("Add Event", () => { CreateEventSection(); });
+
+            mainContainer.Add(_addEventButton);
+
+            _addEventButton.AddToClassList("ds-node__buttonEvent");
+        }
+    }
+
     public override void Draw(Color color)
     {
         base.Draw(new Color(0.2f, 0.2f, 0.4f));
@@ -104,7 +138,7 @@ public class DSMultipleChoiceNode : DSNode
         
         // INPUT CONTAINER //
         
-        inputContainer.Add(CreateInputPort("Connetion"));
+        inputContainer.Add(CreateInputPort("Input"));
         
         // TITLE CONTAINER //
         
@@ -142,16 +176,23 @@ public class DSMultipleChoiceNode : DSNode
             CreateSingleChoicePortNew("New Choice");
         });
 
+        _addEventButton = DSElementUtility.CreateButton("Add Event", () => { CreateEventSection(); });
+
         _changeNodeType = DSElementUtility.CreateButton("Switch node Type", () => { SwitchNodeType(); });
 
-        mainContainer.Add(_changeNodeType);
         mainContainer.Add(_addChoiceButton);
+        mainContainer.Add(_addEventButton);
+        mainContainer.Add(_changeNodeType);
 
-        _changeNodeType.AddToClassList("ds-node__buttonSingle");
         _addChoiceButton.AddToClassList("ds-node__button");
-        
-        
+        _addEventButton.AddToClassList("ds-node__buttonEvent");
+        _changeNodeType.AddToClassList("ds-node__buttonSingle");
+
+        // SECTIONS //
+
         extensionContainer.Add(CreateFoldoutDialogueKeyDropDown());
+        if (Saves.hasEvent)
+            CreateEventSection();
 
         // OUTPUT CONTAINER //
 
@@ -179,6 +220,7 @@ public class DSMultipleChoiceNode : DSNode
         SetNodeTypeLabel();
 
         RefreshExpandedState();
+
     }
 
     private void OnDropDownChoiceTranslate(Port choicePort, DropdownField dropdown, DSChoiceSaveData choiceData)
@@ -367,7 +409,7 @@ private (Port, DropdownField) CreateSingleChoicePortForExisting(DSChoiceSaveData
     if (Saves.isMultipleChoice)
     {
         choiceDropdown = DSElementUtility.CreateDropdownArea("Choice KEY");
-        FillCsvDropdown(choiceDropdown);
+        FillCsvDialogueDropdown(choiceDropdown);
         choiceDropdown.RegisterValueChangedCallback(callback => { OnDropDownChoiceTranslate(choicePort, choiceDropdown, choiceData); });
 
         if (!string.IsNullOrEmpty(dropDownKey))

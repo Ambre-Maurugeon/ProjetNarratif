@@ -11,5 +11,6 @@ public class Speakers : ScriptableObject
 public enum Espeaker
 {
     Brant,
-    Juliana
+    Juliana,
+    Margot
 }

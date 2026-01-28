@@ -53,7 +53,7 @@ using UnityEngine.UIElements;
             });
             
             Button openGraphEditorButton = DSElementUtility.CreateButton("<- Open data graph wiew", () => OpenDataGraphView(fileNameTextField.value));
-            saveButton = DSElementUtility.CreateButton("Save Graph Wiew", () => Save());
+            saveButton = DSElementUtility.CreateButton("Save Graph View", () => Save());
 
             Button loadButton = DSElementUtility.CreateButton("Load Node From File", () => Load());
             Button clearButton = DSElementUtility.CreateButton("Clear Graph Wiew", () => Clear());

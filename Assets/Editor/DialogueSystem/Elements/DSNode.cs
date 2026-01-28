@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting.YamlDotNet.Core.Events;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -15,6 +17,7 @@ public class DSNode : Node
     public HumeurSpeaker Humeur { get; set; }
     public DSNodeSaveData Saves { get; set; }
     public string Text { get; set; }
+    public bool HasEvent { get; set; }
 
     public DropdownField DialogueTypeField { get; set; }
     public Label LanguageLabel { get; set; }
@@ -25,9 +28,13 @@ public class DSNode : Node
 
     private Color defaultBackgroundColor;
 
-    private TextField _fieldLabel;
-    
+    private TextField _fieldDialogueLabel;
+
+    private TextField _fieldEventCaption;
+
     private DropdownField _dropdownFieldDialogue;
+
+    private DropdownField _dropdownFieldEvent;
 
     public bool OnlyOneConditionNeeded;
     
@@ -150,21 +157,21 @@ public class DSNode : Node
     _dialogeNameTextField.style.marginRight = 4;
     _dialogeNameTextField.style.unityTextAlign = TextAnchor.MiddleLeft;
     header.Add(_dialogeNameTextField);
-    
-    // UNCOMMENT LE CODE CI DESSOUS POUR AJOUTER UN PETIT SUBTITLE EN HAUT A DROITE DU NODE //
 
-    // var subtitle = new Label(DialogueType.ToString());
-    // subtitle.AddToClassList("ds-node__subtitle");
-    // subtitle.style.unityFontStyleAndWeight = FontStyle.Bold;
-    // subtitle.style.fontSize = 10;
-    // subtitle.style.unityTextAlign = TextAnchor.MiddleCenter;
-    // subtitle.style.minWidth = 54;
-    // subtitle.style.marginLeft = 6;
-    // header.Add(subtitle);
-    
-    // TITLE CONTAINER //
+        // UNCOMMENT LE CODE CI DESSOUS POUR AJOUTER UN PETIT SUBTITLE EN HAUT A DROITE DU NODE //
 
-    titleContainer.Clear();
+        //var subtitle = new Label(DialogueType.ToString());
+        //subtitle.AddToClassList("ds-node__subtitle");
+        //subtitle.style.unityFontStyleAndWeight = FontStyle.Bold;
+        //subtitle.style.fontSize = 10;
+        //subtitle.style.unityTextAlign = TextAnchor.MiddleCenter;
+        //subtitle.style.minWidth = 54;
+        //subtitle.style.marginLeft = 6;
+        //header.Add(subtitle);
+
+        // TITLE CONTAINER //
+
+        titleContainer.Clear();
     titleContainer.Add(header);
 
     // INPUT CONTAINER //
@@ -188,23 +195,70 @@ public class DSNode : Node
         VisualElement customDataContainer = new VisualElement();
         customDataContainer.AddToClassList("ds-node__custom-data-container");
 
-        Foldout textFoldout = DSElementUtility.CreateFoldout("Dialogue Text");
-        _dropdownFieldDialogue = DSElementUtility.CreateDropdownArea("Dialogue Key", "Choose a key ->");
-        FillCsvDropdown(_dropdownFieldDialogue, true);
-        _dropdownFieldDialogue.RegisterValueChangedCallback((ChangeEvent<string> evt) => OnDropdownEvent(_dropdownFieldDialogue));
+        Foldout textFoldout = DSElementUtility.CreateFoldout("Dialogue Section");
+        _dropdownFieldDialogue = DSElementUtility.CreateDropdownArea("Dialogue Key", "Key");
+        FillCsvDialogueDropdown(_dropdownFieldDialogue, true);
+        _dropdownFieldDialogue.RegisterValueChangedCallback((ChangeEvent<string> evt) => OnDialogueDropdown(_dropdownFieldDialogue));
         textFoldout.Add(_dropdownFieldDialogue);
 
-        _fieldLabel = DSElementUtility.CreateTextField("waiting for key...");
-        _fieldLabel.style.marginTop = 6;
-        textFoldout.Add(_fieldLabel);
+        _fieldDialogueLabel = DSElementUtility.CreateTextField("waiting for key...");
+        _fieldDialogueLabel.style.marginTop = 6;
+        textFoldout.Add(_fieldDialogueLabel);
 
         if (Saves.GetDropDownKeyDialogue() != "")
         {
             _dropdownFieldDialogue.value = Saves.GetDropDownKeyDialogue();
-            OnDropdownEvent(_dropdownFieldDialogue);
+            OnDialogueDropdown(_dropdownFieldDialogue);
         }
 
         customDataContainer.Add(textFoldout);
+        return customDataContainer;
+    }
+
+    // CREE EVENT FOLDOUT
+    protected VisualElement CreateFoldoutEvent()
+    {
+
+        VisualElement customDataContainer = new VisualElement();
+        customDataContainer.AddToClassList("ds-node__event-container");
+
+        Foldout textFoldout = DSElementUtility.CreateFoldout("Event Section");
+        _dropdownFieldEvent = DSElementUtility.CreateDropdownArea("Event Key", "Key");
+
+        // TO EDIT 
+        EventsSC SC = (EventsSC)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Events/Events.asset", typeof(EventsSC));
+        SC?.FillEventDropdown(ref _dropdownFieldEvent);
+        _dropdownFieldEvent.RegisterValueChangedCallback((ChangeEvent<string> evt) => OnEventDropdown(_dropdownFieldEvent));
+
+        // field 
+        textFoldout.Add(_dropdownFieldEvent);
+        _fieldEventCaption = DSElementUtility.CreateTextField("");
+        textFoldout.Add(_fieldEventCaption);
+
+        if (Saves.GetDropDownKeyEvent() != "")
+        {
+            _dropdownFieldEvent.value = Saves.GetDropDownKeyEvent();
+            OnEventDropdown(_dropdownFieldEvent);
+        }
+
+
+        // button delete Event 
+
+        Button deleteButton = DSElementUtility.CreateButton("X", () =>
+        {
+            extensionContainer.Remove(customDataContainer);
+            Saves.hasEvent = false;
+        });
+
+        deleteButton.AddToClassList("ds-node__buttonDelete");
+
+        // container
+        customDataContainer.Add(textFoldout);
+
+        customDataContainer.style.marginTop = 6;
+
+        customDataContainer.Add(deleteButton);
+
         return customDataContainer;
     }
 
@@ -224,17 +278,27 @@ public class DSNode : Node
     }
 
     // GERE L'EVENT QUAND ON CHANGE DE VALEUR DANS LE DROPDOWN //
-    private void OnDropdownEvent(DropdownField dropdownField)
+    private void OnDialogueDropdown(DropdownField dropdownField)
     {
-        if (_fieldLabel == null)
+        if (_fieldDialogueLabel == null)
             return;
 
-        _fieldLabel.value = FantasyDialogueTable.LocalManager.GetAllDialogueFromValue(dropdownField.value);
+        _fieldDialogueLabel.value = FantasyDialogueTable.LocalManager.GetAllDialogueFromValue(dropdownField.value);
         Saves.SaveDropDownKeyDialogue(dropdownField.value);
     }
 
+    protected void OnEventDropdown(DropdownField dropdownField)
+    {
+        if (_fieldEventCaption == null)
+            return;
+
+        EventsSC SC = (EventsSC)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Events/Events.asset", typeof(EventsSC)); // TO EDIT
+        _fieldEventCaption.value = SC?.GetEventByKey(dropdownField.value).caption;
+        Saves.SaveDropDownKeyEvent(dropdownField.value);
+    }
+
     // REMPLIT LE DROPDOWN AVEC LES KEYS DU CSV // "loadSpecificKeysToSpeaker" POUR SAVOIR SI ON CHARGE TOUTES LES KEYS OU JUSTE CELLES DU SPEAKER //
-    public void FillCsvDropdown(DropdownField dropdownField, bool loadSpecificKeysToSpeaker = false)
+    public void FillCsvDialogueDropdown(DropdownField dropdownField, bool loadSpecificKeysToSpeaker = false)
     {
         dropdownField.choices.Clear();
         

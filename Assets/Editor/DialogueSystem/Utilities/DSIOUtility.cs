@@ -196,6 +196,9 @@ public static class DSIOUtility
             
             nodeData.SetBubleType(node.BubleType);
             nodeData.SaveDropDownKeyDialogue(node.Saves.GetDropDownKeyDialogue());
+            nodeData.SaveDropDownKeyEvent(node.Saves.GetDropDownKeyEvent());
+            nodeData.hasEvent = node.Saves.hasEvent; // to edit (clean)
+            nodeData.isMultipleChoice = node.Saves.isMultipleChoice; // to edit (clean)
             nodeData.SaveSpeaker(node.Speaker);
             nodeData.SaveHumeur(node.Humeur);
             nodeData.SetChoices(choices);
@@ -229,6 +232,7 @@ public static class DSIOUtility
                 node.DialogueType,
                 node.IsStartingNode(),
                 node.Speaker
+                
             );
 
 
@@ -280,7 +284,8 @@ public static class DSIOUtility
             }
         }
 
-        private static void UpdateOldGroupedNodes(SerializableDictionary<string, List<string>> currentGroupedNodeNames, DSGraphSaveDataSO graphData)
+
+    private static void UpdateOldGroupedNodes(SerializableDictionary<string, List<string>> currentGroupedNodeNames, DSGraphSaveDataSO graphData)
         {
             if (graphData.OldGroupedNodeNames != null && graphData.OldGroupedNodeNames.Count != 0)
             {
@@ -375,8 +380,10 @@ public static class DSIOUtility
                 node.ID = nodeData.ID;
                 
                 node.Saves.SaveDropDownKeyDialogue( nodeData.GetDropDownKeyDialogue());
+                node.Saves.SaveDropDownKeyEvent(nodeData.GetDropDownKeyEvent());
                 node.Saves.SetChoices(choices);
                 node.Saves.isMultipleChoice = nodeData.isMultipleChoice;
+                node.Saves.hasEvent = nodeData.hasEvent; 
                 node.BubleType = nodeData.GetBubleType();
                 node.SetSpeaker(nodeData.Speaker);
                 node.SetHumeur(nodeData.GetHumeur());

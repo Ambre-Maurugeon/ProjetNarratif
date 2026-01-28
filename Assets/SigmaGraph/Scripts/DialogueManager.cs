@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
+using UnityEditor;
+using UnityEngine.Events;
 
 public enum language
 {
@@ -268,6 +270,11 @@ public class DialogueManager : MonoBehaviour
         
         string targetDialogue = FantasyDialogueTable.LocalManager.FindDialogue(_currentNode.GetDropDownKeyDialogue(), Enum.GetName(typeof(language), languageSetting));
         _currentDialogueContainer.InitializeDialogueContainer(targetDialogue, _currentSpeaker.Name, _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur()));
+
+        // event
+        UnityEvent targetEvent = EventsManager.Instance.FindEvent(_currentNode.GetDropDownKeyEvent());
+        if (targetEvent != null) Debug.Log(targetEvent.GetPersistentMethodName(0));
+        targetEvent?.Invoke();
 
 
     }

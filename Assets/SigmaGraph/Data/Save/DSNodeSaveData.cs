@@ -45,11 +45,11 @@ public class DSNodeSaveData
         Humeur = humeur;
     }
 
-    public bool isMultipleChoice = false;
 
     public Dictionary<Port, List<VisualElement>> ConditionsMapElement = new Dictionary<Port, List<VisualElement>>();
     public Dictionary<Port, List<ConditionsSC>> ConditionsMapSc = new Dictionary<Port, List<ConditionsSC>>();
 
+    // drop down key dialogue
     public string _dropDownKeyDialogue;
 
     public void SaveDropDownKeyDialogue(string key)
@@ -62,6 +62,9 @@ public class DSNodeSaveData
         return _dropDownKeyDialogue;
     }
 
+    // Choices
+    public bool isMultipleChoice = false;
+
     public void SetChoices(List<DSChoiceSaveData> choicesSaveData)
     {
         ChoicesInNode = choicesSaveData;
@@ -70,7 +73,22 @@ public class DSNodeSaveData
     {
         ChoicesInNode.Add(choiceSaveData);
     }
-    
+
+
+    // event
+    public bool hasEvent = false;
+    public string _dropDownKeyEvent;
+
+    public void SaveDropDownKeyEvent(string key)
+    {
+        _dropDownKeyEvent = key;
+    }
+
+    public string GetDropDownKeyEvent()
+    {
+        return _dropDownKeyEvent;
+    }
+
     [field: SerializeField] public bool OnlyOneConditionNeeded { get; set; }
     [field: SerializeField] public List<DSChoiceSaveData> ChoicesInNode { get; private set; }
     

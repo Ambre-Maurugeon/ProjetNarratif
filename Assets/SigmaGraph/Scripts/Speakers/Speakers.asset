@@ -15,7 +15,7 @@ MonoBehaviour:
   speakers:
   - Name: Juliana
     speakEnum: 1
-    Humeur: 0
+    Humeur: 1
     SpritesHumeur:
     - sprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
       humeur: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
     - sprite: {fileID: 21300000, guid: ddba7a5d2b29f334b9d2dffc59f568c1, type: 3}
       humeur: 1
   - Name: Margot
-    speakEnum: 3
+    speakEnum: 2
     Humeur: 0
     SpritesHumeur:
     - sprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
