@@ -7,5 +7,5 @@ public class CharacterEntry
     public string perso;        
     public int id;
     public string refDialogue;  //temp string
-    public string refRythme;   //temp string 
+    public string refRythme;    //temp string 
 }
