@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
     public int currentInsectId = -1;
+    public SceneAsset SceneToLoad;
 
     private void Awake()
     {
@@ -51,7 +53,8 @@ public class GameManager : MonoBehaviour
         }
 
         currentInsectId = id;
-        SceneManager.LoadScene("Hub");
+        // temps de transition lancement de scène
+        SceneManager.LoadScene(SceneToLoad.name);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -73,6 +76,7 @@ public class GameManager : MonoBehaviour
         }
 
         StopAllCoroutines();
+        // fin de transition lancement de scène
         StartCoroutine(GameplayLoop(entry));
     }
 
