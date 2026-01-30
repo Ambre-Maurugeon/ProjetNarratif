@@ -20,6 +20,11 @@ public class Pulse : MonoBehaviour
         NextBeat();
     }
 
+    public void AugBPM(float bpm)
+    {
+        BPM = 10;
+        beatInterval = 60f / BPM;
+    }
 
     void InitMusic()
     {
@@ -33,6 +38,7 @@ public class Pulse : MonoBehaviour
         MusicToEnabled.enabled = true;*/
         MusicSource.Play();
         beatInterval = 60f / BPM;
+        MusicSource.pitch = beatInterval;
         nextBeatInterval = MusicSource.time + beatInterval;
 
     }

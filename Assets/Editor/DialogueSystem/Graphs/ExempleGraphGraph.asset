@@ -16,7 +16,7 @@ MonoBehaviour:
   <Groups>k__BackingField:
   - <ID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <Name>k__BackingField: EXEMPLE
-    <Position>k__BackingField: {x: -261.6, y: -46.399994}
+    <Position>k__BackingField: {x: -261.6, y: -46.4}
   <Nodes>k__BackingField:
   - <ID>k__BackingField: 8a655264-a9bc-49f7-af47-f00ee9f92334
     <Name>k__BackingField: START
@@ -161,7 +161,7 @@ MonoBehaviour:
     _dropDownKeyDialogue: Brant_D1
     isMultipleChoice: 1
     hasEvent: 1
-    _dropDownKeyEvent: No prefab
+    _dropDownKeyEvent: EV_AUG_BPM
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 4b14ed38-5459-4949-b1bd-e4e45e9ce657
