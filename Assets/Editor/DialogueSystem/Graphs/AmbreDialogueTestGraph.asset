@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: AmbreDialogueTestGraph
+  m_EditorClassIdentifier: Assembly-CSharp::DSGraphSaveDataSO
+  <FileName>k__BackingField: AmbreDialogueTest
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 63753db2-d05d-4cea-824d-06eff016ad28
+    <Name>k__BackingField: START
+    <Speaker>k__BackingField: 0
+    BubleType: 0
+    Humeur: 0
+    isMultipleChoice: 0
+    _dropDownKeyDialogue: 
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 35f3595d-6f97-45e9-91ef-07a104fabdec
+      _dropDownKeyChoice: 
+      <Conditions>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 1
+    <Position>k__BackingField: {x: -150.40001, y: 230.4}
+  - <ID>k__BackingField: 351b9478-28c7-459c-b04f-e905f298c85b
+    <Name>k__BackingField: END
+    <Speaker>k__BackingField: 0
+    BubleType: 0
+    Humeur: 0
+    isMultipleChoice: 0
+    _dropDownKeyDialogue: 
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 
+      _dropDownKeyChoice: 
+      <Conditions>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 2
+    <Position>k__BackingField: {x: 1320.7999, y: 230.4}
+  - <ID>k__BackingField: 35f3595d-6f97-45e9-91ef-07a104fabdec
+    <Name>k__BackingField: DialogueName_2
+    <Speaker>k__BackingField: 0
+    BubleType: 0
+    Humeur: 0
+    isMultipleChoice: 0
+    _dropDownKeyDialogue: Brant_D2
+    _dropDownKeyEvent: ozfoizjzfez
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 
+      _dropDownKeyChoice: 
+      <Conditions>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 
+      _dropDownKeyChoice: Brant_D1
+      <Conditions>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 140, y: 230.4}
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - START
+  - END
+  - DialogueName_2
+  <OldGroupedNodeNames>k__BackingField:
+    list: []
