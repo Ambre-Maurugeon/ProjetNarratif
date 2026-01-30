@@ -273,7 +273,6 @@ public class DialogueManager : MonoBehaviour
 
         // event
         UnityEvent targetEvent = EventsManager.Instance.FindEvent(_currentNode.GetDropDownKeyEvent());
-        if (targetEvent != null) Debug.Log(targetEvent.GetPersistentMethodName(0));
         targetEvent?.Invoke();
 
 
