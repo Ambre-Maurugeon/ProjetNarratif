@@ -75,7 +75,7 @@ public class DSBranchNode : DSNode
             
             Button addConditionsButtons = DSElementUtility.CreateButton("Add Condition", () =>
             {
-                AddConditionsSc();
+                AddConditionsKey();
             });
             
             mainContainer.Add(_oneOfConditionsToggle);
@@ -97,20 +97,24 @@ public class DSBranchNode : DSNode
             RefreshExpandedState();
     }
 
-    private void AddConditionsKey(string condition = null)
+    private void AddConditionsKey(string condition = "[CD_Key]")
     {
         // TO EDIT 
         DropdownField conditionField = new DropdownField();
         ConditionsSO SO = (ConditionsSO)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Condition/ConditionV2/Conditions.asset", typeof(ConditionsSO));
 
         SO?.FillConditionDropdown(ref conditionField);
+        
+        conditionField.value = condition;
 
         conditionField.RegisterValueChangedCallback(evt =>
         {
             string newCondition = (string)evt.newValue;
+            string previousCondition = (string)evt.previousValue;
             if (newCondition != null)
             {
                 // AJOUTE LA CONDITION AU IF //
+                Saves.ChoicesInNode[0].ConditionsKey.Remove(previousCondition);
                 Saves.ChoicesInNode[0].ConditionsKey.Add(newCondition);
             }
         });
@@ -154,6 +158,7 @@ public class DSBranchNode : DSNode
         conditionsField.Add(removeButton);
         mainContainer.Add(conditionsField);
     }
+    
 
 
     private Port CreateSingleChoicePortForExisting(DSChoiceSaveData choiceData, Direction portDirection)

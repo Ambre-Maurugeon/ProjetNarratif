@@ -316,7 +316,7 @@ public class DSMultipleChoiceNode : DSNode
         dropdownField.RegisterValueChangedCallback(evt =>
         {
             if (evt.previousValue == evt.newValue) return;
-            AddConditionsKeyToObjectField(choicePort, (string)evt.newValue);
+            AddConditionsKeyToField(choicePort, (string)evt.newValue);
         });
 
         SO?.FillConditionDropdown(ref dropdownField);
@@ -366,45 +366,40 @@ public class DSMultipleChoiceNode : DSNode
     }
 
     // Condition V2
-    //private void ClearKeyCondition(Port port, VisualElement condition)
-    //{
-    //    if (condition == null) return;
+    private void ClearKeyCondition(Port port, VisualElement condition)
+    {
+        if (condition == null) return;
 
-    //    string keyToRemove = "";
-    //    var objField = condition as ObjectField ?? condition.Q<ObjectField>();
-    //    if (objField != null)
-    //    {
-    //        keyToRemove = objField.value as string;
-    //    }
+        string keyToRemove = condition.userData as string;
+        
+        if (condition.parent != null)
+        {
+            condition.parent.Remove(condition);
+        }
 
-    //    if (condition.parent != null)
-    //    {
-    //        condition.parent.Remove(condition);
-    //    }
+        if (port != null && Saves.ConditionsMapElement != null && Saves.ConditionsMapElement.ContainsKey(port))
+        {
+            Saves.ConditionsMapElement[port].Remove(condition);
+            if (Saves.ConditionsMapElement[port].Count == 0)
+                Saves.ConditionsMapElement.Remove(port);
+        }
 
-    //    if (port != null && Saves.ConditionsMapElement != null && Saves.ConditionsMapElement.ContainsKey(port))
-    //    {
-    //        Saves.ConditionsMapElement[port].Remove(condition);
-    //        if (Saves.ConditionsMapElement[port].Count == 0)
-    //            Saves.ConditionsMapElement.Remove(port);
-    //    }
+        if (port != null)
+        {
+            int idx = _choicePorts.IndexOf(port);
+            if (idx >= 0 && idx < Saves.ChoicesInNode.Count)
+            {
+                var choiceData = Saves.ChoicesInNode[idx];
+                if (!string.IsNullOrEmpty(keyToRemove))
+                {
+                    choiceData.ConditionsKey.Remove(keyToRemove);
+                }
+            }
+        }
 
-    //    if (port != null)
-    //    {
-    //        int idx = _choicePorts.IndexOf(port);
-    //        if (idx >= 0 && idx < Saves.ChoicesInNode.Count)
-    //        {
-    //            var choiceData = Saves.ChoicesInNode[idx];
-    //            if (choiceData.ConditionsKey != null && keyToRemove != null)
-    //            {
-    //                choiceData.ConditionsKey.Remove(keyToRemove);
-    //            }
-    //        }
-    //    }
-
-    //    RefreshExpandedState();
-    //    MarkDirtyRepaint();
-    //}
+        RefreshExpandedState();
+        MarkDirtyRepaint();
+    }
 
     private void ClearConditions(List<VisualElement> conditions, Port port = null)
     {
@@ -464,7 +459,7 @@ public class DSMultipleChoiceNode : DSNode
     }
 
     // condition V2
-    private void AddConditionsKeyToObjectField(Port port, string conditionKey)
+    private void AddConditionsKeyToField(Port port, string conditionKey)
     {
         if (port == null || conditionKey == null)
         {
@@ -679,7 +674,7 @@ void AddConditionsBelowPort(Port choicePort, VisualElement elementToAdd, bool ca
         {
             Button butClearCondition = DSElementUtility.CreateButton("X", () =>
             {
-                ClearScCondition(choicePort, elementToAdd);
+                ClearKeyCondition(choicePort, elementToAdd);
             });
             butClearCondition.AddToClassList("ds-node__buttonDeleteCondition");
             elementToAdd.Add(butClearCondition);
