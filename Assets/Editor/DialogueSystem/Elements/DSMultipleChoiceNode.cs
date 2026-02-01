@@ -199,14 +199,14 @@ public class DSMultipleChoiceNode : DSNode
         foreach (DSChoiceSaveData choice in Saves.ChoicesInNode)
         {
             CreateSingleChoicePortForExisting(choice, choice.GetDropDownKeyChoice());
-            if (choice.Conditions != null && choice.Conditions.Count > 0)
+            if (choice.ConditionsKey != null && choice.ConditionsKey.Count > 0)
             {
                 Port port = _choicePorts.LastOrDefault();
                 if (port != null)
                 {
-                    foreach (var savedSc in choice.Conditions)
+                    foreach (var savedKey in choice.ConditionsKey)
                     {
-                        var obj = CreateConditions(port, savedSc);
+                        var obj = CreateConditionKeyField(port, savedKey);
                         AddConditionsBelowPort(port, obj, true);
                     }
                 }
@@ -302,9 +302,30 @@ public class DSMultipleChoiceNode : DSNode
         conditionsField.style.alignSelf = Align.Stretch;
 
         return conditionsField;
+
     }
-    
-    private void ClearCondition(Port port, VisualElement condition)
+
+    private VisualElement CreateConditionKeyField(Port choicePort, string initialValue = "")
+    {
+        // TO EDIT 
+        DropdownField dropdownField = new DropdownField();
+        ConditionsSO SO = (ConditionsSO)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Condition/ConditionV2/Conditions.asset", typeof(ConditionsSO));
+
+        dropdownField.value = initialValue;
+
+        dropdownField.RegisterValueChangedCallback(evt =>
+        {
+            if (evt.previousValue == evt.newValue) return;
+            AddConditionsKeyToObjectField(choicePort, (string)evt.newValue);
+        });
+
+        SO?.FillConditionDropdown(ref dropdownField);
+
+        return dropdownField;
+    }
+
+    // ConditionV1
+    private void ClearScCondition(Port port, VisualElement condition)
     {
         if (condition == null) return;
 
@@ -333,9 +354,9 @@ public class DSMultipleChoiceNode : DSNode
             if (idx >= 0 && idx < Saves.ChoicesInNode.Count)
             {
                 var choiceData = Saves.ChoicesInNode[idx];
-                if (choiceData.Conditions != null && scToRemove != null)
+                if (choiceData.ConditionsSc != null && scToRemove != null)
                 {
-                    choiceData.Conditions.Remove(scToRemove);
+                    choiceData.ConditionsSc.Remove(scToRemove);
                 }
             }
         }
@@ -343,6 +364,47 @@ public class DSMultipleChoiceNode : DSNode
         RefreshExpandedState();
         MarkDirtyRepaint();
     }
+
+    // Condition V2
+    //private void ClearKeyCondition(Port port, VisualElement condition)
+    //{
+    //    if (condition == null) return;
+
+    //    string keyToRemove = "";
+    //    var objField = condition as ObjectField ?? condition.Q<ObjectField>();
+    //    if (objField != null)
+    //    {
+    //        keyToRemove = objField.value as string;
+    //    }
+
+    //    if (condition.parent != null)
+    //    {
+    //        condition.parent.Remove(condition);
+    //    }
+
+    //    if (port != null && Saves.ConditionsMapElement != null && Saves.ConditionsMapElement.ContainsKey(port))
+    //    {
+    //        Saves.ConditionsMapElement[port].Remove(condition);
+    //        if (Saves.ConditionsMapElement[port].Count == 0)
+    //            Saves.ConditionsMapElement.Remove(port);
+    //    }
+
+    //    if (port != null)
+    //    {
+    //        int idx = _choicePorts.IndexOf(port);
+    //        if (idx >= 0 && idx < Saves.ChoicesInNode.Count)
+    //        {
+    //            var choiceData = Saves.ChoicesInNode[idx];
+    //            if (choiceData.ConditionsKey != null && keyToRemove != null)
+    //            {
+    //                choiceData.ConditionsKey.Remove(keyToRemove);
+    //            }
+    //        }
+    //    }
+
+    //    RefreshExpandedState();
+    //    MarkDirtyRepaint();
+    //}
 
     private void ClearConditions(List<VisualElement> conditions, Port port = null)
     {
@@ -377,6 +439,7 @@ public class DSMultipleChoiceNode : DSNode
         MarkDirtyRepaint();
     }
     
+    // condition V1
     private void AddConditionsScToObjectField(Port port, ConditionsSC conditionSc)
     {
         if (port == null || conditionSc == null)
@@ -394,13 +457,38 @@ public class DSMultipleChoiceNode : DSNode
 
         DSChoiceSaveData choiceData = Saves.ChoicesInNode[idx];
 
-        if (choiceData.Conditions == null)
-            choiceData.Conditions = new List<ConditionsSC>();
+        if (choiceData.ConditionsSc == null)
+            choiceData.ConditionsSc = new List<ConditionsSC>();
 
-        choiceData.Conditions.Add(conditionSc);
+        choiceData.ConditionsSc.Add(conditionSc);
     }
-    
-private (Port, DropdownField) CreateSingleChoicePortForExisting(DSChoiceSaveData choiceData, string dropDownKey = "")
+
+    // condition V2
+    private void AddConditionsKeyToObjectField(Port port, string conditionKey)
+    {
+        if (port == null || conditionKey == null)
+        {
+            Debug.Log("Port or ConditionsKey is null, cannot add to ConditionsMapKey.");
+            return;
+        }
+
+        int idx = _choicePorts.IndexOf(port);
+        if (idx < 0 || idx >= Saves.ChoicesInNode.Count)
+        {
+            Debug.LogWarning("[AddConditionsKeyToObjectField] Impossible de retrouver l'index du choix pour ce port.");
+            return;
+        }
+
+        DSChoiceSaveData choiceData = Saves.ChoicesInNode[idx];
+
+        if (choiceData.ConditionsKey == null)
+            choiceData.ConditionsKey = new List<string>();
+
+        choiceData.ConditionsKey.Add(conditionKey);
+    }
+
+
+    private (Port, DropdownField) CreateSingleChoicePortForExisting(DSChoiceSaveData choiceData, string dropDownKey = "")
 {
     Port choicePort = this.CreatePort();
     choicePort.userData = choiceData;
@@ -459,7 +547,7 @@ private (Port, DropdownField) CreateSingleChoicePortForExisting(DSChoiceSaveData
 
     if (Saves.isMultipleChoice)
     {
-        Button conditionsButton = DSElementUtility.CreateButton("Add Conditions", () => { AddConditionsBelowPort(choicePort, CreateConditions(choicePort)); });
+        Button conditionsButton = DSElementUtility.CreateButton("Add Conditions", () => { AddConditionsBelowPort(choicePort, CreateConditionKeyField(choicePort)); });
         conditionsButton.AddToClassList("ds-node__button");
         choicePort.Add(conditionsButton);
     }
@@ -591,7 +679,7 @@ void AddConditionsBelowPort(Port choicePort, VisualElement elementToAdd, bool ca
         {
             Button butClearCondition = DSElementUtility.CreateButton("X", () =>
             {
-                ClearCondition(choicePort, elementToAdd);
+                ClearScCondition(choicePort, elementToAdd);
             });
             butClearCondition.AddToClassList("ds-node__buttonDeleteCondition");
             elementToAdd.Add(butClearCondition);

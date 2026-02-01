@@ -173,7 +173,7 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("Evaluating branch conditions for Node ID: " + _currentNode.ID);
         // SI Y'A PAS DE CONDITIONS DANS UN IF ON SKIP // NORMALEMENT CA DEVRAIT JAMAIS ARRIVER MDR//
-        if(_currentNode.ChoicesInNode[0].Conditions.Count <= 0)
+        if(_currentNode.ChoicesInNode[0].ConditionsKey.Count <= 0)
         {
             Debug.Log("No choices available in the current branch node.");
             return GetNextNode(_currentNode.ChoicesInNode[1].NodeID);
@@ -181,11 +181,11 @@ public class DialogueManager : MonoBehaviour
         
         bool hasMetConditions = false;
 
-        foreach (var choice in _currentNode.ChoicesInNode[0].Conditions)
+        foreach (var choice in _currentNode.ChoicesInNode[0].ConditionsKey)
         {
             if (_currentNode.OnlyOneConditionNeeded)
             {
-                if (DoesFillCondtions(choice))
+                if (DoesFillKeyConditions(choice))
                 {
                     hasMetConditions = true;
                     // ON RECUP LE [1] CAR C'EST LE TRUE //
@@ -194,7 +194,7 @@ public class DialogueManager : MonoBehaviour
                 continue;
             }
             
-            if (!DoesFillCondtions(choice))
+            if (!DoesFillKeyConditions(choice))
             {
                 hasMetConditions = false;
                 break;
@@ -290,9 +290,9 @@ public class DialogueManager : MonoBehaviour
                 if (buttonController != null)
                 {
                     bool fillCondition = true;
-                    foreach (var condition in choice.Conditions)
+                    foreach (var condition in choice.ConditionsKey)
                     {
-                        fillCondition = DoesFillCondtions(condition);
+                        fillCondition = DoesFillKeyConditions(condition);
                         if (!fillCondition)
                         {
                             break;
@@ -316,9 +316,13 @@ public class DialogueManager : MonoBehaviour
         }
     }
     
-    private bool DoesFillCondtions(ConditionsSC choice)
+    private bool DoesFillScConditions(ConditionsSC choice)
     {
         return PlayerInventoryManager.instance.DoesPlayerFillCondition(choice);
+    }
+    private bool DoesFillKeyConditions(string key)
+    {
+        return ConditionsManager.instance.EvaluateCondition(key);
     }
 
     private void EndDialogue()

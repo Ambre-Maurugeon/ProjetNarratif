@@ -17,7 +17,7 @@ public abstract class SerializableCallbackBase<TReturn> : SerializableCallbackBa
 		func = null;
 	}
 
-	protected InvokableCallbackBase<TReturn> GetPersistentMethod()
+	public InvokableCallbackBase<TReturn> GetPersistentMethod()
 	{
 		Type[] types = new Type[ArgRealTypes.Length + 1];
 		Array.Copy(ArgRealTypes, types, ArgRealTypes.Length);

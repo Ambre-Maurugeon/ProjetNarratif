@@ -45,9 +45,12 @@ public class DSNodeSaveData
         Humeur = humeur;
     }
 
-
+    // Conditions V1
     public Dictionary<Port, List<VisualElement>> ConditionsMapElement = new Dictionary<Port, List<VisualElement>>();
     public Dictionary<Port, List<ConditionsSC>> ConditionsMapSc = new Dictionary<Port, List<ConditionsSC>>();
+
+    // Conditions V2
+    public Dictionary<Port, List<string>> ConditionsMapKey = new Dictionary<Port, List<string>>();
 
     // drop down key dialogue
     public string _dropDownKeyDialogue;

@@ -255,6 +255,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38279671}
   m_CullTransparentMesh: 1
+--- !u!1 &116836126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 116836128}
+  - component: {fileID: 116836127}
+  m_Layer: 0
+  m_Name: ConditionsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &116836127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116836126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1f915b0b99d57438f9f8fd442e2684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConditionGO
+  SO: {fileID: 11400000, guid: a607140e32bff024497d8895c4e87faa, type: 2}
+  list:
+  - Key: PassedTest
+    check:
+      _target: {fileID: 873364782}
+      _methodName: ConditionTest
+      _args:
+      - boolValue: 0
+        intValue: 0
+        floatValue: 0
+        stringValue: 
+        objectValue: {fileID: 0}
+        argType: 1
+        _typeName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      _dynamic: 0
+      _typeName: CheckEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      dirty: 0
+  - Key: Prout
+    check:
+      _target: {fileID: 873364782}
+      _methodName: ConditionTest
+      _args:
+      - boolValue: 1
+        intValue: 0
+        floatValue: 0
+        stringValue: 
+        objectValue: {fileID: 0}
+        argType: 1
+        _typeName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      _dynamic: 0
+      _typeName: CheckEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      dirty: 0
+--- !u!4 &116836128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116836126}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.80839, y: -2.95616, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124815063
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &124815064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,6 +630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Source
       objectReference: {fileID: 0}
+    - target: {fileID: 7250342716545454453, guid: 6bbe8709d5586ed48a76c829bf3ea3c9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -684,24 +764,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d109199be3d45b40b85bf93bea85216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventsManager
-  SC: {fileID: 11400000, guid: 484dc84e410406c4687e380229cc92b1, type: 2}
+  SO: {fileID: 11400000, guid: 484dc84e410406c4687e380229cc92b1, type: 2}
   list:
+  - Key: No prefab
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
   - Key: EV_AUG_BPM
     Event:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 124815064}
-          m_TargetAssemblyTypeName: Pulse, Assembly-CSharp
-          m_MethodName: AugBPM
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 200
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
+  - Key: EV_AUG_BP
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &503777677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1195,6 +1271,17 @@ RectTransform:
   m_AnchoredPosition: {x: -39.4953, y: 15.712952}
   m_SizeDelta: {x: 860.2253, y: 118.5741}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &873364782 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1783849011314268274, guid: 5af698cc8889924458a35d1d4a8aabf8, type: 3}
+  m_PrefabInstance: {fileID: 213799510}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4ff155d35ab8d4b8bc64358ebe3871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestEvent
 --- !u!1 &952049063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,7 +2168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1576061274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2372,3 +2459,4 @@ SceneRoots:
   - {fileID: 1576061275}
   - {fileID: 278449986}
   - {fileID: 2041818665}
+  - {fileID: 116836128}

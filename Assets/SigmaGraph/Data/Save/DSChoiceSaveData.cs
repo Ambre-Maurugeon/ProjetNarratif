@@ -12,7 +12,9 @@ public class DSChoiceSaveData
     public string NodeID;
     [SerializeField] public string _dropDownKeyChoice;
 
-    [field: SerializeField] public List<ConditionsSC> Conditions { get; set; } = new List<ConditionsSC>();
+    [field: SerializeField] public List<ConditionsSC> ConditionsSc { get; set; } = new List<ConditionsSC>();
+    [field: SerializeField] public List<string> ConditionsKey { get; set; } = new List<string>();
+
 
     public void SavePortDirection(Direction direction)
     {

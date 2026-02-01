@@ -1,15 +1,18 @@
 using System;
+using UnityEngine;
 
 [Serializable]
 public class ConditionData
 {
-    public System.Object objet;
+    public string Label;
+    public string Key;
+    public string Caption;
 
-    public CheckEvent checkEvent;
+
+    //public CheckEvent checkEvent;
 
 }
 
-[Serializable] public class CheckEvent : SerializableCallback<string, int, bool> { }
 
 
 

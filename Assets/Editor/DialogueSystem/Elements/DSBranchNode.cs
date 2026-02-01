@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -74,7 +75,7 @@ public class DSBranchNode : DSNode
             
             Button addConditionsButtons = DSElementUtility.CreateButton("Add Condition", () =>
             {
-                AddConitionsSc();
+                AddConditionsSc();
             });
             
             mainContainer.Add(_oneOfConditionsToggle);
@@ -88,39 +89,68 @@ public class DSBranchNode : DSNode
             
             
             // AJOUTE LES CONDITIONS EXISTANTES AU IF PORT //
-            foreach (var condition in Saves.ChoicesInNode[0].Conditions)
+            foreach (var condition in Saves.ChoicesInNode[0].ConditionsKey)
             {
-                AddConitionsSc(condition);
+                AddConditionsKey(condition);
             }
             
             RefreshExpandedState();
     }
 
-    private void AddConitionsSc(ConditionsSC condition = null)
+    private void AddConditionsKey(string condition = null)
     {
-        ObjectField conditionsField = new ObjectField("Conditions --->")
+        // TO EDIT 
+        DropdownField conditionField = new DropdownField();
+        ConditionsSO SO = (ConditionsSO)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Condition/ConditionV2/Conditions.asset", typeof(ConditionsSO));
+
+        SO?.FillConditionDropdown(ref conditionField);
+
+        conditionField.RegisterValueChangedCallback(evt =>
         {
-            objectType = typeof(ConditionsSC),
-            value = condition,
-        };
-        
-        conditionsField.RegisterValueChangedCallback(evt =>
-        {
-            ConditionsSC newCondition = (ConditionsSC)evt.newValue;
+            string newCondition = (string)evt.newValue;
             if (newCondition != null)
             {
                 // AJOUTE LA CONDITION AU IF //
-                Saves.ChoicesInNode[0].Conditions.Add(newCondition);
+                Saves.ChoicesInNode[0].ConditionsKey.Add(newCondition);
             }
         });
         
         Button removeButton = DSElementUtility.CreateButton("X", () =>
         {
             // SUPPRIME LA CONDITION DU IF //
-            Saves.ChoicesInNode[0].Conditions.Remove((ConditionsSC)conditionsField.value);
-            mainContainer.Remove(conditionsField);
+            Saves.ChoicesInNode[0].ConditionsKey.Remove(condition);
+            mainContainer.Remove(conditionField);
         });
         
+        conditionField.Add(removeButton);
+        mainContainer.Add(conditionField);
+    }
+
+    private void AddConditionsSc(ConditionsSC condition = null)
+    {
+        ObjectField conditionsField = new ObjectField("Conditions")
+        {
+            objectType = typeof(ConditionsSC),
+            value = condition,
+        };
+
+        conditionsField.RegisterValueChangedCallback(evt =>
+        {
+            ConditionsSC newCondition = (ConditionsSC)evt.newValue;
+            if (newCondition != null)
+            {
+                // AJOUTE LA CONDITION AU IF //
+                Saves.ChoicesInNode[0].ConditionsSc.Add(newCondition);
+            }
+        });
+
+        Button removeButton = DSElementUtility.CreateButton("X", () =>
+        {
+            // SUPPRIME LA CONDITION DU IF //
+            Saves.ChoicesInNode[0].ConditionsSc.Remove((ConditionsSC)conditionsField.value);
+            mainContainer.Remove(conditionsField);
+        });
+
         conditionsField.Add(removeButton);
         mainContainer.Add(conditionsField);
     }

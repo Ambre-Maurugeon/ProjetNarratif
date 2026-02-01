@@ -656,10 +656,10 @@ public static class DSIOUtility
                 choiceData.SaveDropDownKeyChoice(choice.GetDropDownKeyChoice());
                 choiceData.SavePortDirection(choice.GetPortDirection());
 
-                if (choice.Conditions != null && choice.Conditions.Count > 0)
-                    choiceData.Conditions = new List<ConditionsSC>(choice.Conditions);
+                if (choice.ConditionsKey != null && choice.ConditionsKey.Count > 0)
+                    choiceData.ConditionsKey = new List<string>(choice.ConditionsKey);
                 else
-                    choiceData.Conditions = new List<ConditionsSC>();
+                    choiceData.ConditionsKey = new List<string>();
 
                 choices.Add(choiceData);
             }
