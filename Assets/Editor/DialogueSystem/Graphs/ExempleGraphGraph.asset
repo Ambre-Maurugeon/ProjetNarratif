@@ -16,7 +16,7 @@ MonoBehaviour:
   <Groups>k__BackingField:
   - <ID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <Name>k__BackingField: EXEMPLE
-    <Position>k__BackingField: {x: -769.60004, y: -46.399986}
+    <Position>k__BackingField: {x: -769.6, y: -46.4}
   <Nodes>k__BackingField:
   - <ID>k__BackingField: a400b91b-d8e5-494a-bb18-21dc94b23562
     <Name>k__BackingField: DialogueName_9
@@ -182,7 +182,7 @@ MonoBehaviour:
     isMultipleChoice: 0
     hasEvent: 0
     _dropDownKeyEvent: 
-    <OnlyOneConditionNeeded>k__BackingField: 0
+    <OnlyOneConditionNeeded>k__BackingField: 1
     <ChoicesInNode>k__BackingField:
     - NodeID: 
       _dropDownKeyChoice: 

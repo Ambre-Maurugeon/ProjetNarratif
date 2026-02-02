@@ -66,15 +66,25 @@ public class EventsManager : MonoBehaviour
 
     // ---- EVENTS ----
 
+    // ReSharper disable Unity.PerformanceAnalysis
     public UnityEvent FindEvent(string Key)
     {
-        EventData e = SO.GetEventByKey(Key);
+        EventData data = SO.GetEventByKey(Key);
 
         // prefab event => data from sc ; scene event => data from scene
-        if(e.isPrefab)
-            return e.Event;
-        else
-            return dico[Key];
+        UnityEvent e = new UnityEvent();
+        if(data.isPrefab)
+            e = data.Event;
+        else 
+            if (dico[Key] == null)
+            {
+                e = null;
+                Debug.LogError($"No EventData with Key {Key}");
+            }
+            else
+                e = dico[Key];
+
+        return e;
     }
 }
 
