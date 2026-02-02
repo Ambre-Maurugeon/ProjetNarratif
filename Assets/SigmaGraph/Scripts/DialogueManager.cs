@@ -289,9 +289,6 @@ public class DialogueManager : MonoBehaviour
 
     private void CreateButtonsChoice()
     {
-
-        Debug.Log("Count" + _currentNode.ChoicesInNode.Count);
-        
         if (_currentNode.ChoicesInNode.Count > 1)
         {
             _isWaitingForChoice = true;

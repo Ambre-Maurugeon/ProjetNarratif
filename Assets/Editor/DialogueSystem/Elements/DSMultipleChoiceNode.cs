@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Linq;
+using PlasticGui.Help;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.PackageManager;
@@ -312,10 +313,18 @@ public class DSMultipleChoiceNode : DSNode
         ConditionsSO SO = (ConditionsSO)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Condition/ConditionV2/Conditions.asset", typeof(ConditionsSO));
 
         dropdownField.value = initialValue;
+        dropdownField.userData = initialValue;
 
         dropdownField.RegisterValueChangedCallback(evt =>
         {
             if (evt.previousValue == evt.newValue) return;
+            
+            // clear previous value
+            int idx = _choicePorts.IndexOf(choicePort);
+            Saves.ChoicesInNode[idx].ConditionsKey.Remove(evt.previousValue);
+
+            // add new value
+            dropdownField.userData = evt.newValue;
             AddConditionsKeyToField(choicePort, (string)evt.newValue);
         });
 
@@ -370,9 +379,8 @@ public class DSMultipleChoiceNode : DSNode
     {
         if (condition == null) return;
 
-        string keyToRemove = ""; // condition. as string;
-
-        Debug.Log("KEYYYYY" +  keyToRemove);
+        // userdata registered in dropdown value
+        string keyToRemove = condition.userData as string; 
         
         if (condition.parent != null)
         {
@@ -393,16 +401,9 @@ public class DSMultipleChoiceNode : DSNode
             {
                 var choiceData = Saves.ChoicesInNode[idx];
 
-
-                //List<string> test = new List<string>();
-                //test = Saves.ConditionsMapKey[port];
-                //keyToRemove = (string)condition;
-                //Debug.Log("avant laaaaa" + keyToRemove);
-
                 if (!string.IsNullOrEmpty(keyToRemove))
                 {
                     choiceData.ConditionsKey.Remove(keyToRemove);
-                    Debug.Log("laaaa");
                 }
             }
         }
