@@ -50,6 +50,8 @@ public class EventsManager : MonoBehaviour
         if (!changesTracker.TrackFieldChanges(this, x => x.SO))
             return;
 
+        list.Clear();
+
         if (!SO)
         {
             Debug.LogError("No Scriptable Object referenced in " + this.name);
@@ -73,6 +75,7 @@ public class EventsManager : MonoBehaviour
 
         // prefab event => data from sc ; scene event => data from scene
         UnityEvent e = new UnityEvent();
+
         if(data.isPrefab)
             e = data.Event;
         else 

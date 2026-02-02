@@ -125,12 +125,18 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        // ON CLICK //
-        if (Input.GetMouseButtonDown(0) && !_isWaitingForChoice)
+        //// ON CLICK //
+        //if (Input.GetMouseButtonDown(0) && !_isWaitingForChoice)
+        //{
+        //    TryToUpdateNextDialogueFromNextNode();
+        //}
+
+        if (Input.GetKeyDown(KeyCode.Space) && !_isWaitingForChoice)
         {
             TryToUpdateNextDialogueFromNextNode();
         }
     }
+
     
     // MET A JOUR LE DIALOGUE EN FONCTION DU NODE SUIVANT //
     private void TryToUpdateNextDialogueFromNextNode()
@@ -171,7 +177,7 @@ public class DialogueManager : MonoBehaviour
     // GERE LES CONDITIONS DU BRANCH // RETOURNE LE BON NODE EN FONCTION DES CONDITIONS //s
     private DSNodeSaveData GetCorrectNextNodeFromBranch()
     {
-        Debug.Log("Evaluating branch conditions for Node ID: " + _currentNode.ID);
+        //Debug.Log("Evaluating branch conditions for Node ID: " + _currentNode.ID);
         // SI Y'A PAS DE CONDITIONS DANS UN IF ON SKIP // NORMALEMENT CA DEVRAIT JAMAIS ARRIVER MDR//
         if(_currentNode.ChoicesInNode[0].ConditionsKey.Count <= 0)
         {
@@ -272,14 +278,20 @@ public class DialogueManager : MonoBehaviour
         _currentDialogueContainer.InitializeDialogueContainer(targetDialogue, _currentSpeaker.Name, _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur()));
 
         // event
-        UnityEvent targetEvent = EventsManager.Instance.FindEvent(_currentNode.GetDropDownKeyEvent());
-        targetEvent?.Invoke();
+        if(!string.IsNullOrEmpty(_currentNode.GetDropDownKeyEvent()))
+        {
+            UnityEvent targetEvent = EventsManager.Instance.FindEvent(_currentNode.GetDropDownKeyEvent());
+            targetEvent?.Invoke();
+        }
 
 
     }
 
     private void CreateButtonsChoice()
     {
+
+        Debug.Log("Count" + _currentNode.ChoicesInNode.Count);
+        
         if (_currentNode.ChoicesInNode.Count > 1)
         {
             _isWaitingForChoice = true;
@@ -305,17 +317,22 @@ public class DialogueManager : MonoBehaviour
                 choiceButton.onClick.AddListener(() =>
                 {
                     _isWaitingForChoice = false;
-                    UpdateDialogueFromNode(GetNextNode(choice.NodeID));
+
+                    //clear
                     foreach (Transform child in ChoiceButtonContainer)
                     {
                         if (child == null) continue;
                         Destroy(child.gameObject);
                     }
+
+                    // next node
+                    UpdateDialogueFromNode(GetNextNode(choice.NodeID));
+
                 });
             }
         }
     }
-    
+
     private bool DoesFillScConditions(ConditionsSC choice)
     {
         return PlayerInventoryManager.instance.DoesPlayerFillCondition(choice);

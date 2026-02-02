@@ -28,6 +28,7 @@ public class buttonChoiceController : MonoBehaviour
         
         if(_animator == null) _animator = GetComponent<Animator>();
         _animator.SetBool("Locked", lockState);
+
     }
     
     public void OnClicked()

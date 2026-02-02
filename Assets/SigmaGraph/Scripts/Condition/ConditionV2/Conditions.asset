@@ -19,3 +19,6 @@ MonoBehaviour:
   - Label: Ici
     Key: Prout
     Caption: a reussi le test via eventTest
+  - Label: Bulle
+    Key: Bubule
+    Caption: augdagdgh

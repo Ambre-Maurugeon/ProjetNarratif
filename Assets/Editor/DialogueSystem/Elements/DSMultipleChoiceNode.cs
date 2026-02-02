@@ -370,7 +370,9 @@ public class DSMultipleChoiceNode : DSNode
     {
         if (condition == null) return;
 
-        string keyToRemove = condition.userData as string;
+        string keyToRemove = ""; // condition. as string;
+
+        Debug.Log("KEYYYYY" +  keyToRemove);
         
         if (condition.parent != null)
         {
@@ -390,9 +392,17 @@ public class DSMultipleChoiceNode : DSNode
             if (idx >= 0 && idx < Saves.ChoicesInNode.Count)
             {
                 var choiceData = Saves.ChoicesInNode[idx];
+
+
+                //List<string> test = new List<string>();
+                //test = Saves.ConditionsMapKey[port];
+                //keyToRemove = (string)condition;
+                //Debug.Log("avant laaaaa" + keyToRemove);
+
                 if (!string.IsNullOrEmpty(keyToRemove))
                 {
                     choiceData.ConditionsKey.Remove(keyToRemove);
+                    Debug.Log("laaaa");
                 }
             }
         }

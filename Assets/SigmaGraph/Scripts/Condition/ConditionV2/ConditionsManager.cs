@@ -41,6 +41,8 @@ public class ConditionsManager : MonoBehaviour
         if (!changesTracker.TrackFieldChanges(this, x => x.SO))
             return;
 
+        list.Clear();
+
         if (!SO)
         {
             Debug.LogError("No Scriptable Object referenced in " + this.name);

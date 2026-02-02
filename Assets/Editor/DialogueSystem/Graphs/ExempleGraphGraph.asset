@@ -16,7 +16,7 @@ MonoBehaviour:
   <Groups>k__BackingField:
   - <ID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <Name>k__BackingField: EXEMPLE
-    <Position>k__BackingField: {x: -769.6, y: -46.4}
+    <Position>k__BackingField: {x: -769.60004, y: -46.400055}
   <Nodes>k__BackingField:
   - <ID>k__BackingField: a400b91b-d8e5-494a-bb18-21dc94b23562
     <Name>k__BackingField: DialogueName_9
@@ -113,36 +113,6 @@ MonoBehaviour:
     <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 1603.2, y: 238.4}
-  - <ID>k__BackingField: 74f640d2-3b9d-4c3f-b494-4bfc35394985
-    <Name>k__BackingField: DialogueName
-    <Speaker>k__BackingField: 0
-    BubleType: 0
-    Humeur: 0
-    _dropDownKeyDialogue: Brant_D2
-    isMultipleChoice: 1
-    hasEvent: 0
-    _dropDownKeyEvent: 
-    <OnlyOneConditionNeeded>k__BackingField: 0
-    <ChoicesInNode>k__BackingField:
-    - NodeID: 4b14ed38-5459-4949-b1bd-e4e45e9ce657
-      _dropDownKeyChoice: Juliana_D2_C1
-      <ConditionsSc>k__BackingField: []
-      <ConditionsKey>k__BackingField: []
-      _directionPort: 0
-    - NodeID: 10048afa-a1e6-4d4f-add2-860282086f7d
-      _dropDownKeyChoice: Juliana_D2_C2
-      <ConditionsSc>k__BackingField: []
-      <ConditionsKey>k__BackingField:
-      - Prout
-      _directionPort: 0
-    - NodeID: 142a10ef-155f-4e7f-9f7e-a8c3104ac07a
-      _dropDownKeyChoice: Juliana_D2_C3
-      <ConditionsSc>k__BackingField: []
-      <ConditionsKey>k__BackingField: []
-      _directionPort: 0
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 391.2, y: 595.2}
   - <ID>k__BackingField: 142a10ef-155f-4e7f-9f7e-a8c3104ac07a
     <Name>k__BackingField: Branch (Experimental)
     <Speaker>k__BackingField: 0
@@ -247,10 +217,38 @@ MonoBehaviour:
     <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 103.2, y: 14.400002}
+  - <ID>k__BackingField: 74f640d2-3b9d-4c3f-b494-4bfc35394985
+    <Name>k__BackingField: DialogueName
+    <Speaker>k__BackingField: 0
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Brant_D2
+    isMultipleChoice: 1
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 142a10ef-155f-4e7f-9f7e-a8c3104ac07a
+      _dropDownKeyChoice: Brant_D2
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 4b14ed38-5459-4949-b1bd-e4e45e9ce657
+      _dropDownKeyChoice: Juliana_D2_C1
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 10048afa-a1e6-4d4f-add2-860282086f7d
+      _dropDownKeyChoice: Juliana_D2_C1
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 380, y: 579.2}
   <OldGroupNames>k__BackingField:
   - EXEMPLE
   <OldUngroupedNodeNames>k__BackingField:
-  - DialogueName
   - Branch (Experimental)
   <OldGroupedNodeNames>k__BackingField:
     list:
@@ -264,3 +262,4 @@ MonoBehaviour:
       - Branch (Experimental)
       - START
       - DialogueName_4
+      - DialogueName

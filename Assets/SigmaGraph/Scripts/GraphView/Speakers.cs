@@ -12,5 +12,10 @@ public enum Espeaker
 {
     Brant,
     Juliana,
-    Margot
+    Margot,
+    Bourdon,
+    Gendarme,
+    Papillon,
+    Cloporte,
+    Mantis
 }
