@@ -223,7 +223,7 @@ public class DSNode : Node
         customDataContainer.AddToClassList("ds-node__event-container");
 
         Foldout textFoldout = DSElementUtility.CreateFoldout("Event Section");
-        _dropdownFieldEvent = DSElementUtility.CreateDropdownArea("Event Key", "Key");
+        _dropdownFieldEvent = DSElementUtility.CreateDropdownArea("[EV_Key]", "Key");
 
         // TO EDIT 
         EventsSO SC = (EventsSO)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Events/Events.asset", typeof(EventsSO));
@@ -236,7 +236,7 @@ public class DSNode : Node
         DSElementUtility.CreateLabelField("");
         textFoldout.Add(_fieldEventCaption);
 
-        if (Saves.GetDropDownKeyEvent() != "")
+        if (!string.IsNullOrEmpty(Saves.GetDropDownKeyEvent()))
         {
             _dropdownFieldEvent.value = Saves.GetDropDownKeyEvent();
             OnEventDropdown(_dropdownFieldEvent);
@@ -249,6 +249,7 @@ public class DSNode : Node
         {
             extensionContainer.Remove(customDataContainer);
             Saves.hasEvent = false;
+            Saves.SaveDropDownKeyEvent(null);
         });
 
         deleteButton.AddToClassList("ds-node__buttonDelete");
