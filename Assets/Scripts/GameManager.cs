@@ -2,10 +2,12 @@ using System.Collections;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private BugsDatabase bugsDatabase;
+    [SerializeField] private GameObject transitionPrefab;
 
     public static GameManager Instance { get; private set; }
     public int currentInsectId = -1;
@@ -31,6 +33,11 @@ public class GameManager : MonoBehaviour
             SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    public void CheckSuccess()
+    {
+        Debug.Log("Vérification de la réussite...");
+    }
+
     public void OnStartInsect(int id)
     {
         if (bugsDatabase == null)
@@ -53,7 +60,33 @@ public class GameManager : MonoBehaviour
         }
 
         currentInsectId = id;
-        // temps de transition lancement de scène
+        StartCoroutine(StartInsectCoroutine());
+    }
+
+    private IEnumerator StartInsectCoroutine()
+    {
+        var transition = FindObjectOfType<TransitionScene>();
+
+        if (transition != null && !transition.gameObject.activeInHierarchy)
+        {
+            transition.gameObject.SetActive(true);
+        }
+
+        if (transition == null && transitionPrefab != null)
+        {
+            var go = Instantiate(transitionPrefab);
+            if (go != null)
+            {
+                go.SetActive(true);
+                transition = go.GetComponent<TransitionScene>();
+            }
+        }
+
+        if (transition != null)
+        {
+            yield return StartCoroutine(transition.FadeIn());
+        }
+
         SceneManager.LoadScene(SceneToLoad.name);
     }
 
@@ -64,28 +97,69 @@ public class GameManager : MonoBehaviour
 
         if (bugsDatabase == null || bugsDatabase.entries == null)
         {
-            Debug.LogWarning("BugsDatabase non disponible après chargement de la scène.");
             return;
         }
 
         CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
         if (entry == null)
         {
-            Debug.LogWarning($"Aucun insecte trouvé avec id {currentInsectId} après chargement de la scène.");
             return;
         }
 
+        var transition = FindObjectOfType<TransitionScene>();
+        if (transition == null && transitionPrefab != null)
+        {
+            var go = Instantiate(transitionPrefab);
+            if (go != null)
+            {
+                go.SetActive(true);
+                Debug.Log("TransitionScene instancié dans la nouvelle scène.");
+                transition = go.GetComponent<TransitionScene>();
+            }
+        }
+
+        if (transition != null)
+        {
+            StartCoroutine(HandleSceneLoadedWithFadeOut(entry, transition));
+        }
+        else
+        {
+            StopAllCoroutines();
+            StartCoroutine(GameplayLoop(entry));
+        }
+    }
+
+    private IEnumerator HandleSceneLoadedWithFadeOut(CharacterEntry entry, TransitionScene transition)
+    {
+        if (!transition.gameObject.activeInHierarchy)
+            transition.gameObject.SetActive(true);
+
+        yield return StartCoroutine(transition.FadeOut());
+
         StopAllCoroutines();
-        // fin de transition lancement de scène
         StartCoroutine(GameplayLoop(entry));
     }
 
     private IEnumerator GameplayLoop(CharacterEntry entry)
     {
-        Debug.Log($"Démarrage du gameplay pour {entry.perso} (id {entry.id}).");
         while (true)
         {
-            // ajouter la logique de gameplay ici
+            var dialogueManager = FindObjectOfType<DialogueManager>();
+            if (dialogueManager == null)
+            {
+                Debug.LogWarning("DialogueManager introuvable dans la scène.");
+            }
+            else
+            {
+                if (entry.refDialogue == null)
+                {
+                    Debug.LogWarning($"L'entrée {entry.perso} n'a pas de refDialogue assigné.");
+                }
+                else
+                {
+                    dialogueManager.runtimeGraph = entry.refDialogue;
+                }
+            }
             yield return null;
         }
     }
