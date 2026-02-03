@@ -346,6 +346,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Pulse
   MusicSource: {fileID: 1559099677}
   BPM: 120
+  speed: 1.5
+  Tolerance: 0.2
 --- !u!1001 &1309165384
 PrefabInstance:
   m_ObjectHideFlags: 0
