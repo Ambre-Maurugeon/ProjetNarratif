@@ -48,7 +48,7 @@ public class Pulse : MonoBehaviour
         badAchievement = false;
         playing = false;
 
-        PlayMusic();
+        //PlayMusic();
     }
 
     void Update()

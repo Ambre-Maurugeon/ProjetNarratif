@@ -435,7 +435,7 @@ MonoBehaviour:
   - Key: goodscore
     check:
       _target: {fileID: 124815064}
-      _methodName: goodscore
+      _methodName: MediumAchievement
       _args: []
       _dynamic: 0
       _typeName: CheckEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -488,10 +488,11 @@ MonoBehaviour:
   BPM: 120
   speed: 1
   Tolerance: 1
-  PerfectAchievement: 0
-  GoodAchievement: 0
-  MediumAchievement: 0
-  BadAchievement: 0
+  perfectAchievement: 0
+  goodAchievement: 0
+  mediumAchievement: 0
+  badAchievement: 0
+  bpmTimePlaying: 0
 --- !u!4 &124815065
 Transform:
   m_ObjectHideFlags: 0
