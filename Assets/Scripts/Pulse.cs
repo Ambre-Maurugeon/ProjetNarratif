@@ -15,18 +15,19 @@ public class Pulse : MonoBehaviour
     private int nbInterval = 0;
     private int timingResult = 0;
 
-    public bool PerfectAchievement;
-    public bool GoodAchievement;
-    public bool MediumAchievement;
-    public bool BadAchievement;
 
-    public bool goodscore()
-    {
-        return GoodAchievement;
-    }
+    public bool perfectAchievement;
+    public bool goodAchievement;
+    public bool mediumAchievement;
+    public bool badAchievement;
+    public double bpmTimePlaying;
+
+    public bool PerfectAchievement() => perfectAchievement;
+    public bool GoodAchievement() => goodAchievement;
+    public bool MediumAchievement() => mediumAchievement;
+    public bool BadAchievement() => badAchievement;
 
 
-    TouchScreen touchScreen;
     public static event Action OnEndRythm;
 
     private void OnEnable()
@@ -41,23 +42,23 @@ public class Pulse : MonoBehaviour
 
     void Start()
     {
-        PerfectAchievement = false;
-        GoodAchievement = false;
-        MediumAchievement = false;
-        BadAchievement = false;
+        perfectAchievement = false;
+        goodAchievement = false;
+        mediumAchievement = false;
+        badAchievement = false;
         playing = false;
 
-        //InitMusic();
+        PlayMusic();
     }
 
     void Update()
     {
         NextBeat();
-        BPMSpeed(1);
+        BPMSpeed(speed);
     }
 
 
-    public void InitMusic()
+    public void PlayMusic()
     {
         if (MusicSource == null)
         {
@@ -81,7 +82,7 @@ public class Pulse : MonoBehaviour
     {
         if (!playing) return;
 
-        double bpmTimePlaying = dspStartTime;
+         bpmTimePlaying = AudioSettings.dspTime - dspStartTime;
 
         if (bpmTimePlaying >= nextBeatInterval)
         {
@@ -91,14 +92,12 @@ public class Pulse : MonoBehaviour
             Debug.LogWarning($"nextBeatInterval : {nextBeatInterval}");
         }
 
-        //if (nbInterval >= 22)
-        //{
-        //    Result();
-        //    Stop();
-        //}
+        if (nbInterval >= 22)
+        {
+            Result();
+            Stop();
+        }
 
-        Invoke("Result", 6f);
-        Invoke("Stop", 7f);
     }
 
     void BeatInterval()
@@ -106,27 +105,25 @@ public class Pulse : MonoBehaviour
         if (!playing) return;
 
         double tapTime = AudioSettings.dspTime - dspStartTime;
-        Debug.Log($"tapTime: {tapTime}");
-
         // Beat le plus proche
         double closestBeat = Math.Round(tapTime / beatInterval) * beatInterval;
-        Debug.Log($"closestBeat: {closestBeat}");
         double delta = Math.Abs(tapTime - closestBeat);
-        Debug.Log($"delta: {delta}");
+
+        Debug.Log($"time: {bpmTimePlaying}, tapTime: {tapTime}, delta: {delta}, closestBeat: {closestBeat}");
 
         if (delta <= Tolerance)
         {
             timingResult  += 1;
-            Debug.Log($"Timing OK");
+            Debug.Log($"Timing OK : {dspStartTime}");
         }
         else
         {
             timingResult -= 1;
-            Debug.Log($"Timing KO");
+            Debug.Log($"Timing KO : {dspStartTime}");
         }
     }
 
-    public void BPMSpeed(int speed)
+    public void BPMSpeed(float speed)
     {
         if (!playing) return;
         MusicSource.pitch = speed;
@@ -146,22 +143,22 @@ public class Pulse : MonoBehaviour
         if (result == 1f)
         {
             Debug.Log("100%");
-            PerfectAchievement = true;
+            perfectAchievement = true;
         }
         else if (result >= 0.8f && result < 1f)
         {
             Debug.Log("80% ~ 99%");
-            GoodAchievement = true;
+            goodAchievement = true;
         }
         else if (result >= 0.5f && result <= 0.7f)
         {
             Debug.Log("50% ~ 79%");
-            MediumAchievement = true;
+            mediumAchievement = true;
         }
         else if (result < 0.4f)
         {
             Debug.Log("0% ~ 49%");
-            BadAchievement = true;
+            badAchievement = true;
         }
     }
 
