@@ -8,4 +8,5 @@ public class CharacterEntry
     public int id;
     public DSGraphSaveDataSO refDialogue;
     public int NewSpeedBPM;
+    public Sprite characterSprite;
 }

@@ -67,7 +67,7 @@ public class DialogueManager : MonoBehaviour
 
     // end Dialogue
     public delegate void MyDelegate();
-    public event MyDelegate OnDialogueEnd;
+    public static event MyDelegate OnDialogueEnd;
 
     #endregion
 
