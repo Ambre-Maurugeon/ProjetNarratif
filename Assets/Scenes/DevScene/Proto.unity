@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f028ce0c7d42ab9bcb5d37e69c38e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  runtimeGraph: {fileID: 11400000, guid: 1701772bc219c754a94ceac17c762741, type: 2}
+  runtimeGraph: {fileID: 11400000, guid: 5fa68d7144e08704383094a717aa7888, type: 2}
   languageSetting: 0
   _bubleContainerList:
   - {fileID: 504661613}
@@ -2392,7 +2392,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   bugsDatabase: {fileID: 11400000, guid: d67aebae0d477be4bab20b849bce29e5, type: 2}
+  transitionPrefab: {fileID: 0}
   currentInsectId: -1
+  SceneToLoad: {fileID: 0}
 --- !u!4 &2041818665
 Transform:
   m_ObjectHideFlags: 0
