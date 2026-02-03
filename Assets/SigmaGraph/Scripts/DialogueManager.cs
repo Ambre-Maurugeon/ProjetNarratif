@@ -21,6 +21,8 @@ public enum bubleType
 
 public class DialogueManager : MonoBehaviour
 {
+    #region Fields
+
     public DSGraphSaveDataSO runtimeGraph;
     
     [Header("PLAYER SETTINGS")]
@@ -34,9 +36,12 @@ public class DialogueManager : MonoBehaviour
     private Dictionary<bubleType, dialogueContainer> _bubleContainers = new Dictionary<bubleType, dialogueContainer>();
     [SerializeField] private List<dialogueContainer> _bubleContainerList = new List<dialogueContainer>();
 
-    [Header("Choice Button UI")] public Button ChoiceButtonPrefab;
+    [Header("UI Buttons")] 
+    public Button ChoiceButtonPrefab;
     public Transform ChoiceButtonContainer;
+    public Button _nextButton;
 
+    [Header("Speakers")]
     public Speakers SpeakersScriptable;
     private SpeakerInfo _currentSpeaker;
 
@@ -47,6 +52,24 @@ public class DialogueManager : MonoBehaviour
     
     private dialogueContainer _currentDialogueContainer;
     private dialogueContainer _oldDialogueContainer;
+
+    // Interaction
+
+    private bool _canInteract = true;
+    public bool CanInteract
+    {
+        get => _canInteract;
+        set
+        {
+            _canInteract = value;
+        }
+    }
+
+    // end Dialogue
+    public delegate void MyDelegate();
+    public event MyDelegate OnDialogueEnd;
+
+    #endregion
 
     [Button]
     public void LoadCsv()
@@ -112,6 +135,16 @@ public class DialogueManager : MonoBehaviour
         {
             TryToUpdateNextDialogueFromNextNode();
         }
+
+        // Next Button
+        if (_nextButton != null)
+        {
+            _nextButton.onClick.AddListener(() =>
+            {
+             if(CanInteract && !_isWaitingForChoice)
+                TryToUpdateNextDialogueFromNextNode();
+            });
+        }
     }
     
     private DSNodeSaveData GetNextNode(string nextID)
@@ -125,12 +158,13 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        // ON CLICK //
-        if (Input.GetMouseButtonDown(0) && !_isWaitingForChoice)
-        {
-            TryToUpdateNextDialogueFromNextNode();
-        }
+        //// ON CLICK //
+        //if (Input.GetMouseButtonDown(0) && !_isWaitingForChoice)
+        //{
+        //    TryToUpdateNextDialogueFromNextNode();
+        //}
     }
+
     
     // MET A JOUR LE DIALOGUE EN FONCTION DU NODE SUIVANT //
     private void TryToUpdateNextDialogueFromNextNode()
@@ -171,9 +205,9 @@ public class DialogueManager : MonoBehaviour
     // GERE LES CONDITIONS DU BRANCH // RETOURNE LE BON NODE EN FONCTION DES CONDITIONS //s
     private DSNodeSaveData GetCorrectNextNodeFromBranch()
     {
-        Debug.Log("Evaluating branch conditions for Node ID: " + _currentNode.ID);
+        //Debug.Log("Evaluating branch conditions for Node ID: " + _currentNode.ID);
         // SI Y'A PAS DE CONDITIONS DANS UN IF ON SKIP // NORMALEMENT CA DEVRAIT JAMAIS ARRIVER MDR//
-        if(_currentNode.ChoicesInNode[0].Conditions.Count <= 0)
+        if(_currentNode.ChoicesInNode[0].ConditionsKey.Count <= 0)
         {
             Debug.Log("No choices available in the current branch node.");
             return GetNextNode(_currentNode.ChoicesInNode[1].NodeID);
@@ -181,11 +215,11 @@ public class DialogueManager : MonoBehaviour
         
         bool hasMetConditions = false;
 
-        foreach (var choice in _currentNode.ChoicesInNode[0].Conditions)
+        foreach (var choice in _currentNode.ChoicesInNode[0].ConditionsKey)
         {
             if (_currentNode.OnlyOneConditionNeeded)
             {
-                if (DoesFillCondtions(choice))
+                if (DoesFillKeyConditions(choice))
                 {
                     hasMetConditions = true;
                     // ON RECUP LE [1] CAR C'EST LE TRUE //
@@ -194,7 +228,7 @@ public class DialogueManager : MonoBehaviour
                 continue;
             }
             
-            if (!DoesFillCondtions(choice))
+            if (!DoesFillKeyConditions(choice))
             {
                 hasMetConditions = false;
                 break;
@@ -272,8 +306,11 @@ public class DialogueManager : MonoBehaviour
         _currentDialogueContainer.InitializeDialogueContainer(targetDialogue, _currentSpeaker.Name, _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur()));
 
         // event
-        UnityEvent targetEvent = EventsManager.Instance.FindEvent(_currentNode.GetDropDownKeyEvent());
-        targetEvent?.Invoke();
+        if(!string.IsNullOrEmpty(_currentNode.GetDropDownKeyEvent()))
+        {
+            UnityEvent targetEvent = EventsManager.Instance.FindEvent(_currentNode.GetDropDownKeyEvent());
+            targetEvent?.Invoke();
+        }
 
 
     }
@@ -290,9 +327,9 @@ public class DialogueManager : MonoBehaviour
                 if (buttonController != null)
                 {
                     bool fillCondition = true;
-                    foreach (var condition in choice.Conditions)
+                    foreach (var condition in choice.ConditionsKey)
                     {
-                        fillCondition = DoesFillCondtions(condition);
+                        fillCondition = DoesFillKeyConditions(condition);
                         if (!fillCondition)
                         {
                             break;
@@ -304,32 +341,46 @@ public class DialogueManager : MonoBehaviour
                 
                 choiceButton.onClick.AddListener(() =>
                 {
+                    Debug.Log("help");
+
                     _isWaitingForChoice = false;
-                    UpdateDialogueFromNode(GetNextNode(choice.NodeID));
+
+                    //clear
                     foreach (Transform child in ChoiceButtonContainer)
                     {
                         if (child == null) continue;
                         Destroy(child.gameObject);
                     }
+
+                    // next node
+                    UpdateDialogueFromNode(GetNextNode(choice.NodeID));
+
                 });
             }
         }
     }
-    
-    private bool DoesFillCondtions(ConditionsSC choice)
+
+    private bool DoesFillScConditions(ConditionsSC choice)
     {
         return PlayerInventoryManager.instance.DoesPlayerFillCondition(choice);
+    }
+    private bool DoesFillKeyConditions(string key)
+    {
+        return ConditionsManager.instance.EvaluateCondition(key);
     }
 
     private void EndDialogue()
     {
         _currentDialogueContainer.HideContainer();
+        _nextButton.gameObject.SetActive(false);
         _currentNode = null;
 
         foreach (Transform child in ChoiceButtonContainer)
         {
             Destroy(child.gameObject);
         }
+
+        OnDialogueEnd?.Invoke();
     }
 
     public void ChangeSpeaker(Espeaker speak)
@@ -361,4 +412,5 @@ public class DialogueManager : MonoBehaviour
         }
         return null;
     }
+
 }

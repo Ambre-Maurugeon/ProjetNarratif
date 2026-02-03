@@ -6,6 +6,6 @@ public class CharacterEntry
 {
     public string perso;        
     public int id;
-    public DSGraphSaveDataSO refDialogue;  //temp string
-    public string refRythme;    //temp string 
+    public DSGraphSaveDataSO refDialogue;
+    public int NewSpeedBPM;
 }

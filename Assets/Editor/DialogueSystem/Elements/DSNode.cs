@@ -29,7 +29,7 @@ public class DSNode : Node
     private Color defaultBackgroundColor;
 
     private TextField _fieldDialogueLabel;
-
+    
     private TextField _fieldEventCaption;
 
     private DropdownField _dropdownFieldDialogue;
@@ -223,19 +223,20 @@ public class DSNode : Node
         customDataContainer.AddToClassList("ds-node__event-container");
 
         Foldout textFoldout = DSElementUtility.CreateFoldout("Event Section");
-        _dropdownFieldEvent = DSElementUtility.CreateDropdownArea("Event Key", "Key");
+        _dropdownFieldEvent = DSElementUtility.CreateDropdownArea("[EV_Key]", "Key");
 
         // TO EDIT 
-        EventsSC SC = (EventsSC)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Events/Events.asset", typeof(EventsSC));
+        EventsSO SC = (EventsSO)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Events/Events.asset", typeof(EventsSO));
         SC?.FillEventDropdown(ref _dropdownFieldEvent);
         _dropdownFieldEvent.RegisterValueChangedCallback((ChangeEvent<string> evt) => OnEventDropdown(_dropdownFieldEvent));
 
         // field 
         textFoldout.Add(_dropdownFieldEvent);
-        _fieldEventCaption = DSElementUtility.CreateTextField("");
+        _fieldEventCaption = DSElementUtility.CreateTextField(""); // TO EDIT text to label (read only ?)
+        DSElementUtility.CreateLabelField("");
         textFoldout.Add(_fieldEventCaption);
 
-        if (Saves.GetDropDownKeyEvent() != "")
+        if (!string.IsNullOrEmpty(Saves.GetDropDownKeyEvent()))
         {
             _dropdownFieldEvent.value = Saves.GetDropDownKeyEvent();
             OnEventDropdown(_dropdownFieldEvent);
@@ -248,6 +249,7 @@ public class DSNode : Node
         {
             extensionContainer.Remove(customDataContainer);
             Saves.hasEvent = false;
+            Saves.SaveDropDownKeyEvent(null);
         });
 
         deleteButton.AddToClassList("ds-node__buttonDelete");
@@ -278,6 +280,7 @@ public class DSNode : Node
     }
 
     // GERE L'EVENT QUAND ON CHANGE DE VALEUR DANS LE DROPDOWN //
+    // TO EDIT ONE FUNCTION FOR ALL DORPDOWNS
     private void OnDialogueDropdown(DropdownField dropdownField)
     {
         if (_fieldDialogueLabel == null)
@@ -292,7 +295,7 @@ public class DSNode : Node
         if (_fieldEventCaption == null)
             return;
 
-        EventsSC SC = (EventsSC)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Events/Events.asset", typeof(EventsSC)); // TO EDIT
+        EventsSO SC = (EventsSO)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Events/Events.asset", typeof(EventsSO)); // TO EDIT
         _fieldEventCaption.value = SC?.GetEventByKey(dropdownField.value).caption;
         Saves.SaveDropDownKeyEvent(dropdownField.value);
     }

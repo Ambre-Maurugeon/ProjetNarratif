@@ -16,6 +16,7 @@ MonoBehaviour:
   - label: Display name
     Key: EV--Prefab
     caption: display le name, prefab
+    isPrefab: 1
     Event:
       m_PersistentCalls:
         m_Calls:
@@ -31,17 +32,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
-    isPrefab: 1
   - label: No prefab
     Key: No prefab
     caption: tttttttttttttt
+    isPrefab: 0
     Event:
       m_PersistentCalls:
         m_Calls: []
-    isPrefab: 0
   - label: Augmenter rythme
     Key: EV_AUG_BPM
     caption: augmente le bpm
+    isPrefab: 0
     Event:
       m_PersistentCalls:
         m_Calls:
@@ -57,4 +58,24 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - label: Augmenter rythme
+    Key: EV_AUG_BP
+    caption: augmente le bpm
     isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: ujfzef
+    Key: EV_Jult
+    caption: description
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Lancer le Rythme
+    Key: EV_RythmLaunch
+    caption: lance le rythme
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
