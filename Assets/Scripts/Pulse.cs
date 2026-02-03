@@ -41,7 +41,7 @@ public class Pulse : MonoBehaviour
         BadAchievement = false;
         playing = false;
 
-        InitMusic();
+        //InitMusic();
     }
 
     void Update()
@@ -51,7 +51,7 @@ public class Pulse : MonoBehaviour
     }
 
 
-    void InitMusic()
+    public void InitMusic()
     {
         if (MusicSource == null)
         {

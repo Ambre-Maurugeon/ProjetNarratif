@@ -43,3 +43,13 @@ MonoBehaviour:
       humeur: 2
     - sprite: {fileID: 21300000, guid: ddba7a5d2b29f334b9d2dffc59f568c1, type: 3}
       humeur: 1
+  - Name: Bourdon
+    speakEnum: 3
+    Humeur: 0
+    SpritesHumeur:
+    - sprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
+      humeur: 0
+    - sprite: {fileID: 21300000, guid: e052daf03e049f54b9844545ac3e54c2, type: 3}
+      humeur: 2
+    - sprite: {fileID: 21300000, guid: ddba7a5d2b29f334b9d2dffc59f568c1, type: 3}
+      humeur: 1

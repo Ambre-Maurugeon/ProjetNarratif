@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7376235631433316882}
   - component: {fileID: 1783849011314268274}
   m_Layer: 0
-  m_Name: EventTest
+  m_Name: Event&ConditionTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
