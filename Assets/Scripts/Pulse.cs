@@ -25,7 +25,7 @@ public class Pulse : MonoBehaviour
 
     void Start()
     {
-        InitMusic();
+        //InitMusic();
     }
 
     void Update()
@@ -35,7 +35,7 @@ public class Pulse : MonoBehaviour
     }
 
 
-    void InitMusic()
+    public void InitMusic()
     {
         if (MusicSource == null)
         {
@@ -70,6 +70,7 @@ public class Pulse : MonoBehaviour
         else 
         {
             Debug.Log($"timing ko{MusicSource.time}");
+
         }
     }
 
