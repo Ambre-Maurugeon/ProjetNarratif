@@ -15,7 +15,7 @@ Bourdon_D1;Boudiou j’ai eu du mal à te trouver !;Gosh I had a hard time finding 
 Bourdon_D2;En tout cas, tu es très élégant.e, comme sur tes photos ! :);In any case, you are very elegant, just like in your photos! :)
 Bourdon_D3;Tu prends quoi à boire ? J'espère qu'ils font des boissons avec de l'alcool pas trop fort..;What are you drinking? I hope they make drinks with not too strong alcohol..
 DR_1;À la télévision du bar, l'émission Cyber Grasshoper In The Techno Shell est diffusée.;On the bar's television, the show Cyber Grasshopper In The Techno Shell is playing.
-Bourdon_D4;J'aime pas cette émission, c'est créé par des boomers !;I don't like this show, it's created by boomers !
+Bourdon_D4;J'aime pas l'émission Cyber Grasshoper In The Techno Shell qui passe derrière toi, c'est créé par des boomers !;I don't like this show, it's created by boomers !
 Mantis_D1_C1;Mais moi j’aime bien cette série :’|;But I really like this series:’|
 Mantis_D1_C2;C'est série nulle. Créé pour les vieux et par des vieux..;It's a terrible series. Created for the old and by the old..
 Mantis_D1_C3;Je ne l’ai pas regardé.;I didn't watch it.
@@ -48,6 +48,7 @@ Bourdon_D29;Personnellement j’ai pris du cidre, ça a un goût proche du jus de po
 Bourdon_D30; Oh. Heu... Je cromprend-Tu veux prendre quelque chose peut être!;
 ;CONTINUATION CHOIX 4 (2,1,1.4);
 Bourdon_D12;Ha super! Mais attends t’as pas répondu... Tu veux quoi du coup?;
+Bourdon_D69;WOUHOUU HAPPY DATE;
 ;CONTINUATION CHOIX 1 (2,2);
 Mantis_D5;Mhh, je vois ce que tu veux dire.;
 Bourdon_D13;Et honnêtement, quand j'ai dit que c’était une série pour vieux c'est surtout parce que j’ai vu des extrait sur [youtubedejardin] vu que c’est un classique mais c’est trop une série compliqué pour moi. :/;
@@ -70,3 +71,14 @@ Bourdon_D23;WooooooW vraiment?!;
 Bourdon_D24;Je veux dire, toi aussi !!;
 Bourdon_D25;Ahah, si j’étais comme mes potes je dirais que c’est de la nouriture pour gamin, mais ils ne comprennent juste pas que c’est cent fois meilleur !;
 Bourdon_D26;En plus les patates sourires sont aussi bien cuites en dessous que au dessus, c’est comme un vrai trésor de capitaine !;
+;SUITE CHOIX 1;
+Bourdon_D32;C'est pas pour dire que je l'ai regardé après, j'ai que regarder des extraits pour la culture mais c'était trop lent comme cette autres séries là, Free reins. C'est pas compliqué pourtant si le rythme était super rapide on s'ennuieraient moins.;
+Bourdon_D33;C'est ton choix, simplement c'est objectivement trop nul faut pas écouter la critique ils descendent toujours les meilleurs séries. Preuve! Moi j'aime tous les Permien Parks mais il continue de dire que Permien World c'est moins bien! Chuis grave trop pas d'accord.;
+Bourdon_D34;En plus ils sont tellement plus réaliste! Les robots c'est tellement moins probable que des dinosaures néés par des grenouilles en manipulant leurs adn et le recyclant de moustique préservé dans de la sève d'arbre de plusieurs million d'années. Pfouah des robots quoi! C'est tellement impossible.;
+Bourdon_D35;Et puis le Mycropentanatocéphalocarcharomimus il est-Oops! Je veux pas t'ennuyer avec ça, dès fois je m'arrête plus qu'en j'en parle. Ca serait dommage de me tapé sur la tête pour que j'arrête d'en parler haha!;
+Bourdon_D36;Faut pas me regarder comme ça... Moi... Le dinodex c'est passionant les dinosaures.;
+Bourdon_D37;Si ça ne te va pas je peux toujour parler ou passer sur heu…;
+Bourdon_D38;Tu-aimes bien-ton travail-nom du crush-virgule tu fais quoi comme travail-point d'interogation heu... ~Oops;
+Mantis_D7_C1;Tu sais pas parler ou quoi ?;
+Mantis_D7_C2;Tu mélanges tes pinceaux là.;
+Mantis_D7_C3;On peut dire secrétaire..;
