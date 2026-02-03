@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int currentInsectId = 0;
     public SceneAsset SceneToLoad;
     public SceneAsset SceneHub;
+    private bool AsFinishedInsect = false;
 
     private void Awake()
     {
@@ -31,12 +32,14 @@ public class GameManager : MonoBehaviour
     void OnEnable()
     {
         Pulse.OnEndRythm += StopRythmGame;
+        DialogueManager.OnDialogueEnd += ReturnToHub;
         
     }
     
     void OnDisable()
     {
         Pulse.OnEndRythm -= StopRythmGame;
+        DialogueManager.OnDialogueEnd -= ReturnToHub;
     }
 
     private void OnDestroy()
