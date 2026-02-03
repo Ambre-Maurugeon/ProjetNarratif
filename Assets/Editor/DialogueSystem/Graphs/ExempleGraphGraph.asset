@@ -1,0 +1,266 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: ExempleGraphGraph
+  m_EditorClassIdentifier: Assembly-CSharp::DSGraphSaveDataSO
+  <FileName>k__BackingField: ExempleGraph
+  <Groups>k__BackingField:
+  - <ID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
+    <Name>k__BackingField: EXEMPLE
+    <Position>k__BackingField: {x: -769.6, y: -46.40001}
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: a400b91b-d8e5-494a-bb18-21dc94b23562
+    <Name>k__BackingField: DialogueName_9
+    <Speaker>k__BackingField: 1
+    BubleType: 2
+    Humeur: 1
+    _dropDownKeyDialogue: Juliana_D2_C2
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: ce72c2f5-78b0-427b-ac29-7ac2afea4b1d
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1603.2, y: 483.2}
+  - <ID>k__BackingField: ce72c2f5-78b0-427b-ac29-7ac2afea4b1d
+    <Name>k__BackingField: END
+    <Speaker>k__BackingField: 0
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: 
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
+    <DialogueType>k__BackingField: 2
+    <Position>k__BackingField: {x: 2722.4, y: 384.8}
+  - <ID>k__BackingField: 4b14ed38-5459-4949-b1bd-e4e45e9ce657
+    <Name>k__BackingField: DialogueName_6
+    <Speaker>k__BackingField: 1
+    BubleType: 0
+    Humeur: 1
+    _dropDownKeyDialogue: Juliana_D1
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: ce72c2f5-78b0-427b-ac29-7ac2afea4b1d
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1603.2, y: 14.400002}
+  - <ID>k__BackingField: 142a10ef-155f-4e7f-9f7e-a8c3104ac07a
+    <Name>k__BackingField: Branch (Experimental)
+    <Speaker>k__BackingField: 0
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: 
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField:
+      - Prout
+      _directionPort: 0
+    - NodeID: a400b91b-d8e5-494a-bb18-21dc94b23562
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 1
+    - NodeID: 9e5c6b49-a829-4ff3-9c33-5914e1594846
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 1
+    <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
+    <DialogueType>k__BackingField: 3
+    <Position>k__BackingField: {x: 1140.7999, y: 305.6}
+  - <ID>k__BackingField: f6b6c86b-474e-41ac-9f1d-3eac257680fa
+    <Name>k__BackingField: Branch (Experimental)
+    <Speaker>k__BackingField: 0
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: 
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField:
+      - Prout
+      - PassedTest
+      _directionPort: 0
+    - NodeID: 7a2c9b30-12f7-4243-b3d1-924a1ae0e8d0
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 1
+    - NodeID: 74f640d2-3b9d-4c3f-b494-4bfc35394985
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 1
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 3
+    <Position>k__BackingField: {x: -455.19998, y: 215.2}
+  - <ID>k__BackingField: 8a655264-a9bc-49f7-af47-f00ee9f92334
+    <Name>k__BackingField: START
+    <Speaker>k__BackingField: 0
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: 
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: f6b6c86b-474e-41ac-9f1d-3eac257680fa
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
+    <DialogueType>k__BackingField: 1
+    <Position>k__BackingField: {x: -744, y: 14.400002}
+  - <ID>k__BackingField: 7a2c9b30-12f7-4243-b3d1-924a1ae0e8d0
+    <Name>k__BackingField: DialogueName_4
+    <Speaker>k__BackingField: 0
+    BubleType: 0
+    Humeur: 1
+    _dropDownKeyDialogue: Brant_D1
+    isMultipleChoice: 1
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 74f640d2-3b9d-4c3f-b494-4bfc35394985
+      _dropDownKeyChoice: Juliana_D2_C1
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 74f640d2-3b9d-4c3f-b494-4bfc35394985
+      _dropDownKeyChoice: Juliana_D2_C2
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField:
+      - Prout
+      _directionPort: 0
+    <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 103.2, y: 14.400002}
+  - <ID>k__BackingField: 74f640d2-3b9d-4c3f-b494-4bfc35394985
+    <Name>k__BackingField: DialogueName
+    <Speaker>k__BackingField: 0
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Brant_D2
+    isMultipleChoice: 1
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 142a10ef-155f-4e7f-9f7e-a8c3104ac07a
+      _dropDownKeyChoice: Brant_D2
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 4b14ed38-5459-4949-b1bd-e4e45e9ce657
+      _dropDownKeyChoice: Juliana_D2_C1
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 10048afa-a1e6-4d4f-add2-860282086f7d
+      _dropDownKeyChoice: Juliana_D2_C1
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 380, y: 579.2}
+  - <ID>k__BackingField: 10048afa-a1e6-4d4f-add2-860282086f7d
+    <Name>k__BackingField: DialogueName_7
+    <Speaker>k__BackingField: 1
+    BubleType: 0
+    Humeur: 1
+    _dropDownKeyDialogue: Juliana_D2_C1
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: ce72c2f5-78b0-427b-ac29-7ac2afea4b1d
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1592.7999, y: 253.6}
+  - <ID>k__BackingField: 9e5c6b49-a829-4ff3-9c33-5914e1594846
+    <Name>k__BackingField: DialogueName_10
+    <Speaker>k__BackingField: 1
+    BubleType: 1
+    Humeur: 2
+    _dropDownKeyDialogue: Juliana_D2_C3
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: ce72c2f5-78b0-427b-ac29-7ac2afea4b1d
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1603.2, y: 734.4}
+  <OldGroupNames>k__BackingField:
+  - EXEMPLE
+  <OldUngroupedNodeNames>k__BackingField:
+  - Branch (Experimental)
+  <OldGroupedNodeNames>k__BackingField:
+    list:
+    - Key: EXEMPLE
+      Value:
+      - DialogueName_9
+      - END
+      - DialogueName_6
+      - Branch (Experimental)
+      - START
+      - DialogueName_4
+      - DialogueName
+      - DialogueName_7
+      - DialogueName_10
