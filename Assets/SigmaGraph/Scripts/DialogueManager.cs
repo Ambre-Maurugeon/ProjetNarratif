@@ -42,6 +42,7 @@ public class DialogueManager : MonoBehaviour
     public Button _nextButton;
 
     [Header("Speakers")]
+    [SerializeField] private Image _speakerImage;
     public Speakers SpeakersScriptable;
     private SpeakerInfo _currentSpeaker;
 
@@ -56,14 +57,14 @@ public class DialogueManager : MonoBehaviour
     // Interaction
 
     private bool _canInteract = true;
-    public bool CanInteract
-    {
-        get => _canInteract;
-        set
-        {
-            _canInteract = value;
-        }
-    }
+    public bool CanInteract              
+    {                                    
+        get => _canInteract;             
+        set                              
+        {                                
+            _canInteract = value;        
+        }                                
+    }                                    
 
     // end Dialogue
     public delegate void MyDelegate();
@@ -305,8 +306,12 @@ public class DialogueManager : MonoBehaviour
         string targetDialogue = FantasyDialogueTable.LocalManager.FindDialogue(_currentNode.GetDropDownKeyDialogue(), Enum.GetName(typeof(language), languageSetting));
         _currentDialogueContainer.InitializeDialogueContainer(targetDialogue, _currentSpeaker.Name, _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur()));
 
+        if(_speakerImage!=null)
+            _speakerImage.sprite = _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur());
+
+
         // event
-        if(!string.IsNullOrEmpty(_currentNode.GetDropDownKeyEvent()))
+        if (!string.IsNullOrEmpty(_currentNode.GetDropDownKeyEvent()))
         {
             UnityEvent targetEvent = EventsManager.Instance.FindEvent(_currentNode.GetDropDownKeyEvent());
             targetEvent?.Invoke();

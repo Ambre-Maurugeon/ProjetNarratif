@@ -15,7 +15,6 @@ MonoBehaviour:
   speakers:
   - Name: Juliana
     speakEnum: 1
-    Humeur: 1
     SpritesHumeur:
     - sprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
       humeur: 0
@@ -25,7 +24,6 @@ MonoBehaviour:
       humeur: 1
   - Name: Brant
     speakEnum: 0
-    Humeur: 0
     SpritesHumeur:
     - sprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
       humeur: 0
@@ -35,7 +33,6 @@ MonoBehaviour:
       humeur: 1
   - Name: Margot
     speakEnum: 2
-    Humeur: 0
     SpritesHumeur:
     - sprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
       humeur: 0
@@ -45,11 +42,37 @@ MonoBehaviour:
       humeur: 1
   - Name: Bourdon
     speakEnum: 3
-    Humeur: 0
     SpritesHumeur:
-    - sprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
+    - sprite: {fileID: 225820235190330879, guid: 8ddda20f333dc394cbada86d17ab0265, type: 3}
       humeur: 0
-    - sprite: {fileID: 21300000, guid: e052daf03e049f54b9844545ac3e54c2, type: 3}
-      humeur: 2
-    - sprite: {fileID: 21300000, guid: ddba7a5d2b29f334b9d2dffc59f568c1, type: 3}
+    - sprite: {fileID: -689123407364376526, guid: e9d06f4b9fa753a478c2da8c96440d40, type: 3}
       humeur: 1
+    - sprite: {fileID: -909507038745483531, guid: 0e0d46da5340a974db6da779f3383936, type: 3}
+      humeur: 3
+  - Name: Papillon
+    speakEnum: 5
+    SpritesHumeur:
+    - sprite: {fileID: -4949248933000875399, guid: 8a5f9729259f6a84096eb91bad34d131, type: 3}
+      humeur: 0
+    - sprite: {fileID: 7232796831262645752, guid: b0f141633da48f54aaa3c75a61a5bf2e, type: 3}
+      humeur: 1
+    - sprite: {fileID: -8465993084441826826, guid: 5d98efaf291f1ff4bba7251da3494d29, type: 3}
+      humeur: 3
+  - Name: Cloporte
+    speakEnum: 6
+    SpritesHumeur:
+    - sprite: {fileID: 4740316203790968155, guid: a209267d6a2d1d34f97406b77e7c17b3, type: 3}
+      humeur: 0
+    - sprite: {fileID: 6783097925221544674, guid: adafc2e7f4b0729498a6ae29e87dc3b7, type: 3}
+      humeur: 1
+    - sprite: {fileID: -1381784074667881438, guid: ee4dbc1a960453446b7c8e02cf327d46, type: 3}
+      humeur: 3
+  - Name: Gendarme
+    speakEnum: 4
+    SpritesHumeur:
+    - sprite: {fileID: 3685890791923494845, guid: fdc1cc34d284f034d8daefce799dfb60, type: 3}
+      humeur: 0
+    - sprite: {fileID: -9101580389907184280, guid: 32cdabb4a0410634f975e4f0aa2f54f3, type: 3}
+      humeur: 1
+    - sprite: {fileID: -7404548345199642650, guid: e05eb22d817d5e84d87f2ad8b858c65a, type: 3}
+      humeur: 3
