@@ -47,11 +47,7 @@ public class Pulse : MonoBehaviour
         BadAchievement = false;
         playing = false;
 
-<<<<<<< HEAD
-        InitMusic();
-=======
         //InitMusic();
->>>>>>> b0b57b7f585a89d8503b3fc8b765f91e7f6d45c9
     }
 
     void Update()
@@ -61,7 +57,7 @@ public class Pulse : MonoBehaviour
     }
 
 
-    void InitMusic()
+    public void InitMusic()
     {
         if (MusicSource == null)
         {
@@ -130,7 +126,7 @@ public class Pulse : MonoBehaviour
         }
     }
 
-    void BPMSpeed(int speed)
+    public void BPMSpeed(int speed)
     {
         if (!playing) return;
         MusicSource.pitch = speed;
