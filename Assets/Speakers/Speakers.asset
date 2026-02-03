@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db76096bd8ebaf4590083a9464b5ac1, type: 3}
+  m_Name: Speakers
+  m_EditorClassIdentifier: Assembly-CSharp::test
+  speakers:
+  - Name: Juliana
+    speakEnum: 1
+    Humeur: 1
+    SpritesHumeur:
+    - sprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
+      humeur: 0
+    - sprite: {fileID: 21300000, guid: e052daf03e049f54b9844545ac3e54c2, type: 3}
+      humeur: 2
+    - sprite: {fileID: 21300000, guid: ddba7a5d2b29f334b9d2dffc59f568c1, type: 3}
+      humeur: 1
+  - Name: Brant
+    speakEnum: 0
+    Humeur: 0
+    SpritesHumeur:
+    - sprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
+      humeur: 0
+    - sprite: {fileID: 21300000, guid: e052daf03e049f54b9844545ac3e54c2, type: 3}
+      humeur: 2
+    - sprite: {fileID: 21300000, guid: ddba7a5d2b29f334b9d2dffc59f568c1, type: 3}
+      humeur: 1
+  - Name: Margot
+    speakEnum: 2
+    Humeur: 0
+    SpritesHumeur:
+    - sprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
+      humeur: 0
+    - sprite: {fileID: 21300000, guid: e052daf03e049f54b9844545ac3e54c2, type: 3}
+      humeur: 2
+    - sprite: {fileID: 21300000, guid: ddba7a5d2b29f334b9d2dffc59f568c1, type: 3}
+      humeur: 1
