@@ -9,4 +9,5 @@ public class CharacterEntry
     public DSGraphSaveDataSO refDialogue;
     public int NewSpeedBPM;
     public Sprite characterSprite;
+    public bool isCompleted = false;
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEditor;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     public int currentInsectId = 0;
     public SceneAsset SceneToLoad;
     public SceneAsset SceneHub;
-    private bool AsFinishedInsect = false;
+    private Button Button;
 
     private void Awake()
     {
@@ -28,12 +29,24 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+    private void Start()
+    {
+        Button = GameObject.Find("TestButton").GetComponent<Button>();
+        if (Button != null)
+        {
+            Button.onClick.AddListener(() => OnStartInsect(0));
+        }
+        else
+        {
+            Debug.LogWarning("Bouton 'TestButton' non trouvé dans la scène.");
+        }
+    }
+
     void OnEnable()
     {
         Pulse.OnEndRythm += StopRythmGame;
         DialogueManager.OnDialogueEnd += ReturnToHub;
-        
     }
     
     void OnDisable()
@@ -46,11 +59,6 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == this)
             SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    public void CheckSuccess()
-    {
-        Debug.Log("Vérification de la réussite...");
     }
 
     public void OnStartInsect(int id)
@@ -73,6 +81,12 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning($"Aucun insecte trouvé avec id {id}.");
             return;
         }
+        
+        if (entry.isCompleted) 
+        {
+            Debug.Log($"L'insecte {entry.perso} (id {id}) a déjà été complété.");
+            return;
+        }
 
         currentInsectId = id;
         StartCoroutine(StartInsectCoroutine());
@@ -93,7 +107,7 @@ public class GameManager : MonoBehaviour
             if (go != null)
             {
                 go.SetActive(true);
-                transition = go.GetComponent<TransitionScene>();
+                transition = FindObjectOfType<TransitionScene>();
             }
         }
 
@@ -107,6 +121,16 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Button = GameObject.Find("TestButton").GetComponent<Button>();
+        if (Button != null)
+        {
+            Button.onClick.AddListener(() => OnStartInsect(0));
+        }
+        else
+        {
+            Debug.LogWarning("Bouton 'TestButton' non trouvé dans la scène.");
+        }
+        
         if (currentInsectId < 0)
             return;
 
@@ -129,7 +153,7 @@ public class GameManager : MonoBehaviour
             {
                 go.SetActive(true);
                 Debug.Log("TransitionScene instancié dans la nouvelle scène.");
-                transition = go.GetComponent<TransitionScene>();
+                transition = FindObjectOfType<TransitionScene>();
             }
         }
 
@@ -140,11 +164,6 @@ public class GameManager : MonoBehaviour
         else
         {
             StopAllCoroutines();
-            var pulse = FindObjectOfType<Pulse>();
-            if (pulse != null && entry.NewSpeedBPM > 0)
-            {
-                pulse.BPMSpeed(entry.NewSpeedBPM);
-            }
             StartCoroutine(GameplayLoop(entry));
         }
     }
@@ -207,7 +226,8 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(transition.FadeIn());
         }
-
+        CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
+        entry.isCompleted = true;
         SceneManager.LoadScene(SceneHub.name);
     }
     

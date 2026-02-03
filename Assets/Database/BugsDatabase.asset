@@ -17,11 +17,17 @@ MonoBehaviour:
     id: 0
     refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
     NewSpeedBPM: 1
+    characterSprite: {fileID: 0}
+    isCompleted: 0
   - perso: oh
     id: 1
     refDialogue: {fileID: 0}
     NewSpeedBPM: 1
+    characterSprite: {fileID: 0}
+    isCompleted: 0
   - perso: no
     id: 2
     refDialogue: {fileID: 0}
     NewSpeedBPM: 1
+    characterSprite: {fileID: 0}
+    isCompleted: 0
