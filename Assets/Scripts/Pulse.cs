@@ -1,14 +1,27 @@
 using UnityEngine;
+using System;
 
 public class Pulse : MonoBehaviour
 {
     [SerializeField]private AudioSource MusicSource;
     [SerializeField]private float BPM;
+    [SerializeField]private float speed;
+    [SerializeField]private float Tolerance;
 
     private float beatInterval;
     private float nextBeatInterval;
 
-    private AudioSource MusicToEnabled;
+    TouchScreen touchScreen;
+
+    private void OnEnable()
+    {
+        TouchScreen.OnTouch += BeatInterval;
+    }
+
+    private void OnDisable()
+    {
+        TouchScreen.OnTouch -= BeatInterval;
+    }
 
     void Start()
     {
@@ -18,13 +31,9 @@ public class Pulse : MonoBehaviour
     void Update()
     {
         NextBeat();
+        BPMSpeed(1);
     }
 
-    public void AugBPM(float bpm)
-    {
-        BPM = 10;
-        beatInterval = 60f / BPM;
-    }
 
     void InitMusic()
     {
@@ -38,8 +47,8 @@ public class Pulse : MonoBehaviour
         MusicToEnabled.enabled = true;*/
         MusicSource.Play();
         beatInterval = 60f / BPM;
-        MusicSource.pitch = beatInterval;
         nextBeatInterval = MusicSource.time + beatInterval;
+        /*MusicSource.pitch = beatInterval;*/
 
     }
 
@@ -48,8 +57,25 @@ public class Pulse : MonoBehaviour
         if (MusicSource.isPlaying && MusicSource.time >= nextBeatInterval) 
         {
             nextBeatInterval += beatInterval;
-            Debug.Log($"top : {MusicSource.time}");
+            Debug.LogWarning($"top : {MusicSource.time}");
         }
+    }
+
+    void BeatInterval()
+    {
+        if (MusicSource.isPlaying && MusicSource.time >= nextBeatInterval - Tolerance || MusicSource.isPlaying && MusicSource.time <= nextBeatInterval + Tolerance)
+        {
+            Debug.Log($"timing ok :{MusicSource.time}");
+        }
+        else 
+        {
+            Debug.Log($"timing ko{MusicSource.time}");
+        }
+    }
+
+    void BPMSpeed(int speed)
+    {
+        MusicSource.pitch = speed;
     }
 
 }
