@@ -13,7 +13,7 @@ public class EventsManager : MonoBehaviour
     public static EventsManager Instance;
 
     // EVENTS
-    [SerializeField] private EventsSC SC;
+    [SerializeField] private EventsSO SO;
 
     public List<EventController> list = new List<EventController>();
 
@@ -47,16 +47,18 @@ public class EventsManager : MonoBehaviour
 
     private void OnValidate()
     {
-        if (!changesTracker.TrackFieldChanges(this, x => x.SC))
+        if (!changesTracker.TrackFieldChanges(this, x => x.SO))
             return;
 
-        if (!SC)
+        list.Clear();
+
+        if (!SO)
         {
             Debug.LogError("No Scriptable Object referenced in " + this.name);
             return;
         }
 
-        foreach (EventData e in SC.eventDatas)
+        foreach (EventData e in SO.eventDatas)
         {
             if(!e.isPrefab) // event is depending on scene
                 list.Add(new EventController(e.Key));
@@ -66,25 +68,26 @@ public class EventsManager : MonoBehaviour
 
     // ---- EVENTS ----
 
+    // ReSharper disable Unity.PerformanceAnalysis
     public UnityEvent FindEvent(string Key)
     {
-        EventData e = SC.GetEventByKey(Key);
+        EventData data = SO.GetEventByKey(Key);
 
         // prefab event => data from sc ; scene event => data from scene
-        if(e.isPrefab)
-            return e.Event;
-        else
-            return dico[Key];
-    }
+        UnityEvent e = new UnityEvent();
 
-    public static void DisplayName(string name)
-    {
-        Debug.Log("string " + name);
-    }
+        if(data.isPrefab)
+            e = data.Event;
+        else 
+            if (dico[Key] == null)
+            {
+                e = null;
+                Debug.LogError($"No EventData with Key {Key}");
+            }
+            else
+                e = dico[Key];
 
-    public void Event01()
-    {
-        Debug.Log("Event 01 ");
+        return e;
     }
 }
 

@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 [CreateAssetMenu(fileName = "Events", menuName = "Scriptable Objects/EventsSC")]
-public class EventsSC : ScriptableObject
+public class EventsSO : ScriptableObject
 {
     public List<EventData> eventDatas = new List<EventData>();
 

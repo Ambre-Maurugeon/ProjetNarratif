@@ -11,4 +11,9 @@ public class TestEvent : MonoBehaviour
     {
         Debug.Log("test no prefab");
     }
+
+    public bool ConditionTest(bool value)
+    {
+        return value;
+    }
 }
