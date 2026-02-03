@@ -73,7 +73,7 @@ public class Pulse : MonoBehaviour
         }
     }
 
-    void BPMSpeed(int speed)
+    public void BPMSpeed(int speed)
     {
         MusicSource.pitch = speed;
     }

@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36e3fbc363a37146aa98d40fa1b0264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionScene
-  FadeRate: 1
+  FadeRate: 2
 --- !u!1 &5717887646235211865
 GameObject:
   m_ObjectHideFlags: 0

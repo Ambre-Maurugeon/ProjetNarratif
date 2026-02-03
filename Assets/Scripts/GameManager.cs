@@ -125,6 +125,11 @@ public class GameManager : MonoBehaviour
         else
         {
             StopAllCoroutines();
+            var pulse = FindObjectOfType<Pulse>();
+            if (pulse != null && entry.NewSpeedBPM > 0)
+            {
+                pulse.BPMSpeed(entry.NewSpeedBPM);
+            }
             StartCoroutine(GameplayLoop(entry));
         }
     }
