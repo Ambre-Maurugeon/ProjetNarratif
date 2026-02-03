@@ -395,6 +395,14 @@ MonoBehaviour:
       _dynamic: 0
       _typeName: CheckEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       dirty: 0
+  - Key: goodscore
+    check:
+      _target: {fileID: 124815064}
+      _methodName: goodscore
+      _args: []
+      _dynamic: 0
+      _typeName: CheckEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      dirty: 0
 --- !u!4 &116836128
 Transform:
   m_ObjectHideFlags: 0
@@ -904,9 +912,9 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 124815064}
-          m_TargetAssemblyTypeName: Pulse, Assembly-CSharp
-          m_MethodName: InitMusic
+        - m_Target: {fileID: 2041818664}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: LaunchRythmGame
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2832,6 +2840,7 @@ MonoBehaviour:
   transitionPrefab: {fileID: 0}
   currentInsectId: -1
   SceneToLoad: {fileID: 0}
+  SceneHub: {fileID: 0}
 --- !u!4 &2041818665
 Transform:
   m_ObjectHideFlags: 0

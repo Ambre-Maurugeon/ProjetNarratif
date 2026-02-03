@@ -20,6 +20,11 @@ public class Pulse : MonoBehaviour
     public bool MediumAchievement;
     public bool BadAchievement;
 
+    public bool goodscore()
+    {
+        return GoodAchievement;
+    }
+
 
     TouchScreen touchScreen;
     public static event Action OnEndRythm;
@@ -86,11 +91,14 @@ public class Pulse : MonoBehaviour
             Debug.LogWarning($"nextBeatInterval : {nextBeatInterval}");
         }
 
-        if (nbInterval >= 22) 
-        {
-            Result();
-            Stop();
-        }
+        //if (nbInterval >= 22)
+        //{
+        //    Result();
+        //    Stop();
+        //}
+
+        Invoke("Result", 6f);
+        Invoke("Stop", 7f);
     }
 
     void BeatInterval()
@@ -164,6 +172,7 @@ public class Pulse : MonoBehaviour
             MusicSource.Stop();
             playing = false;
             OnEndRythm?.Invoke();
+            Debug.Log("fini");
         }
     }
 
