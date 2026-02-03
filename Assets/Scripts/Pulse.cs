@@ -22,6 +22,7 @@ public class Pulse : MonoBehaviour
 
 
     TouchScreen touchScreen;
+    public static event Action OnEndRythm;
 
     private void OnEnable()
     {
@@ -156,12 +157,13 @@ public class Pulse : MonoBehaviour
         }
     }
 
-    void Stop()
+    public void Stop()
     {
         if (MusicSource.isPlaying)
         {
             MusicSource.Stop();
             playing = false;
+            OnEndRythm?.Invoke();
         }
     }
 
