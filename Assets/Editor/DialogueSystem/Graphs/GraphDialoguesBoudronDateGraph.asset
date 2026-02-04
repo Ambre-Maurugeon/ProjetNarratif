@@ -121,7 +121,7 @@ MonoBehaviour:
     _dropDownKeyEvent: 
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
-    - NodeID: 
+    - NodeID: 0116dc47-016c-49aa-9545-b9cd21f01e68
       _dropDownKeyChoice: Mantis_D1_C1
       <ConditionsSc>k__BackingField: []
       <ConditionsKey>k__BackingField: []
@@ -139,73 +139,6 @@ MonoBehaviour:
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 43.2, y: 1580}
-  - <ID>k__BackingField: de631261-6fa8-49eb-b421-64bbc1401d01
-    <Name>k__BackingField: DialogueName_8
-    <Speaker>k__BackingField: 3
-    BubleType: 0
-    Humeur: 1
-    _dropDownKeyDialogue: Bourdon_D31
-    isMultipleChoice: 0
-    hasEvent: 0
-    _dropDownKeyEvent: 
-    <OnlyOneConditionNeeded>k__BackingField: 0
-    <ChoicesInNode>k__BackingField:
-    - NodeID: 
-      _dropDownKeyChoice: 
-      <ConditionsSc>k__BackingField: []
-      <ConditionsKey>k__BackingField: []
-      _directionPort: 0
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 998.4, y: 1694.4}
-  - <ID>k__BackingField: 9d87112f-c0f0-4501-a4a7-e93262bb0ff9
-    <Name>k__BackingField: DialogueName_3
-    <Speaker>k__BackingField: 3
-    BubleType: 0
-    Humeur: 0
-    _dropDownKeyDialogue: Bourdon_D5
-    isMultipleChoice: 0
-    hasEvent: 0
-    _dropDownKeyEvent: 
-    <OnlyOneConditionNeeded>k__BackingField: 0
-    <ChoicesInNode>k__BackingField:
-    - NodeID: 32821d11-82be-42aa-8eed-00ec1ac73c58
-      _dropDownKeyChoice: 
-      <ConditionsSc>k__BackingField: []
-      <ConditionsKey>k__BackingField: []
-      _directionPort: 0
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 988, y: 1457.6}
-  - <ID>k__BackingField: 32821d11-82be-42aa-8eed-00ec1ac73c58
-    <Name>k__BackingField: DialogueName_9
-    <Speaker>k__BackingField: 0
-    BubleType: 0
-    Humeur: 0
-    _dropDownKeyDialogue: 
-    isMultipleChoice: 1
-    hasEvent: 0
-    _dropDownKeyEvent: 
-    <OnlyOneConditionNeeded>k__BackingField: 0
-    <ChoicesInNode>k__BackingField:
-    - NodeID: d6a70b5e-cf35-4764-95df-a9840b34ce53
-      _dropDownKeyChoice: Mantis_D2_C1
-      <ConditionsSc>k__BackingField: []
-      <ConditionsKey>k__BackingField: []
-      _directionPort: 0
-    - NodeID: 
-      _dropDownKeyChoice: Mantis_D2_C2
-      <ConditionsSc>k__BackingField: []
-      <ConditionsKey>k__BackingField: []
-      _directionPort: 0
-    - NodeID: 
-      _dropDownKeyChoice: Mantis_D2_C3
-      <ConditionsSc>k__BackingField: []
-      <ConditionsKey>k__BackingField: []
-      _directionPort: 0
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1894.4, y: 1456.7999}
   - <ID>k__BackingField: d6a70b5e-cf35-4764-95df-a9840b34ce53
     <Name>k__BackingField: DialogueName_10
     <Speaker>k__BackingField: 3
@@ -402,25 +335,6 @@ MonoBehaviour:
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 9832.8, y: 1060}
-  - <ID>k__BackingField: 47fdf46d-691f-4ee9-bd5a-bd22516fbf4e
-    <Name>k__BackingField: END
-    <Speaker>k__BackingField: 0
-    BubleType: 0
-    Humeur: 0
-    _dropDownKeyDialogue: 
-    isMultipleChoice: 0
-    hasEvent: 0
-    _dropDownKeyEvent: 
-    <OnlyOneConditionNeeded>k__BackingField: 0
-    <ChoicesInNode>k__BackingField:
-    - NodeID: 
-      _dropDownKeyChoice: 
-      <ConditionsSc>k__BackingField: []
-      <ConditionsKey>k__BackingField: []
-      _directionPort: 0
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 2
-    <Position>k__BackingField: {x: 10777.6, y: 1308}
   - <ID>k__BackingField: 5335aa4d-1206-4400-a48a-7396679f7dfe
     <Name>k__BackingField: END
     <Speaker>k__BackingField: 0
@@ -440,6 +354,120 @@ MonoBehaviour:
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 2
     <Position>k__BackingField: {x: 10732, y: 1136}
+  - <ID>k__BackingField: de631261-6fa8-49eb-b421-64bbc1401d01
+    <Name>k__BackingField: DialogueName_8
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 1
+    _dropDownKeyDialogue: Bourdon_D31
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 4346de85-5de1-4db9-903d-d3f995030c80
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 920.8, y: 1860}
+  - <ID>k__BackingField: 9d87112f-c0f0-4501-a4a7-e93262bb0ff9
+    <Name>k__BackingField: DialogueName_3
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Bourdon_D5
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 32821d11-82be-42aa-8eed-00ec1ac73c58
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 920.8, y: 1608.7999}
+  - <ID>k__BackingField: 0116dc47-016c-49aa-9545-b9cd21f01e68
+    <Name>k__BackingField: DialogueName_5
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Bourdon_D32
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 86262212-fab8-48b0-9d0c-d1761e2c4fe7
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 901.6, y: 1164}
+  - <ID>k__BackingField: 041834b6-5068-4a12-ad0f-27cb7135723d
+    <Name>k__BackingField: DialogueName_7
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Bourdon_D34
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 5567b772-6793-40f2-9c5a-fa01d1402fa8
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3656, y: 817.6}
+  - <ID>k__BackingField: 86262212-fab8-48b0-9d0c-d1761e2c4fe7
+    <Name>k__BackingField: DialogueName_6
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Bourdon_D33
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 041834b6-5068-4a12-ad0f-27cb7135723d
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2276.8, y: 1034.4}
+  - <ID>k__BackingField: 5567b772-6793-40f2-9c5a-fa01d1402fa8
+    <Name>k__BackingField: DialogueName_20
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Bourdon_D35
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5412.8, y: 772.8}
   - <ID>k__BackingField: 9d672ef0-256e-4c2e-b8c3-ebe6e18b4a76
     <Name>k__BackingField: DialogueName_18
     <Speaker>k__BackingField: 3
@@ -451,14 +479,310 @@ MonoBehaviour:
     _dropDownKeyEvent: 
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
-    - NodeID: 47fdf46d-691f-4ee9-bd5a-bd22516fbf4e
+    - NodeID: db0c8db9-ddd8-46c2-bd9f-1cf444de25ea
       _dropDownKeyChoice: 
       <ConditionsSc>k__BackingField: []
       <ConditionsKey>k__BackingField: []
       _directionPort: 0
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 9857.6, y: 1336}
+    <Position>k__BackingField: {x: 9798.4, y: 1339.2}
+  - <ID>k__BackingField: db0c8db9-ddd8-46c2-bd9f-1cf444de25ea
+    <Name>k__BackingField: DialogueName_21
+    <Speaker>k__BackingField: 7
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Mantis_D4_C4
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 9d672ef0-256e-4c2e-b8c3-ebe6e18b4a76
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 10662.4, y: 1350.4}
+  - <ID>k__BackingField: 3114238f-b17f-4952-bee1-0a1a36b09b95
+    <Name>k__BackingField: DialogueName_23
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Bourdon_D14
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: de3d226f-ba72-40b9-9924-e7c25330aa7c
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3982.4, y: 1664}
+  - <ID>k__BackingField: de3d226f-ba72-40b9-9924-e7c25330aa7c
+    <Name>k__BackingField: DialogueName_24
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Bourdon_D15
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 9dd6e8f5-951b-4d3f-882e-77df16087679
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4884.8, y: 1672}
+  - <ID>k__BackingField: 9dd6e8f5-951b-4d3f-882e-77df16087679
+    <Name>k__BackingField: DialogueName_25
+    <Speaker>k__BackingField: 0
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: 
+    isMultipleChoice: 1
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 
+      _dropDownKeyChoice: Mantis_D6_C1
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 
+      _dropDownKeyChoice: Mantis_D6_C2
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 
+      _dropDownKeyChoice: Mantis_D6_C3
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5750.4, y: 1664.7999}
+  - <ID>k__BackingField: 32821d11-82be-42aa-8eed-00ec1ac73c58
+    <Name>k__BackingField: DialogueName_9
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: 
+    isMultipleChoice: 1
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: d6a70b5e-cf35-4764-95df-a9840b34ce53
+      _dropDownKeyChoice: Mantis_D2_C1
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 4346de85-5de1-4db9-903d-d3f995030c80
+      _dropDownKeyChoice: Mantis_D2_C2
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 1ca88e05-688c-4c75-8136-f7d16bddf4d1
+      _dropDownKeyChoice: Mantis_D2_C3
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1894.4, y: 1456.7999}
+  - <ID>k__BackingField: 4346de85-5de1-4db9-903d-d3f995030c80
+    <Name>k__BackingField: DialogueName_22
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Bourdon_D13
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 3114238f-b17f-4952-bee1-0a1a36b09b95
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2773.6, y: 1560}
+  - <ID>k__BackingField: 1ca88e05-688c-4c75-8136-f7d16bddf4d1
+    <Name>k__BackingField: DialogueName_26
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Bourdon_D36
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 3df6020f-c516-46b2-8507-9094a4dc54ea
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2784.8, y: 1841.6}
+  - <ID>k__BackingField: 3df6020f-c516-46b2-8507-9094a4dc54ea
+    <Name>k__BackingField: DialogueName_27
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Bourdon_D37
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 4a45ebe0-b179-42e2-a7e5-0ae66593a2b9
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3646.4, y: 1914.4}
+  - <ID>k__BackingField: 4a45ebe0-b179-42e2-a7e5-0ae66593a2b9
+    <Name>k__BackingField: DialogueName_28
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Bourdon_D38
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 9b03e3ea-6844-430c-b3a8-4adccda8049a
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4488, y: 1994.4}
+  - <ID>k__BackingField: 9b03e3ea-6844-430c-b3a8-4adccda8049a
+    <Name>k__BackingField: DialogueName_29
+    <Speaker>k__BackingField: 0
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: 
+    isMultipleChoice: 1
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: b20976f8-ca8e-4dc4-a70c-d2f420e24eab
+      _dropDownKeyChoice: Mantis_D7_C1
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 
+      _dropDownKeyChoice: Mantis_D7_C2
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 
+      _dropDownKeyChoice: Mantis_D7_C3
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5367.2, y: 2062.4001}
+  - <ID>k__BackingField: b20976f8-ca8e-4dc4-a70c-d2f420e24eab
+    <Name>k__BackingField: DialogueName_30
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Bourdon_D7
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 587fc82a-efc1-412b-9372-5004b0605d68
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 6327.2, y: 2056.8}
+  - <ID>k__BackingField: 587fc82a-efc1-412b-9372-5004b0605d68
+    <Name>k__BackingField: DialogueName_31
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Bourdon_D8
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 87b4d0ca-5e4e-4d3b-84b2-6c28d0f447c8
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 7195.2, y: 2052.8}
+  - <ID>k__BackingField: 87b4d0ca-5e4e-4d3b-84b2-6c28d0f447c8
+    <Name>k__BackingField: DialogueName_32
+    <Speaker>k__BackingField: 3
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: Bourdon_D9
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 411cf252-1216-4ef3-bc7c-4d5cbf887489
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 8061.6, y: 2052.8}
+  - <ID>k__BackingField: 411cf252-1216-4ef3-bc7c-4d5cbf887489
+    <Name>k__BackingField: DialogueName_33
+    <Speaker>k__BackingField: 0
+    BubleType: 0
+    Humeur: 0
+    _dropDownKeyDialogue: 
+    isMultipleChoice: 0
+    hasEvent: 0
+    _dropDownKeyEvent: 
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 8945.6, y: 2055.2002}
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
   - START
@@ -467,9 +791,6 @@ MonoBehaviour:
   - DialogueName_4
   - DialogueName_1
   - DialogueName_2
-  - DialogueName_8
-  - DialogueName_3
-  - DialogueName_9
   - DialogueName_10
   - DialogueName_11
   - DialogueName_12
@@ -480,7 +801,26 @@ MonoBehaviour:
   - DialogueName_16
   - DialogueName_19
   - END
-  - END
+  - DialogueName_8
+  - DialogueName_3
+  - DialogueName_5
+  - DialogueName_7
+  - DialogueName_6
+  - DialogueName_20
   - DialogueName_18
+  - DialogueName_21
+  - DialogueName_23
+  - DialogueName_24
+  - DialogueName_25
+  - DialogueName_9
+  - DialogueName_22
+  - DialogueName_26
+  - DialogueName_27
+  - DialogueName_28
+  - DialogueName_29
+  - DialogueName_30
+  - DialogueName_31
+  - DialogueName_32
+  - DialogueName_33
   <OldGroupedNodeNames>k__BackingField:
     list: []
