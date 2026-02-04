@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     public int currentInsectId = 0;
     public SceneAsset SceneToLoad;
     public SceneAsset SceneHub;
-    private Button Button;
+    private Button DateBtn;
+    private Button NextButton;
+    private Button PrevButton;
     public Canvas UiCanva;
 
     private void Awake()
@@ -33,15 +35,33 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Button = GameObject.Find("DateBtn").GetComponent<Button>();
-        if (Button != null)
+        if (NextButton == null)
         {
-            Button.onClick.AddListener(() => OnStartInsect(currentInsectId));
+            if (GameObject.Find("NextBtn") != null)
+            {
+                NextButton = GameObject.Find("NextBtn").GetComponent<Button>();
+            }
         }
-        else
+
+        if (NextButton != null)
         {
-            Debug.LogWarning("Bouton 'DateBtn' non trouvé dans la scène.");
+            NextButton.onClick.RemoveAllListeners();
+            NextButton.onClick.AddListener(() => NextInsect());
         }
+        
+        if (PrevButton == null)
+        {
+            if (GameObject.Find("PrevBtn") != null)
+            {
+                PrevButton = GameObject.Find("PrevBtn").GetComponent<Button>();
+            }
+        }
+        if (PrevButton != null)
+        {
+            PrevButton.onClick.RemoveAllListeners();
+            PrevButton.onClick.AddListener(() => PrevInsect());
+        }
+        UpdateBug();
     }
 
     void OnEnable()
@@ -66,26 +86,22 @@ public class GameManager : MonoBehaviour
     {
         if (bugsDatabase == null)
         {
-            Debug.LogError("BugsDatabase non assignée dans l'inspector.");
             return;
         }
 
         if (bugsDatabase.entries == null)
         {
-            Debug.LogError("La liste d'entrées est nulle dans BugsDatabase.");
             return;
         }
 
         CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == id);
         if (entry == null)
         {
-            Debug.LogWarning($"Aucun insecte trouvé avec id {id}.");
             return;
         }
         
         if (entry.isCompleted) 
         {
-            Debug.Log($"L'insecte {entry.perso} (id {id}) a déjà été complété.");
             return;
         }
 
@@ -122,18 +138,42 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Button = GameObject.Find("DateBtn").GetComponent<Button>();
-        if (Button != null)
+
+        if (UiCanva == null)
         {
-            Button.onClick.AddListener(() => OnStartInsect(0));
-        }
-        else
-        {
-            Debug.LogWarning("Bouton 'DateBtn' non trouvé dans la scène.");
+            if (GameObject.Find("UICanva") != null)
+            {
+                UiCanva = GameObject.Find("UICanva").GetComponent<Canvas>();
+            }
         }
         
-        UiCanva = GameObject.Find("UICanva").GetComponent<Canvas>();UiCanva = FindObjectOfType<Canvas>();
+        if (NextButton == null)
+        {
+            if (GameObject.Find("NextButton") != null)
+            {
+                NextButton = GameObject.Find("NextButton").GetComponent<Button>();
+            }
+        }
+        if (NextButton != null)
+        {
+            NextButton.onClick.RemoveAllListeners();
+            NextButton.onClick.AddListener(() => NextInsect());
+        }
+        if (PrevButton == null)
+        {
+            if (GameObject.Find("PrevButton") != null)
+            {
+                PrevButton = GameObject.Find("PrevButton").GetComponent<Button>();
+            }
+        }
+        if (PrevButton != null)
+        {
+            PrevButton.onClick.RemoveAllListeners();
+            PrevButton.onClick.AddListener(() => PrevInsect());
+        }
         
+        UpdateBug();
+
         if (currentInsectId < 0)
             return;
 
@@ -141,6 +181,8 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+        
+        UpdateBug();
 
         CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
         if (entry == null)
@@ -155,7 +197,6 @@ public class GameManager : MonoBehaviour
             if (go != null)
             {
                 go.SetActive(true);
-                Debug.Log("TransitionScene instancié dans la nouvelle scène.");
                 transition = FindObjectOfType<TransitionScene>();
             }
         }
@@ -247,4 +288,102 @@ public class GameManager : MonoBehaviour
         var DManager = FindObjectOfType<DialogueManager>();
         DManager.CanInteract= true;
     }
+    
+    public void NextInsect()
+    {
+        if (currentInsectId >= 4) return;
+        currentInsectId++;
+        UpdateBug();
+    }
+    
+    public void PrevInsect()
+    {
+        if (currentInsectId <= 0) return;
+        currentInsectId--;
+        UpdateBug();
+    }
+
+    private void UpdateBug()
+    {
+        CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
+        if (entry == null)
+        {
+            return;
+        }
+
+        if (DateBtn == null)
+        {
+            if (GameObject.Find("DateBtn") != null)
+            {
+                DateBtn = GameObject.Find("DateBtn").GetComponent<Button>();
+            }
+        }
+        if (DateBtn != null)
+        {
+            DateBtn.onClick.RemoveAllListeners();
+            DateBtn.onClick.AddListener(() => OnStartInsect(currentInsectId));
+        }
+
+        if (UiCanva != null)
+        {
+            var textTf = UiCanva.transform.Find("Name");
+            if (textTf != null)
+            {
+                var text = textTf.GetComponent<TMPro.TextMeshProUGUI>();
+                if (text != null)
+                {
+                    if (entry != null)
+                    {
+                        text.text = entry.perso;
+                    }
+                }
+            }
+
+            var spriteTf = UiCanva.transform.Find("Sprite");
+            if (spriteTf != null)
+            {
+                var img = spriteTf.GetComponent<Image>();
+                if (img != null)
+                {
+                    if (entry != null)
+                    {
+                        if (entry.characterSprite != null)
+                            img.sprite = entry.characterSprite;
+                    }
+                }
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                var descTf = UiCanva.transform.Find($"Desc {i + 1}");
+                if (descTf == null) continue;
+
+                var descText = descTf.GetComponent<TMPro.TextMeshProUGUI>();
+                if (descText == null) continue;
+
+                string value = "";
+                if (entry != null && entry.description != null && entry.description.Length > i && !string.IsNullOrEmpty(entry.description[i]))
+                {
+                    value = entry.description[i];
+                }
+
+                descText.text = value;
+            }
+            
+            var sprite = UiCanva.transform.Find("BgText");
+            if (sprite != null)
+            {
+                var img = sprite.GetComponent<Image>();
+                if (img != null)
+                {
+                    if (entry != null)
+                    {
+                        if (entry.BgSprite != null)
+                            img.sprite = entry.BgSprite;
+                    }
+                }
+            }
+        }
+    }
+
 }

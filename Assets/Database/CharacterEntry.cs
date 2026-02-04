@@ -12,5 +12,6 @@ public class CharacterEntry
     public DSGraphSaveDataSO refDialogue;
     public int NewSpeedBPM;
     public Sprite characterSprite;
-    public string[] description;
+    public string[] description = new string[3];
+    public Sprite BgSprite;
 }

@@ -13,24 +13,47 @@ MonoBehaviour:
   m_Name: BugsDatabase
   m_EditorClassIdentifier: Assembly-CSharp::BugsDatabase
   entries:
-  - perso: yes
+  - perso: Bourdon
     id: 0
     isCompleted: 0
     refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
     NewSpeedBPM: 1
     characterSprite: {fileID: -909507038745483531, guid: 0e0d46da5340a974db6da779f3383936, type: 3}
-    description: []
-  - perso: oh
+    description:
+    - 0
+    - 1
+    - 2
+    BgSprite: {fileID: -9074006278687196050, guid: 7869c92813eb54a4bb0f261ce9643bb0, type: 3}
+  - perso: Bug 2
     id: 1
     isCompleted: 0
-    refDialogue: {fileID: 0}
+    refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
     NewSpeedBPM: 1
-    characterSprite: {fileID: 0}
-    description: []
-  - perso: no
+    characterSprite: {fileID: 21300000, guid: d86a139ae4a64df499f0a12e26f98419, type: 3}
+    description:
+    - 3
+    - 4
+    - 5
+    BgSprite: {fileID: -2818449658216415420, guid: ca6b1ba428649c544a36c3cc2a3e1633, type: 3}
+  - perso: Bug 3
     id: 2
     isCompleted: 0
-    refDialogue: {fileID: 0}
+    refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
     NewSpeedBPM: 1
-    characterSprite: {fileID: 0}
-    description: []
+    characterSprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
+    description:
+    - 6
+    - 7
+    - 8
+    BgSprite: {fileID: -7176216987877333843, guid: 2514be1ce4009e748a7fc27a5c26fa02, type: 3}
+  - perso: 'febj bdxf '
+    id: 3
+    isCompleted: 0
+    refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
+    NewSpeedBPM: 1
+    characterSprite: {fileID: 21300000, guid: 005888ede18a58e4db8d069cfa3007cb, type: 3}
+    description:
+    - 9
+    - 10
+    - 11
+    BgSprite: {fileID: -7906568950211089970, guid: 74ec7c6c678cfa442b00d532801b5e81, type: 3}
