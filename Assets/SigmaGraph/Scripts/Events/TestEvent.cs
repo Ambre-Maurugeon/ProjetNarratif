@@ -22,9 +22,20 @@ public class TestEvent : MonoBehaviour
 
     public void MoveMantis()
     {
-        Debug.Log("move mantis");
-
         _mantisAnimator.SetTrigger("Move");
+
+    }
+
+    public void HideMantis()
+    {
+        _mantisAnimator.SetTrigger("Remove");
+
+    }
+
+    public void SetChoiceSpeaker()
+    {
+        _speakerAnimator.SetTrigger("Offset");
+        HideMantis();
 
     }
 }

@@ -86,3 +86,17 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - label: Hide Mantis arms
+    Key: EV_HideMantis
+    caption: Hide Mantis arms
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Set choice order
+    Key: EV_SetChoice
+    caption: "deplace le speaker sur le cot\xE9 "
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []

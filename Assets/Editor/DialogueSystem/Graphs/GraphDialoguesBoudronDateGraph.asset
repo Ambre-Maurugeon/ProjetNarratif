@@ -41,8 +41,8 @@ MonoBehaviour:
     Humeur: 1
     _dropDownKeyDialogue: Bourdon_D3
     isMultipleChoice: 0
-    hasEvent: 1
-    _dropDownKeyEvent: EV_MoveMantis
+    hasEvent: 0
+    _dropDownKeyEvent: 
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 69bd8039-c888-44a9-9166-48f109da8522
@@ -79,8 +79,8 @@ MonoBehaviour:
     Humeur: 0
     _dropDownKeyDialogue: 
     isMultipleChoice: 1
-    hasEvent: 0
-    _dropDownKeyEvent: 
+    hasEvent: 1
+    _dropDownKeyEvent: EV_SetChoice
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 9d87112f-c0f0-4501-a4a7-e93262bb0ff9
