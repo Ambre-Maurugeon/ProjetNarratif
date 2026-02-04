@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
         if (PrevButton != null)
         {
             PrevButton.onClick.RemoveAllListeners();
+            Debug.Log("Adding PrevInsect listener");
             PrevButton.onClick.AddListener(() => PrevInsect());
         }
         UpdateBug();
@@ -111,7 +112,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator StartInsectCoroutine()
     {
-        var transition = FindObjectOfType<TransitionScene>();
+        var transition = FindFirstObjectByType<TransitionScene>();
 
         if (transition != null && !transition.gameObject.activeInHierarchy)
         {
@@ -124,7 +125,7 @@ public class GameManager : MonoBehaviour
             if (go != null)
             {
                 go.SetActive(true);
-                transition = FindObjectOfType<TransitionScene>();
+                transition = FindFirstObjectByType<TransitionScene>();
             }
         }
 
@@ -149,9 +150,9 @@ public class GameManager : MonoBehaviour
         
         if (NextButton == null)
         {
-            if (GameObject.Find("NextButton") != null)
+            if (GameObject.Find("NextBtn") != null)
             {
-                NextButton = GameObject.Find("NextButton").GetComponent<Button>();
+                NextButton = GameObject.Find("NextBtn").GetComponent<Button>();
             }
         }
         if (NextButton != null)
@@ -161,9 +162,9 @@ public class GameManager : MonoBehaviour
         }
         if (PrevButton == null)
         {
-            if (GameObject.Find("PrevButton") != null)
+            if (GameObject.Find("PrevBtn") != null)
             {
-                PrevButton = GameObject.Find("PrevButton").GetComponent<Button>();
+                PrevButton = GameObject.Find("PrevBtn").GetComponent<Button>();
             }
         }
         if (PrevButton != null)
@@ -190,14 +191,14 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        var transition = FindObjectOfType<TransitionScene>();
+        var transition = FindFirstObjectByType<TransitionScene>();
         if (transition == null && transitionPrefab != null)
         {
             var go = Instantiate(transitionPrefab);
             if (go != null)
             {
                 go.SetActive(true);
-                transition = FindObjectOfType<TransitionScene>();
+                transition = FindFirstObjectByType<TransitionScene>();
             }
         }
 
@@ -227,7 +228,7 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            var dialogueManager = FindObjectOfType<DialogueManager>();
+            var dialogueManager = FindFirstObjectByType<DialogueManager>();
             if (dialogueManager == null)
             {
                 Debug.LogWarning("DialogueManager introuvable dans la scène.");
@@ -249,7 +250,7 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToHub ()
     {
-        var transition = FindObjectOfType<TransitionScene>();
+        var transition = FindFirstObjectByType<TransitionScene>();
 
         if (transition != null && !transition.gameObject.activeInHierarchy)
         {
@@ -277,15 +278,15 @@ public class GameManager : MonoBehaviour
     
     public void LaunchRythmGame()
     {
-        var pulse = FindObjectOfType<Pulse>();
+        var pulse = FindFirstObjectByType<Pulse>();
         pulse?.InitMusic();
-        var DManager = FindObjectOfType<DialogueManager>();
+        var DManager = FindFirstObjectByType<DialogueManager>();
         DManager.CanInteract= false;
     }
     
     public void StopRythmGame()
     {
-        var DManager = FindObjectOfType<DialogueManager>();
+        var DManager = FindFirstObjectByType<DialogueManager>();
         DManager.CanInteract= true;
     }
     
