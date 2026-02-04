@@ -47,5 +47,5 @@ MonoBehaviour:
   bugsDatabase: {fileID: 11400000, guid: d67aebae0d477be4bab20b849bce29e5, type: 2}
   transitionPrefab: {fileID: 5717887646235211865, guid: 705252f911808d84099c83a08b37bc80, type: 3}
   currentInsectId: 0
-  SceneToLoad: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+  SceneToLoad: {fileID: 102900000, guid: df777568513af8448835c40c16b56364, type: 3}
   SceneHub: {fileID: 102900000, guid: 71f0c2d626ac1bb4e8cef912345ceef2, type: 3}

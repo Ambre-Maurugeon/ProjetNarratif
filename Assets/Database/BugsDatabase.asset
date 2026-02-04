@@ -15,19 +15,22 @@ MonoBehaviour:
   entries:
   - perso: yes
     id: 0
+    isCompleted: 0
     refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
     NewSpeedBPM: 1
-    characterSprite: {fileID: 0}
-    isCompleted: 0
+    characterSprite: {fileID: -909507038745483531, guid: 0e0d46da5340a974db6da779f3383936, type: 3}
+    description: []
   - perso: oh
     id: 1
+    isCompleted: 0
     refDialogue: {fileID: 0}
     NewSpeedBPM: 1
     characterSprite: {fileID: 0}
-    isCompleted: 0
+    description: []
   - perso: no
     id: 2
+    isCompleted: 0
     refDialogue: {fileID: 0}
     NewSpeedBPM: 1
     characterSprite: {fileID: 0}
-    isCompleted: 0
+    description: []

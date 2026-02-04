@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public SceneAsset SceneToLoad;
     public SceneAsset SceneHub;
     private Button Button;
+    public Canvas UiCanva;
 
     private void Awake()
     {
@@ -32,14 +33,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Button = GameObject.Find("TestButton").GetComponent<Button>();
+        Button = GameObject.Find("DateBtn").GetComponent<Button>();
         if (Button != null)
         {
-            Button.onClick.AddListener(() => OnStartInsect(0));
+            Button.onClick.AddListener(() => OnStartInsect(currentInsectId));
         }
         else
         {
-            Debug.LogWarning("Bouton 'TestButton' non trouvé dans la scène.");
+            Debug.LogWarning("Bouton 'DateBtn' non trouvé dans la scène.");
         }
     }
 
@@ -121,15 +122,17 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Button = GameObject.Find("TestButton").GetComponent<Button>();
+        Button = GameObject.Find("DateBtn").GetComponent<Button>();
         if (Button != null)
         {
             Button.onClick.AddListener(() => OnStartInsect(0));
         }
         else
         {
-            Debug.LogWarning("Bouton 'TestButton' non trouvé dans la scène.");
+            Debug.LogWarning("Bouton 'DateBtn' non trouvé dans la scène.");
         }
+        
+        UiCanva = GameObject.Find("UICanva").GetComponent<Canvas>();UiCanva = FindObjectOfType<Canvas>();
         
         if (currentInsectId < 0)
             return;
