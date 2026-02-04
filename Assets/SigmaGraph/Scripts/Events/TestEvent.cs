@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class TestEvent : MonoBehaviour
 {
+    //[SerializeField] DialogueManager dialogueManager;
+
     public static void testPrefab()
     {
         Debug.Log("test prefab");
@@ -16,4 +18,19 @@ public class TestEvent : MonoBehaviour
     {
         return value;
     }
+
+    //private void OnEnable()
+    //{
+    //    dialogueManager.OnDialogueEnd += OnEnd;
+    //}
+
+    //private void OnDisable()
+    //{
+    //    dialogueManager.OnDialogueEnd -= OnEnd;
+    //}
+
+    //private void OnEnd()
+    //{
+    //    Debug.Log("help");
+    //}
 }

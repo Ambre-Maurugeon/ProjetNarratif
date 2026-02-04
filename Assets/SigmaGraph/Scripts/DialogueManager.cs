@@ -21,6 +21,8 @@ public enum bubleType
 
 public class DialogueManager : MonoBehaviour
 {
+    #region Fields
+
     public DSGraphSaveDataSO runtimeGraph;
     
     [Header("PLAYER SETTINGS")]
@@ -34,9 +36,13 @@ public class DialogueManager : MonoBehaviour
     private Dictionary<bubleType, dialogueContainer> _bubleContainers = new Dictionary<bubleType, dialogueContainer>();
     [SerializeField] private List<dialogueContainer> _bubleContainerList = new List<dialogueContainer>();
 
-    [Header("Choice Button UI")] public Button ChoiceButtonPrefab;
+    [Header("UI Buttons")] 
+    public Button ChoiceButtonPrefab;
     public Transform ChoiceButtonContainer;
+    public Button _nextButton;
 
+    [Header("Speakers")]
+    [SerializeField] private Image _speakerImage;
     public Speakers SpeakersScriptable;
     private SpeakerInfo _currentSpeaker;
 
@@ -47,6 +53,24 @@ public class DialogueManager : MonoBehaviour
     
     private dialogueContainer _currentDialogueContainer;
     private dialogueContainer _oldDialogueContainer;
+
+    // Interaction
+
+    private bool _canInteract = true;
+    public bool CanInteract              
+    {                                    
+        get => _canInteract;             
+        set                              
+        {                                
+            _canInteract = value;        
+        }                                
+    }                                    
+
+    // end Dialogue
+    public delegate void MyDelegate();
+    public static event MyDelegate OnDialogueEnd;
+
+    #endregion
 
     [Button]
     public void LoadCsv()
@@ -112,6 +136,16 @@ public class DialogueManager : MonoBehaviour
         {
             TryToUpdateNextDialogueFromNextNode();
         }
+
+        // Next Button
+        if (_nextButton != null)
+        {
+            _nextButton.onClick.AddListener(() =>
+            {
+             if(CanInteract && !_isWaitingForChoice)
+                TryToUpdateNextDialogueFromNextNode();
+            });
+        }
     }
     
     private DSNodeSaveData GetNextNode(string nextID)
@@ -130,11 +164,6 @@ public class DialogueManager : MonoBehaviour
         //{
         //    TryToUpdateNextDialogueFromNextNode();
         //}
-
-        if (Input.GetKeyDown(KeyCode.Space) && !_isWaitingForChoice)
-        {
-            TryToUpdateNextDialogueFromNextNode();
-        }
     }
 
     
@@ -277,8 +306,12 @@ public class DialogueManager : MonoBehaviour
         string targetDialogue = FantasyDialogueTable.LocalManager.FindDialogue(_currentNode.GetDropDownKeyDialogue(), Enum.GetName(typeof(language), languageSetting));
         _currentDialogueContainer.InitializeDialogueContainer(targetDialogue, _currentSpeaker.Name, _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur()));
 
+        if(_speakerImage!=null)
+            _speakerImage.sprite = _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur());
+
+
         // event
-        if(!string.IsNullOrEmpty(_currentNode.GetDropDownKeyEvent()))
+        if (!string.IsNullOrEmpty(_currentNode.GetDropDownKeyEvent()))
         {
             UnityEvent targetEvent = EventsManager.Instance.FindEvent(_currentNode.GetDropDownKeyEvent());
             targetEvent?.Invoke();
@@ -313,6 +346,8 @@ public class DialogueManager : MonoBehaviour
                 
                 choiceButton.onClick.AddListener(() =>
                 {
+                    Debug.Log("help");
+
                     _isWaitingForChoice = false;
 
                     //clear
@@ -342,12 +377,15 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         _currentDialogueContainer.HideContainer();
+        _nextButton.gameObject.SetActive(false);
         _currentNode = null;
 
         foreach (Transform child in ChoiceButtonContainer)
         {
             Destroy(child.gameObject);
         }
+
+        OnDialogueEnd?.Invoke();
     }
 
     public void ChangeSpeaker(Espeaker speak)
@@ -379,4 +417,5 @@ public class DialogueManager : MonoBehaviour
         }
         return null;
     }
+
 }

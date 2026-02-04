@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject transitionPrefab;
 
     public static GameManager Instance { get; private set; }
-    public int currentInsectId = -1;
+    public int currentInsectId = 0;
     public SceneAsset SceneToLoad;
+    public SceneAsset SceneHub;
+    private bool AsFinishedInsect = false;
 
     private void Awake()
     {
@@ -25,6 +27,19 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    
+    void OnEnable()
+    {
+        Pulse.OnEndRythm += StopRythmGame;
+        DialogueManager.OnDialogueEnd += ReturnToHub;
+        
+    }
+    
+    void OnDisable()
+    {
+        Pulse.OnEndRythm -= StopRythmGame;
+        DialogueManager.OnDialogueEnd -= ReturnToHub;
     }
 
     private void OnDestroy()
@@ -125,6 +140,11 @@ public class GameManager : MonoBehaviour
         else
         {
             StopAllCoroutines();
+            var pulse = FindObjectOfType<Pulse>();
+            if (pulse != null && entry.NewSpeedBPM > 0)
+            {
+                pulse.BPMSpeed(entry.NewSpeedBPM);
+            }
             StartCoroutine(GameplayLoop(entry));
         }
     }
@@ -162,5 +182,46 @@ public class GameManager : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    public void ReturnToHub ()
+    {
+        var transition = FindObjectOfType<TransitionScene>();
+
+        if (transition != null && !transition.gameObject.activeInHierarchy)
+        {
+            transition.gameObject.SetActive(true);
+        }
+
+        if (transition == null && transitionPrefab != null)
+        {
+            var go = Instantiate(transitionPrefab);
+            if (go != null)
+            {
+                go.SetActive(true);
+                transition = go.GetComponent<TransitionScene>();
+            }
+        }
+
+        if (transition != null)
+        {
+            StartCoroutine(transition.FadeIn());
+        }
+
+        SceneManager.LoadScene(SceneHub.name);
+    }
+    
+    public void LaunchRythmGame()
+    {
+        var pulse = FindObjectOfType<Pulse>();
+        pulse?.PlayMusic();
+        var DManager = FindObjectOfType<DialogueManager>();
+        DManager.CanInteract= false;
+    }
+    
+    public void StopRythmGame()
+    {
+        var DManager = FindObjectOfType<DialogueManager>();
+        DManager.CanInteract= true;
     }
 }

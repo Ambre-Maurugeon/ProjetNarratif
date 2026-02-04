@@ -16,12 +16,12 @@ MonoBehaviour:
   - perso: yes
     id: 0
     refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
-    NewBPM: 0
+    NewSpeedBPM: 1
   - perso: oh
     id: 1
     refDialogue: {fileID: 0}
-    NewBPM: 0
+    NewSpeedBPM: 1
   - perso: no
     id: 2
     refDialogue: {fileID: 0}
-    NewBPM: 0
+    NewSpeedBPM: 1
