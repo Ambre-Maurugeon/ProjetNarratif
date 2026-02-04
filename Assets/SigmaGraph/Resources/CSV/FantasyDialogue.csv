@@ -1,0 +1,71 @@
+idLng;FR;EN
+Brant_D1;Bonjour voyageur ! Qu'est ce qui vous emmene de ce côté du continent ?;Hello traveler ! What brought you on this side of the continent ?
+Juliana_D1;Je suis à la recherce d'une cité perdu autrefois habité des nains. Vous avez des information pour moi ?;I am searching for a lost city once inhabited by dwarves. Do you have any information for me?
+Brant_D2;Oh, je vois ! De quel genre d'informations avez-vous besoin ?;Oh, I See ! What kind of info do you need ?
+Juliana_D2_C1;Une légende raconte que cette cité serait au sein d'une montagne antique. Vous savez où je peux la trouver ?;Legend has it that this city lies within an ancient mountain. Do you know where I can find it ?
+Juliana_D2_C2;Je suis pas sûre de ne pas être la seul à chercher cette cité. Vous connaissez un bon endroit où trouver de l'équipement ?;I'm not sure I'm the only one looking for this city. Do you know a good place to find equipment ?
+Juliana_D2_C3;J'ai trouvé ce parchemin enroulé dans un anneau dans un ancien sanctuaire. Je me demande ce que cela peut bien être...;I found this scroll rolled up in a ring in an old shrine. I wonder what it could be…
+Brant_D3_A1;Vous savez, on dit beaucoup de choses dans les tavernes. Pensez à y aller,vous pourrez aussi vous laver là-bas... Vous en avez besoin.;You know, a lot of things are said in taverns. Think about going there, you can also wash up there... You need it.
+Brant_D3_A2;Eh bien, mademoiselle, vous êtes au bon endroit ! Dites-moi ce dont vous avez besoin et je m'en occupe tout de suite. En échange de quelques pièces, bien sûr !;Well, miss, you've come to the right place! Tell me what you need and I'll get right on it. For a handful of coins, of course!
+Brant_D3_A3;Laissez moi voir ça….Hmmmm… Ce parchemin à l'air d'être écrit en language de nain mais… très ancien. Pour la bague par contre je n'en ai aucune idée. Allez dont voir l'ancien du village, il saura vous renseigné. Dites lui que vous venez de la part de Brant, il saura vous recevoir !;"Let me see... Hmm... This scroll appears to be written in the language of the dwarves, but it's very old. As for the ring, I have no idea. Go see the village elder; he'll be able to help you. Tell him Brant sent you, and he'll welcome you!"
+Margot_Test;bla;bla
+Brant_D4_A4;f;f
+Bourdon_D1;Boudiou j’ai eu du mal à te trouver !;Gosh I had a hard time finding you!
+Bourdon_D2;En tout cas, tu es très élégant.e, comme sur tes photos ! :);In any case, you are very elegant, just like in your photos! :)
+Bourdon_D3;Tu prends quoi à boire ? J'espère qu'ils font des boissons avec de l'alcool pas trop fort..;What are you drinking? I hope they make drinks with not too strong alcohol..
+Bourdon_D4;J'aime pas l'émission Cyber Grasshoper In The Techno Shell qui passe derrière toi, c'est créé par des boomers !;I don't like this show, it's created by boomers !
+Mantis_D1_C1;Mais moi j’aime bien cette série :’|;But I really like this series:’|
+Mantis_D1_C2;C'est série nulle. Créé pour les vieux et par des vieux..;It's a terrible series. Created for the old and by the old..
+Mantis_D1_C3;Je ne l’ai pas regardé.;I didn't watch it.
+Bourdon_D31;Après c'est un bon point;
+Bourdon_D5;C'est pas gentil de critiquer le travail d’autrui :c. Tu sais, comme le dit Colin Mochrie, nous avons tous un dinosaure au fond de nous qui essaie de sortir.;It's not nice to criticize other people's work :c. You know, as Colin Mochrie says, we all have a dinosaur deep within us just trying to get out.
+Mantis_D2_C1;C’est ton premier tête à tête ?;
+Mantis_D2_C2;Tu es passionné par les séries? ... Cette série?;
+Mantis_D2_C3;Qu’est-ce que tu regardes ??;
+Bourdon_D6;Oui en effet, ça se voit tant que ça ..? J'ai pas beaucoup d'expériences en la matière.. J'espère quand même faire bonne impression. ^^';
+Mantis_D3_C1;Oui, oui...;
+Mantis_D3_C2;Je me sens à l'aise !;
+Mantis_D3_C3;C'est impossible à dire aussi tôt dans le date honnêtement.;
+Bourdon_D7;Oh non! Désoléééééé! Euh euuuuuuh, si il faut je peux me rattraper!! On peut aller commander ? ;
+Bourdon_D8;Euuuh c’est pas comme au fast food, c’est vrai, il faut demander ! C’est ce qu’il y a avait marqué dans les tutos de Mothsansmaster69..;
+Bourdon_D9;Bonjour monsieur ! Je vais prendre un jus de pomme alcolisée !;
+Bourdon_D10;Du cidre ? AH OUI ! Je voulais dire du cidre! ;
+Bourdon_D11;... Et toi tu veux quoi?;
+Mantis_D4_C1;Feur.;
+Mantis_D4_C2;Un Hardcore Coronarita Vin and Tonic Gin Diesel on the rocks.;
+Mantis_D4_C3;De l’eau.;
+Mantis_D4_C4;Oui.;
+Bourdon_D27;Youhou ^^;
+Bourdon_D28;Tu veux prendre commande?;
+Bourdon_D29;Personnellement j’ai pris du cidre, ça a un goût proche du jus de pomme c’est chouette !;
+Bourdon_D30; Oh. Heu... Je cromprend-Tu veux prendre quelque chose peut être!;
+Bourdon_D12;Ha super! Mais attends t’as pas répondu... Tu veux quoi du coup?;
+Bourdon_D69;WOUHOUU HAPPY DATE;
+Mantis_D5;Mhh, je vois ce que tu veux dire.;
+Bourdon_D13;Et honnêtement, quand j'ai dit que c’était une série pour vieux c'est surtout parce que j’ai vu des extrait sur [youtubedejardin] vu que c’est un classique mais c’est trop une série compliqué pour moi. :/;
+Bourdon_D14;Et puis, il y a aucun dinosaure, c'est un gros malus :c.;
+Bourdon_D15;J'adore les dinosaures !! Tu sais, mon repas préféré, c'est les dino nuggies !!;
+Mantis_D6_C1;(Je ne sais pas quoi faire de cette information);
+Mantis_D6_C2;C’est les meilleurs !;
+Mantis_D6_C3;Je préfère les patates sourire. :);
+Bourdon_D16;La texture est pas la même, les nuggets en forme de dinosaures sont beaucoup plus tendres que les nuggets normaux.;
+Bourdon_D17;Eh hem, en parlant de tout ça! Ça donne soif de parler de nourriture! Même si pour toi les dino nuggies c’est trop raffiné, tu veux prendre quoi?;
+Bourdon_D18;On est D’ACCORD! Et tout le monde comprend pas à chaque fois C’EST FOUS ÇA! ALORS QUE C’EST TROP BON.;
+Bourdon_D19;En plus ça ferme la boucle! Les dinosaures aujourd’hui c’est les poulets puis on les transforme après en nuggets de dinosaures c’est BEAU.;
+Bourdon_D20;Mais bon heu... C’est qu’un détail hein.;
+Bourdon_D21;Mais je suis content de savoir qu'il existe d'autre appréciateur de dino nuggie !;
+Bourdon_D22;Tu prends quoi à boire ?;
+Bourdon_D23;WooooooW vraiment?!;
+Bourdon_D24;Je veux dire, toi aussi !!;
+Bourdon_D25;Ahah, si j’étais comme mes potes je dirais que c’est de la nouriture pour gamin, mais ils ne comprennent juste pas que c’est cent fois meilleur !;
+Bourdon_D26;En plus les patates sourires sont aussi bien cuites en dessous que au dessus, c’est comme un vrai trésor de capitaine !;
+Bourdon_D32;C'est pas pour dire que je l'ai regardé après, j'ai que regarder des extraits pour la culture mais c'était trop lent comme cette autres séries là, Free reins. C'est pas compliqué pourtant si le rythme était super rapide on s'ennuieraient moins.;
+Bourdon_D33;C'est ton choix, simplement c'est objectivement trop nul faut pas écouter la critique ils descendent toujours les meilleurs séries. Preuve! Moi j'aime tous les Permien Parks mais il continue de dire que Permien World c'est moins bien! Chuis grave trop pas d'accord.;
+Bourdon_D34;En plus ils sont tellement plus réaliste! Les robots c'est tellement moins probable que des dinosaures néés par des grenouilles en manipulant leurs adn et le recyclant de moustique préservé dans de la sève d'arbre de plusieurs million d'années. Pfouah des robots quoi! C'est tellement impossible.;
+Bourdon_D35;Et puis le Mycropentanatocéphalocarcharomimus il est-Oops! Je veux pas t'ennuyer avec ça, dès fois je m'arrête plus qu'en j'en parle. Ca serait dommage de me tapé sur la tête pour que j'arrête d'en parler haha!;
+Bourdon_D36;Faut pas me regarder comme ça... Moi... Le dinodex c'est passionant les dinosaures.;
+Bourdon_D37;Si ça ne te va pas je peux toujour parler ou passer sur heu…;
+Bourdon_D38;Tu-aimes bien-ton travail-nom du crush-virgule tu fais quoi comme travail-point d'interogation heu... ~Oops;
+Mantis_D7_C1;Tu sais pas parler ou quoi ?;
+Mantis_D7_C2;Tu mélanges tes pinceaux là.;
+Mantis_D7_C3;On peut dire secrétaire..;
