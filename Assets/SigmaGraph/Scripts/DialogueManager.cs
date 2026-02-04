@@ -42,7 +42,6 @@ public class DialogueManager : MonoBehaviour
     public Button _nextButton;
 
     [Header("Speakers")]
-    [SerializeField] private Image _speakerImage;
     public Speakers SpeakersScriptable;
     private SpeakerInfo _currentSpeaker;
 
@@ -305,9 +304,6 @@ public class DialogueManager : MonoBehaviour
         
         string targetDialogue = FantasyDialogueTable.LocalManager.FindDialogue(_currentNode.GetDropDownKeyDialogue(), Enum.GetName(typeof(language), languageSetting));
         _currentDialogueContainer.InitializeDialogueContainer(targetDialogue, _currentSpeaker.Name, _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur()));
-
-        if(_speakerImage!=null)
-            _speakerImage.sprite = _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur());
 
 
         // event
