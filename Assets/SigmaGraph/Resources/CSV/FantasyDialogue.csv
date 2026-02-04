@@ -10,75 +10,136 @@ Brant_D3_A2;Eh bien, mademoiselle, vous êtes au bon endroit ! Dites-moi ce dont 
 Brant_D3_A3;Laissez moi voir ça….Hmmmm… Ce parchemin à l'air d'être écrit en language de nain mais… très ancien. Pour la bague par contre je n'en ai aucune idée. Allez dont voir l'ancien du village, il saura vous renseigné. Dites lui que vous venez de la part de Brant, il saura vous recevoir !;"Let me see... Hmm... This scroll appears to be written in the language of the dwarves, but it's very old. As for the ring, I have no idea. Go see the village elder; he'll be able to help you. Tell him Brant sent you, and he'll welcome you!"
 Margot_Test;bla;bla
 Brant_D4_A4;f;f
-;;
 Bourdon_D1;Boudiou j’ai eu du mal à te trouver !;Gosh I had a hard time finding you!
 Bourdon_D2;En tout cas, tu es très élégant.e, comme sur tes photos ! :);In any case, you are very elegant, just like in your photos! :)
 Bourdon_D3;Tu prends quoi à boire ? J'espère qu'ils font des boissons avec de l'alcool pas trop fort..;What are you drinking? I hope they make drinks with not too strong alcohol..
-DR_1;À la télévision du bar, l'émission Cyber Grasshoper In The Techno Shell est diffusée.;On the bar's television, the show Cyber Grasshopper In The Techno Shell is playing.
 Bourdon_D4;J'aime pas l'émission Cyber Grasshoper In The Techno Shell qui passe derrière toi, c'est créé par des boomers !;I don't like this show, it's created by boomers !
 Mantis_D1_C1;Mais moi j’aime bien cette série :’|;But I really like this series:’|
 Mantis_D1_C2;C'est série nulle. Créé pour les vieux et par des vieux..;It's a terrible series. Created for the old and by the old..
 Mantis_D1_C3;Je ne l’ai pas regardé.;I didn't watch it.
-;SUITE CHOIX 2 ;
-;SUITE CHOIX 3;
-Bourdon_D31;Après c'est un bon point;
+Bourdon_D31;Après c'est un bon point.;Then, it's a valid point.
 Bourdon_D5;C'est pas gentil de critiquer le travail d’autrui :c. Tu sais, comme le dit Colin Mochrie, nous avons tous un dinosaure au fond de nous qui essaie de sortir.;It's not nice to criticize other people's work :c. You know, as Colin Mochrie says, we all have a dinosaur deep within us just trying to get out.
-Mantis_D2_C1;C’est ton premier tête à tête ?;
-Mantis_D2_C2;Tu es passionné par les séries? ... Cette série?;
-Mantis_D2_C3;Qu’est-ce que tu regardes ??;
-Bourdon_D6;Oui en effet, ça se voit tant que ça ..? J'ai pas beaucoup d'expériences en la matière.. J'espère quand même faire bonne impression. ^^';
-Mantis_D3_C1;Oui, oui...;
-Mantis_D3_C2;Je me sens à l'aise !;
-Mantis_D3_C3;C'est impossible à dire aussi tôt dans le date honnêtement.;
-;CONTINUATION CHOIX 1 (2,1);
-Bourdon_D7;Oh non! Désoléééééé! Euh euuuuuuh, si il faut je peux me rattraper!! On peut aller commander ? ;
-Bourdon_D8;Euuuh c’est pas comme au fast food, c’est vrai, il faut demander ! C’est ce qu’il y a avait marqué dans les tutos de Mothsansmaster69..;
-Bourdon_D9;Bonjour monsieur ! Je vais prendre un jus de pomme alcolisée !;
-Bourdon_D10;Du cidre ? AH OUI ! Je voulais dire du cidre! ;
-Bourdon_D11;... Et toi tu veux quoi?;
-Mantis_D4_C1;Feur.;
-Mantis_D4_C2;Un Hardcore Coronarita Vin and Tonic Gin Diesel on the rocks.;
-Mantis_D4_C3;De l’eau.;
-Mantis_D4_C4;Oui.;
-;CONTINUATION CHOIX 4 (2,1,2);
-Bourdon_D27;Youhou ^^;
-Bourdon_D28;Tu veux prendre commande?;
-Bourdon_D29;Personnellement j’ai pris du cidre, ça a un goût proche du jus de pomme c’est chouette !;
-;CONTINUATION CHOIX 4 (2,1,3);
-Bourdon_D30; Oh. Heu... Je cromprend-Tu veux prendre quelque chose peut être!;
-;CONTINUATION CHOIX 4 (2,1,1.4);
-Bourdon_D12;Ha super! Mais attends t’as pas répondu... Tu veux quoi du coup?;
-Bourdon_D69;WOUHOUU HAPPY DATE;
-;CONTINUATION CHOIX 1 (2,2);
-Mantis_D5;Mhh, je vois ce que tu veux dire.;
-Bourdon_D13;Et honnêtement, quand j'ai dit que c’était une série pour vieux c'est surtout parce que j’ai vu des extrait sur [youtubedejardin] vu que c’est un classique mais c’est trop une série compliqué pour moi. :/;
-Bourdon_D14;Et puis, il y a aucun dinosaure, c'est un gros malus :c.;
-Bourdon_D15;J'adore les dinosaures !! Tu sais, mon repas préféré, c'est les dino nuggies !!;
-Mantis_D6_C1;(Je ne sais pas quoi faire de cette information);
-Mantis_D6_C2;C’est les meilleurs !;
-Mantis_D6_C3;Je préfère les patates sourire. :);
-;CONTINUATION CHOIX 1 (2,2.1);
-Bourdon_D16;La texture est pas la même, les nuggets en forme de dinosaures sont beaucoup plus tendres que les nuggets normaux.;
-Bourdon_D17;Eh hem, en parlant de tout ça! Ça donne soif de parler de nourriture! Même si pour toi les dino nuggies c’est trop raffiné, tu veux prendre quoi?;
-;CONTINUATION CHOIX 1 (2,2.2);
-Bourdon_D18;On est D’ACCORD! Et tout le monde comprend pas à chaque fois C’EST FOUS ÇA! ALORS QUE C’EST TROP BON.;
-Bourdon_D19;En plus ça ferme la boucle! Les dinosaures aujourd’hui c’est les poulets puis on les transforme après en nuggets de dinosaures c’est BEAU.;
-Bourdon_D20;Mais bon heu... C’est qu’un détail hein.;
-Bourdon_D21;Mais je suis content de savoir qu'il existe d'autre appréciateur de dino nuggie !;
-Bourdon_D22;Tu prends quoi à boire ?;
-;CONTINUATION CHOIX 1 (2,2.3);
-Bourdon_D23;WooooooW vraiment?!;
-Bourdon_D24;Je veux dire, toi aussi !!;
-Bourdon_D25;Ahah, si j’étais comme mes potes je dirais que c’est de la nouriture pour gamin, mais ils ne comprennent juste pas que c’est cent fois meilleur !;
-Bourdon_D26;En plus les patates sourires sont aussi bien cuites en dessous que au dessus, c’est comme un vrai trésor de capitaine !;
-;SUITE CHOIX 1;
-Bourdon_D32;C'est pas pour dire que je l'ai regardé après, j'ai que regarder des extraits pour la culture mais c'était trop lent comme cette autres séries là, Free reins. C'est pas compliqué pourtant si le rythme était super rapide on s'ennuieraient moins.;
-Bourdon_D33;C'est ton choix, simplement c'est objectivement trop nul faut pas écouter la critique ils descendent toujours les meilleurs séries. Preuve! Moi j'aime tous les Permien Parks mais il continue de dire que Permien World c'est moins bien! Chuis grave trop pas d'accord.;
-Bourdon_D34;En plus ils sont tellement plus réaliste! Les robots c'est tellement moins probable que des dinosaures néés par des grenouilles en manipulant leurs adn et le recyclant de moustique préservé dans de la sève d'arbre de plusieurs million d'années. Pfouah des robots quoi! C'est tellement impossible.;
-Bourdon_D35;Et puis le Mycropentanatocéphalocarcharomimus il est-Oops! Je veux pas t'ennuyer avec ça, dès fois je m'arrête plus qu'en j'en parle. Ca serait dommage de me tapé sur la tête pour que j'arrête d'en parler haha!;
-Bourdon_D36;Faut pas me regarder comme ça... Moi... Le dinodex c'est passionant les dinosaures.;
-Bourdon_D37;Si ça ne te va pas je peux toujour parler ou passer sur heu…;
-Bourdon_D38;Tu-aimes bien-ton travail-nom du crush-virgule tu fais quoi comme travail-point d'interogation heu... ~Oops;
-Mantis_D7_C1;Tu sais pas parler ou quoi ?;
-Mantis_D7_C2;Tu mélanges tes pinceaux là.;
-Mantis_D7_C3;On peut dire secrétaire..;
+Mantis_D2_C1;C’est ton premier tête à tête ?;Is it your first one-on-one?
+Mantis_D2_C2;Tu es passionné par les séries? ... Cette série?;Are you passionate about series? ... This series?
+Mantis_D2_C3;Qu’est-ce que tu regardes ??;What are you watching??
+Bourdon_D6;Oui en effet, ça se voit tant que ça ..? J'ai pas beaucoup d'expériences en la matière.. J'espère quand même faire bonne impression. ^^';Yes actually, is it that obvious...? I don't have much experience in this area.. I still hope to make a good impression. ^^'
+Mantis_D3_C1;Oui, oui...;Yes, yes…
+Mantis_D3_C2;Je me sens à l'aise !;I feel comfortable!
+Mantis_D3_C3;C'est impossible à dire aussi tôt dans le date honnêtement.;It's impossible to say so early in the date honestly.
+Bourdon_D7;Oh non! Désoléééééé! Euh euuuuuuh, si il faut je peux me rattraper!! On peut aller commander ? ;Oh no! Sorryyyyy! Um, uh, if I need to, I can make it up to you!! Can we go order?
+Bourdon_D8;Euuuh c’est pas comme au fast food, c’est vrai, il faut demander ! C’est ce qu’il y a avait marqué dans les tutos de Mothsansmaster69..;Uuuh, it's not like at fast food, it's true, you have to ask! That's what it said in Mothsansmaster69's tutorials..
+Bourdon_D9;Bonjour monsieur ! Je vais prendre un jus de pomme alcolisée !;Hello sir! I'll take an alcoholic apple juice!
+Bourdon_D10;Du cidre ? AH OUI ! Je voulais dire du cidre! ;Cider? AH YES! I meant cider!
+Bourdon_D11;... Et toi tu veux quoi?;... And you want what ?
+Mantis_D4_C1;Feur.;s UP
+Mantis_D4_C2;Un Hardcore Coronarita Vin and Tonic Gin Diesel on the rocks.;A Hardcore Coronarita Vin and Tonic Gin Diesel on the rocks.
+Mantis_D4_C3;De l’eau.;Some water.
+Mantis_D4_C4;Oui.;Yes.
+Bourdon_D27;Youhou ^^;Youhou ^^
+Bourdon_D28;Tu veux prendre commande?;Do you want to take order?
+Bourdon_D29;Personnellement j’ai pris du cidre, ça a un goût proche du jus de pomme c’est chouette !;Personally, I had cider, it tastes close to apple juice, it's great!
+Bourdon_D30; Oh. Heu... Je cromprend-Tu veux prendre quelque chose peut être!;Oh. Um... I understand-Maybe you want to take something!
+Bourdon_D12;Ha super! Mais attends t’as pas répondu... Tu veux quoi du coup?;Oh great! But wait, you haven't answered... What do you want then?
+Mantis_D5;Mhh, je vois ce que tu veux dire.;Mhh, I see what you mean.
+Bourdon_D13;Et honnêtement, quand j'ai dit que c’était une série pour vieux c'est surtout parce que j’ai vu des extrait sur [youtubedejardin] vu que c’est un classique mais c’est trop une série compliqué pour moi. :/;And honestly, when I said it was a series for old people, it was mostly because I saw excerpts on [youtubedejardin] since it's a classic, but it's too complicated a series for me. :/
+Bourdon_D14;Et puis, il y a aucun dinosaure, c'est un gros malus :c.;And then, there are no dinosaurs, it's a big drawback :c.
+Bourdon_D15;J'adore les dinosaures !! Tu sais, mon repas préféré, c'est les dino nuggies !!;I love dinosaurs!! You know, my favorite meal is dino nuggies!!
+Mantis_D6_C1;(Je ne sais pas quoi faire de cette information);(I don't know what to do with this information)
+Mantis_D6_C2;C’est les meilleurs !;They are the best!
+Mantis_D6_C3;Je préfère les patates sourire. :);I prefer smiley potatoes. :)
+Bourdon_D16;La texture est pas la même, les nuggets en forme de dinosaures sont beaucoup plus tendres que les nuggets normaux.;The texture is not the same, the dinosaur-shaped nuggets are much more tender than regular nuggets.
+Bourdon_D17;Eh hem, en parlant de tout ça! Ça donne soif de parler de nourriture! Même si pour toi les dino nuggies c’est trop raffiné, tu veux prendre quoi?;Ahem, speaking of all that! Talking about food makes me thirsty! Even if dino nuggies are too refined for you, what do you want to get?
+Bourdon_D18;On est D’ACCORD! Et à chaque fois, personne comprend C’EST FOU ÇA! ALORS QUE C’EST TROP BON.;We AGREE! And every time, no one understands IT'S CRAZY! WHILE IT'S TOO GOOD.
+Bourdon_D19;En plus ça ferme la boucle! Les dinosaures aujourd’hui c’est les poulets puis on les transforme après en nuggets de dinosaures c’est BEAU.;Plus, it closes the loop! Dinosaurs today are chickens, then we turn them into dinosaur nuggets, it's BEAUTIFUL.
+Bourdon_D20;Mais bon heu... C’est qu’un détail hein.;But well... It's just a detail, right?
+Bourdon_D21;Mais je suis content de savoir qu'il existe d'autre appréciateur de dino nuggie !;But I'm glad to know there are other dino nuggie appreciators out there!
+Bourdon_D22;Tu prends quoi à boire ?;What would you like to drink?
+Bourdon_D23;WooooooW vraiment?!;WooooooW really?!
+Bourdon_D24;Je veux dire, toi aussi !!;I mean, you too!!
+Bourdon_D25;Ahah, si j’étais comme mes potes je dirais que c’est de la nouriture pour gamin, mais ils ne comprennent juste pas que c’est cent fois meilleur !;Ahah, if I were like my friends, I would say it's kid food, but they just don't understand that it's a hundred times better!
+Bourdon_D26;En plus les patates sourires sont aussi bien cuites en dessous que au dessus, c’est comme un vrai trésor de capitaine !;Plus, the smiley fries are cooked just as well underneath as they are on top, it's like a real captain's treasure!
+Bourdon_D32;C'est pas pour dire que je l'ai regardé après, j'ai que regarder des extraits pour la culture mais c'était trop lent comme cette autres séries là, Free reins. C'est pas compliqué pourtant si le rythme était super rapide on s'ennuieraient moins.;It's not to say that I watched it afterward, I only watched excerpts for culture but it was too slow like that other series, Free Reins. It's not complicated tho, if the pace was super fast we would be less bored.
+Bourdon_D33;C'est ton choix, simplement c'est objectivement trop nul faut pas écouter la critique ils descendent toujours les meilleurs séries. Preuve! Moi j'aime tous les Permien Parks mais il continue de dire que Permien World c'est moins bien! Chuis grave trop pas d'accord.;It's your choice, it's just objectively too bad, you shouldn't listen to the critics, they always trash the best series. Preuve ! I like all the Permian Parks but he keeps saying Permian World is worse! I really seriously disagree.
+Bourdon_D34;En plus ils sont tellement plus réaliste! Les robots c'est tellement moins probable que des dinosaures néés par des grenouilles en manipulant leurs adn et le recyclant de moustique préservé dans de la sève d'arbre de plusieurs million d'années. Pfouah des robots quoi! C'est tellement impossible.;Plus they are so much more realistic! Robots are so much less likely than dinosaurs born from frogs by manipulating their DNA and recycling it from mosquitoes preserved in tree sap from several million years ago. Pfouah robots what! It's so impossible.
+Bourdon_D35;Et puis le Mycropentanatocéphalocarcharomimus il est-Oops! Je veux pas t'ennuyer avec ça, dès fois je m'arrête plus qu'en j'en parle. Ca serait dommage de me taper sur la tête pour que j'arrête d'en parler haha!;And then the Mycropentanatocéphalocarcharomimus is-Oops! I don't want to bore you with that, sometimes I can't stop when I talk about it. It would be a shame to hit me on the head so I would stop talking about it haha!
+Bourdon_D36;Faut pas me regarder comme ça... Moi... J'adore le dinodex, c'est passionant les dinosaures.;Don't look at me like that... Me... I love the dinodex, dinosaurs are fascinating.
+Bourdon_D37;Si ça ne te va pas je peux toujours parler ou passer sur heu…;If that doesn't work for you, I can always talk or switch to…
+Bourdon_D38;Tu-aimes bien-ton travail-nom du crush-virgule tu fais quoi comme travail-point d'interogation heu... ~Oops;You really like your job, [crush's name], comma, what kind of work do you do, question mark, um... ~Oops
+Mantis_D7_C1;Tu sais pas parler ou quoi ?;You don't know how to talk or what?
+Mantis_D7_C2;Tu mélanges tes pinceaux là.;You're mixing up your brushes there.
+Mantis_D7_C3;On peut dire secrétaire..;We can say secretary..
+Mantis_D8_C1;Te sert pas de tuto pour date avec moi ou je me casse.;Don't use a tutorial to date me or I'm out.
+Mantis_D8_C2;Je suis pas sur de la fiabilité de ton gars.;I'm not sure about the reliability of your guy.
+Mantis_D8_C3;Aww t’essaye de faire au mieux ?;Aww, are you trying your best?
+Bourdon_D39;H-heu... Heuu... Bwahahah T.T Désolé, c’est mon premier rendez vous en dehors de Dinosnap ! ;H-heu... Umm... Bwahahah T.T Sorry, it's my first appointment outside of Dinosnap!
+Mantis_D9;Bon ! Je vais prendre quelque chose, pour moi, alors...;Alright! I'm going to get something for myself, then…
+Bourdon_D40;Arrête, il m’a appris tellement de chose, la preuve il a été en couple 20 fois!;Stop, he taught me so much, proof is he's been in a relationship 20 times!
+Mantis_D10;(Heu... en combien de temps ??);(Um... how long?)
+Bourdon_D41;Donc... Tu prends un truc ?;So... Are you taking something?
+Bourdon_D42;Heu... oui.;Hem... yes.
+Mantis_D11C1;Un café.;A coffee.
+Mantis_D11C2;Une grenadine.;A grenadine.
+Mantis_D11C3;Une Absinthe Suissesse [Maurice].;A Swiss Absinthe [Maurice].
+Mantis_D12;(Il m’endort, je vais prendre de quoi rester actif) (ET SURTOUT DE QUOI GARDER MON TAUX DE CAFÉINE);(He's making me sleepy, I'm going to grab something to stay active) (AND ESPECIALLY SOMETHING TO KEEP MY CAFFEINE LEVEL UP)
+Mantis_D13;Maintenant on peux attendre les serveurs ici sont de véritables escargots !;Now we can wait, the servers here are real snails!
+Bourdon_D43;Toi aussi t’aime bien les trucs doux !;You also like sweet stuff!
+Mantis_D14;(Du sirop pour adoucir ce drôle de rendez-vous);(Syrup to sweeten this strange date)
+Bourdon_D44;…;…
+Mantis_D15;Je vais me bourrer la gueule de façon rafinée;I'm going to get refinedly drunk.
+Mantis_D16;(Et c’est pas ce rendez vous qui  m’en empêchera);(And it's not this date that will stop me)
+Bourdon_D45;Heu... Tout du pas ! Heu... Pardon: Pas du tout;Uh... All at not! Um... Sorry: Not at all
+Bourdon_D46;Tu sais, j'ai eu une très bonne note au [jeu de mot pour dire bac];You know, I got a very good grade on the [wordplay for bac]
+Bourdon_D47;Et toi ?;And you ?
+Mantis_D17C1;J’ai toujours été fort en cuisine;I've always been good in the kitchen.
+Mantis_D17C2;Bizarrement mes autres dates ne les apprécient pas à leurs juste valeurs;Strangely, my other dates don't appreciate them at their true worth.
+Mantis_D17C3;*Hocher de la tête en souriant*;*Nodding with a smile*
+Mantis_D18C1;Je croivez qu’ont s’en foux.;I thihnk weed don't care.
+Mantis_D18C2;Je m’en sort plutôt bien comme toi;I'm doing pretty well like you.
+Mantis_D18C3;Je meus la verve ainsi que mon orthographe et grammaire à ma guise;I wield the eloquence as well as my spelling and grammar as I please.
+Bourdon_D48;... Ouais, carrément;... Yeah, totally
+Mantis_D19;(J’espère qu’il l’a pas pris 1er degrée il à l’air très confus);(I hope he didn't take it literally, he seems very confused)
+Bourdon_D49;Mais j’ai quand même des doutes;But I still have doubts.
+Mantis_D20; (Ok, il l’a pris 1er degré);(Okay, he took it literally)
+Bourdon_D50;Après, après le bac par contre je n’ai pas continuer des études linguistiques mais en école de géologie parce qu’il faut bien aller creuser les fossils là dessous!;After, after high school, however, I didn't continue with linguistic studies but went to geology school because you have to dig up the fossils underneath!
+Mantis_D21C1;Fossil? Mais c’est Arcéologue qu’il fallait faire.;Fossile ? But it's Archeologist that he should have done.
+Mantis_D21C2;…;,,,
+Bourdon_D50;Arcéologue? Jamais entendu parlé. Mais sinon tu veux boire quelque chose?;Archeologist? Never heard of it. But otherwise, do you want something to drink?
+Bourdon_D51;Dans tous les cas c’est sur, tu t'exprimes mieux que moi ^^;In any case, it's certain, you express yourself better than me ^^
+Bourdon_D52;Par contre, je comprend pas pourquoi j'étudie les minéraux.. Je suis apparement très bon mais j'ai encore jamais étudié un caillou de dinosaure :c.;On the other hand, I don't understand why I'm studying minerals.. I'm apparently very good but I've never studied a dinosaur rock yet :c.
+Bourdon_D53;Et toi du coup, tu fais quoi dans la vie ? ;And what do you do in life?
+Bourdon_D54;*Le bourdon vous écoutes attentivement*;*The bumblebee listens to you attentively*
+Mantis_22;Mais c’est privé;But it's private
+Mantis_23;J'aime beaucoup mon travail après.;I really like my work afterward.
+Mantis_24;C’est l’essentiel-;It's the essential-
+Mantis_25;La partie la plus difficile c’est de nettoyer après les entretiens;The most difficult part is cleaning up after the interviews.
+Mantis_26C1;WOH TU PREND LA PAROLE OU JE T’ARRACHES LA TÊTE?!;HEY, YOU SPEAK UP OR I'LL RIP YOUR HEAD OFF?!
+Mantis_26C2;Vraiment?;Really?
+Mantis_26C3;Je t’autorise à parler.;I authorize you to speak.
+Bourdon_D55;Ah-Heu Désolé-P-Pardon! @!@;Ah-Um Sorry-S-Sorry! @!@
+Bourdon_D56;Et bien vous êtes grave joli(e) comme secrétaire;Well, you're seriously pretty as a secretary.
+Mantis_27C1;Et toi bien intelligent pour un jeune adulte ¦) Je t’offre un verre pour la peine mais je te raccompagne chez toi.;And you're quite intelligent for a young adult ¦) I'll buy you a drink for your trouble, but I'll walk you home.
+Mantis_27C2;Ahn merciii (???????);Ahn thaaank u (???????)
+Mantis_27C3;Et toi clairement trop jeune, j’me casse.;And you're clearly too young, I'm leaving.
+Bourdon_D57;Oh non faut pas se cacher le visage dite, c’était pas dans le guide @!@ Heu je te paye un verre ?;Oh no, you don't have to hide your face, it wasn't in the guide @!@ Um, I'll buy you a drink?
+Mantis_D28;Mais non (???????);But no (???????)
+Bourdon_D58;Mais si;But yes
+Mantis_D29;Pas la peine (^°_°^);No need (^°_°^)
+Bourdon_D59;D’accord. Mais j’aimerais quand même te poser la question... Que veux-tu?;Okay. But I would still like to ask you... What do you want?
+Mantis_D30C1;Un Roffignac;A Roffignac
+Mantis_D30C2;Sortir avec toi ! (¬ ? ?¬);Going out with you! (¬ ? ?¬)
+Bourdon_D60;”Valeur” c’est peut être un peu fort;"""Value"" might be a bit strong."
+Mantis_D31C1;*Explique avec détails la raison pour laquelle les bonhommes sourire sont un phénomène*;*Explain in detail why smiley faces are a phenomenon*
+Mantis_D32;*Vous expliquez en quoi les bonhommes sourire tandis que le bourdon vous écoutes avec attention*;*You explain why the smiley faces while the bumblebee listens to you attentively*
+Bourdon_D61;Ah oui je vois!;Ah yes, I see !
+Mantis_D33;*Vous démontrez par propriété relative la nature supérieurement calorique des bonhommes sourire*;*You demonstrate thru relative property the superior caloric nature of smiley faces*
+Bourdon_D62;Heu... J’ai pas fait spé maths;Um... I didn't do advanced math.
+Mantis_D34;*Vous élevé la conscience du bourdon à travers une démonstration quantique prouvant que les bonhommes sourire SONT*;*You raise the awareness of the bumblebee thru a quantum demonstration proving that the smiley faces ARE*
+Bourdon_D63;Enfin personne d’autre que toi..;Finally, no one else but you..
+Bourdon_D64;*Le bourdon parle en détail que lui aussi à l’habitude de se faire sa propre nourriture*;*The bumblebee speaks in detail that he too is used to making his own food*
+Bourdon_D65;Tu sais cuisiner, c’est pratique, t’as ça appris en ligne?;You know how to cook, that's handy, did you learn that online?
+Mantis_D35C1;Tu me prends pour qui ?!;Who do you think I am?!
+Mantis_D35C2;Mmmoui;mmmmmh yes 
+Mantis_D35C3;Les gens en ligne apprenne de moi +-+;People online learn from me +-+
+Mantis_D36;(J’espère qu’il me juge pas trop);(I hope he doesn't judge me too much)
+Bourdon_D66;Comme tous le monde, c’es trop cool que t’est appris ça en autodidacte, y a pas longtemps j’ai appris à lacet mes chaussures en autodidacte après avoir vue un tuto! ça me fais penser d’ailleurs...;Like everyone else, it's so cool that you learned that on your own, not long ago I learned how to tie my shoes on my own after watching a tutorial! That reminds me...
+Bourdon_D67;Sans déc! T’es créateur de contenu. ça me fais penser que j’avais entendu parler d’un norbug qui sortais avec des larves brrrr... T’es pas l’un d’entre eux au moins, j’ai juste eu un vague frisson c’est tout.;No way! You're a content creator. It makes me think I had heard about a norbug that was dating larvae brrrr... You're not one of them at least, I just got a vague shiver that's all.
