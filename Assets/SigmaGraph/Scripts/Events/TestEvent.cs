@@ -32,10 +32,4 @@ public class TestEvent : MonoBehaviour
 
     }
 
-    public void SetChoiceSpeaker()
-    {
-        _speakerAnimator.SetTrigger("Offset");
-        HideMantis();
-
-    }
 }
