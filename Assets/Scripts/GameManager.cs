@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     private Button NextButton;
     private Button PrevButton;
     public Canvas UiCanva;
+    [SerializeField] private GameObject sequencePlayerPrefab;
+
 
     private void Awake()
     {
@@ -63,6 +65,7 @@ public class GameManager : MonoBehaviour
             PrevButton.onClick.AddListener(() => PrevInsect());
         }
         UpdateBug();
+        LaunchSequence();
     }
 
     void OnEnable()
@@ -172,7 +175,8 @@ public class GameManager : MonoBehaviour
             PrevButton.onClick.RemoveAllListeners();
             PrevButton.onClick.AddListener(() => PrevInsect());
         }
-        
+
+        EnsureSequencePlayerExists();
         UpdateBug();
 
         if (currentInsectId < 0)
@@ -387,4 +391,113 @@ public class GameManager : MonoBehaviour
         }
     }
 
+  private void EnsureSequencePlayerExists()
+  {
+      var player = GameObject.Find("SequencePlayer");
+      if (player != null) return;
+  
+      if (sequencePlayerPrefab != null)
+      {
+          var go = Instantiate(sequencePlayerPrefab);
+          go.name = "SequencePlayer";
+          if (UiCanva != null)
+              go.transform.SetParent(UiCanva.transform, false);
+          return;
+      }
+  
+      var seqGo = new GameObject("SequencePlayer", typeof(RectTransform), typeof(UnityEngine.UI.Image), typeof(Animation));
+      if (UiCanva != null)
+      {
+          seqGo.transform.SetParent(UiCanva.transform, false);
+          var rt = seqGo.GetComponent<RectTransform>();
+          rt.anchorMin = new Vector2(0.5f, 0.5f);
+          rt.anchorMax = new Vector2(0.5f, 0.5f);
+          rt.anchoredPosition = Vector2.zero;
+          rt.sizeDelta = new Vector2(800, 600);
+      }
+      var img = seqGo.GetComponent<UnityEngine.UI.Image>();
+      img.raycastTarget = false;
+  }
+  
+  public void LaunchSequence()
+  {
+      if (bugsDatabase == null || bugsDatabase.entries == null) return;
+  
+      CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
+      if (entry == null || entry.Sequences == null || entry.Sequences.Length == 0) return;
+  
+      int idx = Mathf.Clamp(entry.sequenceIndex, 0, entry.Sequences.Length - 1);
+      AnimationClip clip = entry.Sequences[idx];
+      if (clip == null) return;
+  
+      var DManager = FindFirstObjectByType<DialogueManager>();
+      if (DManager != null) DManager.CanInteract = false;
+  
+      EnsureSequencePlayerExists();
+      var player = GameObject.Find("SequencePlayer");
+      bool playedViaAnimation = false;
+  
+      if (player != null)
+      {
+          var animation = player.GetComponentInChildren<Animation>();
+          if (animation != null)
+          {
+              try
+              {
+      #if UNITY_EDITOR
+                  if (!clip.legacy)
+                  {
+                      clip.legacy = true;
+                      UnityEditor.EditorUtility.SetDirty(clip);
+                      Debug.Log($"Marked clip '{clip.name}' as Legacy for Animation component.");
+                  }
+      #else
+                  if (!clip.legacy)
+                  {
+                      Debug.LogWarning($"Clip '{clip.name}' n'est pas marqué Legacy. Marquez-le dans l'import settings pour l'utiliser avec le composant Animation.");
+                  }
+      #endif
+  
+                  var existing = animation.GetClip(clip.name);
+                  if (existing != clip)
+                  {
+                      if (existing != null)
+                          animation.RemoveClip(existing);
+                      animation.AddClip(clip, clip.name);
+                  }
+  
+                  animation.clip = clip;
+                  var state = animation[clip.name];
+                  if (state != null)
+                      state.wrapMode = WrapMode.Once;
+                  animation.Play(clip.name);
+                  playedViaAnimation = true;
+              }
+              catch (Exception ex)
+              {
+                  Debug.LogWarning($"Impossible de lancer l'Animation: {ex.Message}");
+                  playedViaAnimation = false;
+              }
+          }
+      }
+  
+      entry.sequenceIndex = (idx + 1) % entry.Sequences.Length;
+      StartCoroutine(HandleSequencePlayback(clip));
+  }
+    
+    private IEnumerator HandleSequencePlayback(AnimationClip clip)
+    {
+        if (clip == null)
+        {
+            var Df = FindFirstObjectByType<DialogueManager>();
+            if (Df != null) Df.CanInteract = true;
+            yield break;
+        }
+    
+        yield return new WaitForSeconds(clip.length);
+    
+        var DManager = FindFirstObjectByType<DialogueManager>();
+        if (DManager != null) DManager.CanInteract = true;
+    }
+    
 }

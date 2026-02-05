@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 1369796965196230175}
   - component: {fileID: 460476798815625101}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: transition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

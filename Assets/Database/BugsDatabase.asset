@@ -24,6 +24,10 @@ MonoBehaviour:
     - 1
     - 2
     BgSprite: {fileID: -9074006278687196050, guid: 7869c92813eb54a4bb0f261ce9643bb0, type: 3}
+    Sequences:
+    - {fileID: 7400000, guid: 1c20207b96195404faf325738c828b03, type: 2}
+    - {fileID: 7400000, guid: 847cbd02df46ee14885f719987972d46, type: 2}
+    sequenceIndex: 0
   - perso: Bug 2
     id: 1
     isCompleted: 0
@@ -35,6 +39,8 @@ MonoBehaviour:
     - 4
     - 5
     BgSprite: {fileID: -2818449658216415420, guid: ca6b1ba428649c544a36c3cc2a3e1633, type: 3}
+    Sequences: []
+    sequenceIndex: 0
   - perso: Bug 3
     id: 2
     isCompleted: 0
@@ -46,6 +52,8 @@ MonoBehaviour:
     - 7
     - 8
     BgSprite: {fileID: -7176216987877333843, guid: 2514be1ce4009e748a7fc27a5c26fa02, type: 3}
+    Sequences: []
+    sequenceIndex: 0
   - perso: 'febj bdxf '
     id: 3
     isCompleted: 0
@@ -57,3 +65,5 @@ MonoBehaviour:
     - 10
     - 11
     BgSprite: {fileID: -7906568950211089970, guid: 74ec7c6c678cfa442b00d532801b5e81, type: 3}
+    Sequences: []
+    sequenceIndex: 0
