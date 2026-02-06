@@ -48,7 +48,7 @@ MonoBehaviour:
     - sprite: {fileID: -689123407364376526, guid: e9d06f4b9fa753a478c2da8c96440d40, type: 3}
       humeur: 1
     - sprite: {fileID: -909507038745483531, guid: 0e0d46da5340a974db6da779f3383936, type: 3}
-      humeur: 3
+      humeur: 2
   - Name: Papillon
     speakEnum: 5
     SpritesHumeur:
@@ -57,7 +57,7 @@ MonoBehaviour:
     - sprite: {fileID: 7232796831262645752, guid: b0f141633da48f54aaa3c75a61a5bf2e, type: 3}
       humeur: 1
     - sprite: {fileID: -8465993084441826826, guid: 5d98efaf291f1ff4bba7251da3494d29, type: 3}
-      humeur: 3
+      humeur: 2
   - Name: Cloporte
     speakEnum: 6
     SpritesHumeur:
@@ -66,7 +66,7 @@ MonoBehaviour:
     - sprite: {fileID: 6783097925221544674, guid: adafc2e7f4b0729498a6ae29e87dc3b7, type: 3}
       humeur: 1
     - sprite: {fileID: -1381784074667881438, guid: ee4dbc1a960453446b7c8e02cf327d46, type: 3}
-      humeur: 3
+      humeur: 2
   - Name: Gendarme
     speakEnum: 4
     SpritesHumeur:
@@ -75,7 +75,7 @@ MonoBehaviour:
     - sprite: {fileID: -9101580389907184280, guid: 32cdabb4a0410634f975e4f0aa2f54f3, type: 3}
       humeur: 1
     - sprite: {fileID: -7404548345199642650, guid: e05eb22d817d5e84d87f2ad8b858c65a, type: 3}
-      humeur: 3
+      humeur: 2
   - Name: Narrator
     speakEnum: 8
     SpritesHumeur: []
