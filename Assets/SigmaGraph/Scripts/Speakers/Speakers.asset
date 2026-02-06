@@ -13,6 +13,33 @@ MonoBehaviour:
   m_Name: Speakers
   m_EditorClassIdentifier: Assembly-CSharp::test
   speakers:
+  - Name: Juliana
+    speakEnum: 1
+    SpritesHumeur:
+    - sprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
+      humeur: 0
+    - sprite: {fileID: 21300000, guid: e052daf03e049f54b9844545ac3e54c2, type: 3}
+      humeur: 2
+    - sprite: {fileID: 21300000, guid: ddba7a5d2b29f334b9d2dffc59f568c1, type: 3}
+      humeur: 1
+  - Name: Brant
+    speakEnum: 0
+    SpritesHumeur:
+    - sprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
+      humeur: 0
+    - sprite: {fileID: 21300000, guid: e052daf03e049f54b9844545ac3e54c2, type: 3}
+      humeur: 2
+    - sprite: {fileID: 21300000, guid: ddba7a5d2b29f334b9d2dffc59f568c1, type: 3}
+      humeur: 1
+  - Name: Margot
+    speakEnum: 2
+    SpritesHumeur:
+    - sprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
+      humeur: 0
+    - sprite: {fileID: 21300000, guid: e052daf03e049f54b9844545ac3e54c2, type: 3}
+      humeur: 2
+    - sprite: {fileID: 21300000, guid: ddba7a5d2b29f334b9d2dffc59f568c1, type: 3}
+      humeur: 1
   - Name: Bourdon
     speakEnum: 3
     SpritesHumeur:
@@ -42,15 +69,6 @@ MonoBehaviour:
       humeur: 3
   - Name: Gendarme
     speakEnum: 4
-    SpritesHumeur:
-    - sprite: {fileID: 3685890791923494845, guid: fdc1cc34d284f034d8daefce799dfb60, type: 3}
-      humeur: 0
-    - sprite: {fileID: -9101580389907184280, guid: 32cdabb4a0410634f975e4f0aa2f54f3, type: 3}
-      humeur: 1
-    - sprite: {fileID: -7404548345199642650, guid: e05eb22d817d5e84d87f2ad8b858c65a, type: 3}
-      humeur: 3
-  - Name: ' '
-    speakEnum: 5
     SpritesHumeur:
     - sprite: {fileID: 3685890791923494845, guid: fdc1cc34d284f034d8daefce799dfb60, type: 3}
       humeur: 0
