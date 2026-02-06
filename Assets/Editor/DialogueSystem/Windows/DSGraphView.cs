@@ -472,9 +472,8 @@ using UnityEngine.UIElements;
                 ungroupedNodes.Add(nodeName, nodeErrorData);
                 return;
             }
-            
-            if(node.DialogueType != DSDialogueType.End)
-                Debug.LogWarning("NODE WITH SAME NAME DETECTED : " + nodeName);
+           
+            Debug.LogError("NODE WITH SAME NAME DETECTED");
         }
 
         // MÉTHODE DE SUPPRESSION D'UN NODE SANS GROUPE //

@@ -37,5 +37,6 @@ public enum HumeurSpeaker
 {
     Colere,
     Shy,
+    Triste,
     Neutre
 }

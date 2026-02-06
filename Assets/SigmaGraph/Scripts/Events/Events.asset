@@ -65,30 +65,16 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - label: ujfzef
+    Key: EV_Jult
+    caption: description
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
   - label: Lancer le Rythme
     Key: EV_RythmLaunch
     caption: lance le rythme
-    isPrefab: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
-  - label: Show Mantis arms
-    Key: EV_StartMantis
-    caption: montre les bras de la mante pour la premiere fois
-    isPrefab: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
-  - label: Move Mantis arms
-    Key: EV_MoveMantis
-    caption: Move Mantis arms
-    isPrefab: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
-  - label: Hide Mantis arms
-    Key: EV_HideMantis
-    caption: Hide Mantis arms
     isPrefab: 0
     Event:
       m_PersistentCalls:
