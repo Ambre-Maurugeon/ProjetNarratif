@@ -42,8 +42,10 @@ public class DialogueManager : MonoBehaviour
     public Button _nextButton;
 
     [Header("Speakers")]
-    [SerializeField] private Image _speakerImage;
     public Speakers SpeakersScriptable;
+    [SerializeField] private Animator _speakerAnimator;
+    [SerializeField] private Animator _characterAnimator;
+
     private SpeakerInfo _currentSpeaker;
 
     private Dictionary<string, DSNodeSaveData> _nodeLookup = new Dictionary<string, DSNodeSaveData>();
@@ -147,6 +149,7 @@ public class DialogueManager : MonoBehaviour
             });
         }
     }
+
     
     private DSNodeSaveData GetNextNode(string nextID)
     {
@@ -155,15 +158,6 @@ public class DialogueManager : MonoBehaviour
             return node;
         }
         return null;
-    }
-
-    private void Update()
-    {
-        //// ON CLICK //
-        //if (Input.GetMouseButtonDown(0) && !_isWaitingForChoice)
-        //{
-        //    TryToUpdateNextDialogueFromNextNode();
-        //}
     }
 
     
@@ -306,10 +300,6 @@ public class DialogueManager : MonoBehaviour
         string targetDialogue = FantasyDialogueTable.LocalManager.FindDialogue(_currentNode.GetDropDownKeyDialogue(), Enum.GetName(typeof(language), languageSetting));
         _currentDialogueContainer.InitializeDialogueContainer(targetDialogue, _currentSpeaker.Name, _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur()));
 
-        if(_speakerImage!=null)
-            _speakerImage.sprite = _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur());
-
-
         // event
         if (!string.IsNullOrEmpty(_currentNode.GetDropDownKeyEvent()))
         {
@@ -317,6 +307,19 @@ public class DialogueManager : MonoBehaviour
             targetEvent?.Invoke();
         }
 
+        // anims
+        if(_characterAnimator && _speakerAnimator)
+        {
+            if (_currentNode.DialogueType == DSDialogueType.MultipleChoice)
+            {
+                // Anim multiple choices
+                if (_currentNode.isMultipleChoice && !IsSpeakerOffset)
+                    FocusOnSpeaker(true);
+                //reset anim multiple choices
+                else if (!_currentNode.isMultipleChoice && IsSpeakerOffset)
+                    FocusOnSpeaker(false);
+            }
+        }
 
     }
 
@@ -346,8 +349,6 @@ public class DialogueManager : MonoBehaviour
                 
                 choiceButton.onClick.AddListener(() =>
                 {
-                    Debug.Log("help");
-
                     _isWaitingForChoice = false;
 
                     //clear
@@ -418,4 +419,24 @@ public class DialogueManager : MonoBehaviour
         return null;
     }
 
+
+    // Anims
+
+    private void FocusOnSpeaker(bool focused)
+    {
+        // Focus On Speaker
+        if (focused)
+        {
+            _speakerAnimator.SetBool("Offset", true);
+            _characterAnimator.SetTrigger("Remove");
+        }
+        // Initial Set up
+        else
+        {
+            _speakerAnimator.SetBool("Offset", false);
+            _characterAnimator.SetTrigger("Start");
+        }
+    }
+
+    private bool IsSpeakerOffset => _speakerAnimator.GetBool("Offset");
 }
