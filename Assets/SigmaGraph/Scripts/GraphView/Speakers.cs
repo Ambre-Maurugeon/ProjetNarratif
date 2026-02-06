@@ -17,5 +17,6 @@ public enum Espeaker
     Gendarme,
     Papillon,
     Cloporte,
-    Mantis
+    Mantis,
+    Narrator
 }
