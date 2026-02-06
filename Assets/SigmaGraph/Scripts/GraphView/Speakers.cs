@@ -10,12 +10,10 @@ public class Speakers : ScriptableObject
 [System.Serializable]
 public enum Espeaker
 {
-    Brant,
-    Juliana,
-    Margot,
-    Bourdon,
-    Gendarme,
-    Papillon,
-    Cloporte,
-    Mantis
+    None = 0,
+    Bourdon = 3,
+    Gendarme = 4,
+    Papillon = 5,
+    Cloporte = 6,
+    Mantis = 7
 }
