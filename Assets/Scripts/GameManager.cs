@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
     [SerializeField] private BugsDatabase bugsDatabase;
     [SerializeField] private GameObject transitionPrefab;
+    
 
     public static GameManager Instance { get; private set; }
     public int currentInsectId = 0;
@@ -213,8 +215,8 @@ public class GameManager : MonoBehaviour
     
     public void LaunchRythmGame()
     {
-        var pulse = FindObjectOfType<Pulse>();
-        pulse?.InitMusic();
+        Pulse pulse = FindObjectOfType<Pulse>();
+        pulse.StartSequence();
         var DManager = FindObjectOfType<DialogueManager>();
         DManager.CanInteract= false;
     }
