@@ -14,7 +14,7 @@ public class dialogueContainer : MonoBehaviour
         var childContainer = transform.GetChild(0);
         if (childContainer == null) return;
         childContainer.gameObject.SetActive(true);
-        characterImage.sprite = characterSprite;
+        if(characterImage != null) characterImage.sprite = characterSprite;
         
         dialogueText.SetText(dialogue);
         speakerNameText.SetText(speakerName);
