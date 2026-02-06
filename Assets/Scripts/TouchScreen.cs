@@ -1,45 +1,35 @@
-using System;
+ï»¿using System;
 using UnityEngine;
 
 public class TouchScreen : MonoBehaviour
 {
 
-    public static event Action OnTouch;
-    Pulse pulse;
-    private Touch touch;
+    [SerializeField] private float noteTime;
+    [SerializeField] private float tolerance;
 
+    private bool alreadyTapped;
 
-    void Update()
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        Touch();
+
     }
 
-    void Touch()
+    // Update is called once per frame
+    void Update()
     {
-        if (Input.touchCount > 0)
+        if (!alreadyTapped && Input.touchCount > 0)
         {
-            touch = Input.GetTouch(0);
+            Touch touch = Input.GetTouch(0);
 
-            switch (touch.phase)
+            if (touch.phase == TouchPhase.Began)
             {
-                case TouchPhase.Began:
-                    OnTouch?.Invoke();
-                    /*Debug.Log($"Ecran touché au point: {touch.position}");*/
-                    break;
+                float currentTime = Time.time;
+                float difference = Mathf.Abs(currentTime - noteTime);
 
-                case TouchPhase.Moved:
-                    /*Debug.Log($"Le doigt bouge: {touch.position}");*/
-                    break;
-
-                case TouchPhase.Stationary:
-                    break;
-
-                case TouchPhase.Canceled:
-                    break;
-
-                case TouchPhase.Ended:
-                    break;
+                alreadyTapped = true;
             }
+
         }
     }
 }
