@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class TestEvent : MonoBehaviour
 {
-    //[SerializeField] DialogueManager dialogueManager;
+    [SerializeField] Animator _mantisAnimator;
+    [SerializeField] Animator _speakerAnimator;
 
     public static void testPrefab()
     {
@@ -19,18 +20,16 @@ public class TestEvent : MonoBehaviour
         return value;
     }
 
-    //private void OnEnable()
-    //{
-    //    dialogueManager.OnDialogueEnd += OnEnd;
-    //}
+    public void MoveMantis()
+    {
+        _mantisAnimator.SetTrigger("Move");
 
-    //private void OnDisable()
-    //{
-    //    dialogueManager.OnDialogueEnd -= OnEnd;
-    //}
+    }
 
-    //private void OnEnd()
-    //{
-    //    Debug.Log("help");
-    //}
+    public void HideMantis()
+    {
+        _mantisAnimator.SetTrigger("Remove");
+
+    }
+
 }
