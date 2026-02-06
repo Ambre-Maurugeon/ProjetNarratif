@@ -17,6 +17,7 @@
       private Button NextButton;
       private Button PrevButton;
       public Canvas UiCanva;
+      public Canvas SequenceCanvas;
   
       private Coroutine sequenceCoroutine;
       private ImageAnimation sceneImageAnim;
@@ -99,7 +100,6 @@
   
       private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
       {
-          sceneImageAnim = FindSceneImageAnimation();
           if (sceneImageAnim != null)
               sceneImageAnim.GetImage();
   
@@ -107,6 +107,12 @@
           {
               if (GameObject.Find("UICanva") != null)
                   UiCanva = GameObject.Find("UICanva").GetComponent<Canvas>();
+          }
+          
+          if (SequenceCanvas == null)
+          {
+              if (GameObject.Find("SequenceCanvas") != null)
+                  SequenceCanvas = GameObject.Find("SequenceCanvas").GetComponent<Canvas>();
           }
   
           UpdateBug();
@@ -138,9 +144,10 @@
   
       private ImageAnimation FindSceneImageAnimation()
       {
-          if (UiCanva != null)
+          if (SequenceCanvas != null)
           {
-              var seqTf = UiCanva.transform.Find("SequencePlayer");
+              var seqTf = SequenceCanvas.transform.Find("SequencePlayer");
+              Instantiate(SequenceCanvas);
               if (seqTf != null)
               {
                   var anim = seqTf.GetComponentInChildren<ImageAnimation>();
