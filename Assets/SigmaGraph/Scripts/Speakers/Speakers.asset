@@ -76,3 +76,6 @@ MonoBehaviour:
       humeur: 1
     - sprite: {fileID: -7404548345199642650, guid: e05eb22d817d5e84d87f2ad8b858c65a, type: 3}
       humeur: 3
+  - Name: Narrator
+    speakEnum: 8
+    SpritesHumeur: []
