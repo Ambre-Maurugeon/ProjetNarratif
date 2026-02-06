@@ -22,7 +22,7 @@ public class buttonChoiceController : MonoBehaviour
     public void InitializeButtonChoiceController(bool fillCondition, string text)
     {
         lockState = !fillCondition;
-
+           
         if(!lockState) buttonText.SetText(text);
 
         if(_button == null) _button = GetComponent<Button>();
