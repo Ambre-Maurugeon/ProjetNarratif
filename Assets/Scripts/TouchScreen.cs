@@ -5,7 +5,6 @@ public class TouchScreen : MonoBehaviour
 {
 
     [SerializeField] private float noteTime;
-    [SerializeField] private float tolerance;
 
     private bool alreadyTapped;
 
