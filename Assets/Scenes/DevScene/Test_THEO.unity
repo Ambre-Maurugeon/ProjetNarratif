@@ -429,36 +429,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2123399297 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5570935099723028630, guid: f2fc17715a5a3ef4dae339c5b7c036c2, type: 3}
-  m_PrefabInstance: {fileID: 7408230498599845635}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2123399300 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7505538164310434324, guid: f2fc17715a5a3ef4dae339c5b7c036c2, type: 3}
-  m_PrefabInstance: {fileID: 7408230498599845635}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123399297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
---- !u!114 &2123399302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123399297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c05a0f0abba4fc68934f9fbe17a9b68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UISpriteAnimator
-  targetImage: {fileID: 2123399300}
-  defaultFrameDuration: 0.15
 --- !u!1001 &534032699235713805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -713,17 +683,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5289731217105999751, guid: f2fc17715a5a3ef4dae339c5b7c036c2, type: 3}
-      propertyPath: m_PlayAutomatically
+    - target: {fileID: 5020738919650487218, guid: f2fc17715a5a3ef4dae339c5b7c036c2, type: 3}
+      propertyPath: loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020738919650487218, guid: f2fc17715a5a3ef4dae339c5b7c036c2, type: 3}
+      propertyPath: sprites.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020738919650487218, guid: f2fc17715a5a3ef4dae339c5b7c036c2, type: 3}
+      propertyPath: 'sprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020738919650487218, guid: f2fc17715a5a3ef4dae339c5b7c036c2, type: 3}
+      propertyPath: 'sprites.Array.data[1]'
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5570935099723028630, guid: f2fc17715a5a3ef4dae339c5b7c036c2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2123399302}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2fc17715a5a3ef4dae339c5b7c036c2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

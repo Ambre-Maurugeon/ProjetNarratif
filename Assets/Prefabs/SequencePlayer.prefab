@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 4569177167479342614}
   - component: {fileID: 7884934647156188378}
   - component: {fileID: 7505538164310434324}
-  - component: {fileID: 5289731217105999751}
+  - component: {fileID: 5020738919650487218}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -178,20 +178,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!111 &5289731217105999751
-Animation:
+--- !u!114 &5020738919650487218
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5570935099723028630}
   m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 1c20207b96195404faf325738c828b03, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 1c20207b96195404faf325738c828b03, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fbc5a018edda8b43a9ecddf8f3b3c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImageAnimation
+  sprites:
+  - {fileID: -1100583664547031073, guid: 8d75ee8403d99404a99f000f6135abf8, type: 3}
+  - {fileID: 4677777032245502107, guid: 1d28a749bf147ec4ab18c358ca2c298a, type: 3}
+  framesPerSprite: 6
+  loop: 0
+  destroyOnEnd: 0
