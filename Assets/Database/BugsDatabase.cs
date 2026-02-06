@@ -1,11 +1,12 @@
     using System.Collections.Generic;
     using UnityEngine;
-    
+    using UnityEngine.PlayerLoop;
+
     [CreateAssetMenu(fileName = "BugsDatabase", menuName = "Scriptable Objects/BugsDatabase")]  
     public class BugsDatabase : ScriptableObject
     {
         public List<CharacterEntry> entries = new List<CharacterEntry>();
-    
+        
         private void OnValidate()
         {
             UpdateIds();

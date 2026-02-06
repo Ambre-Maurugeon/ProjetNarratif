@@ -214,7 +214,7 @@ public class GameManager : MonoBehaviour
     public void LaunchRythmGame()
     {
         var pulse = FindObjectOfType<Pulse>();
-        pulse?.PlayMusic();
+        pulse?.InitMusic();
         var DManager = FindObjectOfType<DialogueManager>();
         DManager.CanInteract= false;
     }
