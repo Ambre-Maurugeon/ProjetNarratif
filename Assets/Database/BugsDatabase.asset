@@ -31,6 +31,14 @@ MonoBehaviour:
       framesPerSprite: 6
       loop: 0
       destroyOnEnd: 0
+    - sprites:
+      - {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
+      - {fileID: 21300000, guid: ddba7a5d2b29f334b9d2dffc59f568c1, type: 3}
+      - {fileID: 21300000, guid: d86a139ae4a64df499f0a12e26f98419, type: 3}
+      - {fileID: 21300000, guid: e052daf03e049f54b9844545ac3e54c2, type: 3}
+      framesPerSprite: 6
+      loop: 0
+      destroyOnEnd: 0
     sequenceIndex: 0
   - perso: Bug 2
     id: 1

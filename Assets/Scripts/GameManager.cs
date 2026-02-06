@@ -171,7 +171,6 @@
               {
                   if (entry.refDialogue != null)
                   {
-                      // logique existante...
                   }
               }
               yield return null;
@@ -308,63 +307,17 @@
   
       public void PlayCurrentSequenceNow()
       {
+          var DManager = FindFirstObjectByType<DialogueManager>();
+          if (DManager != null) DManager.CanInteract = false;
           var entry = bugsDatabase?.entries?.Find(e => e != null && e.id == currentInsectId);
           if (entry == null) return;
   
           if (sequenceCoroutine != null)
               StopCoroutine(sequenceCoroutine);
-  
+    
           sequenceCoroutine = StartCoroutine(InternalPlaySequence(entry, entry.sequenceIndex));
       }
-  
-      public void PlaySequenceAtIndex(int index)
-      {
-          var entry = bugsDatabase?.entries?.Find(e => e != null && e.id == currentInsectId);
-          if (entry == null) return;
-  
-          int maxIndex = -1;
-          if (entry.Sequences != null && entry.Sequences.Length > 0) maxIndex = Mathf.Max(maxIndex, entry.Sequences.Length - 1);
-          if (maxIndex < 0) return;
-  
-          index = Mathf.Clamp(index, 0, maxIndex);
-          if (sequenceCoroutine != null)
-              StopCoroutine(sequenceCoroutine);
-          sequenceCoroutine = StartCoroutine(InternalPlaySequence(entry, index));
-      }
-  
-      public void PlayNextSequenceForCurrentInsect()
-      {
-          var entry = bugsDatabase?.entries?.Find(e => e != null && e.id == currentInsectId);
-          if (entry == null) return;
-  
-          if (sequenceCoroutine != null)
-              StopCoroutine(sequenceCoroutine);
-  
-          sequenceCoroutine = StartCoroutine(InternalPlaySequence(entry, entry.sequenceIndex));
-      }
-  
-      public void StopSequencePlayback(bool resetIndex = false)
-      {
-          if (sequenceCoroutine != null)
-          {
-              StopCoroutine(sequenceCoroutine);
-              sequenceCoroutine = null;
-          }
-  
-          if (sceneImageAnim == null)
-              sceneImageAnim = FindSceneImageAnimation();
-  
-          if (sceneImageAnim != null)
-              sceneImageAnim.Stop(resetIndex);
-  
-          if (resetIndex)
-          {
-              var entry = bugsDatabase?.entries?.Find(e => e != null && e.id == currentInsectId);
-              if (entry != null) entry.sequenceIndex = 0;
-          }
-      }
-  
-      // IMPORTANT: ne pas instancier de prefab ici — on n'applique que sur l'ImageAnimation de la scène
+      
       private IEnumerator InternalPlaySequence(CharacterEntry entry, int playIndex)
       {
           if (entry == null)
@@ -372,18 +325,15 @@
               sequenceCoroutine = null;
               yield break;
           }
-  
+      
           if (entry.Sequences != null && entry.Sequences.Length > 0)
           {
               int foundIdx = -1;
               Sequence seq = default;
-  
+      
               int clamped = Mathf.Clamp(playIndex, 0, entry.Sequences.Length - 1);
-              // Log conservé : quelle sequence est choisie (utile pour valider que c'est la bonne)
-              Debug.Log($"[GameManager] InternalPlaySequence -> clamped index = {clamped}");
               seq = entry.Sequences[clamped];
-              Debug.Log($"[GameManager] InternalPlaySequence -> seq at clamped idx sprites={(seq.sprites != null ? seq.sprites.Length.ToString() : "NULL")}, framesPerSprite={seq.framesPerSprite}, loop={seq.loop}, destroyOnEnd={seq.destroyOnEnd}");
-  
+      
               if (seq.sprites == null || seq.sprites.Length == 0)
               {
                   if (!FindValidSequenceData(entry, playIndex, out foundIdx, out seq))
@@ -397,46 +347,42 @@
               {
                   foundIdx = clamped;
               }
-  
+      
               if (sceneImageAnim == null)
                   sceneImageAnim = FindSceneImageAnimation();
-  
+      
               if (sceneImageAnim == null)
               {
                   entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
                   sequenceCoroutine = null;
                   yield break;
               }
-  
-              // Applique et joue la sequence correctement initialisée
+      
               sceneImageAnim.Stop(true);
               sceneImageAnim.ApplySequence(seq);
               sceneImageAnim.GetImage();
-  
-              // Logs conservés : vérification après ApplySequence
-              Debug.Log($"[GameManager] InternalPlaySequence -> after ApplySequence sceneImageAnim.sprites={(sceneImageAnim.sprites != null ? sceneImageAnim.sprites.Length.ToString() : "NULL")}, framesPerSprite={sceneImageAnim.framesPerSprite}, loop={sceneImageAnim.loop}, destroyOnEnd={sceneImageAnim.destroyOnEnd}");
-              if (sceneImageAnim.sprites != null && sceneImageAnim.sprites.Length > 0)
+      
+              bool animEnded = false;
+              System.Action handler = () =>
               {
-                  for (int i = 0; i < Mathf.Min(5, sceneImageAnim.sprites.Length); i++)
-                      Debug.Log($"[GameManager] InternalPlaySequence -> sceneImageAnim.sprites[{i}] name: {sceneImageAnim.sprites[i]?.name ?? "NULL"}");
-              }
-              var imgComp = sceneImageAnim.GetComponent<UnityEngine.UI.Image>();
-              Debug.Log($"[GameManager] InternalPlaySequence -> Image component current sprite before Play: {imgComp?.sprite?.name ?? "NULL"}");
-  
+                  animEnded = true;
+                  entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+              };
+              sceneImageAnim.AnimationEnded += handler;
+      
               sceneImageAnim.Play(true);
-  
-              yield return new WaitUntil(() => !sceneImageAnim.IsPlaying);
-  
-              var imgAfter = sceneImageAnim.GetComponent<UnityEngine.UI.Image>();
-              Debug.Log($"[GameManager] InternalPlaySequence -> Image component current sprite after Play: {imgAfter?.sprite?.name ?? "NULL"}");
-  
+      
+              yield return new WaitUntil(() => animEnded);
+      
+              sceneImageAnim.AnimationEnded -= handler;
+      
               sceneImageAnim.Stop(true);
-  
+      
               sequenceCoroutine = null;
               entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
               yield break;
           }
-  
+      
           sequenceCoroutine = null;
           yield break;
       }
