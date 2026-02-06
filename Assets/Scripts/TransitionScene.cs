@@ -10,8 +10,6 @@ public class TransitionScene : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(transform.root.gameObject);
-    
         image = GetComponent<Image>();
         if (image == null)
         {

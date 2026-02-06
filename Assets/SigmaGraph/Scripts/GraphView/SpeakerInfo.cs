@@ -11,7 +11,6 @@ public class SpeakerInfo
     
     public string Name;
     public Espeaker speakEnum;
-    public HumeurSpeaker Humeur;
     public List<SpriteHumeur> SpritesHumeur;
     
     public Sprite GetSpriteForHumeur(HumeurSpeaker humeur)
@@ -37,6 +36,6 @@ public class SpriteHumeur
 public enum HumeurSpeaker
 {
     Colere,
-    Joie,
-    Triste
+    Shy,
+    Neutre
 }
