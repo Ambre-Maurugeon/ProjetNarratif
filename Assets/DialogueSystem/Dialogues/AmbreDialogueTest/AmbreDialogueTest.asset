@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaa76378291a144d849f29230be0a5a, type: 3}
+  m_Name: AmbreDialogueTest
+  m_EditorClassIdentifier: Assembly-CSharp::DSDialogueContainerSO
+  <FileName>k__BackingField: AmbreDialogueTest
+  <DialogueGroups>k__BackingField:
+    list: []
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: 3d9c601b6b4e2e04e9c7c14b578bfde0, type: 2}
+  - {fileID: 11400000, guid: 8281cdce864e1b545a306ce5b075c5c7, type: 2}
+  - {fileID: 11400000, guid: 6163ace14b7e4094fadb75108d732ed4, type: 2}

@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce89bce660995cc4184791df227e3f33, type: 3}
+  m_Name: Events
+  m_EditorClassIdentifier: Assembly-CSharp::EventsSC
+  eventDatas:
+  - label: Display name
+    Key: EV--Prefab
+    caption: display le name, prefab
+    isPrefab: 1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1783849011314268274, guid: 5af698cc8889924458a35d1d4a8aabf8, type: 3}
+          m_TargetAssemblyTypeName: TestEvent, Assembly-CSharp
+          m_MethodName: testPrefab
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+  - label: No prefab
+    Key: No prefab
+    caption: tttttttttttttt
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Augmenter rythme
+    Key: EV_AUG_BPM
+    caption: augmente le bpm
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7250342716545454453, guid: 6bbe8709d5586ed48a76c829bf3ea3c9, type: 3}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - label: Augmenter rythme
+    Key: EV_AUG_BP
+    caption: augmente le bpm
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Lancer le Rythme
+    Key: EV_RythmLaunch
+    caption: lance le rythme
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Show Mantis arms
+    Key: EV_StartMantis
+    caption: montre les bras de la mante pour la premiere fois
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Move Mantis arms
+    Key: EV_MoveMantis
+    caption: Move Mantis arms
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Hide Mantis arms
+    Key: EV_HideMantis
+    caption: Hide Mantis arms
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
