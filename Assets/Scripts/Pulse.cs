@@ -5,6 +5,7 @@ using Debug = UnityEngine.Debug;
 
 public class Pulse : MonoBehaviour
 {
+        public static event Action OnEndRythm;
 
         [SerializeField]VisualPulse visualPulse;
 
@@ -21,10 +22,11 @@ public class Pulse : MonoBehaviour
         void Start()
         {
             beatInterval = 60f / bpm;
-            nextBeatTime = Time.time + beatInterval;
+           /* StartSequence();*/
+
         }
 
-        void Update()
+    void Update()
         {
             if (sequenceActive)
             {
@@ -32,6 +34,7 @@ public class Pulse : MonoBehaviour
                 {   
                     sequenceActive = false;
                     Debug.Log("Séquence fini");
+                    OnEndRythm?.Invoke();
                 }
 
                 // Génération du beat
@@ -82,7 +85,7 @@ public class Pulse : MonoBehaviour
             this.bpm = bpm;
         }
 
-    void StartSequence() 
+    public void StartSequence() 
     {
         sequenceActive = true;
         nextBeatTime = Time.time + beatInterval;
@@ -90,5 +93,5 @@ public class Pulse : MonoBehaviour
         Debug.Log($"▶ Séquence commencée pour {sequenceDuration} secondes !");
     }
 
- }
+}
 
