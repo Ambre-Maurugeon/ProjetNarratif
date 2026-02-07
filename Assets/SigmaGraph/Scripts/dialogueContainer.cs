@@ -7,14 +7,23 @@ public class dialogueContainer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI speakerNameText;
     [SerializeField] private Image characterImage;
-    
-    
-    public void InitializeDialogueContainer(string dialogue, string speakerName, Sprite characterSprite)
+    [SerializeField] private Button _nextButton;
+
+    public TextMeshProUGUI Dialogue_tmp => dialogueText;
+
+
+    public void InitializeDialogueContainer(string dialogue, string speakerName, Sprite characterSprite, bool IsMultipleChoice = false)
     {
         var childContainer = transform.GetChild(0);
         if (childContainer == null) return;
         childContainer.gameObject.SetActive(true);
-        if(characterImage != null) characterImage.sprite = characterSprite;
+
+        if(IsMultipleChoice)
+            _nextButton?.gameObject.SetActive(false);
+        else
+            _nextButton?.gameObject.SetActive(true);
+
+        if (characterImage != null) characterImage.sprite = characterSprite;
         
         dialogueText.SetText(dialogue);
         speakerNameText.SetText(speakerName);
@@ -25,5 +34,11 @@ public class dialogueContainer : MonoBehaviour
         var childContainer = transform.GetChild(0);
         if (childContainer == null) return;
         childContainer.gameObject.SetActive(false);
+        _nextButton?.gameObject.SetActive(false);
+    }
+
+    public void OnClicNextButton(UnityEngine.Events.UnityAction Func)
+    {
+         _nextButton.onClick.AddListener(Func);
     }
 }

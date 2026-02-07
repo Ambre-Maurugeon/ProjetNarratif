@@ -1,9 +1,15 @@
+using System.Collections.Generic;
+using NaughtyAttributes;
+using NUnit.Framework;
+using TMPro;
 using UnityEngine;
 
 public class TestEvent : MonoBehaviour
 {
+    [Header("Anims")]
     [SerializeField] Animator _mantisAnimator;
     [SerializeField] Animator _speakerAnimator;
+    
 
     public static void testPrefab()
     {
@@ -31,5 +37,6 @@ public class TestEvent : MonoBehaviour
         _mantisAnimator.SetTrigger("Remove");
 
     }
+
 
 }

@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using NaughtyAttributes;
 using UnityEditor;
 using UnityEngine.Events;
+using System.Linq;
+using TMPro;
+using System.ComponentModel;
 
 public enum language
 {
@@ -39,7 +42,8 @@ public class DialogueManager : MonoBehaviour
     [Header("UI Buttons")] 
     public Button ChoiceButtonPrefab;
     public Transform ChoiceButtonContainer;
-    public Button _nextButton;
+
+    private bool _isWaitingForChoice = false;
 
     [Header("Speakers")]
     public Speakers SpeakersScriptable;
@@ -48,13 +52,16 @@ public class DialogueManager : MonoBehaviour
 
     private SpeakerInfo _currentSpeaker;
 
+    //node
     private Dictionary<string, DSNodeSaveData> _nodeLookup = new Dictionary<string, DSNodeSaveData>();
-    private DSNodeSaveData _currentNode;
-    
-    private bool _isWaitingForChoice = false;
-    
+    private static DSNodeSaveData _currentNode;
+    public static DSNodeSaveData CurrentNode => _currentNode;
+
     private dialogueContainer _currentDialogueContainer;
     private dialogueContainer _oldDialogueContainer;
+
+    //censor
+    private GameObject CensorParent;
 
     // Interaction
 
@@ -139,15 +146,9 @@ public class DialogueManager : MonoBehaviour
             TryToUpdateNextDialogueFromNextNode();
         }
 
-        // Next Button
-        if (_nextButton != null)
-        {
-            _nextButton.onClick.AddListener(() =>
-            {
-             if(CanInteract && !_isWaitingForChoice)
-                TryToUpdateNextDialogueFromNextNode();
-            });
-        }
+        //next button
+        foreach (var container in _bubleContainerList)
+            container.OnClicNextButton(NextButtonFunc);
     }
 
     
@@ -160,7 +161,18 @@ public class DialogueManager : MonoBehaviour
         return null;
     }
 
-    
+    private DSNodeSaveData GetNodeStart()
+    {
+        foreach (var node in runtimeGraph.Nodes)
+        {
+            if (node.DialogueType == DSDialogueType.Start)
+            {
+                return node;
+            }
+        }
+        return null;
+    }
+
     // MET A JOUR LE DIALOGUE EN FONCTION DU NODE SUIVANT //
     private void TryToUpdateNextDialogueFromNextNode()
     {
@@ -269,6 +281,7 @@ public class DialogueManager : MonoBehaviour
                 break;
         }
 
+        // -- CONTAINERS --
         if (_bubleContainers.TryGetValue(_currentNode.GetBubleType(), out var container))
         {
             _currentDialogueContainer = container;
@@ -290,6 +303,7 @@ public class DialogueManager : MonoBehaviour
         }
         _oldDialogueContainer = _currentDialogueContainer;
 
+        // -- TEXT --
         ChangeSpeaker(_currentNode.Speaker);
         if(_currentSpeaker == null)
         {
@@ -297,17 +311,24 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         
+        //dialogue text
         string targetDialogue = FantasyDialogueTable.LocalManager.FindDialogue(_currentNode.GetDropDownKeyDialogue(), Enum.GetName(typeof(language), languageSetting));
-        _currentDialogueContainer.InitializeDialogueContainer(targetDialogue, _currentSpeaker.Name, _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur()));
+        _currentDialogueContainer.InitializeDialogueContainer(targetDialogue, _currentSpeaker.Name, _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur()),_currentNode.isMultipleChoice);
 
-        // event
+        //censorship
+        RemoveCensorship();
+        var count = targetDialogue.Count(x => x == '*');
+        if (count % 2 == 0 && count !=0) CensorSentence(_currentDialogueContainer.Dialogue_tmp);
+        
+
+        // -- EVENTS --
         if (!string.IsNullOrEmpty(_currentNode.GetDropDownKeyEvent()))
         {
             UnityEvent targetEvent = EventsManager.Instance.FindEvent(_currentNode.GetDropDownKeyEvent());
             targetEvent?.Invoke();
         }
 
-        // anims
+        // -- ANIMS --
         if(_characterAnimator && _speakerAnimator)
         {
             if (_currentNode.DialogueType == DSDialogueType.MultipleChoice)
@@ -323,6 +344,14 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    // -- BUTTONS --
+    private void NextButtonFunc()
+    {
+        if (CanInteract)
+            TryToUpdateNextDialogueFromNextNode();
+    }
+
+
     private void CreateButtonsChoice()
     {
         if (_currentNode.ChoicesInNode.Count > 1)
@@ -330,8 +359,10 @@ public class DialogueManager : MonoBehaviour
             _isWaitingForChoice = true;
             foreach (DSChoiceSaveData choice in _currentNode.ChoicesInNode)
             {
+                // init choice button
                 Button choiceButton = Instantiate(ChoiceButtonPrefab, ChoiceButtonContainer);
                 buttonChoiceController buttonController = choiceButton.GetComponent<buttonChoiceController>();
+
                 if (buttonController != null)
                 {
                     bool fillCondition = true;
@@ -347,6 +378,7 @@ public class DialogueManager : MonoBehaviour
                     buttonController.InitializeButtonChoiceController(fillCondition, textButton);
                 }
                 
+                // action on choice clic
                 choiceButton.onClick.AddListener(() =>
                 {
                     _isWaitingForChoice = false;
@@ -366,6 +398,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    // -- CONDITIONS --
     private bool DoesFillScConditions(ConditionsSC choice)
     {
         return PlayerInventoryManager.instance.DoesPlayerFillCondition(choice);
@@ -378,7 +411,6 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         _currentDialogueContainer.HideContainer();
-        _nextButton.gameObject.SetActive(false);
         _currentNode = null;
 
         foreach (Transform child in ChoiceButtonContainer)
@@ -401,24 +433,66 @@ public class DialogueManager : MonoBehaviour
     }
     
 
-
     private void SetNewSpeaker(SpeakerInfo speaker)
     {
         _currentSpeaker = speaker;
     }
 
-    private DSNodeSaveData GetNodeStart()
+
+    // Censorship
+    private void CensorSentence(TextMeshProUGUI tmp_text)
     {
-        foreach (var node in runtimeGraph.Nodes)
+        string text = tmp_text.text;
+        bool censored = false;
+
+        CensorParent = new GameObject("CensorParent");
+        CensorParent.transform.parent = transform;
+
+        for (int i = 0; i < text.Length; i++)
         {
-            if (node.DialogueType == DSDialogueType.Start)
+            //toggle censorship
+            if (text[i].ToString() == "*")
+                censored = !censored;
+            //spawn censorship on letter
+            else if (censored)
             {
-                return node;
+                GameObject censorship = GetPositionOfLetterAsGameObject(tmp_text, i);
+                censorship.transform.parent = CensorParent.transform;
             }
         }
-        return null;
     }
 
+    private void RemoveCensorship()
+    {
+        if(CensorParent) Destroy(CensorParent);
+    }
+
+    private GameObject GetPositionOfLetterAsGameObject(TextMeshProUGUI tmp_text, int index)
+    {
+        tmp_text.ForceMeshUpdate();
+
+        Vector3[] vertices = tmp_text.mesh.vertices;
+        TMP_CharacterInfo charInfo = tmp_text.textInfo.characterInfo[index];
+        int vertexIndex = charInfo.vertexIndex;
+
+        Vector2 charMidTopLine = new Vector2((vertices[vertexIndex + 0].x + vertices[vertexIndex + 2].x) / 2, (charInfo.bottomLeft.y + charInfo.topLeft.y) / 2);
+        Vector3 worldPos = tmp_text.transform.TransformPoint(charMidTopLine);
+
+        //Instantiate(parent, transform, worldPositionStays:false);
+        
+
+        UnityEngine.Object prefab = AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/OPTIONNAL/Prefabs/CensorshipPrefab.prefab", typeof(GameObject));
+        if (prefab == null)  {
+            Debug.LogError("Censorship prefab wasn't found by path.");
+            return null;
+        }
+
+        GameObject censorship = Instantiate(prefab,transform) as GameObject;
+        censorship.transform.position = worldPos;
+
+        return censorship;
+
+    }
 
     // Anims
 
@@ -439,4 +513,6 @@ public class DialogueManager : MonoBehaviour
     }
 
     private bool IsSpeakerOffset => _speakerAnimator.GetBool("Offset");
+
+
 }
