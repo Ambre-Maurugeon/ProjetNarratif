@@ -93,3 +93,10 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - label: Call
+    Key: EV_ShowImage
+    caption: Hide Mantis arms
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
