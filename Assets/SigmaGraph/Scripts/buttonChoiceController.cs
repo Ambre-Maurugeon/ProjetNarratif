@@ -1,17 +1,22 @@
 using System;
+using System.Linq;
 using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class buttonChoiceController : MonoBehaviour
 {
-    
+    // Button
     [SerializeField] private TextMeshProUGUI buttonText;
-    
-    private bool lockState = false;
-    
+
     private Button _button;
     private Animator _animator;
+
+    private bool lockState = false;
+
+    // Text
+    private GameObject CensorParent;
 
     private void Awake()
     {
@@ -19,11 +24,16 @@ public class buttonChoiceController : MonoBehaviour
         _button = GetComponent<Button>();
     }
 
-    public void InitializeButtonChoiceController(bool fillCondition, string text)
+    public void InitializeButtonChoiceController(DialogueManager dManager, bool fillCondition, string text)
     {
         lockState = !fillCondition;
-           
-        if(!lockState) buttonText.SetText(text);
+
+        if (!lockState)
+        {
+            buttonText.SetText(text);
+
+            dManager.CheckCensorship(ref CensorParent, buttonText, parent: transform);
+        }
 
         if(_button == null) _button = GetComponent<Button>();
         _button.interactable = !lockState;
@@ -37,10 +47,7 @@ public class buttonChoiceController : MonoBehaviour
     {
         _animator.SetTrigger("Clicked");
 
-        if (lockState)
-        {
-            return;
-        }
+        if (lockState) return;
     }
 
 }

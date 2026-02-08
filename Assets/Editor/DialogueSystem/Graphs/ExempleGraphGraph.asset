@@ -16,7 +16,7 @@ MonoBehaviour:
   <Groups>k__BackingField:
   - <ID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <Name>k__BackingField: EXEMPLE
-    <Position>k__BackingField: {x: -769.6, y: -46.399998}
+    <Position>k__BackingField: {x: -769.6, y: -46.399967}
   <Nodes>k__BackingField:
   - <ID>k__BackingField: ce72c2f5-78b0-427b-ac29-7ac2afea4b1d
     <Name>k__BackingField: END
@@ -120,12 +120,12 @@ MonoBehaviour:
     Humeur: 0
     _dropDownKeyDialogue: Brant_D2
     isMultipleChoice: 1
-    hasEvent: 1
-    _dropDownKeyEvent: EV_RythmLaunch
+    hasEvent: 0
+    _dropDownKeyEvent: 
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 4b14ed38-5459-4949-b1bd-e4e45e9ce657
-      _dropDownKeyChoice: Juliana_D2_C1
+      _dropDownKeyChoice: Bourdon_D999
       <ConditionsSc>k__BackingField: []
       <ConditionsKey>k__BackingField: []
       _directionPort: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 74f640d2-3b9d-4c3f-b494-4bfc35394985
-      _dropDownKeyChoice: Juliana_D2_C1
+      _dropDownKeyChoice: Bourdon_D999
       <ConditionsSc>k__BackingField: []
       <ConditionsKey>k__BackingField: []
       _directionPort: 0
