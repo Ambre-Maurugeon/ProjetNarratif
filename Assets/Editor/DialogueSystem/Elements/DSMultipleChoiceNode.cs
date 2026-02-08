@@ -100,7 +100,6 @@ public class DSMultipleChoiceNode : DSNode
 
     private void CreateEventSection()
     {
-        Saves.hasEvent = true;
         //ShowEventButton(true);
 
         extensionContainer.Add(CreateFoldoutEvent());
@@ -192,7 +191,7 @@ public class DSMultipleChoiceNode : DSNode
         // SECTIONS //
 
         extensionContainer.Add(CreateFoldoutDialogueKeyDropDown());
-        if (Saves.hasEvent)
+        if (Saves.GetEvents().Count > 0)
             CreateEventSection();
 
         // OUTPUT CONTAINER //

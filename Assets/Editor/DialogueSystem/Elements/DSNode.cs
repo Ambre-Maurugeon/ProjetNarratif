@@ -29,12 +29,12 @@ public class DSNode : Node
     private Color defaultBackgroundColor;
 
     private TextField _fieldDialogueLabel;
-    
-    private TextField _fieldEventCaption;
 
     private DropdownField _dropdownFieldDialogue;
 
+    // TO EDIT
     private DropdownField _dropdownFieldEvent;
+    public List<string> Events = new(); 
 
     public bool OnlyOneConditionNeeded;
     
@@ -223,24 +223,24 @@ public class DSNode : Node
         customDataContainer.AddToClassList("ds-node__event-container");
 
         Foldout textFoldout = DSElementUtility.CreateFoldout("Event Section");
-        _dropdownFieldEvent = DSElementUtility.CreateDropdownArea("[EV_Key]", "Key");
+        //_dropdownFieldEvent = DSElementUtility.CreateDropdownArea("[EV_Key]", "Key");
 
-        // TO EDIT 
-        EventsSO SC = (EventsSO)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Events/Events.asset", typeof(EventsSO));
-        SC?.FillEventDropdown(ref _dropdownFieldEvent);
-        _dropdownFieldEvent.RegisterValueChangedCallback((ChangeEvent<string> evt) => OnEventDropdown(_dropdownFieldEvent));
+        Button addEventButton = DSElementUtility.CreateButton("Add new Event", () => { AddEventSubsection(textFoldout); });
 
-        // field 
-        textFoldout.Add(_dropdownFieldEvent);
-        _fieldEventCaption = DSElementUtility.CreateTextField(""); // TO EDIT text to label (read only ?)
-        DSElementUtility.CreateLabelField("");
-        textFoldout.Add(_fieldEventCaption);
+        textFoldout.Add(addEventButton);
 
-        if (!string.IsNullOrEmpty(Saves.GetDropDownKeyEvent()))
+        foreach (var eventKey in Saves.GetEvents())
         {
-            _dropdownFieldEvent.value = Saves.GetDropDownKeyEvent();
-            OnEventDropdown(_dropdownFieldEvent);
+            AddEventSubsection(textFoldout, eventKey);
+            Debug.Log("event" + eventKey); // DEBUG
         }
+
+
+        //if (!string.IsNullOrEmpty(Saves.GetDropDownKeyEvent()))
+        //{
+        //    _dropdownFieldEvent.value = Saves.GetDropDownKeyEvent();
+        //    OnEventDropdown(_dropdownFieldEvent);
+        //}
 
 
         // button delete Event 
@@ -248,8 +248,7 @@ public class DSNode : Node
         Button deleteButton = DSElementUtility.CreateButton("X", () =>
         {
             extensionContainer.Remove(customDataContainer);
-            Saves.hasEvent = false;
-            Saves.SaveDropDownKeyEvent(null);
+            Saves.SaveEvents(new ());
         });
 
         deleteButton.AddToClassList("ds-node__buttonDelete");
@@ -262,6 +261,43 @@ public class DSNode : Node
         customDataContainer.Add(deleteButton);
 
         return customDataContainer;
+    }
+
+    // TO EDIT (put in ds multiple choice node ?) + RENAME 
+    private void AddEventSubsection(Foldout foldout, string initialValue = "")
+    {
+        // new event
+        VisualElement elementToAdd = new VisualElement();
+
+        // EVENT KEY
+        DropdownField dropdownFieldEvent = DSElementUtility.CreateDropdownArea();
+
+        dropdownFieldEvent.value = initialValue;
+        //dropdownFieldEvent.userData = initialValue;
+
+        dropdownFieldEvent.RegisterValueChangedCallback((ChangeEvent<string> evt) => OnEventDropdown(dropdownFieldEvent));
+        // to edit
+        EventsSO SC = (EventsSO)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Events/Events.asset", typeof(EventsSO));
+        SC?.FillEventDropdown(ref dropdownFieldEvent);
+
+        // clear button
+        Button butClearCondition = DSElementUtility.CreateButton("X", () =>
+        {
+            foldout.Remove(elementToAdd);
+            Saves._dropDownKeyEventList.Remove(dropdownFieldEvent.value);
+            //string keyToRemove = condition.userData as string;
+        });
+        butClearCondition.AddToClassList("ds-node__buttonDeleteCondition");
+
+        // fill new element  
+        elementToAdd.Add(dropdownFieldEvent);
+        elementToAdd.Add(butClearCondition);
+
+        elementToAdd.AddToClassList("ds-node__conditions-container");
+        elementToAdd.style.flexDirection = FlexDirection.Row; // to edit 
+
+        foldout.Add(elementToAdd);
+
     }
 
     // CREE UN PORT D'ENTREE MULTI-CONNECTION //
@@ -292,12 +328,11 @@ public class DSNode : Node
 
     protected void OnEventDropdown(DropdownField dropdownField)
     {
-        if (_fieldEventCaption == null)
+        if (string.IsNullOrEmpty(dropdownField.value))
             return;
 
         EventsSO SC = (EventsSO)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Events/Events.asset", typeof(EventsSO)); // TO EDIT
-        _fieldEventCaption.value = SC?.GetEventByKey(dropdownField.value).caption;
-        Saves.SaveDropDownKeyEvent(dropdownField.value);
+        Saves.SaveDropDownKeyEventV2(dropdownField.value);
     }
 
     // REMPLIT LE DROPDOWN AVEC LES KEYS DU CSV // "loadSpecificKeysToSpeaker" POUR SAVOIR SI ON CHARGE TOUTES LES KEYS OU JUSTE CELLES DU SPEAKER //

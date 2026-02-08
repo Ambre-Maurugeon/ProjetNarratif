@@ -81,6 +81,9 @@ public class DSNodeSaveData
     // event
     public bool hasEvent = false;
     public string _dropDownKeyEvent;
+    public List<string> _dropDownKeyEventList = new List<string>();
+
+    public List<string> GetEvents() => _dropDownKeyEventList;
 
     public void SaveDropDownKeyEvent(string key)
     {
@@ -90,6 +93,16 @@ public class DSNodeSaveData
     public string GetDropDownKeyEvent()
     {
         return _dropDownKeyEvent;
+    }
+
+    public void SaveDropDownKeyEventV2(string key)
+    {
+        _dropDownKeyEventList.Add(key);
+    }
+
+    public void SaveEvents(List<string> events)
+    {
+        _dropDownKeyEventList = events;
     }
 
     [field: SerializeField] public bool OnlyOneConditionNeeded { get; set; }
