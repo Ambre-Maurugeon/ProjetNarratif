@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaa76378291a144d849f29230be0a5a, type: 3}
+  m_Name: DateCloporteGraph
+  m_EditorClassIdentifier: Assembly-CSharp::DSDialogueContainerSO
+  <FileName>k__BackingField: DateCloporteGraph
+  <DialogueGroups>k__BackingField:
+    list:
+    - Key: {fileID: 11400000, guid: 7146d61e5aac03744ad198f798b32202, type: 2}
+      Value:
+      - {fileID: 11400000, guid: 68883a8bac1f96e4d8a69b3e1593c656, type: 2}
+      - {fileID: 11400000, guid: f0df0d85d043fd6448f869d788850525, type: 2}
+      - {fileID: 11400000, guid: f093ff641059e1945899febd6f545481, type: 2}
+      - {fileID: 11400000, guid: c6150660c58813d418c300c80af87416, type: 2}
+      - {fileID: 11400000, guid: c46514d3cb926434fb310a49f5323580, type: 2}
+      - {fileID: 11400000, guid: cfec300494231cd4b97f829431e54a1e, type: 2}
+      - {fileID: 11400000, guid: e6e24667ee37e7947a1611bfc6f97e76, type: 2}
+      - {fileID: 11400000, guid: 28bec5c477a84164caed021d0348a9b6, type: 2}
+      - {fileID: 11400000, guid: f11ded82770bf7148b53db737d7a7bed, type: 2}
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: efb2001299784e149bda228f0ef45339, type: 2}
+  - {fileID: 11400000, guid: 80de9889370080442b4814d5a9721b0c, type: 2}
+  - {fileID: 11400000, guid: f391be5f43d59a24ebdb1f7271f0971f, type: 2}
+  - {fileID: 11400000, guid: 2fdde744072550c4c9bbf5bfd0442530, type: 2}
+  - {fileID: 11400000, guid: 42d5e7bd98c7cf744aea62813d309cb1, type: 2}
+  - {fileID: 11400000, guid: 4cda7852a0eb3f34d89062bb3ec08443, type: 2}
+  - {fileID: 11400000, guid: 0fefe0bd1f7c62041b42a31b2412d6a3, type: 2}
+  - {fileID: 11400000, guid: 9eaeee84c84b9294e912a73bd67641db, type: 2}
+  - {fileID: 11400000, guid: 56d2e01cccb681b46b8c1890024e8fea, type: 2}
+  - {fileID: 11400000, guid: a1b4511de1b213d4a80acaba05eb40b2, type: 2}
