@@ -1,3 +1,4 @@
+  using System;
   using System.Collections;
   using UnityEditor;
   using UnityEngine;
@@ -35,22 +36,7 @@
               Destroy(gameObject);
           }
       }
-      
-     private void Start()
-     {
-         UpdateBug();
-     
-         if (bugsDatabase != null && bugsDatabase.entries != null)
-         {
-             if (sceneImageAnim == null)
-                 sceneImageAnim = FindSceneImageAnimation();
-     
-             sceneImageAnim?.GetImage();
-     
-             PlayCurrentSequenceNow();
-         }
-     }
-  
+
       void OnEnable()
       {
           Pulse.OnEndRythm += StopRythmGame;
@@ -100,6 +86,7 @@
   
       private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
       {
+          AreAllEntriesCompleted();
           if (sceneImageAnim != null)
               sceneImageAnim.GetImage();
   
@@ -223,15 +210,47 @@
   
       public void NextInsect()
       {
-          if (currentInsectId >= 4) return;
-          currentInsectId++;
+          if (bugsDatabase == null || bugsDatabase.entries == null || bugsDatabase.entries.Count == 0) return;
+      
+          int nextId = int.MaxValue;
+          bool found = false;
+      
+          foreach (var e in bugsDatabase.entries)
+          {
+              if (e == null) continue;
+              if (e.id > currentInsectId && e.id < nextId)
+              {
+                  nextId = e.id;
+                  found = true;
+              }
+          }
+      
+          if (!found) return;
+      
+          currentInsectId = nextId;
           UpdateBug();
       }
   
       public void PrevInsect()
       {
-          if (currentInsectId <= 0) return;
-          currentInsectId--;
+          if (bugsDatabase == null || bugsDatabase.entries == null || bugsDatabase.entries.Count == 0) return;
+      
+          int prevId = int.MinValue;
+          bool found = false;
+      
+          foreach (var e in bugsDatabase.entries)
+          {
+              if (e == null) continue;
+              if (e.id < currentInsectId && e.id > prevId)
+              {
+                  prevId = e.id;
+                  found = true;
+              }
+          }
+      
+          if (!found) return;
+      
+          currentInsectId = prevId;
           UpdateBug();
       }
   
@@ -247,9 +266,33 @@
                   DateBtn = GameObject.Find("DateBtn").GetComponent<Button>();
           }
           if (DateBtn != null)
+          {
               DateBtn.onClick.RemoveAllListeners();
               DateBtn?.onClick.AddListener(() => OnStartInsect(currentInsectId));
-  
+          }
+    
+          if (NextButton == null)
+          {
+              if (GameObject.Find("NextBtn") != null)
+                  NextButton = GameObject.Find("NextBtn").GetComponent<Button>();
+          }
+          if (NextButton != null)
+          {
+              NextButton.onClick.RemoveAllListeners();
+              NextButton?.onClick.AddListener(() => NextInsect());
+          }
+    
+          if (PrevButton == null)
+          {
+              if (GameObject.Find("PrevBtn") != null)
+                  PrevButton = GameObject.Find("PrevBtn").GetComponent<Button>();
+          }
+          if (PrevButton != null)
+          {
+              PrevButton.onClick.RemoveAllListeners();
+              PrevButton?.onClick.AddListener(() => PrevInsect());
+          }
+          
           if (UiCanva != null)
           {
               var textTf = UiCanva.transform.Find("Name");
@@ -374,6 +417,7 @@
               {
                   animEnded = true;
                   entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+                  Destroy(sceneImageAnim.gameObject);
               };
               sceneImageAnim.AnimationEnded += handler;
       
@@ -392,5 +436,38 @@
       
           sequenceCoroutine = null;
           yield break;
+      }
+      
+      private void OnApplicationQuit()
+      {
+          ResetCompletionFlags();
+      }
+      
+      private void ResetCompletionFlags()
+      {
+          if (bugsDatabase == null || bugsDatabase.entries == null) return;
+      
+          foreach (var entry in bugsDatabase.entries)
+          {
+              if (entry != null)
+                  entry.isCompleted = false;
+          }
+      
+      #if UNITY_EDITOR
+          UnityEditor.EditorUtility.SetDirty(bugsDatabase);
+          UnityEditor.AssetDatabase.SaveAssets();
+      #endif
+      }
+      
+      public bool AreAllEntriesCompleted()
+      {
+          if (bugsDatabase == null || bugsDatabase.entries == null) return false;
+          foreach (var entry in bugsDatabase.entries)
+          {
+              if (entry == null) continue;
+              if (!entry.isCompleted) return false;
+          }
+          Debug.Log("All entries completed!");
+          return true;
       }
   }

@@ -28,15 +28,7 @@ MonoBehaviour:
     - sprites:
       - {fileID: -1100583664547031073, guid: 8d75ee8403d99404a99f000f6135abf8, type: 3}
       - {fileID: 4677777032245502107, guid: 1d28a749bf147ec4ab18c358ca2c298a, type: 3}
-      framesPerSprite: 6
-      loop: 0
-      destroyOnEnd: 0
-    - sprites:
-      - {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
-      - {fileID: 21300000, guid: ddba7a5d2b29f334b9d2dffc59f568c1, type: 3}
-      - {fileID: 21300000, guid: d86a139ae4a64df499f0a12e26f98419, type: 3}
-      - {fileID: 21300000, guid: e052daf03e049f54b9844545ac3e54c2, type: 3}
-      framesPerSprite: 6
+      framesPerSprite: 30
       loop: 0
       destroyOnEnd: 0
     sequenceIndex: 0
@@ -51,7 +43,13 @@ MonoBehaviour:
     - 4
     - 5
     BgSprite: {fileID: -2818449658216415420, guid: ca6b1ba428649c544a36c3cc2a3e1633, type: 3}
-    Sequences: []
+    Sequences:
+    - sprites:
+      - {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
+      - {fileID: 21300000, guid: ddba7a5d2b29f334b9d2dffc59f568c1, type: 3}
+      framesPerSprite: 30
+      loop: 0
+      destroyOnEnd: 0
     sequenceIndex: 0
   - perso: Bug 3
     id: 2
@@ -64,7 +62,13 @@ MonoBehaviour:
     - 7
     - 8
     BgSprite: {fileID: -7176216987877333843, guid: 2514be1ce4009e748a7fc27a5c26fa02, type: 3}
-    Sequences: []
+    Sequences:
+    - sprites:
+      - {fileID: 21300000, guid: d86a139ae4a64df499f0a12e26f98419, type: 3}
+      - {fileID: 21300000, guid: e052daf03e049f54b9844545ac3e54c2, type: 3}
+      framesPerSprite: 30
+      loop: 0
+      destroyOnEnd: 0
     sequenceIndex: 0
   - perso: 'febj bdxf '
     id: 3
