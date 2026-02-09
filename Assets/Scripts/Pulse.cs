@@ -6,6 +6,7 @@ using Debug = UnityEngine.Debug;
 public class Pulse : MonoBehaviour
 {
         public static event Action OnEndRythm;
+        public static event Action<bool> OnTiming;
 
         [SerializeField]VisualPulse visualPulse;
 
@@ -22,9 +23,9 @@ public class Pulse : MonoBehaviour
         void Start()
         {
             beatInterval = 60f / bpm;
-           /* StartSequence();*/
+        /*StartSequence();*/
 
-        }
+    }
 
     void Update()
         {
@@ -43,7 +44,7 @@ public class Pulse : MonoBehaviour
                     Debug.Log($"❤️ BEAT , Time : {Time.time}");
                     nextBeatTime += beatInterval;
                     Debug.Log($"nxtBtsTime : {nextBeatTime}");
-                    visualPulse.Pulse();
+                    visualPulse.Pulsing();
                 }
 
                 // Touch tactile
@@ -68,10 +69,12 @@ public class Pulse : MonoBehaviour
 
             if (difference <= tolerance)
             {
+                OnTiming?.Invoke(true);
                 Debug.Log($"BON ✅, difference : {difference}, Tolerance : {tolerance}");
             }
             else
             {
+                OnTiming?.Invoke(false);
                 Debug.Log($"RATÉ ❌, difference : {difference}, Tolerance : {tolerance}");
             }
         }
