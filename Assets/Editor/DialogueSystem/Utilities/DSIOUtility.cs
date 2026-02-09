@@ -240,8 +240,6 @@ public static class DSIOUtility
             node.Saves.SetBubleType(node.BubleType);
             createdDialogues.Add(node.ID, dialogue);
 
-            node.Saves.SaveEvents(node.EventKeys); 
-
             SaveAsset(dialogue);
         }
 

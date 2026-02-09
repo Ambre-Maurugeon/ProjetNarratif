@@ -190,6 +190,7 @@ public class DSMultipleChoiceNode : DSNode
         // SECTIONS //
 
         extensionContainer.Add(CreateFoldoutDialogueKeyDropDown());
+
         if (Saves.HasEvent)
             CreateEventSection();
 

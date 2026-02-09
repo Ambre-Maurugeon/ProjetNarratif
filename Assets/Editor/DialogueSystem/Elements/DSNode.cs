@@ -234,22 +234,6 @@ public class DSNode : Node
             AddEventSubsection(textFoldout, eventKey);
         }
 
-        //if (!string.IsNullOrEmpty(Saves.GetDropDownKeyEvent()))
-        //{
-        //    _dropdownFieldEvent.value = Saves.GetDropDownKeyEvent();
-        //    OnEventDropdown(_dropdownFieldEvent);
-        //}
-
-        //if (Saves.HasEvent)
-        //{
-        //    Debug.Log("il y a au moins un event" + EventKeys.Count);
-        //    AddEventSubsection(textFoldout, Saves.EventKeys[0]);
-        //    for (int i = 0; i < Saves.EventKeys.Count - 1; i++)
-        //    {
-        //        AddEventSubsection(textFoldout, Saves.EventKeys[i]);
-        //    }
-        //}
-
 
         // button delete Event 
 
@@ -280,36 +264,32 @@ public class DSNode : Node
         // -- EVENT KEY --
         DropdownField dropdownFieldEvent = DSElementUtility.CreateDropdownArea();
 
-        dropdownFieldEvent.value = value;
-        //if (!string.IsNullOrEmpty(value))
-        //    Saves.SaveDropDownEventKey(value);
-
-        //dropdownFieldEvent.userData = Saves.EventKeys.Count; // int place in list
-        //Debug.Log("dropdownFieldEvent.userData " + dropdownFieldEvent.userData);
-
-        dropdownFieldEvent.RegisterValueChangedCallback((ChangeEvent<string> evt) => OnEventDropdown(dropdownFieldEvent));
-
         // to edit
         EventsSO SC = (EventsSO)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Events/Events.asset", typeof(EventsSO));
         SC?.FillEventDropdown(ref dropdownFieldEvent);
+
+        dropdownFieldEvent.value = value;
+
+
+        dropdownFieldEvent.RegisterValueChangedCallback(evt =>
+        {
+            string newEvent = (string)evt.newValue;
+            string previousEvent = (string)evt.previousValue;
+            if (newEvent != null)
+            {
+                // AJOUTE EVENT //
+                Saves.EventKeys.Remove(previousEvent);
+                Saves.EventKeys.Add(newEvent);
+            }
+        });
+
 
         // -- CLEAR BUTTON --
         Button butClearCondition = DSElementUtility.CreateButton("X", () =>
         {
             foldout.Remove(elementToAdd);
 
-            //string idxToRemove = dropdownFieldEvent.userData as string;
-            //int myInt;
-            //if (int.TryParse(idxToRemove, out myInt))
-            //{
-            //    Saves._dropDownKeyEventList.RemoveAt(myInt);
-            //    Debug.Log("remove at" + myInt);
-            //}
-            //else
-            //{
-            //    Debug.Log("not parse index : " + idxToRemove + " int : " + myInt);
-            //}
-            Saves._dropDownKeyEventList.Remove(dropdownFieldEvent.value);
+            Saves._dropDownKeyEventList.Remove(value);
 
         });
         butClearCondition.AddToClassList("ds-node__buttonDeleteCondition");
