@@ -16,7 +16,7 @@ MonoBehaviour:
   <Groups>k__BackingField:
   - <ID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <Name>k__BackingField: EXEMPLE
-    <Position>k__BackingField: {x: -769.6, y: -46.399986}
+    <Position>k__BackingField: {x: -769.6, y: -46.399994}
   <Nodes>k__BackingField:
   - <ID>k__BackingField: ce72c2f5-78b0-427b-ac29-7ac2afea4b1d
     <Name>k__BackingField: END
@@ -25,8 +25,6 @@ MonoBehaviour:
     Humeur: 0
     _dropDownKeyDialogue: 
     isMultipleChoice: 0
-    hasEvent: 0
-    _dropDownKeyEvent: 
     _dropDownKeyEventList: []
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
@@ -45,8 +43,6 @@ MonoBehaviour:
     Humeur: 1
     _dropDownKeyDialogue: Juliana_D1
     isMultipleChoice: 0
-    hasEvent: 0
-    _dropDownKeyEvent: 
     _dropDownKeyEventList: []
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
@@ -65,8 +61,6 @@ MonoBehaviour:
     Humeur: 0
     _dropDownKeyDialogue: 
     isMultipleChoice: 0
-    hasEvent: 0
-    _dropDownKeyEvent: 
     _dropDownKeyEventList: []
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
@@ -85,8 +79,6 @@ MonoBehaviour:
     Humeur: 1
     _dropDownKeyDialogue: Juliana_D2_C1
     isMultipleChoice: 0
-    hasEvent: 0
-    _dropDownKeyEvent: 
     _dropDownKeyEventList: []
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
@@ -105,8 +97,6 @@ MonoBehaviour:
     Humeur: 2
     _dropDownKeyDialogue: Juliana_D2_C3
     isMultipleChoice: 0
-    hasEvent: 0
-    _dropDownKeyEvent: 
     _dropDownKeyEventList: []
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
@@ -125,8 +115,6 @@ MonoBehaviour:
     Humeur: 0
     _dropDownKeyDialogue: Brant_D2
     isMultipleChoice: 1
-    hasEvent: 0
-    _dropDownKeyEvent: 
     _dropDownKeyEventList: []
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
@@ -148,6 +136,24 @@ MonoBehaviour:
     <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 380, y: 579.2}
+  - <ID>k__BackingField: a400b91b-d8e5-494a-bb18-21dc94b23562
+    <Name>k__BackingField: DialogueName_9
+    <Speaker>k__BackingField: 1
+    BubleType: 0
+    Humeur: 1
+    _dropDownKeyDialogue: Juliana_D2_C2
+    isMultipleChoice: 0
+    _dropDownKeyEventList: []
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: ce72c2f5-78b0-427b-ac29-7ac2afea4b1d
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1603.2, y: 492.8}
   - <ID>k__BackingField: 7a2c9b30-12f7-4243-b3d1-924a1ae0e8d0
     <Name>k__BackingField: DialogueName_4
     <Speaker>k__BackingField: 3
@@ -155,10 +161,7 @@ MonoBehaviour:
     Humeur: 2
     _dropDownKeyDialogue: Bourdon_D999
     isMultipleChoice: 1
-    hasEvent: 1
-    _dropDownKeyEvent: 
-    _dropDownKeyEventList:
-    - EV_StartMantis
+    _dropDownKeyEventList: []
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 74f640d2-3b9d-4c3f-b494-4bfc35394985
@@ -173,27 +176,7 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 103.2, y: 14.400002}
-  - <ID>k__BackingField: a400b91b-d8e5-494a-bb18-21dc94b23562
-    <Name>k__BackingField: DialogueName_9
-    <Speaker>k__BackingField: 1
-    BubleType: 0
-    Humeur: 1
-    _dropDownKeyDialogue: Juliana_D2_C2
-    isMultipleChoice: 0
-    hasEvent: 0
-    _dropDownKeyEvent: 
-    _dropDownKeyEventList: []
-    <OnlyOneConditionNeeded>k__BackingField: 0
-    <ChoicesInNode>k__BackingField:
-    - NodeID: ce72c2f5-78b0-427b-ac29-7ac2afea4b1d
-      _dropDownKeyChoice: 
-      <ConditionsSc>k__BackingField: []
-      <ConditionsKey>k__BackingField: []
-      _directionPort: 0
-    <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1603.2, y: 492.8}
+    <Position>k__BackingField: {x: -257.59998, y: 14.400002}
   <OldGroupNames>k__BackingField:
   - EXEMPLE
   <OldUngroupedNodeNames>k__BackingField: []
@@ -207,5 +190,5 @@ MonoBehaviour:
       - DialogueName_7
       - DialogueName_10
       - DialogueName
-      - DialogueName_4
       - DialogueName_9
+      - DialogueName_4

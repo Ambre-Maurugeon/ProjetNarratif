@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -79,23 +80,13 @@ public class DSNodeSaveData
 
 
     // event
-    public bool hasEvent = false;
-    public string _dropDownKeyEvent;
     public List<string> _dropDownKeyEventList = new List<string>();
 
-    public List<string> GetEvents() => _dropDownKeyEventList;
+    public bool HasEvent => _dropDownKeyEventList.Count() > 0;
+    public List<string> EventKeys => _dropDownKeyEventList;
 
-    public void SaveDropDownKeyEvent(string key)
-    {
-        _dropDownKeyEvent = key;
-    }
 
-    public string GetDropDownKeyEvent()
-    {
-        return _dropDownKeyEvent;
-    }
-
-    public void SaveDropDownKeyEventV2(string key)
+    public void SaveDropDownEventKey(string key)
     {
         _dropDownKeyEventList.Add(key);
     }

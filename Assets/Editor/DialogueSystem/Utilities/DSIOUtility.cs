@@ -196,9 +196,7 @@ public static class DSIOUtility
             
             nodeData.SetBubleType(node.BubleType);
             nodeData.SaveDropDownKeyDialogue(node.Saves.GetDropDownKeyDialogue());
-            nodeData.SaveDropDownKeyEvent(node.Saves.GetDropDownKeyEvent());
-            nodeData.SaveEvents(node.Saves.GetEvents()); 
-            nodeData.hasEvent = node.Saves.hasEvent; // to edit (clean)
+            nodeData.SaveEvents(node.Saves.EventKeys); 
             nodeData.isMultipleChoice = node.Saves.isMultipleChoice; // to edit (clean)
             nodeData.SaveSpeaker(node.Speaker);
             nodeData.SaveHumeur(node.Humeur);
@@ -242,7 +240,7 @@ public static class DSIOUtility
             node.Saves.SetBubleType(node.BubleType);
             createdDialogues.Add(node.ID, dialogue);
 
-            node.Saves.SaveEvents(node.Events); 
+            node.Saves.SaveEvents(node.EventKeys); 
 
             SaveAsset(dialogue);
         }
@@ -383,10 +381,9 @@ public static class DSIOUtility
                 node.ID = nodeData.ID;
                 
                 node.Saves.SaveDropDownKeyDialogue( nodeData.GetDropDownKeyDialogue());
-                node.Saves.SaveEvents(nodeData.GetEvents());
+                node.Saves.SaveEvents(nodeData.EventKeys);
                 node.Saves.SetChoices(choices);
                 node.Saves.isMultipleChoice = nodeData.isMultipleChoice;
-                node.Saves.hasEvent = nodeData.hasEvent; 
                 node.BubleType = nodeData.GetBubleType();
                 node.SetSpeaker(nodeData.Speaker);
                 node.SetHumeur(nodeData.GetHumeur());

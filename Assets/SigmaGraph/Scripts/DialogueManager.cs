@@ -313,10 +313,13 @@ public class DialogueManager : MonoBehaviour
         _currentDialogueContainer.InitializeDialogueContainer(this, targetDialogue, _currentSpeaker.Name, _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur()), _currentNode.isMultipleChoice);
 
         // -- EVENTS --
-        if (!string.IsNullOrEmpty(_currentNode.GetDropDownKeyEvent()))
+        if (_currentNode.HasEvent)
         {
-            UnityEvent targetEvent = EventsManager.Instance.FindEvent(_currentNode.GetDropDownKeyEvent());
-            targetEvent?.Invoke();
+            foreach (var e in _currentNode.EventKeys)
+            {
+                UnityEvent targetEvent = EventsManager.Instance.FindEvent(e);
+                targetEvent?.Invoke();
+            }
         }
 
         // -- ANIMS --

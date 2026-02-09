@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MacFsWatcher;
+using Unity.VisualScripting;
 using Unity.VisualScripting.YamlDotNet.Core.Events;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.Windows;
 
 public class DSNode : Node
 {
@@ -32,9 +35,7 @@ public class DSNode : Node
 
     private DropdownField _dropdownFieldDialogue;
 
-    // TO EDIT
-    private DropdownField _dropdownFieldEvent;
-    public List<string> Events = new(); 
+    public List<string> EventKeys = new(); 
 
     public bool OnlyOneConditionNeeded;
     
@@ -223,23 +224,30 @@ public class DSNode : Node
         customDataContainer.AddToClassList("ds-node__event-container");
 
         Foldout textFoldout = DSElementUtility.CreateFoldout("Event Section");
-        //_dropdownFieldEvent = DSElementUtility.CreateDropdownArea("[EV_Key]", "Key");
 
         Button addEventButton = DSElementUtility.CreateButton("Add new Event", () => { AddEventSubsection(textFoldout); });
 
         textFoldout.Add(addEventButton);
 
-        foreach (var eventKey in Saves.GetEvents())
+        foreach (var eventKey in Saves.EventKeys)
         {
             AddEventSubsection(textFoldout, eventKey);
-            Debug.Log("event" + eventKey); // DEBUG
         }
-
 
         //if (!string.IsNullOrEmpty(Saves.GetDropDownKeyEvent()))
         //{
         //    _dropdownFieldEvent.value = Saves.GetDropDownKeyEvent();
         //    OnEventDropdown(_dropdownFieldEvent);
+        //}
+
+        //if (Saves.HasEvent)
+        //{
+        //    Debug.Log("il y a au moins un event" + EventKeys.Count);
+        //    AddEventSubsection(textFoldout, Saves.EventKeys[0]);
+        //    for (int i = 0; i < Saves.EventKeys.Count - 1; i++)
+        //    {
+        //        AddEventSubsection(textFoldout, Saves.EventKeys[i]);
+        //    }
         //}
 
 
@@ -264,28 +272,45 @@ public class DSNode : Node
     }
 
     // TO EDIT (put in ds multiple choice node ?) + RENAME 
-    private void AddEventSubsection(Foldout foldout, string initialValue = "")
+    private void AddEventSubsection(Foldout foldout, string value = "")
     {
         // new event
         VisualElement elementToAdd = new VisualElement();
 
-        // EVENT KEY
+        // -- EVENT KEY --
         DropdownField dropdownFieldEvent = DSElementUtility.CreateDropdownArea();
 
-        dropdownFieldEvent.value = initialValue;
-        //dropdownFieldEvent.userData = initialValue;
+        dropdownFieldEvent.value = value;
+        //if (!string.IsNullOrEmpty(value))
+        //    Saves.SaveDropDownEventKey(value);
+
+        //dropdownFieldEvent.userData = Saves.EventKeys.Count; // int place in list
+        //Debug.Log("dropdownFieldEvent.userData " + dropdownFieldEvent.userData);
 
         dropdownFieldEvent.RegisterValueChangedCallback((ChangeEvent<string> evt) => OnEventDropdown(dropdownFieldEvent));
+
         // to edit
         EventsSO SC = (EventsSO)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Events/Events.asset", typeof(EventsSO));
         SC?.FillEventDropdown(ref dropdownFieldEvent);
 
-        // clear button
+        // -- CLEAR BUTTON --
         Button butClearCondition = DSElementUtility.CreateButton("X", () =>
         {
             foldout.Remove(elementToAdd);
+
+            //string idxToRemove = dropdownFieldEvent.userData as string;
+            //int myInt;
+            //if (int.TryParse(idxToRemove, out myInt))
+            //{
+            //    Saves._dropDownKeyEventList.RemoveAt(myInt);
+            //    Debug.Log("remove at" + myInt);
+            //}
+            //else
+            //{
+            //    Debug.Log("not parse index : " + idxToRemove + " int : " + myInt);
+            //}
             Saves._dropDownKeyEventList.Remove(dropdownFieldEvent.value);
-            //string keyToRemove = condition.userData as string;
+
         });
         butClearCondition.AddToClassList("ds-node__buttonDeleteCondition");
 
@@ -293,8 +318,10 @@ public class DSNode : Node
         elementToAdd.Add(dropdownFieldEvent);
         elementToAdd.Add(butClearCondition);
 
+        // style
         elementToAdd.AddToClassList("ds-node__conditions-container");
         elementToAdd.style.flexDirection = FlexDirection.Row; // to edit 
+
 
         foldout.Add(elementToAdd);
 
@@ -332,7 +359,7 @@ public class DSNode : Node
             return;
 
         EventsSO SC = (EventsSO)AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/Scripts/Events/Events.asset", typeof(EventsSO)); // TO EDIT
-        Saves.SaveDropDownKeyEventV2(dropdownField.value);
+        Saves.SaveDropDownEventKey(dropdownField.value);
     }
 
     // REMPLIT LE DROPDOWN AVEC LES KEYS DU CSV // "loadSpecificKeysToSpeaker" POUR SAVOIR SI ON CHARGE TOUTES LES KEYS OU JUSTE CELLES DU SPEAKER //
