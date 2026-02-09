@@ -2634,7 +2634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f028ce0c7d42ab9bcb5d37e69c38e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  runtimeGraph: {fileID: 11400000, guid: 5fa68d7144e08704383094a717aa7888, type: 2}
+  runtimeGraph: {fileID: 11400000, guid: 0307a525ca3ec7549a718935319613e2, type: 2}
   languageSetting: 0
   _bubleContainerList:
   - {fileID: 504661613}
