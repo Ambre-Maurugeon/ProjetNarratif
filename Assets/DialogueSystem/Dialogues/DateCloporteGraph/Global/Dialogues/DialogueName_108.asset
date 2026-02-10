@@ -19,4 +19,4 @@ MonoBehaviour:
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 5502350814201614b895c103c4c6254e, type: 2}
   <DialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0
-  <Speaker>k__BackingField: 0
+  <Speaker>k__BackingField: 6
