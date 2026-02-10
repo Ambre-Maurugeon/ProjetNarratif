@@ -163,7 +163,6 @@ MonoBehaviour:
     isMultipleChoice: 1
     _dropDownKeyEventList:
     - EV_RythmLaunch
-    - EV_ShowImage
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 74f640d2-3b9d-4c3f-b494-4bfc35394985
@@ -178,7 +177,7 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: -316, y: 34.4}
+    <Position>k__BackingField: {x: -420.8, y: 14.4}
   <OldGroupNames>k__BackingField:
   - EXEMPLE
   <OldUngroupedNodeNames>k__BackingField: []
