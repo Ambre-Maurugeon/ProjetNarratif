@@ -86,9 +86,16 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
-  - label: Call
+  - label: Sequence
     Key: EV_ShowImage
-    caption: Hide Mantis arms
+    caption: joue une animation avec un glitch
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Pass to Dark Level
+    Key: EV_DarkLevel
+    caption: switch l ui, le background, le coeur, la mante version dark
     isPrefab: 0
     Event:
       m_PersistentCalls:

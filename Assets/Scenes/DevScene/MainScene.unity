@@ -965,7 +965,6 @@ GameObject:
   m_Component:
   - component: {fileID: 503777675}
   - component: {fileID: 503777676}
-  - component: {fileID: 503777677}
   m_Layer: 0
   m_Name: EventsManager
   m_TagString: Untagged
@@ -1106,20 +1105,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
---- !u!114 &503777677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 503777673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c8a8f53dcdc8464f99712d5f78ce672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventoryManager
-  inventoryItems:
-  - {fileID: 11400000, guid: e601c92e8f8344b42bbcf5c8044b7e4d, type: 2}
+  - Key: EV_DarkLevel
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1233640479}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 4185010866086867858, guid: 82f9b8f2ba136e043a90272941b0c931, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+        - m_Target: {fileID: 1251650169}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: -8225391392203678111, guid: 9ffb2474150751f4b8232d365e89262f, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &504661611
 GameObject:
   m_ObjectHideFlags: 0
