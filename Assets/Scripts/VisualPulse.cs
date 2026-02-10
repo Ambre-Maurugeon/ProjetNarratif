@@ -69,12 +69,12 @@ public class VisualPulse : MonoBehaviour
 
         if (b)
         {
-            return "Assets/GA/UI/heart_UI_fail.png";
+            return "Assets/GA/UI/heart_UI_success.png";
 
         }
         else 
         {
-            return "Assets/GA/UI/heart_UI_success.png"; 
+            return "Assets/GA/UI/heart_UI_fail.png";
         }
     }
 
