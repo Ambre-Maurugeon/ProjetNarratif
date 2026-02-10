@@ -190,9 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fbc5a018edda8b43a9ecddf8f3b3c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ImageAnimation
-  sprites:
-  - {fileID: -1100583664547031073, guid: 8d75ee8403d99404a99f000f6135abf8, type: 3}
-  - {fileID: 4677777032245502107, guid: 1d28a749bf147ec4ab18c358ca2c298a, type: 3}
+  sprites: []
   framesPerSprite: 6
-  loop: 0
+  loop: 1
   destroyOnEnd: 0
