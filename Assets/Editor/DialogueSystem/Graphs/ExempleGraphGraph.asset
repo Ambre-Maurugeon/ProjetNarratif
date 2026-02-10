@@ -16,7 +16,7 @@ MonoBehaviour:
   <Groups>k__BackingField:
   - <ID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <Name>k__BackingField: EXEMPLE
-    <Position>k__BackingField: {x: -769.6, y: -45.6}
+    <Position>k__BackingField: {x: -769.60004, y: -45.600002}
   <Nodes>k__BackingField:
   - <ID>k__BackingField: ce72c2f5-78b0-427b-ac29-7ac2afea4b1d
     <Name>k__BackingField: END
@@ -110,10 +110,10 @@ MonoBehaviour:
     <Position>k__BackingField: {x: 1603.2, y: 734.39996}
   - <ID>k__BackingField: 74f640d2-3b9d-4c3f-b494-4bfc35394985
     <Name>k__BackingField: DialogueName
-    <Speaker>k__BackingField: 0
+    <Speaker>k__BackingField: 8
     BubleType: 0
     Humeur: 0
-    _dropDownKeyDialogue: Brant_D2
+    _dropDownKeyDialogue: Narrator_D17
     isMultipleChoice: 1
     _dropDownKeyEventList: []
     <OnlyOneConditionNeeded>k__BackingField: 0
@@ -156,17 +156,18 @@ MonoBehaviour:
     <Position>k__BackingField: {x: 1603.2, y: 492.80002}
   - <ID>k__BackingField: 7a2c9b30-12f7-4243-b3d1-924a1ae0e8d0
     <Name>k__BackingField: DialogueName_4
-    <Speaker>k__BackingField: 3
+    <Speaker>k__BackingField: 6
     BubleType: 0
     Humeur: 2
-    _dropDownKeyDialogue: Bourdon_D999
+    _dropDownKeyDialogue: Cloporte_D17
     isMultipleChoice: 1
     _dropDownKeyEventList:
     - EV_RythmLaunch
+    - EV_ShowImage
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 74f640d2-3b9d-4c3f-b494-4bfc35394985
-      _dropDownKeyChoice: Bourdon_D999
+      _dropDownKeyChoice: Mantis_D1_C2
       <ConditionsSc>k__BackingField: []
       <ConditionsKey>k__BackingField: []
       _directionPort: 0

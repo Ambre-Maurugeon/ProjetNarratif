@@ -473,6 +473,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2253775580639811971, guid: 34bd59089b5e2b04587e84e4873daac2, type: 3}
+      propertyPath: UiCanva
+      value: 
+      objectReference: {fileID: 204665600}
+    - target: {fileID: 2253775580639811971, guid: 34bd59089b5e2b04587e84e4873daac2, type: 3}
       propertyPath: UiCanvas
       value: 
       objectReference: {fileID: 204665600}

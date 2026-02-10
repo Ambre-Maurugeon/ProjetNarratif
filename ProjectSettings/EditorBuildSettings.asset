@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DevScene/Hub.unity
     guid: ed3070b826dedf94bb7b16553f33adb4
   - enabled: 1
-    path: Assets/Scenes/DevScene/Proto.unity
+    path: Assets/Scenes/DevScene/MainScene.unity
     guid: df777568513af8448835c40c16b56364
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
