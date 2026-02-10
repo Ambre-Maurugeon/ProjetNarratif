@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
     private Button DateBtn;
     private Button NextButton;
     private Button PrevButton;
+    private Button Date1Btn;
+    private Button Date2Btn;
+    private Button Date3Btn;
+    private Button Date4Btn;
     public Canvas UiCanva;
     public Canvas SequenceCanvas;
 
@@ -292,6 +296,47 @@ public class GameManager : MonoBehaviour
             PrevButton.onClick.RemoveAllListeners();
             PrevButton?.onClick.AddListener(() => PrevInsect());
         }
+        
+        if (Date1Btn == null)
+        {
+            if (GameObject.Find("Date1Btn") != null)
+                Date1Btn = GameObject.Find("Date1Btn").GetComponent<Button>();
+        }
+        if (Date1Btn != null)
+        {
+            Date1Btn.onClick.RemoveAllListeners();
+            Date1Btn?.onClick.AddListener(() => SetCurrentInsectId(0));
+        }
+        
+        if (Date2Btn == null)
+        {
+            if (GameObject.Find("Date2Btn") != null)
+                Date2Btn = GameObject.Find("Date2Btn").GetComponent<Button>();
+        }
+        if (Date2Btn != null)        {
+            Date2Btn.onClick.RemoveAllListeners();
+            Date2Btn?.onClick.AddListener(() => SetCurrentInsectId(1));
+        }
+        
+        if (Date3Btn == null)
+        {
+            if (GameObject.Find("Date3Btn") != null)
+                Date3Btn = GameObject.Find("Date3Btn").GetComponent<Button>();
+        }
+        if (Date3Btn != null)        {
+            Date3Btn.onClick.RemoveAllListeners();
+            Date3Btn?.onClick.AddListener(() => SetCurrentInsectId(2));
+        }
+        
+        if (Date4Btn == null)
+        {
+            if (GameObject.Find("Date4Btn") != null)
+                Date4Btn = GameObject.Find("Date4Btn").GetComponent<Button>();
+        }
+        if (Date4Btn != null)        {
+            Date4Btn.onClick.RemoveAllListeners();
+            Date4Btn?.onClick.AddListener(() => SetCurrentInsectId(3));
+        }
 
         if (UiCanva != null)
         {
@@ -333,6 +378,12 @@ public class GameManager : MonoBehaviour
                     img.sprite = entry.BgSprite;
             }
         }
+    }
+
+    public void SetCurrentInsectId(int id)
+    {
+        currentInsectId = id;
+        UpdateBug();
     }
 
     private bool FindValidSequenceData(CharacterEntry entry, int startIdx, out int foundIdx, out Sequence seq)
