@@ -16,7 +16,7 @@ MonoBehaviour:
   <Groups>k__BackingField:
   - <ID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <Name>k__BackingField: EXEMPLE
-    <Position>k__BackingField: {x: -769.60004, y: -45.600002}
+    <Position>k__BackingField: {x: -769.6, y: -46.399994}
   <Nodes>k__BackingField:
   - <ID>k__BackingField: ce72c2f5-78b0-427b-ac29-7ac2afea4b1d
     <Name>k__BackingField: END
@@ -156,10 +156,10 @@ MonoBehaviour:
     <Position>k__BackingField: {x: 1603.2, y: 492.80002}
   - <ID>k__BackingField: 7a2c9b30-12f7-4243-b3d1-924a1ae0e8d0
     <Name>k__BackingField: DialogueName_4
-    <Speaker>k__BackingField: 6
+    <Speaker>k__BackingField: 3
     BubleType: 0
     Humeur: 2
-    _dropDownKeyDialogue: Cloporte_D17
+    _dropDownKeyDialogue: Bourdon_D68
     isMultipleChoice: 1
     _dropDownKeyEventList:
     - EV_RythmLaunch
