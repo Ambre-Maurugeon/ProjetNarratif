@@ -23,7 +23,7 @@ public class Pulse : MonoBehaviour
         void Start()
         {
             beatInterval = 60f / bpm;
-        /*StartSequence();*/
+            StartSequence();
 
     }
 

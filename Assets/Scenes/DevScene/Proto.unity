@@ -575,7 +575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Pulse
   visualPulse: {fileID: 1251650171}
   bpm: 60
-  tolerance: 0.8
+  tolerance: 0.5
   sequenceDuration: 30
 --- !u!4 &124815065
 Transform:
@@ -2720,6 +2720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VisualPulse
   pulseScale: 1.2
   pulseSpeed: 8
+  durationOfSwitchedFeedback: 0.5
 --- !u!1 &1306542897
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,6 +3314,7 @@ MonoBehaviour:
   SceneToLoad: {fileID: 0}
   SceneHub: {fileID: 102900000, guid: ed3070b826dedf94bb7b16553f33adb4, type: 3}
   UiCanva: {fileID: 0}
+  SequenceCanvas: {fileID: 0}
 --- !u!4 &2041818665
 Transform:
   m_ObjectHideFlags: 0

@@ -197,7 +197,7 @@
       public void LaunchRythmGame()
       {
           var pulse = FindFirstObjectByType<Pulse>();
-          pulse?.InitMusic();
+          pulse?.StartSequence();
           var DManager = FindFirstObjectByType<DialogueManager>();
           if (DManager != null) DManager.CanInteract = false;
       }

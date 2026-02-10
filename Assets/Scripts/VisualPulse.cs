@@ -92,7 +92,6 @@ public class VisualPulse : MonoBehaviour
         while (elapsedTime <= durationOfSwitchedFeedback)
         {
             elapsedTime += Time.deltaTime;
-            if (Input.touchCount > 0) break;
             yield return null;
 
         }
