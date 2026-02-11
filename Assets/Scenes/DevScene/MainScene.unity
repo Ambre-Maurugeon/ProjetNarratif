@@ -559,9 +559,16 @@ MonoBehaviour:
       dirty: 0
   - Key: goodscore
     check:
-      _target: {fileID: 124815064}
-      _methodName: MediumAchievement
-      _args: []
+      _target: {fileID: 834456150}
+      _methodName: ConditionTest
+      _args:
+      - boolValue: 0
+        intValue: 0
+        floatValue: 0
+        stringValue: 
+        objectValue: {fileID: 0}
+        argType: 1
+        _typeName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
       _dynamic: 0
       _typeName: CheckEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       dirty: 0
@@ -3748,7 +3755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f028ce0c7d42ab9bcb5d37e69c38e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  runtimeGraph: {fileID: 11400000, guid: 1701772bc219c754a94ceac17c762741, type: 2}
+  runtimeGraph: {fileID: 11400000, guid: 5fa68d7144e08704383094a717aa7888, type: 2}
   languageSetting: 0
   _bubleContainerList:
   - {fileID: 504661613}

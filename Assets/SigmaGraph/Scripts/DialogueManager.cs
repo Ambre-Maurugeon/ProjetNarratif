@@ -316,6 +316,7 @@ public class DialogueManager : MonoBehaviour
         //dialogue text
         string targetDialogue = FantasyDialogueTable.LocalManager.FindDialogue(_currentNode.GetDropDownKeyDialogue(), Enum.GetName(typeof(language), languageSetting));
         _currentDialogueContainer.InitializeDialogueContainer(this, targetDialogue, _currentSpeaker.DisplayName, _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur()), _currentNode.isMultipleChoice);
+        if (_currentNode.GetHumeur() != HumeurSpeaker.Neutre) _speakerAnimator.SetTrigger("Reaction");
 
         // -- EVENTS --
         if (_currentNode.HasEvent)

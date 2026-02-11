@@ -37,8 +37,8 @@ public class buttonChoiceController : MonoBehaviour
 
         if(_button == null) _button = GetComponent<Button>();
         _button.interactable = !lockState;
-        
-        if(_animator == null) _animator = GetComponent<Animator>();
+
+        if (_animator == null) _animator = GetComponent<Animator>();
         _animator.SetBool("Locked", lockState);
 
     }
