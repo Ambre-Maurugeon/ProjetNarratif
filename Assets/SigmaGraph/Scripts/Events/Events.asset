@@ -135,3 +135,10 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - label: SpriteDown
+    Key: EV_Spritedown
+    caption: Move down the sprite of the character a little bit
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
