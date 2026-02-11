@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public Canvas SequenceCanvas;
     public GameObject GlitchEffectPrefab;
     private GameObject glitchEffectInstance;
+    public Canvas MatchCanvas;
 
     private Coroutine sequenceCoroutine;
     private ImageAnimation sceneImageAnim;
@@ -636,6 +637,11 @@ public class GameManager : MonoBehaviour
 
         sequenceCoroutine = null;
         yield break;
+    }
+
+    private void MatchLaunch()
+    {
+        MatchCanvas.gameObject.SetActive(true);
     }
 
     private void OnApplicationQuit()
