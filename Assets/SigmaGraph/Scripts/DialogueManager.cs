@@ -111,6 +111,11 @@ public class DialogueManager : MonoBehaviour
         UpdateDialogueFromNode(_currentNode);
     }
 
+    public void Test()
+    {
+
+    }
+
     private void Awake()
     {
         // ON FAIT CA EN BRUT PRCQ NSM PAS LE TEMPS // Courage pour le projet UNITY MOBILE je vous aime tous <3 //
@@ -434,6 +439,8 @@ public class DialogueManager : MonoBehaviour
         _currentSpeaker = speaker;
     }
 
+
+    // Censorship
     public void CheckCensorship(ref GameObject censorObject, TextMeshProUGUI tmp_text, Transform parent)
     {
         ResetCensorship(ref censorObject);
@@ -443,7 +450,6 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    // Censorship
     private bool NeedCensorship(string text) {
         var count = text.Count(x => x == '*');
         if (count % 2 == 0 && count != 0) 
