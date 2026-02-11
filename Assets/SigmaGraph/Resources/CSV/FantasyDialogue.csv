@@ -13,7 +13,7 @@ Brant_D4_A4;f;f
 Bourdon_D1;Boudiou j’ai eu du mal à te trouver !;Gosh I had a hard time finding you!
 Bourdon_D2;En tout cas, tu es très élégant.e, comme sur tes photos ! :);In any case, you are very elegant, just like in your photos! :)
 Bourdon_D3;Tu prends quoi à boire ? J'espère qu'ils font des boissons avec de l'alcool pas trop fort..;What are you drinking? I hope they make drinks with not too strong alcohol..
-Bourdon_D4;J'aime pas l'émission Cyber Grasshoper In The Techno Shell qui passe derrière toi, c'est créé par des boomers !;I don't like this show, it's created by boomers !
+Bourdon_D4;J'aime pas cette émission, c'est créé par des boomers !;I don't like this show, it's created by boomers !
 Mantis_D1_C1OG;J'aime bien moi :c.;I like it, tho :c.
 Mantis_D1_C2OG;C'est nul.;It's a terrible series.
 Mantis_D1_C3OG;Je ne l’ai pas regardé.;I didn't watch it.
@@ -106,10 +106,10 @@ Bourdon_D46;Tu sais, j'ai eu une très bonne note au [jeu de most pour dire bac];
 Bourdon_D47;Et toi ?;And you ?
 Mantis_D17C1OG;Je gère aux fournaux;I manage the furnaces.
 Mantis_D17C2OG;Mes autres dates ne valident pas.;My other dates didn't validate it.
-Mantis_D17C3OG;*Hocher de la tête*;*Nodding*
+Mantis_D17C3OG;Hocher de la tête;*Nodding*
 Mantis_D17C1;J’ai toujours été fort.e en cuisine.;I've always been good in the kitchen.
 Mantis_D17C2;Bizarrement mes autres dates ne les apprécient pas à leurs juste valeurs.;Strangely, my other dates don't appreciate them at their true worth.
-Mantis_D17C3;*Hocher de la tête en souriant*;*Nodding with a smile*
+Narrator_MD17C3;Vous hochez de la tête en souriant.;*Nodding with a smile*
 Mantis_D18C1OG;Je croivez qu’ont s’en foux.;I thihnk weed don't care.
 Mantis_D18C2OG;Je m’en sors plutôt bien.;I'm doing pretty well.
 Mantis_D18C3OG;Je maîtrise.;I have it under control.
@@ -128,7 +128,7 @@ Bourdon_D51;Archéologue ? Jamais entendu parler. Mais sinon tu veux boire quelqu
 Bourdon_D52;Dans tous les cas, c’est sûr, tu t'exprimes mieux que moi ^^;In any case, it's certain, you express yourself better than me ^^
 Bourdon_D53;Par contre, je comprends pas pourquoi j'étudie les minéraux.. Je suis apparemment très bon.ne mais j'ai encore jamais étudié un caillou de dinosaure :c.;On the other hand, I don't understand why I'm studying minerals.. I'm apparently very good but I've never studied a dinosaur rock yet :c.
 Bourdon_D54;Et toi du coup, tu fais quoi dans la vie ? ;And what do you do in life?
-Bourdon_D55;*Le bourdon vous écoute attentivement.*;*The bumblebee listens to you attentively*
+Narrator_BD55;Le bourdon vous écoute attentivement.;*The bumblebee listens to you attentively*
 Mantis_22;Mais c’est privé.;But it's private
 Mantis_23;J'aime beaucoup mon travail après.;I really like my work afterward.
 Mantis_24;C’est l’essentiel-;It's the essential-
@@ -153,14 +153,14 @@ Bourdon_D60;D’accord. Mais j’aimerais quand même te poser la question... Que veu
 Mantis_D30C1;Un Roffignac.;A Roffignac
 Mantis_D30C2;Sortir avec toi ! (¬ ? ?¬);Going out with you! (¬ ? ?¬)
 Bourdon_D61;“Valeur”, c’est peut-être un peu fort.;"""Value"" might be a bit strong."
-Mantis_D31C1;*Explique avec détails la raison pour laquelle les bonhommes sourire sont un phénomène.*;*Explain in detail why smiley faces are a phenomenon*
-Mantis_D32;*Vous expliquez en quoi les bonhommes sourire sont géniaux tandis que le bourdon vous écoute avec attention.*;*You explain why the smiley faces while the bumblebee listens to you attentively*
+Mantis_D31C1;Expliquer pourquoi  les bonhommes sourire sont un phénomène.;*Explain in detail why smiley faces are a phenomenon*
+Narrator_DM32;Vous expliquez en quoi les bonhommes sourire sont géniaux tandis que le bourdon vous écoute avec attention.;*You explain why the smiley faces while the bumblebee listens to you attentively*
 Bourdon_D62;Ah oui? je vois !;Ah yes, I see !
-Mantis_D33;*Vous démontrez par propriété relative la nature supérieurement calorique des bonhommes sourire.*;*You demonstrate thru relative property the superior caloric nature of smiley faces*
+Narrator_DM33;Vous démontrez par propriété relative la nature supérieurement calorique des bonhommes sourire.;*You demonstrate thru relative property the superior caloric nature of smiley faces*
 Bourdon_D63;Heu... J’ai pas fait spé maths..;Um... I didn't do advanced math.
-Mantis_D34;*Vous élevez la conscience du bourdon à travers une démonstration quantique prouvant que les bonhommes sourire SONT.*;*You raise the awareness of the bumblebee thru a quantum demonstration proving that the smiley faces ARE*
+Narrator_DM34;Vous élevez la conscience du bourdon à travers une démonstration quantique prouvant que les bonhommes sourire SONT.;*You raise the awareness of the bumblebee thru a quantum demonstration proving that the smiley faces ARE*
 Bourdon_D64;Enfin, personne d’autre que toi..;Finally, no one else but you..
-Bourdon_D65;*Le bourdon parle en détail du fait qu'il a lui aussi l’habitude de se cuisiner sa propre nourriture.*;*The bumblebee speaks in detail that he too is used to making his own food*
+Narrator_DB65;Le bourdon parle en détail du fait qu'il a lui aussi l’habitude de se cuisiner sa propre nourriture.;*The bumblebee speaks in detail that he too is used to making his own food*
 Bourdon_D66;Tu sais cuisiner, c’est pratique, t’as ça appris en ligne ?;You know how to cook, that's handy, did you learn that online?
 Mantis_D35C1;Tu me prends pour qui ?!;Who do you think I am?!
 Mantis_D35C2;Mmmoui.;mmmmmh yes 
@@ -191,6 +191,10 @@ Narrator_D6;Le bourdon lève la patte comme pour demander parole.;The bumblebee r
 Narrator_D7;Le bourdon se balance maintenant sur sa chaise..;The bumblebee is now swaying on its chair..
 Narrator_D8;Le bourdon fait des appels de phares avec ses yeux.;The bumblebee makes headlight calls with its eyes.
 Narrator_D9;Le bourdon se touche le bout des pattes.;The bumblebee touches the tips of its paws.
+Narrator_FIN1;Au café, vous riez et tu passes une soirée.;
+Narrator_FIN2;Vous et votre tête-à-tête romantique finissez un repas dans l’insouciance et la naïveté.;
+Narrator_FIN3;Sur le chemin vers chez vous, vous ressentez une nouvelle fois ce sentiment d’inaccomplissement méler à une fierté parental.;
+Narrator_FIN4;Vous passez une soirée à échanger sur des intérêts très spécifiques, vous et votre ami.e. ;
 Cloporte_D1;Pétard, t’es là ?;
 Narrator_D10;Le cloporte s’assoit à votre table.;
 Cloporte_D2;J’ai failli me faire bastonner en venant ici. Ils étaient 5 contre moi !;
@@ -341,7 +345,7 @@ Mantis_D61C3OG;Tiens toi droit.e..;
 Mantis_D61C1;Eh ! C’est important la famille, moi j’ai pas connu mon père.;
 Mantis_D61C2;La famille, j’ai jamais trop connu.;
 Mantis_D61C3;Essaye de tenir droit.e. Tu me fais pitié là !;
-Cloporte_D64;Tadaaah, j’aime bien les gens qui ont une opinion et toi t’es plutôt mollasse de la *mandibule*, sans déconner, on dirait un barman, c’est chaud.;
+Cloporte_D64;Tu sais, j’aime bien les gens qui ont une opinion et toi t’es plutôt mollasse de la *mandibule*, sans déconner, on dirait un barman, c’est chaud.;
 Narrator_D19;Le cloporte fait la moue en regardant par la fenêtre.;
 Mantis_D61BISC1OG;Peut-être dans une vie antérieure.;
 Mantis_D61BISC2OG;Le menacer.;
@@ -546,3 +550,150 @@ Cloporte_D161;Une baddie qui s’intéresse vraiment à moi !;
 Cloporte_D162;Alors, dis, ça t’intéresse de sortir avec moi ?;
 Cloporte_D163;Oh putin ! L’animé à la télé, il me dit quelque chose !;
 Mantis_D95;Et pourquoi tu veux sortir avec moi ?;
+Narrator_DP1;Une personne arrive avec un ordinateur et des feuilles sous le bras, les posant sur le coin de la table à côté de votre verre.;
+Papillon_D1;Tiens, tiens, tiens. Qui avons-nous donc là ?;
+Narrator_DP2;Vous admirez un papillon fort élégant et en retard se poser, jambes croisées, à votre table.;
+Papillon_D2;Tu as de la chance que j’aie réussi à te trouver une place dans mon emploi du temps : mes costumiers étaient en train de me faire essayer autre chose qu’un corset. ;
+Papillon_D3;À moi ?! Tu te rends compte !;
+Mantis_DP1;Oui-;
+Papillon_D4;Eh bien tu n’as pas besoin parce que je le fais pour deux ! ;
+Papillon_D5;Quel outrage ! Regarde bien ce que je porte. C’est pas pour rien ! ;
+Papillon_D6;Rien d’autre ne me met autant en valeur !;
+Papillon_D7;Et dire que j’aurais pu être moins parfait.e en venant à ce rendez-vous.. ;
+Papillon_D8;Et toi ?;
+Papillon_D9;Le thermostat, la santé, les manucures, tout va bien ?;
+Mantis_DP2_C1;Oui ça va et vous ?;
+Mantis_DP2_C2;Je ne fais pas de manucure.;
+Mantis_DP2_C3OG;Laissez vos cernes parler pour vous.;
+Narrator_DP2_C3;Vous laissez vos cernes parler pour vous.;
+Papillon_D10;Évidemment que ça va, nan mais tu suis ce que je vous raconte ?;
+Papillon_D11;Je te signale que je viens de dire que j’ai eu ma ma-nu-cure !;
+Narrator_DP3;Le papillon souffle agréablement.;
+Papillon_D12;Quoi que… Merci de me le rappeler, c’était comme quand je vais au s-p-a, trèès, trèès agréable.;
+Mantis_DP3_C1;"Tant que vous vous sentez bien ;)";
+Mantis_DP3_C2;S-P-A ? Vous aidez les animaux, vous ?;
+Mantis_DP4;WaW, vous en avez de la chance.;
+Papillon_13;Chance ?! Moi ?! J’ai dû durement demander à mes parents d'être dans la position dans laquelle je suis aujourd'hui, je vous ferai dire !;
+Papillon_14;Mais merci du compliment. Car oui. J’ai beaucoup de chance. Beaucoup. Déjà d’avoir des costumiers mais aussi un public aussi formidable ! Merci ! Merci !;
+Mantis_DP4_C1;Je déteste le népotisme.;
+Mantis_DP4_C2;Tu n’as pas volé ta place.;
+Mantis_DP4_C3;Cette manière alambiquée de parler...;
+Papillon_15;Mmmmh je vois. On est trop overbookés tous les deux aussi, il faut dire.;
+Papillon_16;Maurice ! Un café pour mon ami.e.;
+Papillon_17;J’aimerais lui parler avant qu’elle ne se vautre sur la table comme Mille et une patte Farmer.;
+Mantis_DP5_C1;5 minuteuh… zzz;
+Mantis_DP5_C2;Eh beh, ils doivent mal bosser vos costumiers si vous leur parlez comme ça.;
+Narrator_DP4;Le papillon essaie de vous renvoyer un clin d’œil mais a une grande difficulté et contorsionne son visage bizarrement.;
+Mantis_DP6_C1;";)";
+Mantis_DP6_C2OG;Rougir;
+Mantis_DP6_C3OG;Que quelqu’un appelle une ambulance !;
+Narrator_DP6_C2;Vous rougissez.;
+Mantis_DP6_C3;Que quelqu’un appelle une ambulance, mon date fait un AVC !;
+Papillon_18;OOh ooh OOh, bien l’inverse ! C’est eux qui m’aident à décorer certains de mes costumes, darling.;
+Papillon_19;C’était très drôle, j’aime beaucoup ta touche d’humour !;
+Mantis_DP7;(J’ai fait une blague ?);
+Papillon_20;De toute manière, peu sont les gens qui apprécient mes costumes, ils sont taillés spécialement pour moi.;
+Narrator_DP5;Le papillon vous montre les patrons d’un costume, le sortant de son tas de feuilles.;
+Papillon_21;Sans déc, mon/ma pauvre. Je suis pas venu ici pour bailler, buvez et souriez, vous voulez bien ? ;
+Papillon_22;Une mante religieuse, c’est fait pour sourire, non d’*une blatte*. ;
+Papillon_23;M’enfin ! Je m’égare, me perds et m’entourloupe encore et encore. ;
+Papillon_24;Vous savez ! Je n’ai pu m’empêcher de remarquer votre beauté naturelle, Messiames la *mante religieuse*.;
+Papillon_25;C’est même ceci qui m’a fait prendre la décision de venir vous parler et d'accepter de vous voir.;
+Papillon_26;Vos yeux sont comme des étoiles sur un lac…;
+Mantis_DP7_C1OG;On peut passer commande.;
+Mantis_DP7_C2;Vous parlez drôlement bien !;
+Mantis_DP7_C3;Cette manière alambiquée de parler...;
+Mantis_DP7_C1;On peut passer commande. J’ai déjà fini le café !;
+Papillon_27;HEY ! NAN MAIS ÇA VA PAS ! ;
+Papillon_28;ATTENTION, JE SUIS ARMÉE, J’AI DES CISEAUX À DÉCOUPER DANS MON SAC !;
+Narrator_DP6;Le papillon se lance un regard fier en croisant les bras.;
+Papillon_29;Comme dans dresser votre Scarabeille3 !;
+Mantis_DP8_C1OG;J’AI LA RÉFÉRENCE !;
+Mantis_DP8_C3OG;Rien que ça ? ô_??;
+Mantis_DP8_C1;J’AI LA RÉFÉRENCE, ÇA VIENS DU FOURMILLION DE J.R.R. TOLKIENWIGS !;
+Papillon_30;C’est vrai, après, que le public peut être un peu con-con, t’en fais pas.;
+Papillon_31;Ton commentaire me passe au-dessus de la tête, non, tu sais quoi ? Je suis au-dessus de ça. ;
+Papillon_32;Parce que tu as tort, bien sûr.;
+Papillon_33;Tu sais, moi aussi je déteste le népotisme, dommage pour toi que ce ne soit pas, et ouais.;
+Papillon_34;Exactement. Je suis là où il le faut, contrairement à la personne que j’ai remplacée.;
+Papillon_35;D'accord, elle avait un plus grand palmarès que moi, mais que veux. Le talent ne connaît pas de frontière.;
+Mantis_DP9;Tu n’es pas dans la mode, pas vrai ? Tu sembles avoir fait du théâtre.;
+Papillon_36;Urgh… Pourquoi diable me pose-t-on cette question sans cesse ! ;
+Narrator_DP7;La télé se met à grésiller tandis qu’un bruit de statique se fait entendre.;
+Papillon_37;Oh non, tss, c’est la télé qui refait des siennes, tiens.. ? ;
+Mantis_DP10;C’est ce que j’allais dire. Tu es un régulier ici ?;
+Papillon_38;Moi ainsi que le reste de mon équipe tournons dans des studios pas loin.;
+Mantis_DP11;Je savais pas qu’il y avait des studios dans notre *colonie* ?!;
+Papillon_39;*Colonie* ? Hahaha… N’importe quelle salle avec 4 murs peut servir de studio, même une chambre étroite et intime.;
+Narrator_DP8;Les grésillements persistent.;
+Papillon_40;BON TU LA RÉPARES OUI OU MERDE MAURICE LA TÉLÉ ?! ;
+Papillon_41;Je suis acteur mais s'il le répare pas d’ici la prochaine fois, je vais pas faire semblant de me plaindre à son manager.;
+Narrator_DP9;Un collègue de Maurice passe devant lui, réparant la télé.;
+Narrator_DP10;Maurice, le serveur escargot, a l’air triste de s’être fait une autre fois doubler.;
+Papillon_42;Commandons quelque chose !;
+Mantis_DP12_C1;Un sirop !;
+Mantis_DP12_C2;De l'eau !;
+Mantis_DP12_C3;Un Roffignac !;
+Papillon_43;BON TU LA RÉPARES OUI AU MERDE MAURICE LA TÉLÉ ?!;
+Papillon_44;C’EST QUOI LA QUALITE DE CET ÉTABLISSEMENT ?;
+Mantis_DP12;Donc tu as l’habitude de venir ici ?;
+Papillon_45;Tout à fait, on est en train de tourner un film, en huis clos dans un appartement pas loin, pour l’adaptation cinématographique du fourmilion de JRR Tolkien. ;
+Narrator_DP11;Le papillon se met à classer ses feuilles prenant toute la table.;
+Papillon_46;Si vous voulez bien, commandez quelque chose pour nous deux. Je suis occupé présentement.;
+Mantis_DP13_C1;Un sirop et un cocktail.;
+Mantis_DP13_C2;De l’eau et… de l’eau.;
+Mantis_DP13_C3;Une absinthe et un Bubble Over Grapes !;
+Papillon_47;Je vais vous prendre un Bubble Over Grapes. Bien sûr tu payes pour le tien, je paye pour le mien.;
+Papillon_48;En voilà une boisson qui a du style. En plus, le verre qu’ils utilisent pour le présenter est on ne peut plus gracieux.;
+Papillon_49;Je vais vous prendre un Bubble Over Grapes et je vais te faire l’incroyable plaisir de payer pour ton verre !;
+Papillon_50;Tu as raison, être économe, c’est très bien !;
+Papillon_51;Très bon choix ! C’est précisément ce que je voulais. ;
+Papillon_52;Mais attends, de l’absinthe ? On est un gros buveur, pas vrai ? ;
+Papillon_53;Mais c’est pas un peu trop pour un début de date ?;
+Mantis_DP14;Je me sens plus depuis un moment, j’ai besoin de boire ça.;
+Papillon_54;"Regarde-moi ça, la télé est à peine réparée qu’ils l’endommagent déjà avec un de ses ""animé"".";
+Narrator_DP12;Vous apercevez que Cyber Grasshoper in the techno shell passe à la télé du bar.;
+Papillon_55;C'est du divertissement de bas étage pour les gens qui n’ont aucune exigence artistique.;
+Papillon_56;Qui plus est, je ne joue pas dedans et Tique Beetlerton non plus…;
+Mantis_DP15_C1;C’est populaire pour une raison, non ?;
+Mantis_DP15_C2OG;Je regarde pas la télévision.;
+Mantis_DP15_C3OG;C’est juste pour passer le temps.;
+Mantis_DP15_C2;Je regarde pas la télévision, uniquement des DVD, je suis de la vieille époque.;
+Mantis_DP15_C3;C’est juste pour passer le temps, il n'y a pas de mal à ça.;
+Papillon_57;Après, si tu aimes bien, je ne peux pas trop juger, n’empêche que ça reste un sous-divertissement par rapport au vrai film en prise de vue réelle comme les *Mothvrels.*;
+Papillon_58;"C'est du divertissement de bas étage, pas pour ces ""animé"" comme la génération Alpha les appelle.";
+Papillon_59;Qu’est-ce qu'il ne faut pas entendre.;
+Papillon_60;C’est super ça ! Ça veut dire que tu n’as pas subi les trends !;
+Papillon_61;"Perso mon film préféré, c’est ""Phantom of the Paradise"", le protagoniste a un costume fabuleux.";
+Papillon_62;Petit trivia, un autre film impopulaire mais reconnu par la critique n'est autre que Citizen Kane. ;
+Papillon_63;Tu savais que c’était le film préféré de notre 1?? ministre *frelon asiatique* Droneald Plump ? ;
+Papillon_64;Tout ça parce qu’il s’identifie au personnage de Kane, parce qu’il est pas capable de comprendre que c’est le vilain du film HAhaHAhaHA ! ;
+Papillon_65;Vivement qu’il dégage celui-là !;
+Mantis_DP16_C1OG;J’adore pouvoir avoir accès aux bonus.;
+Mantis_DP16_C2OG;Mon père faisait ça et j’en ai simplement pris l’habitude.;
+Mantis_DP16_C3OG;C'est un acte de résistance contre la surconsommation numérique.;
+Mantis_DP16_C1;J’adore pouvoir avoir accès aux bonus, les regarder quand je veux et pouvoir dessiner sur la jaquette si j’aime pas les acteurs.;
+Mantis_DP16_C3;Chaque DVD que je regarde est un acte de résistance contre la surconsommation numérique. ??;
+Papillon_66;Tu défends ces enfantillages ?! AHAHA la loose !;
+Papillon_67;Hm, mais merci de ton honnêteté, je suppose… ;
+Papillon_68;Laisse-moi te rappeler quand même que qualité ? popularité, contrairement à ces dessins animés. ;
+Papillon_69;"Par exemple, mon film préféré, ""Phantom of the Paradise"", n’a pas plu alors que c’est une inspiration pour des Daft Planthoppers et que le protagoniste a un costume fa-bu-leux.";
+Mantis_DP17_C1OG;Le protagoniste a aussi inspiré un animé !;
+Mantis_DP17_C2OG;Faire semblant de connaître.;
+Mantis_DP17_C3;Je regarde surtout ça pour passer le temps.;
+Mantis_DP17_C1;Le protagoniste de Phantom of the Paradise a aussi inspiré un animé, Berserk.;
+Mantis_DP17_C2;Vous faites semblant de connaître les œuvres dont il parle.;
+Papillon_70;Tu ne caches pas en face de moi, grand ACTEUR, que tu apprécies ces enfantillages.;
+Papillon_71;Hm, merci de ton honnêteté, peu de gens ont ce cran !;
+Papillon_72;Quoi qu’il arrive, le temps passe vite, mais l’important c’est d’avoir des souvenirs, et pour avoir des souvenirs il faut faire des choses.;
+Papillon_73;C’est la seule manière qu’on a de se souvenir du temps qui passe et donc d’avoir l’impression que le temps passe moins vite.;
+Mantis_DP18;C’est vrai. C’est beau ce que tu dis.;
+Papillon_74;Uhm, okay.;
+Papillon_75;Ça m'a l’air plutôt passif tout ça, donc laissez-moi vous prévenir.;
+Papillon_76;Je suis une grande star, donc bien évidemment que je serai charmé que mon passage dans les bonus de 0,3 secondes soit regardé ! ;
+Papillon_77;Surtout quand ces segments sont d’une importance cruciale. ;
+Papillon_78;Que dis-je !! Toutes mes apparitions sont d’une importance cruciale !;
+Mantis_DP19;(Je ne sais pas s'il plaisante.);
+Papillon_79;Tes ambitions sont bien petites, je trouve. Sache que…;
+Papillon_80;C’est très bien de comparer des œuvres, mais moi je parle de genre, qu’il ait eu de l'inspiration, je n’en ai rien à faire, il faut assassiner les auteurs.;
+Mantis_DP20;Les décapiter ?;

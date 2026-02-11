@@ -501,7 +501,7 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
-    
+
     public void PlayCurrentSequenceNow(Sprite firstSprite)
     {
         var DManager = FindFirstObjectByType<DialogueManager>();
@@ -669,5 +669,15 @@ public class GameManager : MonoBehaviour
         }
         return true;
     }
+
+    public void QuitGame() 
+    {
+    #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+    #endif
+    }
+    public void Play() => SceneManager.LoadScene("Hub_Scene", LoadSceneMode.Single);
 }
 

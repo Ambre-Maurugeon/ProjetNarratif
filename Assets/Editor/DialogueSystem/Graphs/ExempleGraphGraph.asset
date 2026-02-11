@@ -35,7 +35,7 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <DialogueType>k__BackingField: 2
-    <Position>k__BackingField: {x: 2722.4, y: 384.8}
+    <Position>k__BackingField: {x: 2722.4, y: 384.80002}
   - <ID>k__BackingField: 4b14ed38-5459-4949-b1bd-e4e45e9ce657
     <Name>k__BackingField: DialogueName_6
     <Speaker>k__BackingField: 1
@@ -53,7 +53,7 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1603.2, y: 14.400002}
+    <Position>k__BackingField: {x: 1603.2, y: 14.4}
   - <ID>k__BackingField: 8a655264-a9bc-49f7-af47-f00ee9f92334
     <Name>k__BackingField: START
     <Speaker>k__BackingField: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <DialogueType>k__BackingField: 1
-    <Position>k__BackingField: {x: -744, y: 14.400002}
+    <Position>k__BackingField: {x: -744, y: 14.4}
   - <ID>k__BackingField: 10048afa-a1e6-4d4f-add2-860282086f7d
     <Name>k__BackingField: DialogueName_7
     <Speaker>k__BackingField: 1
@@ -89,7 +89,7 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1592.7999, y: 253.6}
+    <Position>k__BackingField: {x: 1592.8, y: 253.6}
   - <ID>k__BackingField: 9e5c6b49-a829-4ff3-9c33-5914e1594846
     <Name>k__BackingField: DialogueName_10
     <Speaker>k__BackingField: 1
@@ -107,15 +107,16 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1603.2, y: 734.4}
+    <Position>k__BackingField: {x: 1603.2, y: 734.39996}
   - <ID>k__BackingField: 74f640d2-3b9d-4c3f-b494-4bfc35394985
     <Name>k__BackingField: DialogueName
-    <Speaker>k__BackingField: 0
+    <Speaker>k__BackingField: 8
     BubleType: 0
     Humeur: 0
-    _dropDownKeyDialogue: Brant_D2
+    _dropDownKeyDialogue: Narrator_D17
     isMultipleChoice: 1
-    _dropDownKeyEventList: []
+    _dropDownKeyEventList:
+    - EV_DarkLevel
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 4b14ed38-5459-4949-b1bd-e4e45e9ce657
@@ -135,7 +136,7 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 380, y: 579.2}
+    <Position>k__BackingField: {x: 380, y: 579.19995}
   - <ID>k__BackingField: a400b91b-d8e5-494a-bb18-21dc94b23562
     <Name>k__BackingField: DialogueName_9
     <Speaker>k__BackingField: 1
@@ -153,23 +154,19 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1603.2, y: 492.8}
+    <Position>k__BackingField: {x: 1603.2, y: 492.80002}
   - <ID>k__BackingField: 7a2c9b30-12f7-4243-b3d1-924a1ae0e8d0
     <Name>k__BackingField: DialogueName_4
     <Speaker>k__BackingField: 3
     BubleType: 0
     Humeur: 2
-    _dropDownKeyDialogue: Bourdon_D999
+    _dropDownKeyDialogue: Bourdon_D68
     isMultipleChoice: 1
-    _dropDownKeyEventList:
-    - EV--Prefab
-    - No prefab
-    - EV--Prefab
-    - EV_RythmLaunch
+    _dropDownKeyEventList: []
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 74f640d2-3b9d-4c3f-b494-4bfc35394985
-      _dropDownKeyChoice: Bourdon_D999
+      _dropDownKeyChoice: Mantis_D1_C2
       <ConditionsSc>k__BackingField: []
       <ConditionsKey>k__BackingField: []
       _directionPort: 0
@@ -180,7 +177,7 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 88149fc8-3158-4843-b0a9-0c24c3b11040
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: -316, y: 34.4}
+    <Position>k__BackingField: {x: -420.8, y: 14.4}
   <OldGroupNames>k__BackingField:
   - EXEMPLE
   <OldUngroupedNodeNames>k__BackingField: []
