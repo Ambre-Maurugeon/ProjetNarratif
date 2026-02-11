@@ -485,5 +485,15 @@ public class GameManager : MonoBehaviour
         Debug.Log("All entries completed!");
         return true;
     }
+
+    public void QuitGame() 
+    {
+    #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+    #endif
+    }
+    public void Play() => SceneManager.LoadScene("Hub_Scene", LoadSceneMode.Single);
 }
 
