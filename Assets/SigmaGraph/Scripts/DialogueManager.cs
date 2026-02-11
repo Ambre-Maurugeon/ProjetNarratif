@@ -316,7 +316,6 @@ public class DialogueManager : MonoBehaviour
         //dialogue text
         string targetDialogue = FantasyDialogueTable.LocalManager.FindDialogue(_currentNode.GetDropDownKeyDialogue(), Enum.GetName(typeof(language), languageSetting));
         _currentDialogueContainer.InitializeDialogueContainer(this, targetDialogue, _currentSpeaker.DisplayName, _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur()), _currentNode.isMultipleChoice);
-        if (_currentNode.GetHumeur() != HumeurSpeaker.Neutre) _speakerAnimator.SetTrigger("Reaction");
 
         // -- EVENTS --
         if (_currentNode.HasEvent)
@@ -329,6 +328,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // -- ANIMS --
+        //move
         if (_characterAnimator && _speakerAnimator)
         {
             if (_currentNode.DialogueType == DSDialogueType.MultipleChoice)
@@ -341,6 +341,9 @@ public class DialogueManager : MonoBehaviour
                     FocusOnSpeaker(false);
             }
         }
+
+        //react
+        if (_currentNode.GetHumeur() != HumeurSpeaker.Neutre) _speakerAnimator.SetTrigger("Reaction");
 
     }
 
