@@ -100,3 +100,38 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - label: Feur
+    Key: EV_Fakecrash
+    caption: Sends back to the main menu in a fast black screen fade in
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: PlaySound
+    Key: EV_Playsound
+    caption: Play a desired mp3 or wav when dialogue appears
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: MatchOrNot
+    Key: EV_Matchornot
+    caption: 2 options letting the player match or pass the person
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Notonly
+    Key: EV_Notonly
+    caption: 1 options letting the player only pass the person
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: MatchOnly
+    Key: EV_Notonly
+    caption: 1 options letting the player only match the person
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
