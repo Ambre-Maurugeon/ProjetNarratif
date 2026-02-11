@@ -5,6 +5,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public static class GameManagerData
+{
+    public static int SavedCurrentInsectId = 0;
+    public static BugsDatabase SavedBugsDatabase = null;
+    public static SceneAsset SavedSceneToLoad = null;
+    public static SceneAsset SavedSceneHub = null;
+    public static GameObject SavedTransitionPrefab = null;
+    public static Canvas SavedSequenceCanvas = null;
+}
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private BugsDatabase bugsDatabase;
@@ -32,22 +42,38 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
             SceneManager.sceneLoaded += OnSceneLoaded;
+            Debug.Log("GameManager créé - première instance");
         }
         else
         {
-            Destroy(gameObject);
+            Debug.Log("GameManager détecté - transfert des données");
+            GameManager oldInstance = Instance;
+            
+            TransferDataFromPreviousInstance(oldInstance, this);
+            
+            Instance = this;
+            
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            
+            Destroy(oldInstance.gameObject);
+            
+            Debug.Log("Ancien GameManager détruit, nouveau en place");
         }
     }
 
-    void OnEnable()
+    private void Start()
+    {
+        RestoreSavedData();
+    }
+
+    private void OnEnable()
     {
         Pulse.OnEndRythm += StopRythmGame;
         DialogueManager.OnDialogueEnd += ReturnToHub;
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         Pulse.OnEndRythm -= StopRythmGame;
         DialogueManager.OnDialogueEnd -= ReturnToHub;
@@ -56,8 +82,71 @@ public class GameManager : MonoBehaviour
     private void OnDestroy()
     {
         if (Instance == this)
+        {
+            SaveData();
             SceneManager.sceneLoaded -= OnSceneLoaded;
+            Debug.Log("GameManager détruit - données sauvegardées");
+        }
     }
+
+    private void SaveData()
+    {
+        Debug.Log("Sauvegarde des données du GameManager");
+        GameManagerData.SavedCurrentInsectId = this.currentInsectId;
+        GameManagerData.SavedBugsDatabase = this.bugsDatabase;
+        GameManagerData.SavedSceneToLoad = this.SceneToLoad;
+        GameManagerData.SavedSceneHub = this.SceneHub;
+        GameManagerData.SavedTransitionPrefab = this.transitionPrefab;
+        GameManagerData.SavedSequenceCanvas = this.SequenceCanvas;
+    }
+
+    private void RestoreSavedData()
+    {
+        if (GameManagerData.SavedBugsDatabase != null)
+        {
+            Debug.Log("Restauration des données du GameManager");
+            this.currentInsectId = GameManagerData.SavedCurrentInsectId;
+            this.bugsDatabase = GameManagerData.SavedBugsDatabase;
+            this.SceneToLoad = GameManagerData.SavedSceneToLoad;
+            this.SceneHub = GameManagerData.SavedSceneHub;
+            this.transitionPrefab = GameManagerData.SavedTransitionPrefab;
+            this.SequenceCanvas = GameManagerData.SavedSequenceCanvas;
+            
+            var bugsDbField = typeof(GameManager).GetField("bugsDatabase", 
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            if (bugsDbField != null)
+                bugsDbField.SetValue(this, GameManagerData.SavedBugsDatabase);
+            
+            var transitionField = typeof(GameManager).GetField("transitionPrefab", 
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            if (transitionField != null)
+                transitionField.SetValue(this, GameManagerData.SavedTransitionPrefab);
+            
+            Debug.Log($"Insecte restauré: {this.currentInsectId}");
+        }
+    }
+
+    private void TransferDataFromPreviousInstance(GameManager previousInstance, GameManager newInstance)
+    {
+        if (previousInstance == null || newInstance == null) return;
+
+        newInstance.currentInsectId = previousInstance.currentInsectId;
+        newInstance.bugsDatabase = previousInstance.bugsDatabase;
+        newInstance.SceneToLoad = previousInstance.SceneToLoad;
+        newInstance.SceneHub = previousInstance.SceneHub;
+        newInstance.SequenceCanvas = previousInstance.SequenceCanvas;
+        
+        var bugsDbField = typeof(GameManager).GetField("bugsDatabase", 
+            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        if (bugsDbField != null)
+            bugsDbField.SetValue(newInstance, previousInstance.bugsDatabase);
+        
+        var transitionField = typeof(GameManager).GetField("transitionPrefab", 
+            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        if (transitionField != null)
+            transitionField.SetValue(newInstance, previousInstance.transitionPrefab);
+    }
+
 
     public void OnStartInsect(int id)
     {
