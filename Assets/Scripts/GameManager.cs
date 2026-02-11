@@ -626,6 +626,7 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
+    //Menu
     public void QuitGame() 
     {
     #if UNITY_EDITOR
@@ -635,5 +636,12 @@ public class GameManager : MonoBehaviour
     #endif
     }
     public void Play() => SceneManager.LoadScene("Hub_Scene");
+
+    // Options
+    public void SwitchLanguage()
+    {
+
+    }
+
 }
 

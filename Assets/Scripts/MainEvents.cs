@@ -1,5 +1,7 @@
+using System.Runtime.CompilerServices;
 using NaughtyAttributes.Test;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainEvents : MonoBehaviour
@@ -12,6 +14,8 @@ public class MainEvents : MonoBehaviour
     }
 
     [SerializeField] private PassOrMatch _passOrMatchBtns;
+
+    [SerializeField] private GameObject _gameOverCanvas;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -45,6 +49,11 @@ public class MainEvents : MonoBehaviour
 
     // GameOver
     #region GameOver
+    public void FakeCrash() {
+        _gameOverCanvas.SetActive(true);
+        Invoke("LoadMenu",3f);
+    }
 
+    private void LoadMenu() => SceneManager.LoadScene("Menu");
     #endregion
 }
