@@ -651,8 +651,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e7f9d290bd16f444b87f5be56bcda9bb, type: 2}
-  m_sharedMaterial: {fileID: 4640613502779055377, guid: e7f9d290bd16f444b87f5be56bcda9bb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1216,8 +1216,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5373e14f0de11ad4aa61ce45f943d57b, type: 2}
-  m_sharedMaterial: {fileID: -506534796232392532, guid: 5373e14f0de11ad4aa61ce45f943d57b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2720,6 +2720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VisualPulse
   pulseScale: 1.2
   pulseSpeed: 8
+  durationOfSwitchedFeedback: 0
 --- !u!1 &1306542897
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,7 +3295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2041818664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3313,6 +3314,7 @@ MonoBehaviour:
   SceneToLoad: {fileID: 0}
   SceneHub: {fileID: 102900000, guid: ed3070b826dedf94bb7b16553f33adb4, type: 3}
   UiCanva: {fileID: 0}
+  SequenceCanvas: {fileID: 0}
 --- !u!4 &2041818665
 Transform:
   m_ObjectHideFlags: 0
