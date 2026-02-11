@@ -37,7 +37,7 @@ MonoBehaviour:
       framesPerSprite: 30
       loop: 0
       destroyOnEnd: 0
-    sequenceIndex: 1
+    sequenceIndex: 0
   - perso: Bug 2
     id: 1
     isCompleted: 0
