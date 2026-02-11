@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaa76378291a144d849f29230be0a5a, type: 3}
+  m_Name: GraphDialoguesPapillonDate
+  m_EditorClassIdentifier: Assembly-CSharp::DSDialogueContainerSO
+  <FileName>k__BackingField: GraphDialoguesPapillonDate
+  <DialogueGroups>k__BackingField:
+    list: []
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: 6bbc4828839931a4a814976ca7d09425, type: 2}
+  - {fileID: 11400000, guid: 6c3bd7af25359464498813133bf25f88, type: 2}
+  - {fileID: 11400000, guid: 4339b2226de56c9409ef938ca9f053cb, type: 2}
+  - {fileID: 11400000, guid: b327c072d75fc7946b8d4bcacc7a6b00, type: 2}
+  - {fileID: 11400000, guid: ccb5212b4d9a99f4080085a308e7385f, type: 2}
+  - {fileID: 11400000, guid: 498dc30890fa8b643bb6dfdf19c54ab5, type: 2}
+  - {fileID: 11400000, guid: 4a0e51037eba5054fa49c0817cb7f8a6, type: 2}
+  - {fileID: 11400000, guid: cad38c62338556141807966df3f85f00, type: 2}
+  - {fileID: 11400000, guid: c1d775e1cced3a44ab3bf5139dd9c4a9, type: 2}
+  - {fileID: 11400000, guid: c18e5e85e84a9d74194547ce445e6383, type: 2}
+  - {fileID: 11400000, guid: 1a900307ffc9a7c4294358e2810d261e, type: 2}
+  - {fileID: 11400000, guid: 1db1690dd4e4d8b4b90c33e44d2d6792, type: 2}
+  - {fileID: 11400000, guid: b738ea877f0019641826b47418a9f652, type: 2}
+  - {fileID: 11400000, guid: 1384201b945b264469106e75eec0c863, type: 2}
+  - {fileID: 11400000, guid: b4cba45f985f13445b6df239783c12b4, type: 2}
+  - {fileID: 11400000, guid: f5fb6cc4ce7e51d4db2c6ecc354264e8, type: 2}
+  - {fileID: 11400000, guid: 0453072c49ab42f4ba7f0102c1da4130, type: 2}
+  - {fileID: 11400000, guid: 317af8af5d8537b4fb89c048137876f3, type: 2}
