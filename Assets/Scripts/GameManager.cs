@@ -634,6 +634,6 @@ public class GameManager : MonoBehaviour
             Application.Quit();
     #endif
     }
-    public void Play() => SceneManager.LoadScene("Hub_Scene", LoadSceneMode.Single);
+    public void Play() => SceneManager.LoadScene("Hub_Scene");
 }
 

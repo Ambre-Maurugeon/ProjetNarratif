@@ -129,7 +129,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - label: MatchOnly
-    Key: EV_Notonly
+    Key: EV_MatchOnly
     caption: 1 options letting the player only match the person
     isPrefab: 0
     Event:
