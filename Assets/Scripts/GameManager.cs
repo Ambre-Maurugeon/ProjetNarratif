@@ -1,15 +1,25 @@
+using System;
 using System.Collections;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public static class GameManagerData
+{
+    public static int SavedCurrentInsectId = 0;
+    public static BugsDatabase SavedBugsDatabase = null;
+    public static SceneAsset SavedSceneToLoad = null;
+    public static SceneAsset SavedSceneHub = null;
+    public static GameObject SavedTransitionPrefab = null;
+    public static Canvas SavedSequenceCanvas = null;
+    public static GameObject SavedGlitchEffectPrefab = null;
+}
+
 public class GameManager : MonoBehaviour
 {
-
     [SerializeField] private BugsDatabase bugsDatabase;
     [SerializeField] private GameObject transitionPrefab;
-    
 
     public static GameManager Instance { get; private set; }
     public int currentInsectId = 0;
@@ -18,7 +28,15 @@ public class GameManager : MonoBehaviour
     private Button DateBtn;
     private Button NextButton;
     private Button PrevButton;
+    private Button Date1Btn;
+    private Button Date2Btn;
+    private Button Date3Btn;
+    private Button Date4Btn;
     public Canvas UiCanva;
+    public Canvas SequenceCanvas;
+    public GameObject GlitchEffectPrefab;
+    private GameObject glitchEffectInstance;
+    public Canvas MatchCanvas;
 
     private Coroutine sequenceCoroutine;
     private ImageAnimation sceneImageAnim;
@@ -28,37 +46,35 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
-            Destroy(gameObject);
+            GameManager oldInstance = Instance;
+            
+            TransferDataFromPreviousInstance(oldInstance, this);
+            
+            Instance = this;
+            
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            
+            Destroy(oldInstance.gameObject);
+            
         }
     }
 
     private void Start()
     {
-        UpdateBug();
-
-        if (bugsDatabase != null && bugsDatabase.entries != null)
-        {
-            if (sceneImageAnim == null)
-                sceneImageAnim = FindSceneImageAnimation();
-
-            sceneImageAnim?.GetImage();
-
-            PlayCurrentSequenceNow();
-        }
+        RestoreSavedData();
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
         Pulse.OnEndRythm += StopRythmGame;
         DialogueManager.OnDialogueEnd += ReturnToHub;
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         Pulse.OnEndRythm -= StopRythmGame;
         DialogueManager.OnDialogueEnd -= ReturnToHub;
@@ -67,8 +83,69 @@ public class GameManager : MonoBehaviour
     private void OnDestroy()
     {
         if (Instance == this)
+        {
+            SaveData();
             SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
     }
+
+    private void SaveData()
+    {
+        GameManagerData.SavedCurrentInsectId = this.currentInsectId;
+        GameManagerData.SavedBugsDatabase = this.bugsDatabase;
+        GameManagerData.SavedSceneToLoad = this.SceneToLoad;
+        GameManagerData.SavedSceneHub = this.SceneHub;
+        GameManagerData.SavedTransitionPrefab = this.transitionPrefab;
+        GameManagerData.SavedSequenceCanvas = this.SequenceCanvas;
+        GameManagerData.SavedGlitchEffectPrefab = this.GlitchEffectPrefab;
+    }
+
+    private void RestoreSavedData()
+    {
+        if (GameManagerData.SavedBugsDatabase != null)
+        {
+            this.currentInsectId = GameManagerData.SavedCurrentInsectId;
+            this.bugsDatabase = GameManagerData.SavedBugsDatabase;
+            this.SceneToLoad = GameManagerData.SavedSceneToLoad;
+            this.SceneHub = GameManagerData.SavedSceneHub;
+            this.transitionPrefab = GameManagerData.SavedTransitionPrefab;
+            this.SequenceCanvas = GameManagerData.SavedSequenceCanvas;
+            this.GlitchEffectPrefab = GameManagerData.SavedGlitchEffectPrefab;
+            
+            var bugsDbField = typeof(GameManager).GetField("bugsDatabase", 
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            if (bugsDbField != null)
+                bugsDbField.SetValue(this, GameManagerData.SavedBugsDatabase);
+            
+            var transitionField = typeof(GameManager).GetField("transitionPrefab", 
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            if (transitionField != null)
+                transitionField.SetValue(this, GameManagerData.SavedTransitionPrefab);
+            
+        }
+    }
+
+    private void TransferDataFromPreviousInstance(GameManager previousInstance, GameManager newInstance)
+    {
+        if (previousInstance == null || newInstance == null) return;
+
+        newInstance.currentInsectId = previousInstance.currentInsectId;
+        newInstance.bugsDatabase = previousInstance.bugsDatabase;
+        newInstance.SceneToLoad = previousInstance.SceneToLoad;
+        newInstance.SceneHub = previousInstance.SceneHub;
+        newInstance.SequenceCanvas = previousInstance.SequenceCanvas;
+        
+        var bugsDbField = typeof(GameManager).GetField("bugsDatabase", 
+            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        if (bugsDbField != null)
+            bugsDbField.SetValue(newInstance, previousInstance.bugsDatabase);
+        
+        var transitionField = typeof(GameManager).GetField("transitionPrefab", 
+            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        if (transitionField != null)
+            transitionField.SetValue(newInstance, previousInstance.transitionPrefab);
+    }
+
 
     public void OnStartInsect(int id)
     {
@@ -101,7 +178,8 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        sceneImageAnim = FindSceneImageAnimation();
+        RestoreSavedData();
+        AreAllEntriesCompleted();
         if (sceneImageAnim != null)
             sceneImageAnim.GetImage();
 
@@ -111,13 +189,17 @@ public class GameManager : MonoBehaviour
                 UiCanva = GameObject.Find("UICanva").GetComponent<Canvas>();
         }
 
-        UpdateBug();
+        if (SequenceCanvas == null)
+        {
+            if (GameObject.Find("SequenceCanvas") != null)
+                SequenceCanvas = GameObject.Find("SequenceCanvas").GetComponent<Canvas>();
+        }
 
         if (currentInsectId < 0 || bugsDatabase == null || bugsDatabase.entries == null) return;
 
         CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
         if (entry == null) return;
-
+        
         var transition = FindFirstObjectByType<TransitionScene>();
         if (transition == null && transitionPrefab != null)
         {
@@ -128,28 +210,44 @@ public class GameManager : MonoBehaviour
                 transition = FindFirstObjectByType<TransitionScene>();
             }
         }
-
+        
+        if (scene.name == SceneHub.name) UpdateBug();
+        
+        var dialogueManager = FindFirstObjectByType<DialogueManager>();
+        dialogueManager.runtimeGraph = entry.refDialogue;
+        
         if (transition != null)
+        {
             StartCoroutine(HandleSceneLoadedWithFadeOut(entry, transition));
+        }
         else
         {
             StopAllCoroutines();
-            StartCoroutine(GameplayLoop(entry));
         }
     }
 
     private ImageAnimation FindSceneImageAnimation()
     {
-        if (UiCanva != null)
+        if (SequenceCanvas != null)
         {
-            var seqTf = UiCanva.transform.Find("SequencePlayer");
-            if (seqTf != null)
+            var instCanvas = Instantiate(SequenceCanvas);
+            if (instCanvas != null)
             {
-                var anim = seqTf.GetComponentInChildren<ImageAnimation>();
-                if (anim != null) return anim;
+                instCanvas.renderMode = RenderMode.ScreenSpaceCamera;
+                Camera cam = Camera.main;
+                if (cam == null)
+                {
+                    cam = FindObjectOfType<Camera>();
+                }
+                instCanvas.worldCamera = cam;
+                var seqTf = instCanvas.transform.Find("SequencePlayer");
+                if (seqTf != null)
+                {
+                    var anim = seqTf.GetComponentInChildren<ImageAnimation>();
+                    if (anim != null) return anim;
+                }
             }
         }
-
         return FindFirstObjectByType<ImageAnimation>();
     }
 
@@ -161,23 +259,8 @@ public class GameManager : MonoBehaviour
         yield return StartCoroutine(transition.FadeOut());
 
         StopAllCoroutines();
-        StartCoroutine(GameplayLoop(entry));
     }
-
-    private IEnumerator GameplayLoop(CharacterEntry entry)
-    {
-        while (true)
-        {
-            var dialogueManager = FindFirstObjectByType<DialogueManager>();
-            if (dialogueManager != null)
-            {
-                if (entry.refDialogue != null)
-                {
-                }
-            }
-            yield return null;
-        }
-    }
+    
 
     public void ReturnToHub()
     {
@@ -218,15 +301,47 @@ public class GameManager : MonoBehaviour
 
     public void NextInsect()
     {
-        if (currentInsectId >= 4) return;
-        currentInsectId++;
+        if (bugsDatabase == null || bugsDatabase.entries == null || bugsDatabase.entries.Count == 0) return;
+
+        int nextId = int.MaxValue;
+        bool found = false;
+
+        foreach (var e in bugsDatabase.entries)
+        {
+            if (e == null) continue;
+            if (e.id > currentInsectId && e.id < nextId)
+            {
+                nextId = e.id;
+                found = true;
+            }
+        }
+
+        if (!found) return;
+
+        currentInsectId = nextId;
         UpdateBug();
     }
 
     public void PrevInsect()
     {
-        if (currentInsectId <= 0) return;
-        currentInsectId--;
+        if (bugsDatabase == null || bugsDatabase.entries == null || bugsDatabase.entries.Count == 0) return;
+
+        int prevId = int.MinValue;
+        bool found = false;
+
+        foreach (var e in bugsDatabase.entries)
+        {
+            if (e == null) continue;
+            if (e.id < currentInsectId && e.id > prevId)
+            {
+                prevId = e.id;
+                found = true;
+            }
+        }
+
+        if (!found) return;
+
+        currentInsectId = prevId;
         UpdateBug();
     }
 
@@ -242,8 +357,73 @@ public class GameManager : MonoBehaviour
                 DateBtn = GameObject.Find("DateBtn").GetComponent<Button>();
         }
         if (DateBtn != null)
+        {
             DateBtn.onClick.RemoveAllListeners();
-        DateBtn?.onClick.AddListener(() => OnStartInsect(currentInsectId));
+            DateBtn?.onClick.AddListener(() => OnStartInsect(currentInsectId));
+        }
+
+        if (NextButton == null)
+        {
+            if (GameObject.Find("NextBtn") != null)
+                NextButton = GameObject.Find("NextBtn").GetComponent<Button>();
+        }
+        if (NextButton != null)
+        {
+            NextButton.onClick.RemoveAllListeners();
+            NextButton?.onClick.AddListener(() => NextInsect());
+        }
+
+        if (PrevButton == null)
+        {
+            if (GameObject.Find("PrevBtn") != null)
+                PrevButton = GameObject.Find("PrevBtn").GetComponent<Button>();
+        }
+        if (PrevButton != null)
+        {
+            PrevButton.onClick.RemoveAllListeners();
+            PrevButton?.onClick.AddListener(() => PrevInsect());
+        }
+        
+        if (Date1Btn == null)
+        {
+            if (GameObject.Find("Date1Btn") != null)
+                Date1Btn = GameObject.Find("Date1Btn").GetComponent<Button>();
+        }
+        if (Date1Btn != null)
+        {
+            Date1Btn.onClick.RemoveAllListeners();
+            Date1Btn?.onClick.AddListener(() => SetCurrentInsectId(0));
+        }
+        
+        if (Date2Btn == null)
+        {
+            if (GameObject.Find("Date2Btn") != null)
+                Date2Btn = GameObject.Find("Date2Btn").GetComponent<Button>();
+        }
+        if (Date2Btn != null)        {
+            Date2Btn.onClick.RemoveAllListeners();
+            Date2Btn?.onClick.AddListener(() => SetCurrentInsectId(1));
+        }
+        
+        if (Date3Btn == null)
+        {
+            if (GameObject.Find("Date3Btn") != null)
+                Date3Btn = GameObject.Find("Date3Btn").GetComponent<Button>();
+        }
+        if (Date3Btn != null)        {
+            Date3Btn.onClick.RemoveAllListeners();
+            Date3Btn?.onClick.AddListener(() => SetCurrentInsectId(2));
+        }
+        
+        if (Date4Btn == null)
+        {
+            if (GameObject.Find("Date4Btn") != null)
+                Date4Btn = GameObject.Find("Date4Btn").GetComponent<Button>();
+        }
+        if (Date4Btn != null)        {
+            Date4Btn.onClick.RemoveAllListeners();
+            Date4Btn?.onClick.AddListener(() => SetCurrentInsectId(3));
+        }
 
         if (UiCanva != null)
         {
@@ -287,6 +467,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetCurrentInsectId(int id)
+    {
+        currentInsectId = id;
+    }
+
     private bool FindValidSequenceData(CharacterEntry entry, int startIdx, out int foundIdx, out Sequence seq)
     {
         foundIdx = -1;
@@ -307,7 +492,7 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    public void PlayCurrentSequenceNow()
+    public void PlayCurrentSequenceNow(Sprite firstSprite)
     {
         var DManager = FindFirstObjectByType<DialogueManager>();
         if (DManager != null) DManager.CanInteract = false;
@@ -317,7 +502,59 @@ public class GameManager : MonoBehaviour
         if (sequenceCoroutine != null)
             StopCoroutine(sequenceCoroutine);
 
-        sequenceCoroutine = StartCoroutine(InternalPlaySequence(entry, entry.sequenceIndex));
+        int playIndex = entry.sequenceIndex;
+
+        if (firstSprite != null && entry.Sequences != null && entry.Sequences.Length > 0)
+        {
+            for (int i = 0; i < entry.Sequences.Length; i++)
+            {
+                var seq = entry.Sequences[i];
+                if (seq.sprites != null && seq.sprites.Length > 0 && seq.sprites[0] == firstSprite)
+                {
+                    playIndex = i;
+                    break;
+                }
+            }
+        }
+
+        sequenceCoroutine = StartCoroutine(InternalPlaySequence(entry, playIndex));
+    }
+    public void PlayCurrentGlitchedSequenceNow(Sprite firstSprite)
+    {
+        var DManager = FindFirstObjectByType<DialogueManager>();
+        if (DManager != null) DManager.CanInteract = false;
+        var entry = bugsDatabase?.entries?.Find(e => e != null && e.id == currentInsectId);
+        if (entry == null) return;
+
+        if (sequenceCoroutine != null)
+            StopCoroutine(sequenceCoroutine);
+
+        GameObject glitchInstance = null;
+        if (GlitchEffectPrefab != null)
+        {
+            glitchInstance = Instantiate(GlitchEffectPrefab);
+            if (glitchInstance != null)
+                glitchInstance.SetActive(true);
+        }
+
+        glitchEffectInstance = glitchInstance;
+
+        int playIndex = entry.sequenceIndex;
+
+        if (firstSprite != null && entry.Sequences != null && entry.Sequences.Length > 0)
+        {
+            for (int i = 0; i < entry.Sequences.Length; i++)
+            {
+                var seq = entry.Sequences[i];
+                if (seq.sprites != null && seq.sprites.Length > 0 && seq.sprites[0] == firstSprite)
+                {
+                    playIndex = i;
+
+                    break;
+                }
+            }
+        }
+        sequenceCoroutine = StartCoroutine(InternalPlaySequence(entry, playIndex));
     }
 
     private IEnumerator InternalPlaySequence(CharacterEntry entry, int playIndex)
@@ -369,6 +606,8 @@ public class GameManager : MonoBehaviour
             {
                 animEnded = true;
                 entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+                Destroy(sceneImageAnim.gameObject);
+                Destroy(glitchEffectInstance.gameObject);
             };
             sceneImageAnim.AnimationEnded += handler;
 
@@ -388,4 +627,59 @@ public class GameManager : MonoBehaviour
         sequenceCoroutine = null;
         yield break;
     }
+
+    private void MatchLaunch()
+    {
+        MatchCanvas.gameObject.SetActive(true);
+    }
+
+    private void OnApplicationQuit()
+    {
+        ResetCompletionFlags();
+    }
+
+    private void ResetCompletionFlags()
+    {
+        if (bugsDatabase == null || bugsDatabase.entries == null) return;
+
+        foreach (var entry in bugsDatabase.entries)
+        {
+            if (entry != null)
+                entry.isCompleted = false;
+        }
+
+#if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(bugsDatabase);
+        UnityEditor.AssetDatabase.SaveAssets();
+#endif
+    }
+
+    public bool AreAllEntriesCompleted()
+    {
+        foreach (var entry in bugsDatabase.entries)
+        {
+            if (entry == null) continue;
+            if (!entry.isCompleted) return false;
+        }
+        return true;
+    }
+
+    //Menu
+    public void QuitGame() 
+    {
+    #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+    #endif
+    }
+    public void Play() => SceneManager.LoadScene("Hub_Scene");
+
+    // Options
+    public void SwitchLanguage()
+    {
+
+    }
+
 }
+

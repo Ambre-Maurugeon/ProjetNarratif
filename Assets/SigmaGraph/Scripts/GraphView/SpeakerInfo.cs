@@ -10,6 +10,7 @@ public class SpeakerInfo
     public const string AssetExtension = "simpleg";
     
     public string Name;
+    public string DisplayName;
     public Espeaker speakEnum;
     public List<SpriteHumeur> SpritesHumeur;
     

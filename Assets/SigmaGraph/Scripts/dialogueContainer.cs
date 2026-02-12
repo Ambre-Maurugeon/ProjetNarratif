@@ -26,9 +26,9 @@ public class dialogueContainer : MonoBehaviour
         else
             _nextButton?.gameObject.SetActive(true);
 
-        if (characterImage != null) characterImage.sprite = characterSprite;
-        
-        dialogueText.SetText(dialogue);
+        if (characterImage && characterSprite) characterImage.sprite = characterSprite;
+
+                dialogueText.SetText(dialogue);
         dManager.CheckCensorship(ref CensorParent, dialogueText, parent: childContainer.transform);
 
         speakerNameText.SetText(speakerName);

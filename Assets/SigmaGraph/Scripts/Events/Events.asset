@@ -72,13 +72,6 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
-  - label: Show Mantis arms
-    Key: EV_StartMantis
-    caption: montre les bras de la mante pour la premiere fois
-    isPrefab: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
   - label: Move Mantis arms
     Key: EV_MoveMantis
     caption: Move Mantis arms
@@ -93,9 +86,16 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
-  - label: Call
+  - label: Sequence
     Key: EV_ShowImage
-    caption: Hide Mantis arms
+    caption: joue une animation avec un glitch
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Pass to Dark Level
+    Key: EV_DarkLevel
+    caption: switch l ui, le background, le coeur, la mante version dark
     isPrefab: 0
     Event:
       m_PersistentCalls:
@@ -129,7 +129,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - label: MatchOnly
-    Key: EV_Notonly
+    Key: EV_MatchOnly
     caption: 1 options letting the player only match the person
     isPrefab: 0
     Event:

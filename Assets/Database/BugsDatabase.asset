@@ -16,7 +16,7 @@ MonoBehaviour:
   - perso: Bourdon
     id: 0
     isCompleted: 0
-    refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
+    refDialogue: {fileID: 11400000, guid: 5fa68d7144e08704383094a717aa7888, type: 2}
     NewSpeedBPM: 1
     characterSprite: {fileID: -909507038745483531, guid: 0e0d46da5340a974db6da779f3383936, type: 3}
     description:
@@ -24,28 +24,14 @@ MonoBehaviour:
     - 1
     - 2
     BgSprite: {fileID: -9074006278687196050, guid: 7869c92813eb54a4bb0f261ce9643bb0, type: 3}
-    Sequences:
-    - sprites:
-      - {fileID: -1100583664547031073, guid: 8d75ee8403d99404a99f000f6135abf8, type: 3}
-      - {fileID: 4677777032245502107, guid: 1d28a749bf147ec4ab18c358ca2c298a, type: 3}
-      framesPerSprite: 6
-      loop: 0
-      destroyOnEnd: 0
-    - sprites:
-      - {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
-      - {fileID: 21300000, guid: ddba7a5d2b29f334b9d2dffc59f568c1, type: 3}
-      - {fileID: 21300000, guid: d86a139ae4a64df499f0a12e26f98419, type: 3}
-      - {fileID: 21300000, guid: e052daf03e049f54b9844545ac3e54c2, type: 3}
-      framesPerSprite: 6
-      loop: 0
-      destroyOnEnd: 0
+    Sequences: []
     sequenceIndex: 0
-  - perso: Bug 2
+  - perso: Cloporte
     id: 1
     isCompleted: 0
-    refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
+    refDialogue: {fileID: 11400000, guid: 0307a525ca3ec7549a718935319613e2, type: 2}
     NewSpeedBPM: 1
-    characterSprite: {fileID: 21300000, guid: d86a139ae4a64df499f0a12e26f98419, type: 3}
+    characterSprite: {fileID: -1381784074667881438, guid: ee4dbc1a960453446b7c8e02cf327d46, type: 3}
     description:
     - 3
     - 4
@@ -53,12 +39,12 @@ MonoBehaviour:
     BgSprite: {fileID: -2818449658216415420, guid: ca6b1ba428649c544a36c3cc2a3e1633, type: 3}
     Sequences: []
     sequenceIndex: 0
-  - perso: Bug 3
+  - perso: Papillon
     id: 2
     isCompleted: 0
     refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
     NewSpeedBPM: 1
-    characterSprite: {fileID: 21300000, guid: 8d8f508bede9d974d8e85f7cbedbcd22, type: 3}
+    characterSprite: {fileID: -8465993084441826826, guid: 5d98efaf291f1ff4bba7251da3494d29, type: 3}
     description:
     - 6
     - 7
@@ -66,16 +52,16 @@ MonoBehaviour:
     BgSprite: {fileID: -7176216987877333843, guid: 2514be1ce4009e748a7fc27a5c26fa02, type: 3}
     Sequences: []
     sequenceIndex: 0
-  - perso: 'febj bdxf '
+  - perso: Gendarmes
     id: 3
     isCompleted: 0
     refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
     NewSpeedBPM: 1
-    characterSprite: {fileID: 21300000, guid: 005888ede18a58e4db8d069cfa3007cb, type: 3}
+    characterSprite: {fileID: -541288332512988963, guid: 39b51842ec1c741448b828f736a04a26, type: 3}
     description:
     - 9
     - 10
     - 11
-    BgSprite: {fileID: -7906568950211089970, guid: 74ec7c6c678cfa442b00d532801b5e81, type: 3}
+    BgSprite: {fileID: -7906568950211089970, guid: 9bf133a66591a754e8a7d08917b6dd95, type: 3}
     Sequences: []
     sequenceIndex: 0
