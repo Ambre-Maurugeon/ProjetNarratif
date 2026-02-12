@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using NaughtyAttributes;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
@@ -64,6 +65,47 @@ public class EventsManager : MonoBehaviour
                 list.Add(new EventController(e.Key));
         }
     }
+
+    [Button]
+    private void Refresh()
+    {
+        // Add new event
+        foreach (EventData e in SO.eventDatas)
+        {
+            if (!e.isPrefab)
+            {
+                bool contains = false;
+                foreach (var c in list)
+                {
+                    if(c.Key == e.Key) {
+                        contains = true; 
+                        break; 
+                    }
+                }
+
+                if(!contains)
+                    list.Add(new EventController(e.Key));
+            }
+        }
+
+        // delete old event
+        for(int i = 0; i < list.Count; i++) 
+        {
+            bool contains = false;
+            foreach (EventData e in SO.eventDatas)
+            {
+                if(e.Key == list[i].Key)
+                {
+                    contains = true;
+                    break;
+                }
+            }
+
+            if (!contains)
+                list.Remove(list[i]);
+        }
+    }
+
 #endif
 
     // ---- EVENTS ----
@@ -89,6 +131,8 @@ public class EventsManager : MonoBehaviour
 
         return e;
     }
+
+
 }
 
 [System.Serializable]
