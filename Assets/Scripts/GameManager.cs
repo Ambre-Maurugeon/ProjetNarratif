@@ -173,6 +173,9 @@ public class GameManager : MonoBehaviour
         if (transition != null)
             yield return StartCoroutine(transition.FadeIn());
 
+        var AudioManager = FindFirstObjectByType<AudioManager>();
+        AudioManager.PlayAudio(0);
+        
         SceneManager.LoadScene(SceneToLoad.name);
     }
 
@@ -225,7 +228,7 @@ public class GameManager : MonoBehaviour
             StopAllCoroutines();
         }
     }
-
+    
     private ImageAnimation FindSceneImageAnimation()
     {
         if (SequenceCanvas != null)
@@ -317,7 +320,10 @@ public class GameManager : MonoBehaviour
         }
 
         if (!found) return;
-
+        
+        var AudioManager = FindFirstObjectByType<AudioManager>();
+        AudioManager.PlayTwoAudios(1);
+        
         currentInsectId = nextId;
         UpdateBug();
     }
@@ -341,6 +347,9 @@ public class GameManager : MonoBehaviour
 
         if (!found) return;
 
+        var AudioManager = FindFirstObjectByType<AudioManager>();
+        AudioManager.PlayAudio(2);
+        
         currentInsectId = prevId;
         UpdateBug();
     }
@@ -469,8 +478,13 @@ public class GameManager : MonoBehaviour
 
     public void SetCurrentInsectId(int id)
     {
+        
+        var AudioManager = FindFirstObjectByType<AudioManager>();
+        AudioManager.PlayAudio(2);
+        
         currentInsectId = id;
-    }
+        UpdateBug();
+    }       
 
     private bool FindValidSequenceData(CharacterEntry entry, int startIdx, out int foundIdx, out Sequence seq)
     {
@@ -554,6 +568,10 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+        
+        var AudioManager = FindFirstObjectByType<AudioManager>();
+        AudioManager.PlayAudio(1);
+        
         sequenceCoroutine = StartCoroutine(InternalPlaySequence(entry, playIndex));
     }
 
