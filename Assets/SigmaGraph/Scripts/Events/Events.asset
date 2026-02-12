@@ -256,3 +256,10 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - label: ChangeToNight
+    Key: EV_ChangeNight
+    caption: Change scene to night scene
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
