@@ -26,10 +26,11 @@ MonoBehaviour:
     - Aime VRAIMENT les dino.
     BgSprite: {fileID: -9074006278687196050, guid: 7869c92813eb54a4bb0f261ce9643bb0, type: 3}
     Sequences:
-    - sprites: []
-      framesPerSprite: 0
+    - sprites:
+      - {fileID: -481098791475936692, guid: bf93afe2146c4f9479f02bcd1b7600bd, type: 3}
+      framesPerSprite: 80
       loop: 0
-      destroyOnEnd: 0
+      destroyOnEnd: 1
     sequenceIndex: 0
   - perso: "Fr\xE9d\xE9rique (25ans)"
     id: 1
@@ -45,11 +46,10 @@ MonoBehaviour:
     BgSprite: {fileID: -2818449658216415420, guid: ca6b1ba428649c544a36c3cc2a3e1633, type: 3}
     Sequences:
     - sprites:
-      - {fileID: -909507038745483531, guid: 5fac6ef67b1eff74a94c169bf219b9be, type: 3}
-      - {fileID: -909507038745483531, guid: a08805d3e33d6584daca1ea5300d2299, type: 3}
-      framesPerSprite: 1
+      - {fileID: 853352966259622118, guid: a406ebeb0fe908d44827b69688c814f5, type: 3}
+      framesPerSprite: 40
       loop: 0
-      destroyOnEnd: 0
+      destroyOnEnd: 1
     sequenceIndex: 0
   - perso: Dominique (30ans)
     id: 2
@@ -63,7 +63,12 @@ MonoBehaviour:
     - Passe plus de 8h/jour devant son mirroir.Passe plus de 8h/jour devant son mirroir.
     - "Est extr\xEAment souple."
     BgSprite: {fileID: -7176216987877333843, guid: 2514be1ce4009e748a7fc27a5c26fa02, type: 3}
-    Sequences: []
+    Sequences:
+    - sprites:
+      - {fileID: 235601465247075377, guid: cbca531f1d6740d4aa4a08d166425b45, type: 3}
+      framesPerSprite: 40
+      loop: 0
+      destroyOnEnd: 1
     sequenceIndex: 0
   - perso: Stuart (35ans)
     id: 3
@@ -88,5 +93,16 @@ MonoBehaviour:
     characterSprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
     description: []
     BgSprite: {fileID: 0}
-    Sequences: []
+    Sequences:
+    - sprites:
+      - {fileID: -7622984686656493898, guid: 121efe3f03d9ba44ab20c31000aa7009, type: 3}
+      - {fileID: -1965478385883702799, guid: a62a71111f01efd49b7f395b951ef4b2, type: 3}
+      framesPerSprite: 30
+      loop: 0
+      destroyOnEnd: 1
+    - sprites:
+      - {fileID: 5794902363594104546, guid: 261305f1bfc4498409d6c3c135648901, type: 3}
+      framesPerSprite: 30
+      loop: 0
+      destroyOnEnd: 1
     sequenceIndex: 0
