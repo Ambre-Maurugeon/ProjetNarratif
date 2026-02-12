@@ -1362,6 +1362,8 @@ MonoBehaviour:
     isMultipleChoice: 0
     _dropDownKeyEventList:
     - EV_Sequencehand
+    - EV_HideGen
+    - EV_DarkLevel
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 4bdb0d5e-ed1b-41b2-ab6b-3f73b166b009
@@ -1435,7 +1437,9 @@ MonoBehaviour:
     _dropDownKeyDialogue: Narrator_DG7
     isMultipleChoice: 0
     _dropDownKeyEventList:
+    - EV_HideGen
     - EV_Sequencehand
+    - EV_DarkLevel
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: a7001fc4-39b2-4172-a037-7bb8234a214d
@@ -1491,7 +1495,9 @@ MonoBehaviour:
     _dropDownKeyDialogue: Narrator_DG7
     isMultipleChoice: 0
     _dropDownKeyEventList:
+    - EV_HideGen
     - EV_Sequencehand
+    - EV_DarkLevel
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 9469b93c-590a-4191-b9da-02f780d351eb
@@ -2160,7 +2166,9 @@ MonoBehaviour:
     _dropDownKeyDialogue: Narrator_DG7
     isMultipleChoice: 0
     _dropDownKeyEventList:
+    - EV_HideGen
     - EV_Sequencehand
+    - EV_DarkLevel
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: f3e935ce-6fc8-4269-b49d-055b4f987cb6
@@ -2198,7 +2206,9 @@ MonoBehaviour:
     _dropDownKeyDialogue: Narrator_DG7
     isMultipleChoice: 0
     _dropDownKeyEventList:
+    - EV_HideGen
     - EV_Sequencehand
+    - EV_DarkLevel
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 189b662f-75f7-4f23-a2d2-3499f54231cc
@@ -2554,24 +2564,6 @@ MonoBehaviour:
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 9052, y: 5448}
-  - <ID>k__BackingField: 2aa2ac6d-1023-48f3-909c-ded10909342f
-    <Name>k__BackingField: DialogueName_70
-    <Speaker>k__BackingField: 8
-    BubleType: 0
-    Humeur: 2
-    _dropDownKeyDialogue: Narrator_DG7
-    isMultipleChoice: 0
-    _dropDownKeyEventList: []
-    <OnlyOneConditionNeeded>k__BackingField: 0
-    <ChoicesInNode>k__BackingField:
-    - NodeID: 37f864f8-92e8-4b37-9153-3bfb54d74e82
-      _dropDownKeyChoice: 
-      <ConditionsSc>k__BackingField: []
-      <ConditionsKey>k__BackingField: []
-      _directionPort: 0
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 9063.2, y: 7824}
   - <ID>k__BackingField: 37f864f8-92e8-4b37-9153-3bfb54d74e82
     <Name>k__BackingField: DialogueName_69
     <Speaker>k__BackingField: 4
@@ -2654,7 +2646,9 @@ MonoBehaviour:
     _dropDownKeyDialogue: Narrator_DG7
     isMultipleChoice: 0
     _dropDownKeyEventList:
+    - EV_HideGen
     - EV_Sequencehand
+    - EV_DarkLevel
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 1f79443d-6251-4612-bc94-35240b106b9a
@@ -2693,6 +2687,8 @@ MonoBehaviour:
     isMultipleChoice: 0
     _dropDownKeyEventList:
     - EV_SequenceEndNoBlod
+    - EV_HideGen
+    - EV_DarkLevel
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: a45602e8-4d57-40bb-82e1-fa82b4cededb
@@ -2703,6 +2699,27 @@ MonoBehaviour:
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: -4620.8, y: 6225.6}
+  - <ID>k__BackingField: 2aa2ac6d-1023-48f3-909c-ded10909342f
+    <Name>k__BackingField: DialogueName_70
+    <Speaker>k__BackingField: 8
+    BubleType: 0
+    Humeur: 2
+    _dropDownKeyDialogue: Narrator_DG7
+    isMultipleChoice: 0
+    _dropDownKeyEventList:
+    - EV_HideGen
+    - EV_Sequencehand
+    - EV_DarkLevel
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 37f864f8-92e8-4b37-9153-3bfb54d74e82
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 8432, y: 7716}
   <OldGroupNames>k__BackingField:
   - DialogueGroup
   <OldUngroupedNodeNames>k__BackingField:
@@ -2840,7 +2857,6 @@ MonoBehaviour:
   - DialogueName_66
   - DialogueName_71
   - DialogueName_65
-  - DialogueName_70
   - DialogueName_69
   - END
   - DialogueName_94
@@ -2848,6 +2864,7 @@ MonoBehaviour:
   - DialogueName_108
   - DialogueName_77
   - DialogueName_22
+  - DialogueName_70
   <OldGroupedNodeNames>k__BackingField:
     list:
     - Key: DialogueGroup
