@@ -24,13 +24,7 @@ public class VisualPulse : MonoBehaviour
     private Sprite baseSprite;
     private Sprite newSprite;
 
-    private void Awake()
-    {
-        if (image == Circle)
-        {
-            gameObject.SetActive(false);
-        }
-    }
+
     void Start()
     {
         baseScale = transform.localScale;
@@ -48,7 +42,7 @@ public class VisualPulse : MonoBehaviour
         else
         {
             circle = true;
-            /*gameObject.SetActive(false);*/
+            gameObject.SetActive(false);
             Debug.LogWarning($"Image: {image}");
         }
 
@@ -70,7 +64,10 @@ public class VisualPulse : MonoBehaviour
     public void Pulsing()
     {
         pulsing = true;
-        gameObject.SetActive(true);
+        if (circle)
+        {
+            gameObject.SetActive(true);
+        }
 
     }
 
@@ -154,28 +151,31 @@ public class VisualPulse : MonoBehaviour
     }
 
     public void DisabledCircle()
-    {
-
-    }
-/*
- * Pour une précision Diabolique |
- *                               |
- *                               V
-    public float CalculatePulseProgress()
-    {
-        if (pulsing)
+    { 
+        if (circle) 
         {
-            return Mathf.Clamp01(Time.time % pulseSpeed / pulseSpeed);
+            gameObject.SetActive(false);
+        }
+    }
+    /*
+     * Pour une précision Diabolique |
+     *                               |
+     *                               V
+        public float CalculatePulseProgress()
+        {
+            if (pulsing)
+            {
+                return Mathf.Clamp01(Time.time % pulseSpeed / pulseSpeed);
+            }
+
+            return 0f;
         }
 
-        return 0f;
-    }
-
-    public bool IsPerfectTiming()
-    {
-        Handheld.Vibrate();
-        Perfect?.Invoke();
-        return Mathf.Approximately(pulseProgress, 1f);
-    }*/
+        public bool IsPerfectTiming()
+        {
+            Handheld.Vibrate();
+            Perfect?.Invoke();
+            return Mathf.Approximately(pulseProgress, 1f);
+        }*/
 
 }
