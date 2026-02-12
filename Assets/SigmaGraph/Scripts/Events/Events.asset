@@ -263,3 +263,11 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - label: CloporteFenetre
+    Key: EV_CloFenetre
+    caption: "Fait apparaitre le sprite du cloporte qui regarde par la fen\xEAtre
+      pour un dialogue"
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
