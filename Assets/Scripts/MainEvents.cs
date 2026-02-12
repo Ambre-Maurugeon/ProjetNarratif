@@ -3,19 +3,24 @@ using NaughtyAttributes.Test;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class MainEvents : MonoBehaviour
 {
-    [System.Serializable]
+    [Serializable]
     struct PassOrMatch
     {
         public GameObject passBtn;
         public GameObject matchBtn;
     }
-
+    [Header("PassOrMatch")]
     [SerializeField] private PassOrMatch _passOrMatchBtns;
 
+    [Header("GameOver")]
     [SerializeField] private GameObject _gameOverCanvas;
+
+    [Header("Décors")]
+    [SerializeField] private Image _TV;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -55,5 +60,13 @@ public class MainEvents : MonoBehaviour
     }
 
     private void LoadMenu() => SceneManager.LoadScene("Menu");
+    #endregion
+
+    //Decors
+    #region Decors
+
+    // TV
+    public void PutOnTV(Sprite image) => _TV.sprite = image;
+
     #endregion
 }
