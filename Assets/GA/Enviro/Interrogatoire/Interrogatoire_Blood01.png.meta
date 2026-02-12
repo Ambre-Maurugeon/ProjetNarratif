@@ -1,25 +1,10 @@
 fileFormatVersion: 2
-guid: d75d2acb206293d4fa39e276681fb70a
+guid: 121efe3f03d9ba44ab20c31000aa7009
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5577614997263950585
-    second: Tv_off_0
-  - first:
-      213: -4038766154430875738
-    second: Tv_off_1
-  - first:
-      213: 1710609240656573945
-    second: Tv_off_2
-  - first:
-      213: -886370246534358384
-    second: Tv_off_3
-  - first:
-      213: -379900664127891960
-    second: Tv_off_4
-  - first:
-      213: 8911423751317182951
-    second: Tv_off_5
+      213: -7622984686656493898
+    second: Interrogatoire_Blood01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -141,133 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tv_off_0
+      name: Interrogatoire_Blood01_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 660
-        width: 520
-        height: 420
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 70dd03226b45892b0800000000000000
-      internalID: -5577614997263950585
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tv_off_1
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 758
-        width: 428
-        height: 322
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6a7f642b49b63f7c0800000000000000
-      internalID: -4038766154430875738
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tv_off_2
-      rect:
-        serializedVersion: 2
-        x: 466
-        y: 740
-        width: 6
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9f5f5da8a0e4db710800000000000000
-      internalID: 1710609240656573945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tv_off_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 732
-        width: 29
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 09a18dbf4faf2b3f0800000000000000
-      internalID: -886370246534358384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tv_off_4
-      rect:
-        serializedVersion: 2
-        x: 455
-        y: 706
-        width: 13
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 806d8b8db525abaf0800000000000000
-      internalID: -379900664127891960
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tv_off_5
-      rect:
-        serializedVersion: 2
-        x: 380
-        y: 701
-        width: 27
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7e95d34efacbbab70800000000000000
-      internalID: 8911423751317182951
+      spriteID: 6b6e897d0d7b53690800000000000000
+      internalID: -7622984686656493898
       vertices: []
       indices: 
       edges: []
@@ -276,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: eefa8a89684fa064596344bb4ff4c354
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -286,12 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tv_off_0: -5577614997263950585
-      Tv_off_1: -4038766154430875738
-      Tv_off_2: 1710609240656573945
-      Tv_off_3: -886370246534358384
-      Tv_off_4: -379900664127891960
-      Tv_off_5: 8911423751317182951
+      Interrogatoire_Blood01_0: -7622984686656493898
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

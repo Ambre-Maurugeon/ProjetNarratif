@@ -1188,7 +1188,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3852130781357351905, guid: 676b0c6b54513114899ed6a5d8d35cc5, type: 3}
+  m_Sprite: {fileID: -5577614997263950585, guid: d75d2acb206293d4fa39e276681fb70a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1895,7 +1895,7 @@ MonoBehaviour:
           m_MethodName: PutOnTV
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: -8712980398906479894, guid: ef566a9918f27d746b176d38d7bb4876, type: 3}
+            m_ObjectArgument: {fileID: 782869012577089773, guid: ef566a9918f27d746b176d38d7bb4876, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -1927,7 +1927,7 @@ MonoBehaviour:
           m_MethodName: PutOnTV
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: -4038766154430875738, guid: d75d2acb206293d4fa39e276681fb70a, type: 3}
+            m_ObjectArgument: {fileID: -5577614997263950585, guid: d75d2acb206293d4fa39e276681fb70a, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -2068,6 +2068,46 @@ MonoBehaviour:
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: -4931088456632721194, guid: b0c216045620cf745a967a75228cf2d9, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Key: EV_CodeLyoko
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - Key: EV_SequenceEndNoBlod
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - Key: EV_ChangeNight
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1147973324}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5992884458194847247, guid: 1a2f1128a01eee44ebf6cb26d9b53f01, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Key: EV_CloFenetre
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1662151849}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7869729142173346564, guid: 7680bb273d7296441952e888e35bbf5d, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -5238,7 +5278,7 @@ MonoBehaviour:
   pulseScale: 1.2
   pulseSpeed: 8
   durationOfSwitchedFeedback: 0.5
-  Circle: {fileID: 0}
+  Circle: {fileID: 982699734601327758}
 --- !u!1 &1300187653
 GameObject:
   m_ObjectHideFlags: 0
