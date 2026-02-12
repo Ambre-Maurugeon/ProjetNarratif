@@ -151,7 +151,10 @@ public class GameManager : MonoBehaviour
     {
         if (bugsDatabase == null || bugsDatabase.entries == null) return;
         CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == id);
-        if (entry == null || entry.isCompleted) return;
+        if (AreAllEntriesCompleted() != true)
+        {
+            if (entry == null || entry.isCompleted) return;
+        }
         currentInsectId = id;
         StartCoroutine(StartInsectCoroutine());
     }
@@ -182,7 +185,6 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         RestoreSavedData();
-        AreAllEntriesCompleted();
         if (sceneImageAnim != null)
             sceneImageAnim.GetImage();
 
@@ -284,7 +286,9 @@ public class GameManager : MonoBehaviour
 
         CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
         if (entry != null) entry.isCompleted = true;
-
+        
+        if (AreAllEntriesCompleted()==true) OnStartInsect(3);
+        
         SceneManager.LoadScene(SceneHub.name);
     }
 
@@ -540,6 +544,8 @@ public class GameManager : MonoBehaviour
         var entry = bugsDatabase?.entries?.Find(e => e != null && e.id == currentInsectId);
         if (entry == null) return;
 
+        entry.hasMatched = true;
+
         if (sequenceCoroutine != null)
             StopCoroutine(sequenceCoroutine);
 
@@ -723,6 +729,7 @@ public class GameManager : MonoBehaviour
                 entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
                 Destroy(sceneImageAnim.gameObject);
                 Destroy(glitchEffectInstance.gameObject);
+                ReturnToHub();
             };
             sceneImageAnim.AnimationEnded += handler;
 
