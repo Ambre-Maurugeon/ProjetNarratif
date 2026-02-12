@@ -185,6 +185,13 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - label: "Retour_dans_le_pass\xE9_MENU"
+    Key: EV_CodeLyoko
+    caption: Return to the HUB after a clic of the player on the dialogue
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
   - label: SequenceRomouche
     Key: EV_Sequenceromouche
     caption: Play the sequence of romeo eating the shit out of the snail
