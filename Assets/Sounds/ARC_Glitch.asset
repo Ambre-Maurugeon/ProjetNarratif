@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-5401377447781675435
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_Glitch_Large_02_{-5401377447781675435}
+  m_AudioClip: {fileID: 8300000, guid: b6aa362c468bfae468935bf07c214879, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-4968564190412382256
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_Glitch_Small_02_{-4968564190412382256}
+  m_AudioClip: {fileID: 8300000, guid: f2f5e8edcc3361e45b4a400ee0f4386c, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &5273599258089610351
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_Glitch_Small_01_{5273599258089610351}
+  m_AudioClip: {fileID: 8300000, guid: e6b6f255f5acedd4794d5343a3aeac1d, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ARC_Glitch
+  m_Volume: 0
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: 0, y: 0}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: 7255873574513720701}
+  - {fileID: -5401377447781675435}
+  - {fileID: 8537251393428186640}
+  - {fileID: 5273599258089610351}
+  - {fileID: -4968564190412382256}
+  - {fileID: 8239995969682943048}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 2
+  m_TriggerMode: 1
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 1
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 0
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &7255873574513720701
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_Glitch_Large_01_{7255873574513720701}
+  m_AudioClip: {fileID: 8300000, guid: f83e2175e38122a4d8a855f2ab27bd89, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &8239995969682943048
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_Glitch_Small_03_{8239995969682943048}
+  m_AudioClip: {fileID: 8300000, guid: 49299d87bfacc3e4ab890bc5aae0064a, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &8537251393428186640
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX_Glitch_Large_03_{8537251393428186640}
+  m_AudioClip: {fileID: 8300000, guid: 96278f3cd9d7d7e48934be371ab80205, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
