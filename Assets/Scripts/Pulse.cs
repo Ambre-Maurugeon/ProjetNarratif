@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
+using JetBrains.Annotations;
 
 public class Pulse : MonoBehaviour
 {
@@ -25,17 +26,16 @@ public class Pulse : MonoBehaviour
         private int failCount;
         private int perfectCount;
 
-        public bool perfect;
-        public bool good;   
-        public bool bad;
+        private bool perfect = false;
+        private bool good = false;
+        private bool bad = false;
 
         
     
         void Start()
-        {
+        {           
             beatInterval = 60f / bpm;
             /*StartSequence();*/
-
         }
 
     void Update()
@@ -67,6 +67,8 @@ public class Pulse : MonoBehaviour
 
                     if (touch.phase == TouchPhase.Began)
                     {
+                        failCount = 0;
+                        perfectCount = 0;
                         CheckTiming();
                     }
                 }
@@ -95,7 +97,7 @@ public class Pulse : MonoBehaviour
 
             if (Mathf.Approximately(difference, 0f))
             {
-                perfectCount += 1;
+               perfectCount += 1;
                Handheld.Vibrate();
                Debug.Log("PERFEECT !!");
             }   
@@ -121,22 +123,27 @@ public class Pulse : MonoBehaviour
         Debug.Log($"▶ Séquence commencée pour {sequenceDuration} secondes !");
     }
 
+    //Version simplifié
     public void Result()
     {
         if (perfectCount == nextBeatTime - 1) 
         {
-            bool Perfect() => perfect;
+            perfect = true;
         }
 
         if (failCount <= 3)
         {
-            bool Good() => good;
+            good = true;
         }
         else 
         {
-            bool Bad() => bad;
+            bad = true;
         }
     }
+
+    public bool Perfect() => perfect;
+    public bool Good() => good;
+    public bool Bad() => bad;
 
 }
 
