@@ -4223,9 +4223,9 @@ RectTransform:
   - {fileID: 472847116}
   m_Father: {fileID: 1465001130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 237.5, y: -246.9737}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1300187655
@@ -4659,7 +4659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1426462587
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4918,9 +4918,9 @@ RectTransform:
   - {fileID: 284248276}
   m_Father: {fileID: 1465001130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 562.5, y: -246.9737}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1471560435
@@ -5708,7 +5708,7 @@ MonoBehaviour:
   SceneToLoad: {fileID: 102900000, guid: df777568513af8448835c40c16b56364, type: 3}
   SceneHub: {fileID: 102900000, guid: 71f0c2d626ac1bb4e8cef912345ceef2, type: 3}
   UiCanva: {fileID: 0}
-  SequenceCanvas: {fileID: 1699991158701647685, guid: f2fc17715a5a3ef4dae339c5b7c036c2, type: 3}
+  SequenceCanvas: {fileID: 0}
   GlitchEffectPrefab: {fileID: 0}
   MatchCanvas: {fileID: 1426462590}
 --- !u!4 &2041818665
