@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using Unity.VisualScripting;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.UI;
 public class VisualPulse : MonoBehaviour
@@ -86,11 +88,11 @@ public class VisualPulse : MonoBehaviour
         
             if (b)
             {
-                return "Assets/GA/UI/heart_UI_success.png";
+                return "GA/UI/heart_UI_success";
             }
             else 
             {
-                return "Assets/GA/UI/heart_UI_fail.png";
+                return "GA/UI/heart_UI_fail";
             }
         
     }
@@ -108,11 +110,7 @@ public class VisualPulse : MonoBehaviour
 
         float elapsedTime = 0f;
 
-#if UNITY_EDITOR
-        newSprite = (Sprite)AssetDatabase.LoadAssetAtPath(ImagePath(state), typeof(Sprite));
-#else
         newSprite = (Sprite)Resources.Load(ImagePath(state), typeof(Sprite));
-#endif
         image.sprite = newSprite;
 
         while (elapsedTime <= durationOfSwitchedFeedback)
