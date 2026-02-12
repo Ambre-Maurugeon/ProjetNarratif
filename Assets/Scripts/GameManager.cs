@@ -366,7 +366,7 @@ public class GameManager : MonoBehaviour
         if (!found) return;
         
         var AudioManager = FindFirstObjectByType<AudioManager>();
-        AudioManager.PlayTwoAudios(1);
+        AudioManager.PlayAudio(2);
         
         currentInsectId = nextId;
         UpdateBug();
