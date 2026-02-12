@@ -25,3 +25,12 @@ MonoBehaviour:
   - Label: Bulle
     Key: goodscore
     Caption: augdagdgh
+  - Label: MortDuBourdon
+    Key: MortBourdon
+    Caption: "Vous avez match avec le bourdon : il est mang\xE9 du coup."
+  - Label: MortDuPapillon
+    Key: MortPapillon
+    Caption: "Vous avez match avec le papillon : il est mang\xE9 du coup."
+  - Label: MortDuCloporte
+    Key: MortCloporte
+    Caption: "Vous avez match avec le cloporte : il est mang\xE9 du coup."
