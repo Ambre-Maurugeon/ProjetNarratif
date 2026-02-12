@@ -533,6 +533,33 @@ public class GameManager : MonoBehaviour
 
         sequenceCoroutine = StartCoroutine(InternalPlaySequence(entry, playIndex));
     }
+    public void PlayEndSequenceNow(Sprite firstSprite)
+    {
+        var DManager = FindFirstObjectByType<DialogueManager>();
+        if (DManager != null) DManager.CanInteract = false;
+        var entry = bugsDatabase?.entries?.Find(e => e != null && e.id == currentInsectId);
+        if (entry == null) return;
+
+        if (sequenceCoroutine != null)
+            StopCoroutine(sequenceCoroutine);
+
+        int playIndex = entry.sequenceIndex;
+
+        if (firstSprite != null && entry.Sequences != null && entry.Sequences.Length > 0)
+        {
+            for (int i = 0; i < entry.Sequences.Length; i++)
+            {
+                var seq = entry.Sequences[i];
+                if (seq.sprites != null && seq.sprites.Length > 0 && seq.sprites[0] == firstSprite)
+                {
+                    playIndex = i;
+                    break;
+                }
+            }
+        }
+
+        sequenceCoroutine = StartCoroutine(InternalPlayEndSequence(entry, playIndex));
+    }
     public void PlayCurrentGlitchedSequenceNow(Sprite firstSprite)
     {
         var DManager = FindFirstObjectByType<DialogueManager>();
@@ -576,6 +603,76 @@ public class GameManager : MonoBehaviour
     }
 
     private IEnumerator InternalPlaySequence(CharacterEntry entry, int playIndex)
+    {
+        if (entry == null)
+        {
+            sequenceCoroutine = null;
+            yield break;
+        }
+
+        if (entry.Sequences != null && entry.Sequences.Length > 0)
+        {
+            int foundIdx = -1;
+            Sequence seq = default;
+
+            int clamped = Mathf.Clamp(playIndex, 0, entry.Sequences.Length - 1);
+            seq = entry.Sequences[clamped];
+
+            if (seq.sprites == null || seq.sprites.Length == 0)
+            {
+                if (!FindValidSequenceData(entry, playIndex, out foundIdx, out seq))
+                {
+                    entry.sequenceIndex = (entry.sequenceIndex + 1) % entry.Sequences.Length;
+                    sequenceCoroutine = null;
+                    yield break;
+                }
+            }
+            else
+            {
+                foundIdx = clamped;
+            }
+
+            if (sceneImageAnim == null)
+                sceneImageAnim = FindSceneImageAnimation();
+
+            if (sceneImageAnim == null)
+            {
+                entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+                sequenceCoroutine = null;
+                yield break;
+            }
+
+            sceneImageAnim.Stop(true);
+            sceneImageAnim.ApplySequence(seq);
+            sceneImageAnim.GetImage();
+
+            bool animEnded = false;
+            System.Action handler = () =>
+            {
+                animEnded = true;
+                entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+                Destroy(sceneImageAnim.gameObject);
+                Destroy(glitchEffectInstance.gameObject);
+            };
+            sceneImageAnim.AnimationEnded += handler;
+
+            sceneImageAnim.Play(true);
+
+            yield return new WaitUntil(() => animEnded);
+
+            sceneImageAnim.AnimationEnded -= handler;
+
+            sceneImageAnim.Stop(true);
+
+            sequenceCoroutine = null;
+            entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+            yield break;
+        }
+
+        sequenceCoroutine = null;
+        yield break;
+    }
+    private IEnumerator InternalPlayEndSequence(CharacterEntry entry, int playIndex)
     {
         if (entry == null)
         {
