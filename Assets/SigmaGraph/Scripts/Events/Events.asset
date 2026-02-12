@@ -170,3 +170,31 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - label: SquashSprite
+    Key: EV_Squashsprite
+    caption: Squash the date's sprite
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Flash
+    Key: EV_Flash
+    caption: THe mantis flash the butterfly with their camera, make the flash
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: StopSound
+    Key: EV_Stopsound
+    caption: Stop all currently playing sound
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: SequenceRomouche
+    Key: EV_Sequenceromouche
+    caption: Play the sequence of romeo eating the shit out of the snail
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
