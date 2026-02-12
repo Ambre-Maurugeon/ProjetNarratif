@@ -311,16 +311,27 @@ public class GameManager : MonoBehaviour
         if (bugsDatabase == null || bugsDatabase.entries == null || bugsDatabase.entries.Count == 0) return;
 
         int nextId = int.MaxValue;
+        int minId = int.MaxValue;
         bool found = false;
 
         foreach (var e in bugsDatabase.entries)
         {
             if (e == null) continue;
+            
+            if (e.id < minId)
+                minId = e.id;
+            
             if (e.id > currentInsectId && e.id < nextId)
             {
                 nextId = e.id;
                 found = true;
             }
+        }
+
+        if (!found && minId != int.MaxValue)
+        {
+            nextId = minId;
+            found = true;
         }
 
         if (!found) return;
@@ -337,16 +348,27 @@ public class GameManager : MonoBehaviour
         if (bugsDatabase == null || bugsDatabase.entries == null || bugsDatabase.entries.Count == 0) return;
 
         int prevId = int.MinValue;
+        int maxId = int.MinValue;
         bool found = false;
 
         foreach (var e in bugsDatabase.entries)
         {
             if (e == null) continue;
+            
+            if (e.id > maxId)
+                maxId = e.id;
+            
             if (e.id < currentInsectId && e.id > prevId)
             {
                 prevId = e.id;
                 found = true;
             }
+        }
+
+        if (!found && maxId != int.MinValue)
+        {
+            prevId = maxId;
+            found = true;
         }
 
         if (!found) return;
@@ -373,6 +395,31 @@ public class GameManager : MonoBehaviour
         {
             DateBtn.onClick.RemoveAllListeners();
             DateBtn?.onClick.AddListener(() => OnStartInsect(currentInsectId));
+            
+            if (entry.isCompleted)
+            {
+                ColorBlock colors = DateBtn.colors;
+                colors.normalColor = new Color(0.30588236f, 1, 0, 1f);
+                DateBtn.colors = colors;
+                
+                Image btnImage = DateBtn.GetComponent<Image>();
+                if (btnImage != null)
+                {
+                    btnImage.color = new Color(0.30588236f, 1, 0, 1f);
+                }
+            }
+            else
+            {
+                ColorBlock colors = DateBtn.colors;
+                colors.normalColor = new Color(1, 1, 1, 1f);
+                DateBtn.colors = colors;
+                
+                Image btnImage = DateBtn.GetComponent<Image>();
+                if (btnImage != null)
+                {
+                    btnImage.color = new Color(1, 1, 1, 1f);
+                }
+            }
         }
 
         if (NextButton == null)
@@ -406,6 +453,7 @@ public class GameManager : MonoBehaviour
         {
             Date1Btn.onClick.RemoveAllListeners();
             Date1Btn?.onClick.AddListener(() => SetCurrentInsectId(0));
+            UpdateDateButtonColor(Date1Btn, 0);
         }
         
         if (Date2Btn == null)
@@ -416,6 +464,7 @@ public class GameManager : MonoBehaviour
         if (Date2Btn != null)        {
             Date2Btn.onClick.RemoveAllListeners();
             Date2Btn?.onClick.AddListener(() => SetCurrentInsectId(1));
+            UpdateDateButtonColor(Date2Btn, 1);
         }
         
         if (Date3Btn == null)
@@ -426,6 +475,7 @@ public class GameManager : MonoBehaviour
         if (Date3Btn != null)        {
             Date3Btn.onClick.RemoveAllListeners();
             Date3Btn?.onClick.AddListener(() => SetCurrentInsectId(2));
+            UpdateDateButtonColor(Date3Btn, 2);
         }
         
         if (Date4Btn == null)
@@ -436,6 +486,7 @@ public class GameManager : MonoBehaviour
         if (Date4Btn != null)        {
             Date4Btn.onClick.RemoveAllListeners();
             Date4Btn?.onClick.AddListener(() => SetCurrentInsectId(3));
+            UpdateDateButtonColor(Date4Btn, 3);
         }
 
         if (UiCanva != null)
@@ -476,6 +527,39 @@ public class GameManager : MonoBehaviour
                 var img = sprite.GetComponent<Image>();
                 if (img != null && entry != null && entry.BgSprite != null)
                     img.sprite = entry.BgSprite;
+            }
+        }
+    }
+
+    private void UpdateDateButtonColor(Button dateBtn, int insectId)
+    {
+        if (dateBtn == null || bugsDatabase == null || bugsDatabase.entries == null) return;
+        
+        CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == insectId);
+        if (entry == null) return;
+        
+        if (entry.isCompleted)
+        {
+            ColorBlock colors = dateBtn.colors;
+            colors.normalColor = new Color(0.30588236f, 1, 0, 1f);
+            dateBtn.colors = colors;
+            
+            Image btnImage = dateBtn.GetComponent<Image>();
+            if (btnImage != null)
+            {
+                btnImage.color = new Color(0.30588236f, 1, 0, 1f);
+            }
+        }
+        else
+        {
+            ColorBlock colors = dateBtn.colors;
+            colors.normalColor = new Color(1, 1, 1, 1f);
+            dateBtn.colors = colors;
+            
+            Image btnImage = dateBtn.GetComponent<Image>();
+            if (btnImage != null)
+            {
+                btnImage.color = new Color(1, 1, 1, 1f);
             }
         }
     }
