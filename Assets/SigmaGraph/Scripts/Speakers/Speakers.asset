@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::test
   speakers:
   - Name: Bourdon
-    DisplayName: Bourdon
+    DisplayName: "L\xE9on"
     speakEnum: 3
     SpritesHumeur:
     - sprite: {fileID: 225820235190330879, guid: 7b207b901b7109b49b5fc69c2d40038f, type: 3}
@@ -24,7 +24,7 @@ MonoBehaviour:
     - sprite: {fileID: -909507038745483531, guid: a08805d3e33d6584daca1ea5300d2299, type: 3}
       humeur: 2
   - Name: Papillon
-    DisplayName: Papillon
+    DisplayName: Dominique
     speakEnum: 5
     SpritesHumeur:
     - sprite: {fileID: -4949248933000875399, guid: 75b39838926f6054c9dee148fd6ab364, type: 3}
@@ -34,7 +34,7 @@ MonoBehaviour:
     - sprite: {fileID: -8465993084441826826, guid: 5ff06ec2bc528184ebca1f02e28b0451, type: 3}
       humeur: 2
   - Name: Cloporte
-    DisplayName: Cloporte
+    DisplayName: "Fr\xE9d\xE9ric"
     speakEnum: 6
     SpritesHumeur:
     - sprite: {fileID: 4740316203790968155, guid: 646dd0bde88433a478e935c19153cf3d, type: 3}
@@ -44,7 +44,7 @@ MonoBehaviour:
     - sprite: {fileID: -1381784074667881438, guid: 74980ad9496fc0a43a7bb890dea3c74b, type: 3}
       humeur: 2
   - Name: Gendarme
-    DisplayName: Gendarme
+    DisplayName: Jean
     speakEnum: 4
     SpritesHumeur:
     - sprite: {fileID: 3685890791923494845, guid: bd4b0b51e49215b4789e14f174a4bd78, type: 3}
@@ -54,6 +54,6 @@ MonoBehaviour:
     - sprite: {fileID: -541288332512988963, guid: fd150379cfd95d04888b4499cb85c322, type: 3}
       humeur: 2
   - Name: Narrator
-    DisplayName: 
+    DisplayName: Narrator
     speakEnum: 8
     SpritesHumeur: []
