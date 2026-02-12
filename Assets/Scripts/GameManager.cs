@@ -312,7 +312,7 @@ public class GameManager : MonoBehaviour
         CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
         if (entry != null) entry.isCompleted = true;
         
-        if (AreAllEntriesCompleted()==true) OnStartInsect(3);
+        if (AreAllEntriesCompleted()==true) OnStartInsect(4);
         
 #if UNITY_EDITOR
         SceneManager.LoadScene(SceneHub.name);
@@ -339,31 +339,11 @@ public class GameManager : MonoBehaviour
     {
         if (bugsDatabase == null || bugsDatabase.entries == null || bugsDatabase.entries.Count == 0) return;
 
-        int nextId = int.MaxValue;
-        int minId = int.MaxValue;
-        bool found = false;
-
-        foreach (var e in bugsDatabase.entries)
+        int nextId = currentInsectId + 1;
+        if (nextId > 3)
         {
-            if (e == null) continue;
-            
-            if (e.id < minId)
-                minId = e.id;
-            
-            if (e.id > currentInsectId && e.id < nextId)
-            {
-                nextId = e.id;
-                found = true;
-            }
+            nextId = 0;
         }
-
-        if (!found && minId != int.MaxValue)
-        {
-            nextId = minId;
-            found = true;
-        }
-
-        if (!found) return;
         
         var AudioManager = FindFirstObjectByType<AudioManager>();
         AudioManager.PlayAudio(2);
@@ -376,31 +356,11 @@ public class GameManager : MonoBehaviour
     {
         if (bugsDatabase == null || bugsDatabase.entries == null || bugsDatabase.entries.Count == 0) return;
 
-        int prevId = int.MinValue;
-        int maxId = int.MinValue;
-        bool found = false;
-
-        foreach (var e in bugsDatabase.entries)
+        int prevId = currentInsectId - 1;
+        if (prevId < 0)
         {
-            if (e == null) continue;
-            
-            if (e.id > maxId)
-                maxId = e.id;
-            
-            if (e.id < currentInsectId && e.id > prevId)
-            {
-                prevId = e.id;
-                found = true;
-            }
+            prevId = 3;
         }
-
-        if (!found && maxId != int.MinValue)
-        {
-            prevId = maxId;
-            found = true;
-        }
-
-        if (!found) return;
 
         var AudioManager = FindFirstObjectByType<AudioManager>();
         AudioManager.PlayAudio(2);
@@ -891,10 +851,10 @@ public class GameManager : MonoBehaviour
 
     public bool AreAllEntriesCompleted()
     {
-        foreach (var entry in bugsDatabase.entries)
+        for (int id = 0; id <= 3; id++)
         {
-            if (entry == null) continue;
-            if (!entry.isCompleted) return false;
+            var entry = bugsDatabase.entries.Find(e => e != null && e.id == id);
+            if (entry == null || !entry.isCompleted) return false;
         }
         return true;
     }

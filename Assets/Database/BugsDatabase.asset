@@ -43,13 +43,19 @@ MonoBehaviour:
     - "S\u2019est d\xE9j\xE0 retrouv\xE9 coinc\xE9.e dans une poubelle."
     - "On l\u2019appelle \u201Cle boulet\u201D."
     BgSprite: {fileID: -2818449658216415420, guid: ca6b1ba428649c544a36c3cc2a3e1633, type: 3}
-    Sequences: []
+    Sequences:
+    - sprites:
+      - {fileID: -909507038745483531, guid: 5fac6ef67b1eff74a94c169bf219b9be, type: 3}
+      - {fileID: -909507038745483531, guid: a08805d3e33d6584daca1ea5300d2299, type: 3}
+      framesPerSprite: 1
+      loop: 0
+      destroyOnEnd: 0
     sequenceIndex: 0
   - perso: Dominique (30ans)
     id: 2
     isCompleted: 0
     hasMatched: 0
-    refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
+    refDialogue: {fileID: 11400000, guid: a29a412eb1725984d94249a1bccb6bb9, type: 2}
     NewSpeedBPM: 1
     characterSprite: {fileID: -8465993084441826826, guid: 5d98efaf291f1ff4bba7251da3494d29, type: 3}
     description:
@@ -63,7 +69,7 @@ MonoBehaviour:
     id: 3
     isCompleted: 0
     hasMatched: 0
-    refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
+    refDialogue: {fileID: 11400000, guid: 8014dc7993e6f6d4eb1dc967e10ad578, type: 2}
     NewSpeedBPM: 1
     characterSprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
     description:
@@ -71,5 +77,16 @@ MonoBehaviour:
     - "Pense que les personnes qui portent des cravates sont intellectuellement sup\xE9rieures."
     - "D\xE9teste le pr\xE9nom Rom\xE9o."
     BgSprite: {fileID: -7751213362183376697, guid: 82ac46f35f87d674687183def89f840c, type: 3}
+    Sequences: []
+    sequenceIndex: 0
+  - perso: Gendarmes
+    id: 4
+    isCompleted: 0
+    hasMatched: 0
+    refDialogue: {fileID: 11400000, guid: a13e5bb090528c1489c3340a27fdd27a, type: 2}
+    NewSpeedBPM: 1
+    characterSprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+    description: []
+    BgSprite: {fileID: 0}
     Sequences: []
     sequenceIndex: 0
