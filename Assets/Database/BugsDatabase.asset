@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: BugsDatabase
   m_EditorClassIdentifier: Assembly-CSharp::BugsDatabase
   entries:
-  - perso: Bourdon
+  - perso: "L\xE9on (18ans)"
     id: 0
     isCompleted: 0
+    hasMatched: 0
     refDialogue: {fileID: 11400000, guid: 5fa68d7144e08704383094a717aa7888, type: 2}
     NewSpeedBPM: 1
     characterSprite: {fileID: -909507038745483531, guid: 0e0d46da5340a974db6da779f3383936, type: 3}
     description:
-    - 0
-    - 1
-    - 2
+    - Sors toujours avec sa peluche dinosaure.
+    - Collectionne les pet rocks.
+    - Aime VRAIMENT les dino.
     BgSprite: {fileID: -9074006278687196050, guid: 7869c92813eb54a4bb0f261ce9643bb0, type: 3}
     Sequences:
     - sprites: []
@@ -30,42 +31,45 @@ MonoBehaviour:
       loop: 0
       destroyOnEnd: 0
     sequenceIndex: 0
-  - perso: Cloporte
+  - perso: "Fr\xE9d\xE9rique (25ans)"
     id: 1
     isCompleted: 0
+    hasMatched: 0
     refDialogue: {fileID: 11400000, guid: 0307a525ca3ec7549a718935319613e2, type: 2}
     NewSpeedBPM: 1
     characterSprite: {fileID: -1381784074667881438, guid: ee4dbc1a960453446b7c8e02cf327d46, type: 3}
     description:
-    - 3
-    - 4
-    - 5
+    - Aboies sur les gens dans la rue.
+    - "S\u2019est d\xE9j\xE0 retrouv\xE9 coinc\xE9.e dans une poubelle."
+    - "On l\u2019appelle \u201Cle boulet\u201D."
     BgSprite: {fileID: -2818449658216415420, guid: ca6b1ba428649c544a36c3cc2a3e1633, type: 3}
     Sequences: []
     sequenceIndex: 0
-  - perso: Papillon
+  - perso: Dominique (30ans)
     id: 2
     isCompleted: 0
+    hasMatched: 0
     refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
     NewSpeedBPM: 1
     characterSprite: {fileID: -8465993084441826826, guid: 5d98efaf291f1ff4bba7251da3494d29, type: 3}
     description:
-    - 6
-    - 7
-    - 8
+    - "A lanc\xE9 un culte pour sa personne."
+    - Passe plus de 8h/jour devant son mirroir.Passe plus de 8h/jour devant son mirroir.
+    - "Est extr\xEAment souple."
     BgSprite: {fileID: -7176216987877333843, guid: 2514be1ce4009e748a7fc27a5c26fa02, type: 3}
     Sequences: []
     sequenceIndex: 0
-  - perso: Gendarmes
+  - perso: Stuart (35ans)
     id: 3
     isCompleted: 0
+    hasMatched: 0
     refDialogue: {fileID: 11400000, guid: ad39bd80a5329b04486f66814a4f59c2, type: 2}
     NewSpeedBPM: 1
-    characterSprite: {fileID: -541288332512988963, guid: 39b51842ec1c741448b828f736a04a26, type: 3}
+    characterSprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
     description:
-    - 9
-    - 10
-    - 11
-    BgSprite: {fileID: -7906568950211089970, guid: 9bf133a66591a754e8a7d08917b6dd95, type: 3}
+    - Aime pas les mouches.
+    - "Pense que les personnes qui portent des cravates sont intellectuellement sup\xE9rieures."
+    - "D\xE9teste le pr\xE9nom Rom\xE9o."
+    BgSprite: {fileID: -7751213362183376697, guid: 82ac46f35f87d674687183def89f840c, type: 3}
     Sequences: []
     sequenceIndex: 0

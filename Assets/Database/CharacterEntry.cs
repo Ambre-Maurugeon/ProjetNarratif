@@ -16,6 +16,7 @@ public class CharacterEntry
     public string perso;
     public int id;
     public bool isCompleted = false;
+    public bool hasMatched = false;
     public DSGraphSaveDataSO refDialogue;
     public int NewSpeedBPM;
     public Sprite characterSprite;
