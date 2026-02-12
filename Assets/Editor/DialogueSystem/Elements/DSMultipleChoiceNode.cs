@@ -2,10 +2,12 @@ using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Linq;
 using PlasticGui.Help;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.PackageManager;
 using UnityEditor.UIElements;
+#endif
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;

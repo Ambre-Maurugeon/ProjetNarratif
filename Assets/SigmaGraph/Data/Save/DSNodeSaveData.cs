@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+#if UNITY_EDITOR
 using UnityEditor.Experimental.GraphView;
+#endif
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
@@ -46,12 +48,15 @@ public class DSNodeSaveData
         Humeur = humeur;
     }
 
+
+#if UNITY_EDITOR
     // Conditions V1
     public Dictionary<Port, List<VisualElement>> ConditionsMapElement = new Dictionary<Port, List<VisualElement>>();
     public Dictionary<Port, List<ConditionsSC>> ConditionsMapSc = new Dictionary<Port, List<ConditionsSC>>();
 
     // Conditions V2
     public Dictionary<Port, List<string>> ConditionsMapKey = new Dictionary<Port, List<string>>();
+#endif
 
     // drop down key dialogue
     public string _dropDownKeyDialogue;

@@ -87,7 +87,12 @@ public class VisualPulse : MonoBehaviour
     {
 
         float elapsedTime = 0f;
+
+#if UNITY_EDITOR
         newSprite = (Sprite)AssetDatabase.LoadAssetAtPath(ImagePath(state), typeof(Sprite));
+#else
+        newSprite = (Sprite)Resources.Load(ImagePath(state), typeof(Sprite));
+#endif
         image.sprite = newSprite;
 
         while (elapsedTime <= durationOfSwitchedFeedback)

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
-using UnityEditor.SearchService;
 using System.Collections;
 
 public class MainEvents : MonoBehaviour

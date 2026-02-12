@@ -4,8 +4,10 @@ using System.Linq;
 using MacFsWatcher;
 using Unity.VisualScripting;
 using Unity.VisualScripting.YamlDotNet.Core.Events;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
+#endif
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.Windows;

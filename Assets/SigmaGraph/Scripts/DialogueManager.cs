@@ -507,9 +507,12 @@ public class DialogueManager : MonoBehaviour
         Vector3 worldPos = tmp_text.transform.TransformPoint(charMidTopLine);
 
         //Instantiate(parent, transform, worldPositionStays:false);
-        
 
+#if UNITY_EDITOR
         UnityEngine.Object prefab = AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/OPTIONNAL/Prefabs/CensorshipPrefab.prefab", typeof(GameObject));
+#else
+        UnityEngine.Object prefab = Resources.Load("Assets/SigmaGraph/OPTIONNAL/Prefabs/CensorshipPrefab.prefab", typeof(GameObject));
+#endif
         if (prefab == null)  {
             Debug.LogError("Censorship prefab wasn't found by path.");
             return null;

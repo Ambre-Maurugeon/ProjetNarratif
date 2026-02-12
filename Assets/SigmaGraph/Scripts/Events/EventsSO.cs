@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using NUnit.Framework;
+#if UNITY_EDITOR
 using UnityEditor.MPE;
+#endif
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;

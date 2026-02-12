@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,8 +11,10 @@ public static class GameManagerData
 {
     public static int SavedCurrentInsectId = 0;
     public static BugsDatabase SavedBugsDatabase = null;
+#if UNITY_EDITOR
     public static SceneAsset SavedSceneToLoad = null;
     public static SceneAsset SavedSceneHub = null;
+#endif
     public static GameObject SavedTransitionPrefab = null;
     public static Canvas SavedSequenceCanvas = null;
     public static GameObject SavedGlitchEffectPrefab = null;
@@ -23,8 +27,10 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
     public int currentInsectId = 0;
+#if UNITY_EDITOR
     public SceneAsset SceneToLoad;
     public SceneAsset SceneHub;
+#endif
     private Button DateBtn;
     private Button NextButton;
     private Button PrevButton;
@@ -93,8 +99,12 @@ public class GameManager : MonoBehaviour
     {
         GameManagerData.SavedCurrentInsectId = this.currentInsectId;
         GameManagerData.SavedBugsDatabase = this.bugsDatabase;
+
+#if UNITY_EDITOR
         GameManagerData.SavedSceneToLoad = this.SceneToLoad;
         GameManagerData.SavedSceneHub = this.SceneHub;
+#endif
+
         GameManagerData.SavedTransitionPrefab = this.transitionPrefab;
         GameManagerData.SavedSequenceCanvas = this.SequenceCanvas;
         GameManagerData.SavedGlitchEffectPrefab = this.GlitchEffectPrefab;
@@ -106,8 +116,12 @@ public class GameManager : MonoBehaviour
         {
             this.currentInsectId = GameManagerData.SavedCurrentInsectId;
             this.bugsDatabase = GameManagerData.SavedBugsDatabase;
+#if UNITY_EDITOR
+
             this.SceneToLoad = GameManagerData.SavedSceneToLoad;
             this.SceneHub = GameManagerData.SavedSceneHub;
+#endif
+
             this.transitionPrefab = GameManagerData.SavedTransitionPrefab;
             this.SequenceCanvas = GameManagerData.SavedSequenceCanvas;
             this.GlitchEffectPrefab = GameManagerData.SavedGlitchEffectPrefab;
@@ -131,8 +145,10 @@ public class GameManager : MonoBehaviour
 
         newInstance.currentInsectId = previousInstance.currentInsectId;
         newInstance.bugsDatabase = previousInstance.bugsDatabase;
+#if UNITY_EDITOR
         newInstance.SceneToLoad = previousInstance.SceneToLoad;
         newInstance.SceneHub = previousInstance.SceneHub;
+#endif
         newInstance.SequenceCanvas = previousInstance.SequenceCanvas;
         
         var bugsDbField = typeof(GameManager).GetField("bugsDatabase", 
@@ -173,7 +189,12 @@ public class GameManager : MonoBehaviour
         if (transition != null)
             yield return StartCoroutine(transition.FadeIn());
 
+#if UNITY_EDITOR
         SceneManager.LoadScene(SceneToLoad.name);
+#else
+        SceneManager.LoadScene("MainScene");
+#endif
+
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -210,9 +231,12 @@ public class GameManager : MonoBehaviour
                 transition = FindFirstObjectByType<TransitionScene>();
             }
         }
-        
+
+#if UNITY_EDITOR
         if (scene.name == SceneHub.name) UpdateBug();
-        
+#else
+        if (scene.name == "Hub_Scene") UpdateBug();
+#endif
         var dialogueManager = FindFirstObjectByType<DialogueManager>();
         dialogueManager.runtimeGraph = entry.refDialogue;
         
@@ -282,7 +306,11 @@ public class GameManager : MonoBehaviour
         CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
         if (entry != null) entry.isCompleted = true;
 
+#if UNITY_EDITOR
         SceneManager.LoadScene(SceneHub.name);
+#else
+        SceneManager.LoadScene("Hub_Scene");
+#endif
     }
 
     public void LaunchRythmGame()
@@ -667,11 +695,11 @@ public class GameManager : MonoBehaviour
     //Menu
     public void QuitGame() 
     {
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
-        #else
+#else
             Application.Quit();
-    #endif
+#endif
     }
     public void Play() => SceneManager.LoadScene("Hub_Scene");
 

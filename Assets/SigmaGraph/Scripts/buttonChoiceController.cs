@@ -1,7 +1,9 @@
 using System;
 using System.Linq;
 using TMPro;
+#if UNITY_EDITOR
 using UnityEditor.Rendering;
+#endif
 using UnityEngine;
 using UnityEngine.UI;
 
