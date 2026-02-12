@@ -115,9 +115,10 @@ public class MainEvents : MonoBehaviour
 
     public void Flash()
     {
-        Instantiate(_flash, _othersTransform);
+        GameObject flash = Instantiate(_flash, _othersTransform);
+        Destroy(flash, 0.5f);
     }
 
     #endregion
-
+     
 }
