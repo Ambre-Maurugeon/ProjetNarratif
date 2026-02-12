@@ -2009,7 +2009,19 @@ MonoBehaviour:
   - Key: EV_Sequencehand
     Event:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2041818664}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: PlayCurrentGlitchedSequenceNow
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: -7622984686656493898, guid: 121efe3f03d9ba44ab20c31000aa7009, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - Key: EV_Sequencebutterflydeath
     Event:
       m_PersistentCalls:
@@ -2081,7 +2093,19 @@ MonoBehaviour:
   - Key: EV_SequenceEndNoBlod
     Event:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2041818664}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: PlayCurrentSequenceNow
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5794902363594104546, guid: 261305f1bfc4498409d6c3c135648901, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - Key: EV_ChangeNight
     Event:
       m_PersistentCalls:
