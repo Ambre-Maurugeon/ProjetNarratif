@@ -2077,7 +2077,19 @@ MonoBehaviour:
   - Key: EV_CodeLyoko
     Event:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 503777677}
+          m_TargetAssemblyTypeName: MainEvents, Assembly-CSharp
+          m_MethodName: CodeLyoko
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - Key: EV_SequenceEndNoBlod
     Event:
       m_PersistentCalls:
@@ -2201,7 +2213,7 @@ MonoBehaviour:
   dialogueText: {fileID: 576824717}
   speakerNameText: {fileID: 152419007}
   characterImage: {fileID: 1662151849}
-  _nextButton: {fileID: 2450449145299364461}
+  nextButton: {fileID: 2450449145299364461}
 --- !u!1 &507592962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,7 +3931,7 @@ MonoBehaviour:
   dialogueText: {fileID: 38279673}
   speakerNameText: {fileID: 1063589096}
   characterImage: {fileID: 1662151849}
-  _nextButton: {fileID: 275474103}
+  nextButton: {fileID: 275474103}
 --- !u!1 &988813126
 GameObject:
   m_ObjectHideFlags: 0
@@ -5135,6 +5147,7 @@ GameObject:
   - component: {fileID: 1233640478}
   - component: {fileID: 1233640480}
   - component: {fileID: 1233640479}
+  - component: {fileID: 1233640481}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -5199,6 +5212,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233640477}
   m_CullTransparentMesh: 1
+--- !u!95 &1233640481
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233640477}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e30b9593d9205ec42acd27ed21a18e57, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1251650167
 GameObject:
   m_ObjectHideFlags: 0
@@ -5472,7 +5507,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1306542898}
   - component: {fileID: 1306542899}
-  - component: {fileID: 1306542900}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
@@ -5526,28 +5560,7 @@ MonoBehaviour:
   SpeakersScriptable: {fileID: 11400000, guid: 82e282dbd1d6b8c4d845bae0b97efb89, type: 2}
   _speakerAnimator: {fileID: 1662151852}
   _characterAnimator: {fileID: 22770149}
---- !u!95 &1306542900
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306542897}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e30b9593d9205ec42acd27ed21a18e57, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  currentDialogueContainer: {fileID: 0}
 --- !u!1 &1320186408
 GameObject:
   m_ObjectHideFlags: 0
@@ -6827,7 +6840,7 @@ MonoBehaviour:
   dialogueText: {fileID: 1024733662}
   speakerNameText: {fileID: 1048030606}
   characterImage: {fileID: 1662151849}
-  _nextButton: {fileID: 1363209032}
+  nextButton: {fileID: 1363209032}
 --- !u!1 &1902652990
 GameObject:
   m_ObjectHideFlags: 0
@@ -7057,7 +7070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2041818664
 MonoBehaviour:
   m_ObjectHideFlags: 0

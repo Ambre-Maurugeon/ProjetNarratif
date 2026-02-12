@@ -8,6 +8,7 @@ using UnityEngine.Events;
 using System.Linq;
 using TMPro;
 using System.ComponentModel;
+using UnityEngine.SceneManagement;
 
 public enum language
 {
@@ -57,7 +58,7 @@ public class DialogueManager : MonoBehaviour
     private static DSNodeSaveData _currentNode;
     public static DSNodeSaveData CurrentNode => _currentNode;
 
-    private dialogueContainer _currentDialogueContainer;
+    public dialogueContainer currentDialogueContainer;
     private dialogueContainer _oldDialogueContainer;
 
     // Interaction
@@ -160,6 +161,7 @@ public class DialogueManager : MonoBehaviour
         {
             return node;
         }
+
         return null;
     }
 
@@ -286,14 +288,14 @@ public class DialogueManager : MonoBehaviour
         // -- CONTAINERS --
         if (_bubleContainers.TryGetValue(_currentNode.GetBubleType(), out var container))
         {
-            _currentDialogueContainer = container;
+            currentDialogueContainer = container;
         }
         else
         {
             return;
         }
 
-        if (_currentDialogueContainer == null)
+        if (currentDialogueContainer == null)
         {
             Debug.Log("Current Dialogue Container is null.");
             return;
@@ -303,7 +305,7 @@ public class DialogueManager : MonoBehaviour
         {
             _oldDialogueContainer.HideContainer();
         }
-        _oldDialogueContainer = _currentDialogueContainer;
+        _oldDialogueContainer = currentDialogueContainer;
 
         // -- TEXT --
         ChangeSpeaker(_currentNode.Speaker);
@@ -315,7 +317,7 @@ public class DialogueManager : MonoBehaviour
 
         //dialogue text
         string targetDialogue = FantasyDialogueTable.LocalManager.FindDialogue(_currentNode.GetDropDownKeyDialogue(), Enum.GetName(typeof(language), languageSetting));
-        _currentDialogueContainer.InitializeDialogueContainer(this, targetDialogue, _currentSpeaker.DisplayName, _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur()), _currentNode.isMultipleChoice);
+        currentDialogueContainer.InitializeDialogueContainer(this, targetDialogue, _currentSpeaker.DisplayName, _currentSpeaker.GetSpriteForHumeur(_currentNode.GetHumeur()), _currentNode.isMultipleChoice);
 
         // -- EVENTS --
         if (_currentNode.HasEvent)
@@ -350,7 +352,9 @@ public class DialogueManager : MonoBehaviour
     // -- BUTTONS --
     private void NextButtonFunc()
     {
-        if (CanInteract)
+        if (MainEvents.GoToHub)
+            SceneManager.LoadScene("Hub_Scene");
+        else if (CanInteract)
             TryToUpdateNextDialogueFromNextNode();
     }
 
@@ -415,7 +419,7 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        _currentDialogueContainer.HideContainer();
+        currentDialogueContainer.HideContainer();
         _currentNode = null;
 
         foreach (Transform child in ChoiceButtonContainer)
