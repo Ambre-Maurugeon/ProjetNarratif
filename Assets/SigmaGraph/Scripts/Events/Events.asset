@@ -205,23 +205,16 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
-  - label: Sequenceiskilled
-    Key: EV_Sequenceiskilled
-    caption: Play the sequence of a flash back of a killed person
+  - label: SequenceButterflyDead
+    Key: EV_Sequencebutterflydeath
+    caption: Play the sequence of a flash back of the death of the butterfly
     isPrefab: 0
     Event:
       m_PersistentCalls:
         m_Calls: []
-  - label: Sequenceiskilled2
-    Key: EV_Sequenceiskilled2
-    caption: Play the sequence of a flash back of a second killed person
-    isPrefab: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
-  - label: Sequenceiskilled3
-    Key: EV_Sequenceiskilled3
-    caption: Play the sequence of a flash back of a third killed person
+  - label: SequenceCloporteDead
+    Key: EV_Sequencecloportdead
+    caption: Play the sequence of the cloport being dead in a flashback
     isPrefab: 0
     Event:
       m_PersistentCalls:
@@ -229,6 +222,13 @@ MonoBehaviour:
   - label: Sequencebourdead
     Key: EV_Sequencebourdead
     caption: Play the sequence of a flash back of a killed bourdon
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: SequenceButterFly
+    Key: EV_Sequencebutterfly
+    caption: Play the sequence & put the sprite of the butterfly flying away
     isPrefab: 0
     Event:
       m_PersistentCalls:
