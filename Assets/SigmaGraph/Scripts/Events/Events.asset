@@ -198,3 +198,38 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - label: SequenceHand
+    Key: EV_Sequencehand
+    caption: Play the sequence of the mantis looking at its hand being human
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Sequenceiskilled
+    Key: EV_Sequenceiskilled
+    caption: Play the sequence of a flash back of a killed person
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Sequenceiskilled2
+    Key: EV_Sequenceiskilled2
+    caption: Play the sequence of a flash back of a second killed person
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Sequenceiskilled3
+    Key: EV_Sequenceiskilled3
+    caption: Play the sequence of a flash back of a third killed person
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Sequencebourdead
+    Key: EV_Sequencebourdead
+    caption: Play the sequence of a flash back of a killed bourdon
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
