@@ -10,17 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f262818b55b0f4418296bad0176bdab, type: 3}
-  m_Name: RoutepapillonetCloporte
+  m_Name: DialogueName_64
   m_EditorClassIdentifier: Assembly-CSharp::DSDialogueSO
-  <DialogueName>k__BackingField: RoutepapillonetCloporte
+  <DialogueName>k__BackingField: DialogueName_64
   <Text>k__BackingField: Dialogue text.
   <Choices>k__BackingField:
   - <Text>k__BackingField: 
-    <NextDialogue>k__BackingField: {fileID: 0}
-  - <Text>k__BackingField: 
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 3eb974cdc74467545a0b237231de6b35, type: 2}
-  - <Text>k__BackingField: 
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: e9decf5a8da983a44a8f59455afad164, type: 2}
-  <DialogueType>k__BackingField: 3
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 868bfc1eae182574cb1a01b7a596ec98, type: 2}
+  <DialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0
-  <Speaker>k__BackingField: 0
+  <Speaker>k__BackingField: 7

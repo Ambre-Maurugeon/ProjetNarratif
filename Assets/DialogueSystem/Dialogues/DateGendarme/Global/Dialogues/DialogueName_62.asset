@@ -10,17 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f262818b55b0f4418296bad0176bdab, type: 3}
-  m_Name: "Routeg\xE9nocide"
+  m_Name: DialogueName_62
   m_EditorClassIdentifier: Assembly-CSharp::DSDialogueSO
-  <DialogueName>k__BackingField: "Routeg\xE9nocide"
+  <DialogueName>k__BackingField: DialogueName_62
   <Text>k__BackingField: Dialogue text.
   <Choices>k__BackingField:
   - <Text>k__BackingField: 
-    <NextDialogue>k__BackingField: {fileID: 0}
-  - <Text>k__BackingField: 
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: acf9b8969bf17614d8ae039a90fa450b, type: 2}
-  - <Text>k__BackingField: 
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 20c22031b48d4ec46a4e6062bbc0f95a, type: 2}
-  <DialogueType>k__BackingField: 3
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 471dc420affff434aa03904c66c05fc8, type: 2}
+  <DialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0
-  <Speaker>k__BackingField: 0
+  <Speaker>k__BackingField: 8
