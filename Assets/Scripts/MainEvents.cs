@@ -4,9 +4,22 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
+using UnityEditor.SearchService;
+using System.Collections;
 
 public class MainEvents : MonoBehaviour
 {
+    private Transform _othersTransform;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        _othersTransform = _TV.gameObject.transform.parent;
+    }
+
+    // Pass Or Match
+    #region PassOrMatch
+
     [Serializable]
     struct PassOrMatch
     {
@@ -15,22 +28,6 @@ public class MainEvents : MonoBehaviour
     }
     [Header("PassOrMatch")]
     [SerializeField] private PassOrMatch _passOrMatchBtns;
-
-    [Header("GameOver")]
-    [SerializeField] private GameObject _gameOverCanvas;
-
-    [Header("Décors")]
-    [SerializeField] private Image _TV;
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
-    // Pass Or Match
-    #region PassOrMatch
 
     public void PassOnly() => LockButton(true, _passOrMatchBtns.matchBtn);
     public void MatchOnly() => LockButton(true, _passOrMatchBtns.passBtn);
@@ -54,6 +51,10 @@ public class MainEvents : MonoBehaviour
 
     // GameOver
     #region GameOver
+
+    [Header("GameOver")]
+    [SerializeField] private GameObject _gameOverCanvas;
+
     public void FakeCrash() {
         _gameOverCanvas.SetActive(true);
         Invoke("LoadMenu",3f);
@@ -65,8 +66,58 @@ public class MainEvents : MonoBehaviour
     //Decors
     #region Decors
 
+    [Header("Décors")]
+    [SerializeField] private Image _TV;
+    [SerializeField] private Image _background;
+
     // TV
     public void PutOnTV(Sprite image) => _TV.sprite = image;
 
     #endregion
+
+    // Sequences
+    #region Sequences
+
+    [Serializable]
+    struct Romemouche
+    {
+        public Sprite scene01;
+        public Sprite scene02;
+        public Sprite scene03;
+    }
+
+    [SerializeField] private Romemouche _romemoucheScenes;
+
+    public void PlaySequenceRomemouche()
+    {
+        StartCoroutine("LaunchRomemouche");
+    }
+
+    private IEnumerator LaunchRomemouche()
+    {
+        ChangeImage(_background, _romemoucheScenes.scene01);
+        yield return new WaitForSeconds(1.5f);
+        ChangeImage(_background, _romemoucheScenes.scene02);
+        yield return new WaitForSeconds(1.5f);
+        ChangeImage(_background, _romemoucheScenes.scene03);
+    }
+
+    private void ChangeImage(Image from, Sprite to)
+    {
+        from.sprite = to;
+    }
+    #endregion
+
+    // Anims
+    #region Anims
+    [Header("Anims")]
+    [SerializeField] GameObject _flash;
+
+    public void Flash()
+    {
+        Instantiate(_flash, _othersTransform);
+    }
+
+    #endregion
+
 }

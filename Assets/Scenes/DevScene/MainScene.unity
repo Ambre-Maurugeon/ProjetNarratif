@@ -1884,7 +1884,19 @@ MonoBehaviour:
   - Key: EV_TVglitch
     Event:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 503777677}
+          m_TargetAssemblyTypeName: MainEvents, Assembly-CSharp
+          m_MethodName: PutOnTV
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: -8712980398906479894, guid: ef566a9918f27d746b176d38d7bb4876, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - Key: EV_TVanime
     Event:
       m_PersistentCalls:
@@ -1904,7 +1916,19 @@ MonoBehaviour:
   - Key: EV_TVnormal
     Event:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 503777677}
+          m_TargetAssemblyTypeName: MainEvents, Assembly-CSharp
+          m_MethodName: PutOnTV
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: -4038766154430875738, guid: d75d2acb206293d4fa39e276681fb70a, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - Key: EV_TVdroneald
     Event:
       m_PersistentCalls:
@@ -1916,6 +1940,46 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 3852130781357351905, guid: 676b0c6b54513114899ed6a5d8d35cc5, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Key: EV_Squashsprite
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - Key: EV_Flash
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 503777677}
+          m_TargetAssemblyTypeName: MainEvents, Assembly-CSharp
+          m_MethodName: Flash
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Key: EV_Stopsound
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - Key: EV_Sequenceromouche
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 503777677}
+          m_TargetAssemblyTypeName: MainEvents, Assembly-CSharp
+          m_MethodName: PlaySequenceRomemouche
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1938,6 +2002,12 @@ MonoBehaviour:
     matchBtn: {fileID: 1471560433}
   _gameOverCanvas: {fileID: 201358679}
   _TV: {fileID: 282595016}
+  _background: {fileID: 1147973324}
+  _romemoucheScenes:
+    scene01: {fileID: -7811360534000105422, guid: adeec35f95314a74cb8387cd73e1a8f3, type: 3}
+    scene02: {fileID: 368102021046274870, guid: 116dc967579d1cb4abe7083f448ca125, type: 3}
+    scene03: {fileID: -8847146935383336588, guid: 8b2645ddbf0e75644a6cc47489f205d2, type: 3}
+  _flash: {fileID: 6849583230869630037, guid: e299fe3cb5175454c955f7ac6ddf403a, type: 3}
 --- !u!1 &504661611
 GameObject:
   m_ObjectHideFlags: 0
