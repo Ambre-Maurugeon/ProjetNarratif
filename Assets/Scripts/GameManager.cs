@@ -189,8 +189,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (transition != null)
-            yield return StartCoroutine(transition.FadeIn());
+        if (AreAllEntriesCompleted() != true)
+        {
+            if (transition != null) yield return StartCoroutine(transition.FadeIn());
+        }
 
         var AudioManager = FindFirstObjectByType<AudioManager>();
         AudioManager.PlayAudio(0);
@@ -294,7 +296,22 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToHub()
     {
-        var transition = FindFirstObjectByType<TransitionScene>();
+        CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
+        if (entry != null) entry.isCompleted = true;
+        
+        if (AreAllEntriesCompleted() == true)
+        {
+            OnStartInsect(4);
+#if UNITY_EDITOR
+            SceneManager.LoadScene(SceneToLoad != null ? SceneToLoad.name : "MainScene");
+#else
+            SceneManager.LoadScene("MainScene");
+#endif
+        }
+        else
+        {
+            Debug.Log("Returning to hub...");
+            var transition = FindFirstObjectByType<TransitionScene>();
 
         if (transition == null && transitionPrefab != null)
         {
@@ -308,17 +325,15 @@ public class GameManager : MonoBehaviour
 
         if (transition != null)
             StartCoroutine(transition.FadeIn());
-
-        CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
-        if (entry != null) entry.isCompleted = true;
         
-        if (AreAllEntriesCompleted()==true) OnStartInsect(4);
+        #if UNITY_EDITOR
+                SceneManager.LoadScene(SceneHub.name);
+        #else
+                SceneManager.LoadScene("Hub_Scene");
+        #endif
+            
+        }
         
-#if UNITY_EDITOR
-        SceneManager.LoadScene(SceneHub.name);
-#else
-        SceneManager.LoadScene("Hub_Scene");
-#endif
     }
 
     public void LaunchRythmGame()
@@ -678,10 +693,10 @@ public class GameManager : MonoBehaviour
         var AudioManager = FindFirstObjectByType<AudioManager>();
         AudioManager.PlayAudio(1);
         
-        sequenceCoroutine = StartCoroutine(InternalPlaySequence(entry, playIndex));
+        sequenceCoroutine = StartCoroutine(InternalPlayGlitchSequence(entry, playIndex));
     }
 
-    private IEnumerator InternalPlaySequence(CharacterEntry entry, int playIndex)
+    private IEnumerator InternalPlayGlitchSequence(CharacterEntry entry, int playIndex)
     {
         if (entry == null)
         {
@@ -732,6 +747,79 @@ public class GameManager : MonoBehaviour
                 entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
                 Destroy(sceneImageAnim.gameObject);
                 Destroy(glitchEffectInstance.gameObject);
+                var DManager = FindFirstObjectByType<DialogueManager>();
+                if (DManager != null) DManager.CanInteract = true;
+            };
+            sceneImageAnim.AnimationEnded += handler;
+
+            sceneImageAnim.Play(true);
+
+            yield return new WaitUntil(() => animEnded);
+
+            sceneImageAnim.AnimationEnded -= handler;
+
+            sceneImageAnim.Stop(true);
+
+            sequenceCoroutine = null;
+            entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+            yield break;
+        }
+
+        sequenceCoroutine = null;
+        yield break;
+    }
+    private IEnumerator InternalPlaySequence(CharacterEntry entry, int playIndex)
+    {
+        if (entry == null)
+        {
+            sequenceCoroutine = null;
+            yield break;
+        }
+
+        if (entry.Sequences != null && entry.Sequences.Length > 0)
+        {
+            int foundIdx = -1;
+            Sequence seq = default;
+
+            int clamped = Mathf.Clamp(playIndex, 0, entry.Sequences.Length - 1);
+            seq = entry.Sequences[clamped];
+
+            if (seq.sprites == null || seq.sprites.Length == 0)
+            {
+                if (!FindValidSequenceData(entry, playIndex, out foundIdx, out seq))
+                {
+                    entry.sequenceIndex = (entry.sequenceIndex + 1) % entry.Sequences.Length;
+                    sequenceCoroutine = null;
+                    yield break;
+                }
+            }
+            else
+            {
+                foundIdx = clamped;
+            }
+
+            if (sceneImageAnim == null)
+                sceneImageAnim = FindSceneImageAnimation();
+
+            if (sceneImageAnim == null)
+            {
+                entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+                sequenceCoroutine = null;
+                yield break;
+            }
+
+            sceneImageAnim.Stop(true);
+            sceneImageAnim.ApplySequence(seq);
+            sceneImageAnim.GetImage();
+
+            bool animEnded = false;
+            System.Action handler = () =>
+            {
+                animEnded = true;
+                entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+                Destroy(sceneImageAnim.gameObject);
+                var DManager = FindFirstObjectByType<DialogueManager>();
+                if (DManager != null) DManager.CanInteract = true;
             };
             sceneImageAnim.AnimationEnded += handler;
 
@@ -801,7 +889,8 @@ public class GameManager : MonoBehaviour
                 animEnded = true;
                 entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
                 Destroy(sceneImageAnim.gameObject);
-                Destroy(glitchEffectInstance.gameObject);
+                var DManager = FindFirstObjectByType<DialogueManager>();
+                if (DManager != null) DManager.CanInteract = true;
                 ReturnToHub();
             };
             sceneImageAnim.AnimationEnded += handler;
