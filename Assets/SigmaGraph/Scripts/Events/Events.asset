@@ -170,16 +170,10 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
-  - label: SquashSprite
-    Key: EV_Squashsprite
-    caption: Squash the date's sprite
-    isPrefab: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
-  - label: Flash
-    Key: EV_Flash
-    caption: THe mantis flash the butterfly with their camera, make the flash
+  - label: SpriteButterflyStruggles
+    Key: EV_Spritebutterflystruggles
+    caption: Replace the sprite of the butterfly with the one where he got somethin
+      in his eye for this dialogue
     isPrefab: 0
     Event:
       m_PersistentCalls:
@@ -194,6 +188,55 @@ MonoBehaviour:
   - label: SequenceRomouche
     Key: EV_Sequenceromouche
     caption: Play the sequence of romeo eating the shit out of the snail
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: SequenceHand
+    Key: EV_Sequencehand
+    caption: Play the sequence of the mantis looking at its hand being human
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: SequenceButterflyDead
+    Key: EV_Sequencebutterflydeath
+    caption: Play the sequence of a flash back of the death of the butterfly
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: SequenceCloporteDead
+    Key: EV_Sequencecloportdead
+    caption: Play the sequence of the cloport being dead in a flashback
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Sequencebourdead
+    Key: EV_Sequencebourdead
+    caption: Play the sequence of a flash back of a killed bourdon
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: SequenceButterFly
+    Key: EV_Sequencebutterfly
+    caption: Play the sequence & put the sprite of the butterfly flying away
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: SquashSprite
+    Key: EV_Squashsprite
+    caption: Squash the date's sprite
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: Flash
+    Key: EV_Flash
+    caption: THe mantis flash the butterfly with their camera, make the flash
     isPrefab: 0
     Event:
       m_PersistentCalls:

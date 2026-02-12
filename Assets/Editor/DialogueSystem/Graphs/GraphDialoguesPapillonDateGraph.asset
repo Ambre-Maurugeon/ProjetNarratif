@@ -558,7 +558,7 @@ MonoBehaviour:
     <Name>k__BackingField: DialogueName_28
     <Speaker>k__BackingField: 5
     BubleType: 0
-    Humeur: 2
+    Humeur: 0
     _dropDownKeyDialogue: Papillon_D40
     isMultipleChoice: 0
     _dropDownKeyEventList: []
@@ -612,19 +612,24 @@ MonoBehaviour:
     <Name>k__BackingField: DialogueName_31
     <Speaker>k__BackingField: 5
     BubleType: 0
-    Humeur: 0
+    Humeur: 2
     _dropDownKeyDialogue: Papillon_D42
     isMultipleChoice: 1
     _dropDownKeyEventList: []
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
-    - NodeID: 
-      _dropDownKeyChoice: 
+    - NodeID: 0b4e8aa0-0d9b-4f33-8b8d-69d13514e565
+      _dropDownKeyChoice: Mantis_DP12_C1
       <ConditionsSc>k__BackingField: []
       <ConditionsKey>k__BackingField: []
       _directionPort: 0
     - NodeID: 
-      _dropDownKeyChoice: 
+      _dropDownKeyChoice: Mantis_DP12_C2
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 116654b0-432c-4342-98be-8641456ee526
+      _dropDownKeyChoice: Mantis_DP12_C3
       <ConditionsSc>k__BackingField: []
       <ConditionsKey>k__BackingField: []
       _directionPort: 0
@@ -633,10 +638,10 @@ MonoBehaviour:
     <Position>k__BackingField: {x: 26496, y: -574.4}
   - <ID>k__BackingField: 0b4e8aa0-0d9b-4f33-8b8d-69d13514e565
     <Name>k__BackingField: DialogueName_32
-    <Speaker>k__BackingField: 0
+    <Speaker>k__BackingField: 5
     BubleType: 0
-    Humeur: 0
-    _dropDownKeyDialogue: 
+    Humeur: 2
+    _dropDownKeyDialogue: Papillon_D47
     isMultipleChoice: 0
     _dropDownKeyEventList: []
     <OnlyOneConditionNeeded>k__BackingField: 0
@@ -648,7 +653,61 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 27437.6, y: -563.2}
+    <Position>k__BackingField: {x: 27398.4, y: -828}
+  - <ID>k__BackingField: 116654b0-432c-4342-98be-8641456ee526
+    <Name>k__BackingField: DialogueName
+    <Speaker>k__BackingField: 5
+    BubleType: 0
+    Humeur: 2
+    _dropDownKeyDialogue: Papillon_D48
+    isMultipleChoice: 0
+    _dropDownKeyEventList: []
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: db7dcee3-e932-4a5e-b00d-6922b1216260
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 27405.6, y: -174.4}
+  - <ID>k__BackingField: db7dcee3-e932-4a5e-b00d-6922b1216260
+    <Name>k__BackingField: DialogueName_33
+    <Speaker>k__BackingField: 5
+    BubleType: 0
+    Humeur: 2
+    _dropDownKeyDialogue: Papillon_D49
+    isMultipleChoice: 0
+    _dropDownKeyEventList: []
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 28266.4, y: -179.2}
+  - <ID>k__BackingField: e6949fbe-f8e4-46ad-b506-f66c1da82c54
+    <Name>k__BackingField: DialogueName_34
+    <Speaker>k__BackingField: 5
+    BubleType: 0
+    Humeur: 2
+    _dropDownKeyDialogue: Papillon_D54
+    isMultipleChoice: 0
+    _dropDownKeyEventList: []
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 29045.6, y: -836.80005}
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
   - DialogueName_1
@@ -684,5 +743,8 @@ MonoBehaviour:
   - DialogueName_30
   - DialogueName_31
   - DialogueName_32
+  - DialogueName
+  - DialogueName_33
+  - DialogueName_34
   <OldGroupedNodeNames>k__BackingField:
     list: []
