@@ -142,3 +142,31 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - label: TeleGlitch
+    Key: EV_TVglitch
+    caption: Make the tv snow / glitch
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: TeleAnime
+    Key: EV_TVanime
+    caption: Put the anime on the TV
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: TeleNormal
+    Key: EV_TVnormal
+    caption: Make the tv black again
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: TeleDroneald
+    Key: EV_TVdroneald
+    caption: Put Droneald on the TV
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
