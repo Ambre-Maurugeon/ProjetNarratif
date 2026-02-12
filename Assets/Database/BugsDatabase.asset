@@ -24,7 +24,11 @@ MonoBehaviour:
     - 1
     - 2
     BgSprite: {fileID: -9074006278687196050, guid: 7869c92813eb54a4bb0f261ce9643bb0, type: 3}
-    Sequences: []
+    Sequences:
+    - sprites: []
+      framesPerSprite: 0
+      loop: 0
+      destroyOnEnd: 0
     sequenceIndex: 0
   - perso: Cloporte
     id: 1

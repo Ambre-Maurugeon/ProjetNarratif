@@ -619,10 +619,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff568874930560944969e006dc12997b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pulse
-  visualPulse: {fileID: 1251650171}
+  heartPulse: {fileID: 0}
+  circlePulse: {fileID: 0}
   bpm: 60
   tolerance: 0.25
   sequenceDuration: 7
+  perfect: 0
+  good: 0
+  bad: 0
 --- !u!4 &124815065
 Transform:
   m_ObjectHideFlags: 0
@@ -2983,9 +2987,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1147973323}
+  - {fileID: 1139761430}
   - {fileID: 829485180}
   - {fileID: 1306542898}
-  - {fileID: 1139761430}
   m_Father: {fileID: 13539239}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5234,6 +5238,7 @@ MonoBehaviour:
   pulseScale: 1.2
   pulseSpeed: 8
   durationOfSwitchedFeedback: 0.5
+  Circle: {fileID: 0}
 --- !u!1 &1300187653
 GameObject:
   m_ObjectHideFlags: 0
@@ -5477,7 +5482,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306542897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e30b9593d9205ec42acd27ed21a18e57, type: 2}
   m_CullingMode: 0
@@ -6358,7 +6363,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f19d4b52d626b54b9daf046872f775d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Touch
-  noteTime: 0
 --- !u!4 &1576061275
 Transform:
   m_ObjectHideFlags: 0
@@ -7022,7 +7026,7 @@ MonoBehaviour:
   UiCanva: {fileID: 0}
   SequenceCanvas: {fileID: 1699991158701647685, guid: f2fc17715a5a3ef4dae339c5b7c036c2, type: 3}
   GlitchEffectPrefab: {fileID: 0}
-  MatchCanvas: {fileID: 0}
+  MatchCanvas: {fileID: 1426462590}
 --- !u!4 &2041818665
 Transform:
   m_ObjectHideFlags: 0

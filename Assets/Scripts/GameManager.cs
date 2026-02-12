@@ -77,13 +77,13 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         Pulse.OnEndRythm += StopRythmGame;
-        DialogueManager.OnDialogueEnd += ReturnToHub;
+        DialogueManager.OnDialogueEnd += MatchLaunch;
     }
 
     private void OnDisable()
     {
         Pulse.OnEndRythm -= StopRythmGame;
-        DialogueManager.OnDialogueEnd -= ReturnToHub;
+        DialogueManager.OnDialogueEnd -= MatchLaunch;
     }
 
     private void OnDestroy()
