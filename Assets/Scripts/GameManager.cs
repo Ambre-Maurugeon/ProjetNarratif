@@ -178,6 +178,7 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        RestoreSavedData();
         AreAllEntriesCompleted();
         if (sceneImageAnim != null)
             sceneImageAnim.GetImage();
@@ -194,13 +195,11 @@ public class GameManager : MonoBehaviour
                 SequenceCanvas = GameObject.Find("SequenceCanvas").GetComponent<Canvas>();
         }
 
-        UpdateBug();
-
         if (currentInsectId < 0 || bugsDatabase == null || bugsDatabase.entries == null) return;
 
         CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
         if (entry == null) return;
-
+        
         var transition = FindFirstObjectByType<TransitionScene>();
         if (transition == null && transitionPrefab != null)
         {
@@ -211,13 +210,19 @@ public class GameManager : MonoBehaviour
                 transition = FindFirstObjectByType<TransitionScene>();
             }
         }
-
+        
+        if (scene.name == SceneHub.name) UpdateBug();
+        
+        var dialogueManager = FindFirstObjectByType<DialogueManager>();
+        dialogueManager.runtimeGraph = entry.refDialogue;
+        
         if (transition != null)
+        {
             StartCoroutine(HandleSceneLoadedWithFadeOut(entry, transition));
+        }
         else
         {
             StopAllCoroutines();
-            StartCoroutine(GameplayLoop(entry));
         }
     }
 
@@ -254,23 +259,8 @@ public class GameManager : MonoBehaviour
         yield return StartCoroutine(transition.FadeOut());
 
         StopAllCoroutines();
-        StartCoroutine(GameplayLoop(entry));
     }
-
-    private IEnumerator GameplayLoop(CharacterEntry entry)
-    {
-        while (true)
-        {
-            var dialogueManager = FindFirstObjectByType<DialogueManager>();
-            if (dialogueManager != null)
-            {
-                if (entry.refDialogue != null)
-                {
-                }
-            }
-            yield return null;
-        }
-    }
+    
 
     public void ReturnToHub()
     {
@@ -480,7 +470,6 @@ public class GameManager : MonoBehaviour
     public void SetCurrentInsectId(int id)
     {
         currentInsectId = id;
-        UpdateBug();
     }
 
     private bool FindValidSequenceData(CharacterEntry entry, int startIdx, out int foundIdx, out Sequence seq)
@@ -667,7 +656,6 @@ public class GameManager : MonoBehaviour
 
     public bool AreAllEntriesCompleted()
     {
-        if (bugsDatabase == null || bugsDatabase.entries == null) return false;
         foreach (var entry in bugsDatabase.entries)
         {
             if (entry == null) continue;
