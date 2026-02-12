@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,40 +9,128 @@ public class VisualPulse : MonoBehaviour
 
     [SerializeField]private float pulseScale = 1.2f;
     [SerializeField]private float pulseSpeed = 8f;
-    [SerializeField] private float durationOfSwitchedFeedback;
+    [SerializeField]private float durationOfSwitchedFeedback;
+    [SerializeField]private Image Circle;
+
+    public static event Action Perfect;
 
     private Vector3 baseScale;
     private bool pulsing;
+    private bool circle;
     private Image image;
 
     private Sprite baseSprite;
     private Sprite newSprite;
 
+    private void Awake()
+    {
+        if (image == Circle)
+        {
+            gameObject.SetActive(false);
+        }
+    }
     void Start()
     {
         baseScale = transform.localScale;
         image = GetComponent<Image>();
+
         if (image == null) Debug.LogWarning("Le composant Image n'est pas trouvé sur cet objet.");
-        baseSprite = image.sprite;
+
+        if (image != Circle)
+        {
+
+            baseSprite = image.sprite;
+            circle = false;
+            Debug.LogWarning($"Image: {image}");
+        }
+        else
+        {
+            circle = true;
+            /*gameObject.SetActive(false);*/
+            Debug.LogWarning($"Image: {image}");
+        }
+
+
     }
 
     void OnEnable()
     {
         Pulse.OnTiming += SwitchImage;
+        Pulse.OnEndRythm += DisabledCircle;
     }
 
     void OnDisable()
     {
         Pulse.OnTiming -= SwitchImage;
+        Pulse.OnEndRythm -= DisabledCircle;
     }
 
     public void Pulsing()
     {
         pulsing = true;
+        gameObject.SetActive(true);
+
     }
 
     void Update()
     {
+        Pulsation();
+        /*pulseProgress = CalculatePulseProgress(); // Calcul de l'avancement de la pulsation*/
+
+    }
+
+    private string ImagePath(bool b)
+    {
+
+        if (circle) return "";
+        
+            if (b)
+            {
+                return "Assets/GA/UI/heart_UI_success.png";
+            }
+            else 
+            {
+                return "Assets/GA/UI/heart_UI_fail.png";
+            }
+        
+    }
+
+    private void SwitchImage(bool timing)
+    {
+        if (!circle)
+        {
+            StartCoroutine(ChangeSpriteForDuration(durationOfSwitchedFeedback, timing));        
+        }
+    }
+
+    IEnumerator ChangeSpriteForDuration(float duration, bool state) 
+    {
+
+        float elapsedTime = 0f;
+
+#if UNITY_EDITOR
+        newSprite = (Sprite)AssetDatabase.LoadAssetAtPath(ImagePath(state), typeof(Sprite));
+#else
+        newSprite = (Sprite)Resources.Load(ImagePath(state), typeof(Sprite));
+#endif
+        image.sprite = newSprite;
+
+        while (elapsedTime <= durationOfSwitchedFeedback)
+        {
+            elapsedTime += Time.deltaTime;
+            /*if (Input.touchCount > 0) break;*/
+            yield return null;
+
+        }
+
+        image.sprite = baseSprite;
+        /*yield return null;*/
+    }
+
+
+    public void Pulsation() 
+    {
+
         if (pulsing)
         {
             transform.localScale = Vector3.Lerp(
@@ -62,48 +152,32 @@ public class VisualPulse : MonoBehaviour
                 Time.deltaTime * pulseSpeed
             );
         }
+
     }
 
-    private string ImagePath(bool b)
+    public void DisabledCircle()
     {
 
-        if (b)
-        {
-            return "Assets/GA/UI/heart_UI_success.png";
-
-        }
-        else 
-        {
-            return "Assets/GA/UI/heart_UI_fail.png";
-        }
     }
-
-    private void SwitchImage(bool timing)
+/*
+ * Pour une précision Diabolique |
+ *                               |
+ *                               V
+    public float CalculatePulseProgress()
     {
-        StartCoroutine(ChangeSpriteForDuration(durationOfSwitchedFeedback, timing));        
-    }
-
-    IEnumerator ChangeSpriteForDuration(float duration, bool state) 
-    {
-
-        float elapsedTime = 0f;
-
-#if UNITY_EDITOR
-        newSprite = (Sprite)AssetDatabase.LoadAssetAtPath(ImagePath(state), typeof(Sprite));
-#else
-        newSprite = (Sprite)Resources.Load(ImagePath(state), typeof(Sprite));
-#endif
-        image.sprite = newSprite;
-
-        while (elapsedTime <= durationOfSwitchedFeedback)
+        if (pulsing)
         {
-            elapsedTime += Time.deltaTime;
-            yield return null;
-
+            return Mathf.Clamp01(Time.time % pulseSpeed / pulseSpeed);
         }
 
-        image.sprite = baseSprite;
-        /*yield return null;*/
+        return 0f;
     }
+
+    public bool IsPerfectTiming()
+    {
+        Handheld.Vibrate();
+        Perfect?.Invoke();
+        return Mathf.Approximately(pulseProgress, 1f);
+    }*/
 
 }

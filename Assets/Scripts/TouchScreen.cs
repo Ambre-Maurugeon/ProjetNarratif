@@ -4,15 +4,8 @@ using UnityEngine;
 public class TouchScreen : MonoBehaviour
 {
 
-    [SerializeField] private float noteTime;
-
     private bool alreadyTapped;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -24,8 +17,6 @@ public class TouchScreen : MonoBehaviour
             if (touch.phase == TouchPhase.Began)
             {
                 float currentTime = Time.time;
-                float difference = Mathf.Abs(currentTime - noteTime);
-
                 alreadyTapped = true;
             }
 
