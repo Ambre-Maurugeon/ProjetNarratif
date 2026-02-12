@@ -248,3 +248,18 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - label: SequenceEndNoBlood
+    Key: EV_SequenceEndNoBlod
+    caption: The player has killed no bug during the playthrough use the cinematic
+      without blod instead of the base one
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+  - label: ChangeToNight
+    Key: EV_ChangeNight
+    caption: Change scene to night scene
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []

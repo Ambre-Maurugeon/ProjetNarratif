@@ -18,7 +18,7 @@ MonoBehaviour:
   - <Text>k__BackingField: 
     <NextDialogue>k__BackingField: {fileID: 0}
   - <Text>k__BackingField: 
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: acf9b8969bf17614d8ae039a90fa450b, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: dbb42c85ebef61b408310cc3597dcfd8, type: 2}
   - <Text>k__BackingField: 
     <NextDialogue>k__BackingField: {fileID: 11400000}
   <DialogueType>k__BackingField: 3

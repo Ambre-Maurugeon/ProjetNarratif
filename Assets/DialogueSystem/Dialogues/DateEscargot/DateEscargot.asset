@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaa76378291a144d849f29230be0a5a, type: 3}
+  m_Name: DateEscargot
+  m_EditorClassIdentifier: Assembly-CSharp::DSDialogueContainerSO
+  <FileName>k__BackingField: DateEscargot
+  <DialogueGroups>k__BackingField:
+    list: []
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: 9110a2f8de589f84ba1acfcd7cba81df, type: 2}
+  - {fileID: 11400000, guid: b9e88cdab0340a641b3832b6c04f60a5, type: 2}
+  - {fileID: 11400000, guid: 183b167e921f1d84fb91af20cbba4d32, type: 2}
