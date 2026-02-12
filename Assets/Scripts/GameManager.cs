@@ -189,8 +189,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (transition != null)
-            yield return StartCoroutine(transition.FadeIn());
+        if (AreAllEntriesCompleted() != true)
+        {
+            if (transition != null) yield return StartCoroutine(transition.FadeIn());
+        }
 
         var AudioManager = FindFirstObjectByType<AudioManager>();
         AudioManager.PlayAudio(0);
@@ -294,7 +296,22 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToHub()
     {
-        var transition = FindFirstObjectByType<TransitionScene>();
+        CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
+        if (entry != null) entry.isCompleted = true;
+        
+        if (AreAllEntriesCompleted() == true)
+        {
+            OnStartInsect(4);
+#if UNITY_EDITOR
+            SceneManager.LoadScene(SceneToLoad != null ? SceneToLoad.name : "MainScene");
+#else
+            SceneManager.LoadScene("MainScene");
+#endif
+        }
+        else
+        {
+            Debug.Log("Returning to hub...");
+            var transition = FindFirstObjectByType<TransitionScene>();
 
         if (transition == null && transitionPrefab != null)
         {
@@ -308,17 +325,15 @@ public class GameManager : MonoBehaviour
 
         if (transition != null)
             StartCoroutine(transition.FadeIn());
-
-        CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
-        if (entry != null) entry.isCompleted = true;
         
-        if (AreAllEntriesCompleted()==true) OnStartInsect(4);
+        #if UNITY_EDITOR
+                SceneManager.LoadScene(SceneHub.name);
+        #else
+                SceneManager.LoadScene("Hub_Scene");
+        #endif
+            
+        }
         
-#if UNITY_EDITOR
-        SceneManager.LoadScene(SceneHub.name);
-#else
-        SceneManager.LoadScene("Hub_Scene");
-#endif
     }
 
     public void LaunchRythmGame()
