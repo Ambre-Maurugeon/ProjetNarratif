@@ -1785,19 +1785,7 @@ MonoBehaviour:
   - Key: EV_ShowImage
     Event:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2041818664}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: PlayCurrentSequenceNow
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: -481098791475936692, guid: bf93afe2146c4f9479f02bcd1b7600bd, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 1
+        m_Calls: []
   - Key: EV_DarkLevel
     Event:
       m_PersistentCalls:
@@ -5302,7 +5290,7 @@ MonoBehaviour:
   pulseScale: 1.2
   pulseSpeed: 8
   durationOfSwitchedFeedback: 0.5
-  Circle: {fileID: 982699734601327758}
+  Circle: {fileID: 0}
 --- !u!1 &1300187653
 GameObject:
   m_ObjectHideFlags: 0
@@ -5527,7 +5515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f028ce0c7d42ab9bcb5d37e69c38e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  runtimeGraph: {fileID: 11400000, guid: 5fa68d7144e08704383094a717aa7888, type: 2}
+  runtimeGraph: {fileID: 11400000, guid: 1701772bc219c754a94ceac17c762741, type: 2}
   languageSetting: 0
   _bubleContainerList:
   - {fileID: 504661613}
@@ -5546,7 +5534,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306542897}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e30b9593d9205ec42acd27ed21a18e57, type: 2}
   m_CullingMode: 0
@@ -7089,7 +7077,7 @@ MonoBehaviour:
   SceneHub: {fileID: 102900000, guid: 71f0c2d626ac1bb4e8cef912345ceef2, type: 3}
   UiCanva: {fileID: 0}
   SequenceCanvas: {fileID: 1699991158701647685, guid: f2fc17715a5a3ef4dae339c5b7c036c2, type: 3}
-  GlitchEffectPrefab: {fileID: 0}
+  GlitchEffectPrefab: {fileID: 8149127469474041979, guid: 7d6ac62142279654a9fb30b00feb0a2d, type: 3}
   MatchCanvas: {fileID: 1426462590}
 --- !u!4 &2041818665
 Transform:
