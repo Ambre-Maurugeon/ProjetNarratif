@@ -16,11 +16,11 @@ MonoBehaviour:
   <Text>k__BackingField: Dialogue text.
   <Choices>k__BackingField:
   - <Text>k__BackingField: 
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: ddad423f733ea8146953da74927b47bc, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 818e56c0d3d6901479f7162730d7778a, type: 2}
   - <Text>k__BackingField: 
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: ddad423f733ea8146953da74927b47bc, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 837235532d9ee1d459d81ce26b610b35, type: 2}
   - <Text>k__BackingField: 
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: ddad423f733ea8146953da74927b47bc, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 26883cde737adcc44b937bb1ced29e5c, type: 2}
   <DialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0
   <Speaker>k__BackingField: 5
