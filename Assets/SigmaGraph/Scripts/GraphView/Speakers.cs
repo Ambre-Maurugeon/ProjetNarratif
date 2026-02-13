@@ -19,4 +19,5 @@ public enum Espeaker
     Cloporte,
     Mantis,
     Narrator = 8,
+    Escargot =9,
 }
