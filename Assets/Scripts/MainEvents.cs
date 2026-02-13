@@ -60,6 +60,25 @@ public class MainEvents : MonoBehaviour
     }
 
     private void LoadMenu() => SceneManager.LoadScene("Menu");
+
+    public static bool GoToHub = false;
+    public void CodeLyoko()
+    {
+        //Debug.Log("HELLLP V1");
+        //DialogueManager dM = FindAnyObjectByType<DialogueManager>();
+        //if (!dM) return;
+
+        //Button _nextButton = dM.currentDialogueContainer.nextButton;
+
+        //_nextButton.onClick.AddListener(() => 
+        //{
+        //    Debug.Log("HELLLP");
+        //    SceneManager.LoadScene("Hub_Scene");
+        //}
+        //);
+        GoToHub = true;
+
+    }
     #endregion
 
     //Decors

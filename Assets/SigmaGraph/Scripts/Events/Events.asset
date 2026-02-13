@@ -271,3 +271,10 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - label: HideGendarme
+    Key: EV_HideGen
+    caption: Cache le sprite du gendarme.
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
