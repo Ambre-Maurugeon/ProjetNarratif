@@ -1,0 +1,2327 @@
+fileFormatVersion: 2
+guid: de37b62a455484f4482b08c5dd53a6a1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4741765809600891317
+    second: coeur menu selection bugs and love 2_0
+  - first:
+      213: 9170749371364628193
+    second: coeur menu selection bugs and love 2_1
+  - first:
+      213: -5681964667367095336
+    second: coeur menu selection bugs and love 2_2
+  - first:
+      213: -2125318749735982980
+    second: coeur menu selection bugs and love 2_3
+  - first:
+      213: -7377387675806007144
+    second: coeur menu selection bugs and love 2_4
+  - first:
+      213: 1276034476488986194
+    second: coeur menu selection bugs and love 2_5
+  - first:
+      213: -5967199993460796623
+    second: coeur menu selection bugs and love 2_6
+  - first:
+      213: -6410839476652076186
+    second: coeur menu selection bugs and love 2_7
+  - first:
+      213: -5437549648655245672
+    second: coeur menu selection bugs and love 2_8
+  - first:
+      213: -1131789059037124050
+    second: coeur menu selection bugs and love 2_9
+  - first:
+      213: -3541920985734062020
+    second: coeur menu selection bugs and love 2_10
+  - first:
+      213: 6611077101840974819
+    second: coeur menu selection bugs and love 2_11
+  - first:
+      213: -7059757658713065450
+    second: coeur menu selection bugs and love 2_12
+  - first:
+      213: -4262594329114719552
+    second: coeur menu selection bugs and love 2_13
+  - first:
+      213: -1746062693265602300
+    second: coeur menu selection bugs and love 2_14
+  - first:
+      213: -7786387272486430737
+    second: coeur menu selection bugs and love 2_15
+  - first:
+      213: 8128638301570507846
+    second: coeur menu selection bugs and love 2_16
+  - first:
+      213: -7124524987393679046
+    second: coeur menu selection bugs and love 2_17
+  - first:
+      213: -1168765737213934230
+    second: coeur menu selection bugs and love 2_18
+  - first:
+      213: -5729108593282478051
+    second: coeur menu selection bugs and love 2_19
+  - first:
+      213: 2873047049896502773
+    second: coeur menu selection bugs and love 2_20
+  - first:
+      213: 1775861328150652316
+    second: coeur menu selection bugs and love 2_21
+  - first:
+      213: -2262293711710107613
+    second: coeur menu selection bugs and love 2_22
+  - first:
+      213: -1939118654942877658
+    second: coeur menu selection bugs and love 2_23
+  - first:
+      213: -302102031230400560
+    second: coeur menu selection bugs and love 2_24
+  - first:
+      213: 6792276985444018977
+    second: coeur menu selection bugs and love 2_25
+  - first:
+      213: 331678089527298785
+    second: coeur menu selection bugs and love 2_26
+  - first:
+      213: -8177600204665137429
+    second: coeur menu selection bugs and love 2_27
+  - first:
+      213: -6226966883011598978
+    second: coeur menu selection bugs and love 2_28
+  - first:
+      213: 2237459760480243288
+    second: coeur menu selection bugs and love 2_29
+  - first:
+      213: 1522758830815664192
+    second: coeur menu selection bugs and love 2_30
+  - first:
+      213: -1198224903080865916
+    second: coeur menu selection bugs and love 2_31
+  - first:
+      213: 4954521836458267436
+    second: coeur menu selection bugs and love 2_32
+  - first:
+      213: 5675547630169569412
+    second: coeur menu selection bugs and love 2_33
+  - first:
+      213: -2056598405677404420
+    second: coeur menu selection bugs and love 2_34
+  - first:
+      213: -7478700011006950369
+    second: coeur menu selection bugs and love 2_35
+  - first:
+      213: 503625933219203312
+    second: coeur menu selection bugs and love 2_36
+  - first:
+      213: 2791195619585644934
+    second: coeur menu selection bugs and love 2_37
+  - first:
+      213: 2661079296983897420
+    second: coeur menu selection bugs and love 2_38
+  - first:
+      213: 347932558008518086
+    second: coeur menu selection bugs and love 2_39
+  - first:
+      213: -773646289506457210
+    second: coeur menu selection bugs and love 2_40
+  - first:
+      213: -6750269087087798234
+    second: coeur menu selection bugs and love 2_41
+  - first:
+      213: 7234301107873709115
+    second: coeur menu selection bugs and love 2_42
+  - first:
+      213: 1473710564534222871
+    second: coeur menu selection bugs and love 2_43
+  - first:
+      213: -3258168328643447788
+    second: coeur menu selection bugs and love 2_44
+  - first:
+      213: 5993530392579094023
+    second: coeur menu selection bugs and love 2_45
+  - first:
+      213: -1751876486151122243
+    second: coeur menu selection bugs and love 2_46
+  - first:
+      213: -436392188724578345
+    second: coeur menu selection bugs and love 2_47
+  - first:
+      213: -8785323987435388094
+    second: coeur menu selection bugs and love 2_48
+  - first:
+      213: -5966568239821580617
+    second: coeur menu selection bugs and love 2_49
+  - first:
+      213: -1002046203181832426
+    second: coeur menu selection bugs and love 2_50
+  - first:
+      213: 7947891498972730563
+    second: coeur menu selection bugs and love 2_51
+  - first:
+      213: -1535612076527758961
+    second: coeur menu selection bugs and love 2_52
+  - first:
+      213: -3242320820399483455
+    second: coeur menu selection bugs and love 2_53
+  - first:
+      213: 8174274896672903272
+    second: coeur menu selection bugs and love 2_54
+  - first:
+      213: -1730360247829963055
+    second: coeur menu selection bugs and love 2_55
+  - first:
+      213: -5411618689462039354
+    second: coeur menu selection bugs and love 2_56
+  - first:
+      213: 5710655699399458123
+    second: coeur menu selection bugs and love 2_57
+  - first:
+      213: 8601185459693952452
+    second: coeur menu selection bugs and love 2_58
+  - first:
+      213: -8838584324931342009
+    second: coeur menu selection bugs and love 2_59
+  - first:
+      213: -4469951904869512516
+    second: coeur menu selection bugs and love 2_60
+  - first:
+      213: -230855147462113092
+    second: coeur menu selection bugs and love 2_61
+  - first:
+      213: -4815676330792846889
+    second: coeur menu selection bugs and love 2_62
+  - first:
+      213: -6494831001721522968
+    second: coeur menu selection bugs and love 2_63
+  - first:
+      213: 5457160080017518452
+    second: coeur menu selection bugs and love 2_64
+  - first:
+      213: 2331032501659639999
+    second: coeur menu selection bugs and love 2_65
+  - first:
+      213: -1282392487456923544
+    second: coeur menu selection bugs and love 2_66
+  - first:
+      213: -2303082088339418874
+    second: coeur menu selection bugs and love 2_67
+  - first:
+      213: -5824575120363012207
+    second: coeur menu selection bugs and love 2_68
+  - first:
+      213: -2553129699382038174
+    second: coeur menu selection bugs and love 2_69
+  - first:
+      213: -5477224002671468978
+    second: coeur menu selection bugs and love 2_70
+  - first:
+      213: 6931294407013304793
+    second: coeur menu selection bugs and love 2_71
+  - first:
+      213: 557341703445873994
+    second: coeur menu selection bugs and love 2_72
+  - first:
+      213: 3263058919867701901
+    second: coeur menu selection bugs and love 2_73
+  - first:
+      213: -6581759924621611986
+    second: coeur menu selection bugs and love 2_74
+  - first:
+      213: 3378438824456870767
+    second: coeur menu selection bugs and love 2_75
+  - first:
+      213: -8428486234820305731
+    second: coeur menu selection bugs and love 2_76
+  - first:
+      213: 3432504437093498193
+    second: coeur menu selection bugs and love 2_77
+  - first:
+      213: -4556883258345232688
+    second: coeur menu selection bugs and love 2_78
+  - first:
+      213: -4391940204664818915
+    second: coeur menu selection bugs and love 2_79
+  - first:
+      213: 4217790092751275173
+    second: coeur menu selection bugs and love 2_80
+  - first:
+      213: -3632634927469624710
+    second: coeur menu selection bugs and love 2_81
+  - first:
+      213: -5953922338974699404
+    second: coeur menu selection bugs and love 2_82
+  - first:
+      213: -7229904757963133452
+    second: coeur menu selection bugs and love 2_83
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2034
+        width: 142
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4675ae7e1dd13eb0800000000000000
+      internalID: -4741765809600891317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_1
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 2034
+        width: 143
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e6535ce6fb054f70800000000000000
+      internalID: 9170749371364628193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_2
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 2034
+        width: 143
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d383474d3b9521b0800000000000000
+      internalID: -5681964667367095336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_3
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 2034
+        width: 143
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7862878bd95182e0800000000000000
+      internalID: -2125318749735982980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_4
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 2034
+        width: 143
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8900d35fef04e9990800000000000000
+      internalID: -7377387675806007144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_5
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 2034
+        width: 143
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25e074c789265b110800000000000000
+      internalID: 1276034476488986194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_6
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 2034
+        width: 143
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1335e06b83f303da0800000000000000
+      internalID: -5967199993460796623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1846
+        width: 142
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6631a1a467f1807a0800000000000000
+      internalID: -6410839476652076186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_8
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 1846
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e9a576761f984b0800000000000000
+      internalID: -5437549648655245672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_9
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1846
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2a2b67e8d31b40f0800000000000000
+      internalID: -1131789059037124050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_10
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1846
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30e1de11a198dec0800000000000000
+      internalID: -3541920985734062020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_11
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 1846
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e343fdd8934fbb50800000000000000
+      internalID: 6611077101840974819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_12
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 1846
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 618701840d3b60e90800000000000000
+      internalID: -7059757658713065450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_13
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 1846
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cac587ba0938d4c0800000000000000
+      internalID: -4262594329114719552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1659
+        width: 142
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40987544b3db4c7e0800000000000000
+      internalID: -1746062693265602300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_15
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 1659
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe7d2db970231f390800000000000000
+      internalID: -7786387272486430737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_16
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1659
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 644aeb8c779bec070800000000000000
+      internalID: 8128638301570507846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_17
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1659
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a316105754a902d90800000000000000
+      internalID: -7124524987393679046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_18
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 1659
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6547bf11c5b7cfe0800000000000000
+      internalID: -1168765737213934230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_19
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 1659
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1092c9a61e1e70b0800000000000000
+      internalID: -5729108593282478051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_20
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 1659
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f5a010e11d1fd720800000000000000
+      internalID: 2873047049896502773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1472
+        width: 142
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c95e5c2187025a810800000000000000
+      internalID: 1775861328150652316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_22
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 1472
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3284be7fad7ba90e0800000000000000
+      internalID: -2262293711710107613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_23
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1472
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 628ebc27bddd615e0800000000000000
+      internalID: -1939118654942877658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_24
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1472
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d7869e9dc7becbf0800000000000000
+      internalID: -302102031230400560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_25
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 1472
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ba3756ee3034e50800000000000000
+      internalID: 6792276985444018977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_26
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 1472
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ea0e02177b5a9400800000000000000
+      internalID: 331678089527298785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_27
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 1472
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be6d5cdc0f3538e80800000000000000
+      internalID: -8177600204665137429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1285
+        width: 142
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e75e8fd9c9e5599a0800000000000000
+      internalID: -6226966883011598978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_29
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 1285
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85ec7ae2ccd0d0f10800000000000000
+      internalID: 2237459760480243288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_30
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1285
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0485b55b61de12510800000000000000
+      internalID: 1522758830815664192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_31
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1285
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f86d29ccc0f5fe0800000000000000
+      internalID: -1198224903080865916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_32
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 1285
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23d20e2c5ff1c440800000000000000
+      internalID: 4954521836458267436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_33
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 1285
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4883112df7893ce40800000000000000
+      internalID: 5675547630169569412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_34
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 1285
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfea6f775ae7573e0800000000000000
+      internalID: -2056598405677404420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1098
+        width: 142
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f14883eb6f1563890800000000000000
+      internalID: -7478700011006950369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_36
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 1098
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f884313e1d3df600800000000000000
+      internalID: 503625933219203312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_37
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1098
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689570ca0a15cb620800000000000000
+      internalID: 2791195619585644934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_38
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1098
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c451fd7858d0ee420800000000000000
+      internalID: 2661079296983897420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_39
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 1098
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c504ed61da14d400800000000000000
+      internalID: 347932558008518086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_40
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 1098
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6892b247cc47345f0800000000000000
+      internalID: -773646289506457210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_41
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 1098
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 628d4dd970a3252a0800000000000000
+      internalID: -6750269087087798234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 909
+        width: 142
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3cf6055786656460800000000000000
+      internalID: 7234301107873709115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_43
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 909
+        width: 143
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7108dcc43fba37410800000000000000
+      internalID: 1473710564534222871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_44
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 909
+        width: 143
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41477c8ea29a8c2d0800000000000000
+      internalID: -3258168328643447788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_45
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 909
+        width: 143
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7063f20132c4d2350800000000000000
+      internalID: 5993530392579094023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_46
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 909
+        width: 143
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db25a902e9510b7e0800000000000000
+      internalID: -1751876486151122243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_47
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 909
+        width: 143
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d7f050dd9f91f9f0800000000000000
+      internalID: -436392188724578345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_48
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 909
+        width: 143
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 243023c4162441680800000000000000
+      internalID: -8785323987435388094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 721
+        width: 142
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b69e415ccd723da0800000000000000
+      internalID: -5966568239821580617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_50
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 721
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61761da89440812f0800000000000000
+      internalID: -1002046203181832426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_51
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 721
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c4dd9565359c4e60800000000000000
+      internalID: 7947891498972730563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_52
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 721
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8153c1d3f860bae0800000000000000
+      internalID: -1535612076527758961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_53
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 721
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c55c347466f003d0800000000000000
+      internalID: -3242320820399483455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_54
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 721
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 860d49895bbd07170800000000000000
+      internalID: 8174274896672903272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_55
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 721
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1de53aeb5868cf7e0800000000000000
+      internalID: -1730360247829963055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 534
+        width: 142
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc00c2597116e4b0800000000000000
+      internalID: -5411618689462039354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_57
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 534
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4db34d2a13504f40800000000000000
+      internalID: 5710655699399458123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_58
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 534
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd1054ca9c8d5770800000000000000
+      internalID: 8601185459693952452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_59
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 534
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 741b123a26a075580800000000000000
+      internalID: -8838584324931342009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_60
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 534
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba0c23ec6a87f1c0800000000000000
+      internalID: -4469951904869512516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_61
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 534
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb843fc6776dbccf0800000000000000
+      internalID: -230855147462113092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_62
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 534
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d9f5d544e74b2db0800000000000000
+      internalID: -4815676330792846889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 347
+        width: 142
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e4b1327d99bdd5a0800000000000000
+      internalID: -6494831001721522968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_64
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 347
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47fe2e3fd2abbbb40800000000000000
+      internalID: 5457160080017518452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_65
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 347
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb0205db5bd795020800000000000000
+      internalID: 2331032501659639999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_66
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 347
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 860208ab3d6043ee0800000000000000
+      internalID: -1282392487456923544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_67
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 347
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 601d6fbfa0fc900e0800000000000000
+      internalID: -2303082088339418874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_68
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 347
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19f3f27b9c3fa2fa0800000000000000
+      internalID: -5824575120363012207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_69
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 347
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26175d2c016719cd0800000000000000
+      internalID: -2553129699382038174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 142
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4e16850acdfcf3b0800000000000000
+      internalID: -5477224002671468978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_71
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 160
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d90ea32a87e03060800000000000000
+      internalID: 6931294407013304793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_72
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 160
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a45076c83531cb700800000000000000
+      internalID: 557341703445873994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_73
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 160
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8a52e79cc6b84d20800000000000000
+      internalID: 3263058919867701901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_74
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 160
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2ce6006834e8a4a0800000000000000
+      internalID: -6581759924621611986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_75
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 160
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6bd32b0630a2ee20800000000000000
+      internalID: 3378438824456870767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_76
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 160
+        width: 143
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbc144bec60080b80800000000000000
+      internalID: -8428486234820305731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_77
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 142
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15df8ee6994b2af20800000000000000
+      internalID: 3432504437093498193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_78
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 0
+        width: 143
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d66867e1d2b2c0c0800000000000000
+      internalID: -4556883258345232688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_79
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 0
+        width: 143
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d13723247a1bc03c0800000000000000
+      internalID: -4391940204664818915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_80
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 0
+        width: 143
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a40a971eb9988a30800000000000000
+      internalID: 4217790092751275173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_81
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 0
+        width: 143
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a720f7da7c9469dc0800000000000000
+      internalID: -3632634927469624710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_82
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 0
+        width: 143
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 470762d8d2b6f5da0800000000000000
+      internalID: -5953922338974699404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coeur menu selection bugs and love 2_83
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 0
+        width: 143
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd63b5ade73aab90800000000000000
+      internalID: -7229904757963133452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      coeur menu selection bugs and love 2_0: -4741765809600891317
+      coeur menu selection bugs and love 2_1: 9170749371364628193
+      coeur menu selection bugs and love 2_10: -3541920985734062020
+      coeur menu selection bugs and love 2_11: 6611077101840974819
+      coeur menu selection bugs and love 2_12: -7059757658713065450
+      coeur menu selection bugs and love 2_13: -4262594329114719552
+      coeur menu selection bugs and love 2_14: -1746062693265602300
+      coeur menu selection bugs and love 2_15: -7786387272486430737
+      coeur menu selection bugs and love 2_16: 8128638301570507846
+      coeur menu selection bugs and love 2_17: -7124524987393679046
+      coeur menu selection bugs and love 2_18: -1168765737213934230
+      coeur menu selection bugs and love 2_19: -5729108593282478051
+      coeur menu selection bugs and love 2_2: -5681964667367095336
+      coeur menu selection bugs and love 2_20: 2873047049896502773
+      coeur menu selection bugs and love 2_21: 1775861328150652316
+      coeur menu selection bugs and love 2_22: -2262293711710107613
+      coeur menu selection bugs and love 2_23: -1939118654942877658
+      coeur menu selection bugs and love 2_24: -302102031230400560
+      coeur menu selection bugs and love 2_25: 6792276985444018977
+      coeur menu selection bugs and love 2_26: 331678089527298785
+      coeur menu selection bugs and love 2_27: -8177600204665137429
+      coeur menu selection bugs and love 2_28: -6226966883011598978
+      coeur menu selection bugs and love 2_29: 2237459760480243288
+      coeur menu selection bugs and love 2_3: -2125318749735982980
+      coeur menu selection bugs and love 2_30: 1522758830815664192
+      coeur menu selection bugs and love 2_31: -1198224903080865916
+      coeur menu selection bugs and love 2_32: 4954521836458267436
+      coeur menu selection bugs and love 2_33: 5675547630169569412
+      coeur menu selection bugs and love 2_34: -2056598405677404420
+      coeur menu selection bugs and love 2_35: -7478700011006950369
+      coeur menu selection bugs and love 2_36: 503625933219203312
+      coeur menu selection bugs and love 2_37: 2791195619585644934
+      coeur menu selection bugs and love 2_38: 2661079296983897420
+      coeur menu selection bugs and love 2_39: 347932558008518086
+      coeur menu selection bugs and love 2_4: -7377387675806007144
+      coeur menu selection bugs and love 2_40: -773646289506457210
+      coeur menu selection bugs and love 2_41: -6750269087087798234
+      coeur menu selection bugs and love 2_42: 7234301107873709115
+      coeur menu selection bugs and love 2_43: 1473710564534222871
+      coeur menu selection bugs and love 2_44: -3258168328643447788
+      coeur menu selection bugs and love 2_45: 5993530392579094023
+      coeur menu selection bugs and love 2_46: -1751876486151122243
+      coeur menu selection bugs and love 2_47: -436392188724578345
+      coeur menu selection bugs and love 2_48: -8785323987435388094
+      coeur menu selection bugs and love 2_49: -5966568239821580617
+      coeur menu selection bugs and love 2_5: 1276034476488986194
+      coeur menu selection bugs and love 2_50: -1002046203181832426
+      coeur menu selection bugs and love 2_51: 7947891498972730563
+      coeur menu selection bugs and love 2_52: -1535612076527758961
+      coeur menu selection bugs and love 2_53: -3242320820399483455
+      coeur menu selection bugs and love 2_54: 8174274896672903272
+      coeur menu selection bugs and love 2_55: -1730360247829963055
+      coeur menu selection bugs and love 2_56: -5411618689462039354
+      coeur menu selection bugs and love 2_57: 5710655699399458123
+      coeur menu selection bugs and love 2_58: 8601185459693952452
+      coeur menu selection bugs and love 2_59: -8838584324931342009
+      coeur menu selection bugs and love 2_6: -5967199993460796623
+      coeur menu selection bugs and love 2_60: -4469951904869512516
+      coeur menu selection bugs and love 2_61: -230855147462113092
+      coeur menu selection bugs and love 2_62: -4815676330792846889
+      coeur menu selection bugs and love 2_63: -6494831001721522968
+      coeur menu selection bugs and love 2_64: 5457160080017518452
+      coeur menu selection bugs and love 2_65: 2331032501659639999
+      coeur menu selection bugs and love 2_66: -1282392487456923544
+      coeur menu selection bugs and love 2_67: -2303082088339418874
+      coeur menu selection bugs and love 2_68: -5824575120363012207
+      coeur menu selection bugs and love 2_69: -2553129699382038174
+      coeur menu selection bugs and love 2_7: -6410839476652076186
+      coeur menu selection bugs and love 2_70: -5477224002671468978
+      coeur menu selection bugs and love 2_71: 6931294407013304793
+      coeur menu selection bugs and love 2_72: 557341703445873994
+      coeur menu selection bugs and love 2_73: 3263058919867701901
+      coeur menu selection bugs and love 2_74: -6581759924621611986
+      coeur menu selection bugs and love 2_75: 3378438824456870767
+      coeur menu selection bugs and love 2_76: -8428486234820305731
+      coeur menu selection bugs and love 2_77: 3432504437093498193
+      coeur menu selection bugs and love 2_78: -4556883258345232688
+      coeur menu selection bugs and love 2_79: -4391940204664818915
+      coeur menu selection bugs and love 2_8: -5437549648655245672
+      coeur menu selection bugs and love 2_80: 4217790092751275173
+      coeur menu selection bugs and love 2_81: -3632634927469624710
+      coeur menu selection bugs and love 2_82: -5953922338974699404
+      coeur menu selection bugs and love 2_83: -7229904757963133452
+      coeur menu selection bugs and love 2_9: -1131789059037124050
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
