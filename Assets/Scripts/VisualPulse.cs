@@ -13,16 +13,20 @@ public class VisualPulse : MonoBehaviour
     [SerializeField]private float pulseSpeed = 8f;
     [SerializeField]private float durationOfSwitchedFeedback;
     [SerializeField]private Image Circle;
+    [SerializeField] private float fillDuration = 2f;
+
 
     public static event Action Perfect;
 
     private Vector3 baseScale;
     private bool pulsing;
     private bool circle;
+    private bool isFading = false;
     private Image image;
 
     private Sprite baseSprite;
     private Sprite newSprite;
+    private CanvasGroup canvasGroup;
 
 
     void Start()
@@ -42,7 +46,14 @@ public class VisualPulse : MonoBehaviour
         else
         {
             circle = true;
-            gameObject.SetActive(false);
+
+            if (canvasGroup == null) 
+            {
+                canvasGroup = gameObject.AddComponent<CanvasGroup>();
+            }
+
+            /*gameObject.SetActive(false);*/
+            canvasGroup.alpha = 0f;
             Debug.LogWarning($"Image: {image}");
         }
 
@@ -64,10 +75,10 @@ public class VisualPulse : MonoBehaviour
     public void Pulsing()
     {
         pulsing = true;
-        if (circle)
+/*        if (circle)
         {
-            gameObject.SetActive(true);
-        }
+            StartCoroutine(FadeAndFillThenPulse());
+        }*/
 
     }
 
@@ -113,14 +124,58 @@ public class VisualPulse : MonoBehaviour
         while (elapsedTime <= durationOfSwitchedFeedback)
         {
             elapsedTime += Time.deltaTime;
-            /*if (Input.touchCount > 0) break;*/
             yield return null;
 
         }
 
         image.sprite = baseSprite;
-        /*yield return null;*/
     }
+
+    IEnumerator Fade(float start, float end, float duration)
+    {
+        isFading = true;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(start, end, elapsed / duration);
+            yield return null;
+        }
+
+        canvasGroup.alpha = end;
+        
+    }
+    IEnumerator FillRoutine()
+    {
+        float elapsed = 0f;
+
+        if (circle)
+        {
+            while (elapsed < fillDuration)
+            {
+                elapsed += Time.deltaTime;
+                image.fillAmount = elapsed / fillDuration;
+                yield return null;
+            }
+
+            image.fillAmount = 1f;
+        }
+    }
+
+     public IEnumerator FadeAndFillThenPulse() 
+    {
+        if (isFading) yield break;
+
+          StartCoroutine(Fade(0f, 1f, 0.5f));
+
+          StartCoroutine(FillRoutine());
+
+        pulsing = true;
+
+    }
+
+
 
 
     public void Pulsation() 
@@ -154,9 +209,17 @@ public class VisualPulse : MonoBehaviour
     { 
         if (circle) 
         {
-            gameObject.SetActive(false);
+            isFading = false;
+            StartCoroutine(Fade(1f, 0f, 1f));
         }
     }
+
+
+
+
+
+
+
     /*
      * Pour une précision Diabolique |
      *                               |

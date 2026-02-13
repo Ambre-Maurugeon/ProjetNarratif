@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 using JetBrains.Annotations;
+using System.Collections;
 
 public class Pulse : MonoBehaviour
 {
@@ -35,8 +36,8 @@ public class Pulse : MonoBehaviour
         void Start()
         {           
             beatInterval = 60f / bpm;
-            /*StartSequence();*/
-        }
+        StartSequence();
+    }
 
     void Update()
         {
@@ -115,13 +116,25 @@ public class Pulse : MonoBehaviour
         }
 
 
-    public void StartSequence() 
+    public void StartSequence()
     {
+        StartCoroutine(StartSequenceCoroutine());
+    }
+
+    private IEnumerator StartSequenceCoroutine()
+    {
+        // Lancer l'animation et attendre qu'elle finisse
+        yield return StartCoroutine(circlePulse.FadeAndFillThenPulse());
+
+        yield return new WaitForSeconds(1f);
+
         sequenceActive = true;
         nextBeatTime = Time.time + beatInterval;
         sequenceEndTime = Time.time + sequenceDuration;
+
         Debug.Log($"▶ Séquence commencée pour {sequenceDuration} secondes !");
     }
+
 
     //Version simplifié
     public void Result()

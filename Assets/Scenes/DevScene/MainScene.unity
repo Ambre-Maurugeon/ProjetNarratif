@@ -564,16 +564,9 @@ MonoBehaviour:
       dirty: 0
   - Key: goodscore
     check:
-      _target: {fileID: 834456150}
-      _methodName: ConditionTest
-      _args:
-      - boolValue: 0
-        intValue: 0
-        floatValue: 0
-        stringValue: 
-        objectValue: {fileID: 0}
-        argType: 1
-        _typeName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      _target: {fileID: 124815064}
+      _methodName: Good
+      _args: []
       _dynamic: 0
       _typeName: CheckEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       dirty: 0
@@ -626,9 +619,6 @@ MonoBehaviour:
   bpm: 60
   tolerance: 0.33
   sequenceDuration: 7
-  perfect: 0
-  good: 0
-  bad: 0
 --- !u!4 &124815065
 Transform:
   m_ObjectHideFlags: 0
