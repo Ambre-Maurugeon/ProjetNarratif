@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: f3d175a470bbd404db59c997aa77a17d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4555051153905172620
+    second: Cloporte_icone_0
+  - first:
+      213: 3660306524315773146
+    second: Cloporte_icone_1
+  - first:
+      213: -3094118542320120096
+    second: Cloporte_icone_2
+  - first:
+      213: -5014372489921861404
+    second: Cloporte_icone_3
+  - first:
+      213: -7968805770601683914
+    second: Cloporte_icone_4
+  - first:
+      213: -908050864798318008
+    second: Cloporte_icone_5
+  - first:
+      213: -3459860955245146228
+    second: Cloporte_icone_6
+  - first:
+      213: -8608331169890525719
+    second: Cloporte_icone_7
+  - first:
+      213: -4598238927707562702
+    second: Cloporte_icone_8
+  - first:
+      213: 4268129627460594502
+    second: Cloporte_icone_9
+  - first:
+      213: 6923966402949502223
+    second: Cloporte_icone_10
+  - first:
+      213: -8185381983936135431
+    second: Cloporte_icone_11
+  - first:
+      213: -2521932918866297853
+    second: Cloporte_icone_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cloporte_icone_0
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 57
+        width: 52
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c80404a04eac63f30800000000000000
+      internalID: 4555051153905172620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloporte_icone_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 152
+        width: 65
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad8e2e604650cc230800000000000000
+      internalID: 3660306524315773146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloporte_icone_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 215
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee4f00449b7f05d0800000000000000
+      internalID: -3094118542320120096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloporte_icone_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 165
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e867b6a9ce596ab0800000000000000
+      internalID: -5014372489921861404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloporte_icone_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 103
+        width: 56
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63424374f5d196190800000000000000
+      internalID: -7968805770601683914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloporte_icone_5
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 82
+        width: 43
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 842c5bdac84f563f0800000000000000
+      internalID: -908050864798318008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloporte_icone_6
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 67
+        width: 56
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8f8e56daca1cffc0800000000000000
+      internalID: -3459860955245146228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloporte_icone_7
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 60
+        width: 56
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ed90cde860198880800000000000000
+      internalID: -8608331169890525719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloporte_icone_8
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 70
+        width: 44
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23d1e99ce06cf20c0800000000000000
+      internalID: -4598238927707562702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloporte_icone_9
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 105
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64beb1c58417b3b30800000000000000
+      internalID: 4268129627460594502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloporte_icone_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 97
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f055b8c32ced61060800000000000000
+      internalID: 6923966402949502223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloporte_icone_11
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 38
+        width: 65
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9feba90247ea76e80800000000000000
+      internalID: -8185381983936135431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloporte_icone_12
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 50
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30c3c9f3f5b400dd0800000000000000
+      internalID: -2521932918866297853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Cloporte_icone_0: 4555051153905172620
+      Cloporte_icone_1: 3660306524315773146
+      Cloporte_icone_10: 6923966402949502223
+      Cloporte_icone_11: -8185381983936135431
+      Cloporte_icone_12: -2521932918866297853
+      Cloporte_icone_2: -3094118542320120096
+      Cloporte_icone_3: -5014372489921861404
+      Cloporte_icone_4: -7968805770601683914
+      Cloporte_icone_5: -908050864798318008
+      Cloporte_icone_6: -3459860955245146228
+      Cloporte_icone_7: -8608331169890525719
+      Cloporte_icone_8: -4598238927707562702
+      Cloporte_icone_9: 4268129627460594502
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
