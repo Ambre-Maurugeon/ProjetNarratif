@@ -88,7 +88,7 @@ MonoBehaviour:
   - perso: Stuart (35ans)
     id: 3
     isCompleted: 0
-    hasMatched: 1
+    hasMatched: 0
     refDialogue: {fileID: 11400000, guid: 8014dc7993e6f6d4eb1dc967e10ad578, type: 2}
     NewSpeedBPM: 1
     characterSprite: {fileID: -7820284580539036794, guid: 32c6f22eaf4da774f9db6dc45da118d5, type: 3}

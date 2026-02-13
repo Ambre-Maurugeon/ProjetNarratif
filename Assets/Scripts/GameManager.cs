@@ -557,13 +557,13 @@ public class GameManager : MonoBehaviour
         if (entry.isCompleted)
         {
             ColorBlock colors = dateBtn.colors;
-            colors.normalColor = new Color(0.30588236f, 1, 0, 1f);
+            colors.normalColor = new Color(100f/255f, 240f/255f, 0f, 1f);
             dateBtn.colors = colors;
             
             Image btnImage = dateBtn.GetComponent<Image>();
             if (btnImage != null)
             {
-                btnImage.color = new Color(0.30588236f, 1, 0, 1f);
+                btnImage.color = new Color(100f/255f, 240f/255f, 0f, 1f);
             }
         }
         else
