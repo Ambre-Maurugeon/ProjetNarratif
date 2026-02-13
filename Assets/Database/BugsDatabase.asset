@@ -28,7 +28,7 @@ MonoBehaviour:
     Sequences:
     - sprites:
       - {fileID: -481098791475936692, guid: bf93afe2146c4f9479f02bcd1b7600bd, type: 3}
-      framesPerSprite: 80
+      framesPerSprite: 120
       loop: 0
       destroyOnEnd: 1
     sequenceIndex: 0
