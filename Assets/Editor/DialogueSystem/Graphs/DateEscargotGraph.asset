@@ -33,13 +33,13 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 345, y: 287}
+    <Position>k__BackingField: {x: 344.8, y: 286.4}
   - <ID>k__BackingField: c5fb0bfb-2a6f-443c-92ab-32b1f68bd749
     <Name>k__BackingField: DialogueName_1
     <Speaker>k__BackingField: 9
     BubleType: 0
     Humeur: 2
-    _dropDownKeyDialogue: 
+    _dropDownKeyDialogue: Escargot_D1
     isMultipleChoice: 0
     _dropDownKeyEventList: []
     <OnlyOneConditionNeeded>k__BackingField: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: -508, y: 165}
+    <Position>k__BackingField: {x: -508, y: 164.8}
   - <ID>k__BackingField: 68daa5ba-e00d-4d3b-84ba-1fd4557f77cf
     <Name>k__BackingField: START
     <Speaker>k__BackingField: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 1
-    <Position>k__BackingField: {x: -765, y: 5}
+    <Position>k__BackingField: {x: -764.8, y: 4.800001}
   - <ID>k__BackingField: ecd44f21-b3c6-47ee-9d8b-e6de4ee3dd04
     <Name>k__BackingField: END
     <Speaker>k__BackingField: 0
@@ -87,7 +87,7 @@ MonoBehaviour:
       _directionPort: 0
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 2
-    <Position>k__BackingField: {x: 1199, y: 637}
+    <Position>k__BackingField: {x: 1199.2, y: 636.8}
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
   - DialogueName
