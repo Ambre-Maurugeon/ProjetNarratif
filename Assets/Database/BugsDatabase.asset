@@ -135,4 +135,4 @@ MonoBehaviour:
       framesPerSprite: 30
       loop: 0
       destroyOnEnd: 1
-    sequenceIndex: 3
+    sequenceIndex: 1
