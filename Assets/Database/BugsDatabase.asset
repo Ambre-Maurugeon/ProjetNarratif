@@ -16,7 +16,7 @@ MonoBehaviour:
   - perso: "L\xE9on (18ans)"
     id: 0
     isCompleted: 0
-    hasMatched: 0
+    hasMatched: 1
     refDialogue: {fileID: 11400000, guid: 5fa68d7144e08704383094a717aa7888, type: 2}
     NewSpeedBPM: 1
     characterSprite: {fileID: -909507038745483531, guid: 0e0d46da5340a974db6da779f3383936, type: 3}
@@ -40,7 +40,7 @@ MonoBehaviour:
   - perso: "Fr\xE9d\xE9rique (25ans)"
     id: 1
     isCompleted: 0
-    hasMatched: 0
+    hasMatched: 1
     refDialogue: {fileID: 11400000, guid: 0307a525ca3ec7549a718935319613e2, type: 2}
     NewSpeedBPM: 1
     characterSprite: {fileID: -1381784074667881438, guid: ee4dbc1a960453446b7c8e02cf327d46, type: 3}
@@ -64,7 +64,7 @@ MonoBehaviour:
   - perso: Dominique (30ans)
     id: 2
     isCompleted: 0
-    hasMatched: 0
+    hasMatched: 1
     refDialogue: {fileID: 11400000, guid: a29a412eb1725984d94249a1bccb6bb9, type: 2}
     NewSpeedBPM: 1
     characterSprite: {fileID: -8465993084441826826, guid: 5d98efaf291f1ff4bba7251da3494d29, type: 3}
@@ -84,11 +84,11 @@ MonoBehaviour:
       framesPerSprite: 40
       loop: 0
       destroyOnEnd: 1
-    sequenceIndex: 0
+    sequenceIndex: 1
   - perso: Stuart (35ans)
     id: 3
     isCompleted: 0
-    hasMatched: 0
+    hasMatched: 1
     refDialogue: {fileID: 11400000, guid: 8014dc7993e6f6d4eb1dc967e10ad578, type: 2}
     NewSpeedBPM: 1
     characterSprite: {fileID: -7820284580539036794, guid: 32c6f22eaf4da774f9db6dc45da118d5, type: 3}
@@ -102,7 +102,7 @@ MonoBehaviour:
   - perso: Gendarmes
     id: 4
     isCompleted: 0
-    hasMatched: 0
+    hasMatched: 1
     refDialogue: {fileID: 11400000, guid: a13e5bb090528c1489c3340a27fdd27a, type: 2}
     NewSpeedBPM: 1
     characterSprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
@@ -120,4 +120,19 @@ MonoBehaviour:
       framesPerSprite: 30
       loop: 0
       destroyOnEnd: 1
-    sequenceIndex: 0
+    - sprites:
+      - {fileID: -481098791475936692, guid: bf93afe2146c4f9479f02bcd1b7600bd, type: 3}
+      framesPerSprite: 30
+      loop: 0
+      destroyOnEnd: 1
+    - sprites:
+      - {fileID: 853352966259622118, guid: a406ebeb0fe908d44827b69688c814f5, type: 3}
+      framesPerSprite: 30
+      loop: 0
+      destroyOnEnd: 1
+    - sprites:
+      - {fileID: 235601465247075377, guid: cbca531f1d6740d4aa4a08d166425b45, type: 3}
+      framesPerSprite: 30
+      loop: 0
+      destroyOnEnd: 1
+    sequenceIndex: 3
