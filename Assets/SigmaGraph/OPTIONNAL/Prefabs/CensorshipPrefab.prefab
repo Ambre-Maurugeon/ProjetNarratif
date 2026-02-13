@@ -92,6 +92,22 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -1322443213
       objectReference: {fileID: 0}
+    - target: {fileID: 1981847512306751389, guid: 51c9730eb1ded9941889c2759c6dac1e, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981847512306751389, guid: 51c9730eb1ded9941889c2759c6dac1e, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.29803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981847512306751389, guid: 51c9730eb1ded9941889c2759c6dac1e, type: 3}
+      propertyPath: InitialModule.startColor.minColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981847512306751389, guid: 51c9730eb1ded9941889c2759c6dac1e, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3078938055184186905, guid: 51c9730eb1ded9941889c2759c6dac1e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.2
