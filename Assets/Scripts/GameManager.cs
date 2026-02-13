@@ -625,7 +625,7 @@ public class GameManager : MonoBehaviour
 
         sequenceCoroutine = StartCoroutine(InternalPlaySequence(entry, playIndex));
     }
-    public void PlayEndSequenceNow(Sprite firstSprite)
+    public void PlayEndSequenceNow(int sequenceIndex)
     {
         var DManager = FindFirstObjectByType<DialogueManager>();
         if (DManager != null) DManager.CanInteract = false;
@@ -637,20 +637,7 @@ public class GameManager : MonoBehaviour
         if (sequenceCoroutine != null)
             StopCoroutine(sequenceCoroutine);
 
-        int playIndex = entry.sequenceIndex;
-
-        if (firstSprite != null && entry.Sequences != null && entry.Sequences.Length > 0)
-        {
-            for (int i = 0; i < entry.Sequences.Length; i++)
-            {
-                var seq = entry.Sequences[i];
-                if (seq.sprites != null && seq.sprites.Length > 0 && seq.sprites[0] == firstSprite)
-                {
-                    playIndex = i;
-                    break;
-                }
-            }
-        }
+        int playIndex = sequenceIndex;
 
         sequenceCoroutine = StartCoroutine(InternalPlayEndSequence(entry, playIndex));
     }
