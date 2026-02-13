@@ -147,20 +147,24 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "ui_test_s\xE9rieux_success_0"
+      name: "ui_test_s\xE9rieux_success_1"
       rect:
         serializedVersion: 2
-        x: 13
-        y: 231
-        width: 51
-        height: 33
+        x: 14
+        y: 232
+        width: 49
+        height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline: []
+      outline:
+      - - {x: 2.5, y: -11.5}
+        - {x: 6.5, y: -11.5}
+        - {x: 6.5, y: 6.5}
+        - {x: 2.5, y: 6.5}
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 03283cd2d712e0ef0800000000000000
       internalID: -140137716879490512
@@ -169,45 +173,45 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ui_test_s\xE9rieux_success_1"
+      name: "ui_test_s\xE9rieux_success_2"
       rect:
         serializedVersion: 2
-        x: 30
-        y: 261
-        width: 24
-        height: 32
+        x: 31
+        y: 262
+        width: 22
+        height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ce35ee5460f299cb0800000000000000
-      internalID: -4856799019152813076
+      spriteID: e3d0723c128041747bb0631813fc115a
+      internalID: -342303667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ui_test_s\xE9rieux_success_2"
+      name: "ui_test_s\xE9rieux_success"
       rect:
         serializedVersion: 2
-        x: 36
+        x: 37
         y: 92
-        width: 146
-        height: 188
+        width: 144
+        height: 186
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ba55cc1bdbba788f0800000000000000
-      internalID: -538272799227357781
+      spriteID: 4e8a5a09f8cf18f42a42529be25f132d
+      internalID: 1273639671
       vertices: []
       indices: 
       edges: []
@@ -216,20 +220,20 @@ TextureImporter:
       name: "ui_test_s\xE9rieux_success_3"
       rect:
         serializedVersion: 2
-        x: 2
-        y: 188
-        width: 37
-        height: 15
+        x: 3
+        y: 189
+        width: 35
+        height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f09a6938d9d699d90800000000000000
-      internalID: -7090515615033153265
+      spriteID: 78a13a9df0a76124db6d95aa5463046f
+      internalID: 850143584
       vertices: []
       indices: 
       edges: []
@@ -238,20 +242,20 @@ TextureImporter:
       name: "ui_test_s\xE9rieux_success_4"
       rect:
         serializedVersion: 2
-        x: 172
-        y: 169
-        width: 67
-        height: 65
+        x: 173
+        y: 170
+        width: 66
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 26359d811fc2a9b60800000000000000
-      internalID: 7753559122487366498
+      spriteID: 6264973670caab342a99bf97e5dd8a03
+      internalID: -881078699
       vertices: []
       indices: 
       edges: []
@@ -260,20 +264,20 @@ TextureImporter:
       name: "ui_test_s\xE9rieux_success_5"
       rect:
         serializedVersion: 2
-        x: 9
-        y: 130
-        width: 29
-        height: 21
+        x: 10
+        y: 131
+        width: 27
+        height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b0cb6cd9b23b9adb0800000000000000
-      internalID: -4780092529565058037
+      spriteID: 2fb91be7d9401794398461d99aad1b68
+      internalID: 18704689
       vertices: []
       indices: 
       edges: []
@@ -282,20 +286,20 @@ TextureImporter:
       name: "ui_test_s\xE9rieux_success_6"
       rect:
         serializedVersion: 2
-        x: 159
-        y: 106
-        width: 34
-        height: 29
+        x: 160
+        y: 107
+        width: 32
+        height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5440a17ffa88fc8a0800000000000000
-      internalID: -6282652665812220859
+      spriteID: 6ac78647907956e4da0002caea217361
+      internalID: -1474327120
       vertices: []
       indices: 
       edges: []
@@ -304,20 +308,20 @@ TextureImporter:
       name: "ui_test_s\xE9rieux_success_7"
       rect:
         serializedVersion: 2
-        x: 48
-        y: 74
-        width: 26
-        height: 25
+        x: 49
+        y: 75
+        width: 24
+        height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 22e5d74ecf7fb07d0800000000000000
-      internalID: -2950992465273987550
+      spriteID: b28dd97ae1e4c21458b15ef7314c1bca
+      internalID: -2079601269
       vertices: []
       indices: 
       edges: []
@@ -326,7 +330,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8dec6226d66879d479d1a79e8af0fa7d
     internalID: 0
     vertices: []
     indices: 
@@ -334,16 +338,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      "ui_test_s\xE9rieux_success_0": -140137716879490512
-      "ui_test_s\xE9rieux_success_1": -4856799019152813076
-      "ui_test_s\xE9rieux_success_2": -538272799227357781
-      "ui_test_s\xE9rieux_success_3": -7090515615033153265
-      "ui_test_s\xE9rieux_success_4": 7753559122487366498
-      "ui_test_s\xE9rieux_success_5": -4780092529565058037
-      "ui_test_s\xE9rieux_success_6": -6282652665812220859
-      "ui_test_s\xE9rieux_success_7": -2950992465273987550
+      "ui_test_s\xE9rieux_success": 1273639671
+      "ui_test_s\xE9rieux_success_1": -140137716879490512
+      "ui_test_s\xE9rieux_success_2": -342303667
+      "ui_test_s\xE9rieux_success_3": 850143584
+      "ui_test_s\xE9rieux_success_4": -881078699
+      "ui_test_s\xE9rieux_success_5": 18704689
+      "ui_test_s\xE9rieux_success_6": -1474327120
+      "ui_test_s\xE9rieux_success_7": -2079601269
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

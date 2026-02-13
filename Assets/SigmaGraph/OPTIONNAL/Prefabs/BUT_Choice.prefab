@@ -208,7 +208,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168db5382482a774891cef7a8b553cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  buttonText: {fileID: 1908226225776389358}
+  _buttonText: {fileID: 1908226225776389358}
+  _rawLock: {fileID: 7178528266798411788}
+  _btnSprites:
+    darkBtn: {fileID: -1503480872200256491, guid: f3a9dc5da295b60439d29f28497d931f, type: 3}
+    darkLock: {fileID: 1236192087927369556, guid: 08c223c9b9266eb4485b5207888208d7, type: 3}
 --- !u!95 &7712706666949876966
 Animator:
   serializedVersion: 7

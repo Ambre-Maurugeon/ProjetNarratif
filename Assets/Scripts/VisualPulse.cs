@@ -85,11 +85,17 @@ public class VisualPulse : MonoBehaviour
         
             if (b)
             {
-                return "GA/UI/heart_UI_success";
+                if (MainEvents.IsDarkLevel)
+                    return "GA/UI/ui_test_sérieux_success"; 
+                else
+                    return "GA/UI/heart_UI_success";
             }
             else 
             {
-                return "GA/UI/heart_UI_fail";
+                if (MainEvents.IsDarkLevel)
+                    return "GA/UI/ui_test_sérieux_fail"; 
+                else
+                    return "GA/UI/heart_UI_fail";
             }
         
     }
@@ -118,7 +124,10 @@ public class VisualPulse : MonoBehaviour
 
         }
 
-        image.sprite = baseSprite;
+        if(MainEvents.IsDarkLevel)
+            image.sprite = (Sprite)Resources.Load("GA/UI/heart_ui_sérieux", typeof(Sprite));
+        else
+            image.sprite = baseSprite;
         /*yield return null;*/
     }
 
