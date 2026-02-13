@@ -323,7 +323,6 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Returning to hub...");
             var transition = FindFirstObjectByType<TransitionScene>();
 
         if (transition == null && transitionPrefab != null)
@@ -644,6 +643,7 @@ public class GameManager : MonoBehaviour
         if (DManager != null) DManager.CanInteract = false;
         var entry = bugsDatabase?.entries?.Find(e => e != null && e.id == currentInsectId);
         if (entry == null) return;
+        if (entry.Sequences == null || entry.Sequences.Length == 0) ReturnToHub();
 
         entry.hasMatched = true;
 

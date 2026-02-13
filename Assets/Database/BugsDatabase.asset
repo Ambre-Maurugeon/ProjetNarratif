@@ -70,7 +70,7 @@ MonoBehaviour:
     characterSprite: {fileID: -8465993084441826826, guid: 5d98efaf291f1ff4bba7251da3494d29, type: 3}
     description:
     - "A lanc\xE9 un culte pour sa personne."
-    - Passe plus de 8h/jour devant son mirroir.Passe plus de 8h/jour devant son mirroir.
+    - Passe plus de 8h/jour devant son mirroir.
     - "Est extr\xEAment souple."
     BgSprite: {fileID: -7176216987877333843, guid: 2514be1ce4009e748a7fc27a5c26fa02, type: 3}
     Sequences:

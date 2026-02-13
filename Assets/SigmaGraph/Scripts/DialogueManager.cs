@@ -111,10 +111,16 @@ public class DialogueManager : MonoBehaviour
         }
         UpdateDialogueFromNode(_currentNode);
     }
+    
 
-    public void Test()
+    public void Fr()
     {
-
+        UpdateLanguageSetting(language.FR);
+    }
+    
+    public void En()
+    {
+        UpdateLanguageSetting(language.EN);
     }
 
     private void Awake()

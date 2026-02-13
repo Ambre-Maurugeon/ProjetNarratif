@@ -363,6 +363,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2253775580639811971, guid: 34bd59089b5e2b04587e84e4873daac2, type: 3}
+      propertyPath: SequenceCanvas
+      value: 
+      objectReference: {fileID: 1699991158701647685, guid: f2fc17715a5a3ef4dae339c5b7c036c2, type: 3}
+    - target: {fileID: 2253775580639811971, guid: 34bd59089b5e2b04587e84e4873daac2, type: 3}
+      propertyPath: GlitchEffectPrefab
+      value: 
+      objectReference: {fileID: 8149127469474041979, guid: 7d6ac62142279654a9fb30b00feb0a2d, type: 3}
     - target: {fileID: 3401966665017644389, guid: 34bd59089b5e2b04587e84e4873daac2, type: 3}
       propertyPath: m_Name
       value: GameManager
