@@ -60,7 +60,7 @@ MonoBehaviour:
       framesPerSprite: 40
       loop: 0
       destroyOnEnd: 1
-    sequenceIndex: 1
+    sequenceIndex: 0
   - perso: Dominique (30ans)
     id: 2
     isCompleted: 0
@@ -120,4 +120,19 @@ MonoBehaviour:
       framesPerSprite: 30
       loop: 0
       destroyOnEnd: 1
-    sequenceIndex: 1
+    - sprites:
+      - {fileID: -481098791475936692, guid: bf93afe2146c4f9479f02bcd1b7600bd, type: 3}
+      framesPerSprite: 30
+      loop: 0
+      destroyOnEnd: 1
+    - sprites:
+      - {fileID: 853352966259622118, guid: a406ebeb0fe908d44827b69688c814f5, type: 3}
+      framesPerSprite: 30
+      loop: 0
+      destroyOnEnd: 1
+    - sprites:
+      - {fileID: 235601465247075377, guid: cbca531f1d6740d4aa4a08d166425b45, type: 3}
+      framesPerSprite: 30
+      loop: 0
+      destroyOnEnd: 1
+    sequenceIndex: 3
