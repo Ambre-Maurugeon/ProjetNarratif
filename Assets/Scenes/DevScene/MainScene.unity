@@ -3437,7 +3437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   AudioSource: {fileID: 2132221303}
-  VolumeScrollbar: {fileID: 0}
+  VolumeScrollbar: {fileID: 827479113}
   audioClips:
   - {fileID: 6418180475301049370, guid: 0cc472452d77c6c48bc1efc028d448bf, type: 2}
   - {fileID: 6418180475301049370, guid: 2eb6f31bcb7d8e84aa4ec29302c75f28, type: 2}
@@ -3666,7 +3666,19 @@ MonoBehaviour:
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 769478241}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: ChangeVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &827479114
 MonoBehaviour:
   m_ObjectHideFlags: 0

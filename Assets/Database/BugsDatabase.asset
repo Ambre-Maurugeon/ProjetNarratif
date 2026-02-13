@@ -52,7 +52,7 @@ MonoBehaviour:
     Sequences:
     - sprites:
       - {fileID: 801792754700709961, guid: c7e8d7196b238be4f8f13ab423d7f014, type: 3}
-      framesPerSprite: 40
+      framesPerSprite: 120
       loop: 0
       destroyOnEnd: 1
     - sprites:
@@ -76,7 +76,7 @@ MonoBehaviour:
     Sequences:
     - sprites:
       - {fileID: -6412503319465311156, guid: 88a7d1b8aad4051479990a5b3956ddb3, type: 3}
-      framesPerSprite: 40
+      framesPerSprite: 120
       loop: 0
       destroyOnEnd: 1
     - sprites:
@@ -91,7 +91,7 @@ MonoBehaviour:
     hasMatched: 0
     refDialogue: {fileID: 11400000, guid: 8014dc7993e6f6d4eb1dc967e10ad578, type: 2}
     NewSpeedBPM: 1
-    characterSprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+    characterSprite: {fileID: -7820284580539036794, guid: 32c6f22eaf4da774f9db6dc45da118d5, type: 3}
     description:
     - Aime pas les mouches.
     - "Pense que les personnes qui portent des cravates sont intellectuellement sup\xE9rieures."
