@@ -16,7 +16,7 @@ MonoBehaviour:
   - perso: "L\xE9on (18ans)"
     id: 0
     isCompleted: 0
-    hasMatched: 1
+    hasMatched: 0
     refDialogue: {fileID: 11400000, guid: 5fa68d7144e08704383094a717aa7888, type: 2}
     NewSpeedBPM: 1
     characterSprite: {fileID: -909507038745483531, guid: 0e0d46da5340a974db6da779f3383936, type: 3}
