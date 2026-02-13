@@ -13,20 +13,16 @@ public class VisualPulse : MonoBehaviour
     [SerializeField]private float pulseSpeed = 8f;
     [SerializeField]private float durationOfSwitchedFeedback;
     [SerializeField]private Image Circle;
-    [SerializeField] private float fillDuration = 2f;
-
 
     public static event Action Perfect;
 
     private Vector3 baseScale;
     private bool pulsing;
     private bool circle;
-    private bool isFading = false;
     private Image image;
 
     private Sprite baseSprite;
     private Sprite newSprite;
-    private CanvasGroup canvasGroup;
 
 
     void Start()
@@ -34,7 +30,7 @@ public class VisualPulse : MonoBehaviour
         baseScale = transform.localScale;
         image = GetComponent<Image>();
 
-        if (image == null) Debug.LogWarning("Le composant Image n'est pas trouvï¿½ sur cet objet.");
+        if (image == null) Debug.LogWarning("Le composant Image n'est pas trouvé sur cet objet.");
 
         if (image != Circle)
         {
@@ -46,14 +42,7 @@ public class VisualPulse : MonoBehaviour
         else
         {
             circle = true;
-
-            if (canvasGroup == null) 
-            {
-                canvasGroup = gameObject.AddComponent<CanvasGroup>();
-            }
-
-            /*gameObject.SetActive(false);*/
-            canvasGroup.alpha = 0f;
+            gameObject.SetActive(false);
             Debug.LogWarning($"Image: {image}");
         }
 
@@ -83,10 +72,10 @@ public class VisualPulse : MonoBehaviour
     public void Pulsing()
     {
         pulsing = true;
-/*        if (circle)
+        if (circle)
         {
-            StartCoroutine(FadeAndFillThenPulse());
-        }*/
+            gameObject.SetActive(true);
+        }
 
     }
 
@@ -105,14 +94,14 @@ public class VisualPulse : MonoBehaviour
             if (b)
             {
                 if (MainEvents.IsDarkLevel)
-                    return "GA/UI/ui_test_sï¿½rieux_success"; 
+                    return "GA/UI/ui_test_sérieux_success"; 
                 else
                     return "GA/UI/heart_UI_success";
             }
             else 
             {
                 if (MainEvents.IsDarkLevel)
-                    return "GA/UI/ui_test_sï¿½rieux_fail"; 
+                    return "GA/UI/ui_test_sérieux_fail"; 
                 else
                     return "GA/UI/heart_UI_fail";
             }
@@ -138,61 +127,17 @@ public class VisualPulse : MonoBehaviour
         while (elapsedTime <= durationOfSwitchedFeedback)
         {
             elapsedTime += Time.deltaTime;
+            /*if (Input.touchCount > 0) break;*/
             yield return null;
 
         }
 
         if(MainEvents.IsDarkLevel)
-            image.sprite = (Sprite)Resources.Load("GA/UI/heart_ui_sï¿½rieux", typeof(Sprite));
+            image.sprite = (Sprite)Resources.Load("GA/UI/heart_ui_sérieux", typeof(Sprite));
         else
             image.sprite = baseSprite;
+        /*yield return null;*/
     }
-
-    IEnumerator Fade(float start, float end, float duration)
-    {
-        isFading = true;
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(start, end, elapsed / duration);
-            yield return null;
-        }
-
-        canvasGroup.alpha = end;
-        
-    }
-    IEnumerator FillRoutine()
-    {
-        float elapsed = 0f;
-
-        if (circle)
-        {
-            while (elapsed < fillDuration)
-            {
-                elapsed += Time.deltaTime;
-                image.fillAmount = elapsed / fillDuration;
-                yield return null;
-            }
-
-            image.fillAmount = 1f;
-        }
-    }
-
-     public IEnumerator FadeAndFillThenPulse() 
-    {
-        if (isFading) yield break;
-
-          StartCoroutine(Fade(0f, 1f, 0.5f));
-
-          StartCoroutine(FillRoutine());
-
-        pulsing = true;
-
-    }
-
-
 
 
     public void Pulsation() 
@@ -226,19 +171,11 @@ public class VisualPulse : MonoBehaviour
     { 
         if (circle) 
         {
-            isFading = false;
-            StartCoroutine(Fade(1f, 0f, 1f));
+            gameObject.SetActive(false);
         }
     }
-
-
-
-
-
-
-
     /*
-     * Pour une prï¿½cision Diabolique |
+     * Pour une précision Diabolique |
      *                               |
      *                               V
         public float CalculatePulseProgress()
@@ -260,8 +197,8 @@ public class VisualPulse : MonoBehaviour
 
     private void SetDarkAssets()
     {
-        image.sprite = (Sprite)Resources.Load("GA/UI/heart_ui_sï¿½rieux", typeof(Sprite));
-        Circle.sprite = (Sprite)Resources.Load("GA/UI/Dark/ui_cercle_sï¿½rieux",typeof(Sprite));
+        image.sprite = (Sprite)Resources.Load("GA/UI/heart_ui_sérieux", typeof(Sprite));
+        Circle.sprite = (Sprite)Resources.Load("GA/UI/Dark/ui_cercle_sérieux",typeof(Sprite));
     }
 
 }
