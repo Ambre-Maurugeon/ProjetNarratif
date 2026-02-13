@@ -43,6 +43,7 @@ MonoBehaviour:
     isMultipleChoice: 0
     _dropDownKeyEventList:
     - EV_RythmLaunch
+    - EV_Spritedown
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 9b03e3ea-6844-430c-b3a8-4adccda8049a
