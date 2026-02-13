@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 61d6f92390a4e5042bbee6cb5766ca94
+guid: 0caf1b9495f67fa49b856c4d19a9ba99
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5856629809181884303
-    second: "ui_test_s\xE9rieux_fail_0"
+      213: -2341261091035583962
+    second: Bourdon_Icone_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "ui_test_s\xE9rieux_fail_0"
+      name: Bourdon_Icone_0
       rect:
         serializedVersion: 2
-        x: 27
+        x: 32
         y: 0
-        width: 143
-        height: 253
+        width: 251
+        height: 273
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f8fff3d18cde64150800000000000000
-      internalID: 5856629809181884303
+      spriteID: 62a6166317b228fd0800000000000000
+      internalID: -2341261091035583962
       vertices: []
       indices: 
       edges: []
@@ -161,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "ui_test_s\xE9rieux_fail_0": 5856629809181884303
+      Bourdon_Icone_0: -2341261091035583962
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

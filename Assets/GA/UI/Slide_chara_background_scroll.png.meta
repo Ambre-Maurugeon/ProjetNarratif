@@ -1,13 +1,25 @@
 fileFormatVersion: 2
-guid: a868a3d05a575334d8325844053cb123
+guid: fa69689cf56d73548854639eeee302b7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3366357605749543601
-    second: heart_UI_fail_0
+      213: 8708827542292640679
+    second: Slide_chara_background_scroll_0
   - first:
-      213: 628006153489596888
-    second: heart_UI_fail_1
+      213: -1668221700833164964
+    second: Slide_chara_background_scroll_1
+  - first:
+      213: -3140195318942278072
+    second: Slide_chara_background_scroll_2
+  - first:
+      213: -5278049056192238766
+    second: Slide_chara_background_scroll_3
+  - first:
+      213: -4822986389495893604
+    second: Slide_chara_background_scroll_4
+  - first:
+      213: 107671832195586114
+    second: Slide_chara_background_scroll_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +61,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -129,45 +141,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: heart_UI_fail_0
+      name: Slide_chara_background_scroll_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 196
-        height: 144
+        y: 1071
+        width: 151
+        height: 135
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1b2d2ad1864b7be20800000000000000
-      internalID: 3366357605749543601
+      spriteID: 7a3bd742288fbd870800000000000000
+      internalID: 8708827542292640679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heart_UI_fail_1
+      name: Slide_chara_background_scroll_1
       rect:
         serializedVersion: 2
-        x: 87
-        y: 3
-        width: 109
-        height: 141
+        x: 0
+        y: 870
+        width: 151
+        height: 136
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8d1c18fe44027b800800000000000000
-      internalID: 628006153489596888
+      spriteID: c51cd33a33949d8e0800000000000000
+      internalID: -1668221700833164964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slide_chara_background_scroll_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 669
+        width: 151
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84ed911bef8cb64d0800000000000000
+      internalID: -3140195318942278072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slide_chara_background_scroll_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 468
+        width: 151
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b6392095a90c6b0800000000000000
+      internalID: -5278049056192238766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slide_chara_background_scroll_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 267
+        width: 151
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c91bd899e6f411db0800000000000000
+      internalID: -4822986389495893604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slide_chara_background_scroll_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 66
+        width: 151
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 248555ef5f68e7100800000000000000
+      internalID: 107671832195586114
       vertices: []
       indices: 
       edges: []
@@ -176,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cfa920daa31a37643b4a7c11ee5dff57
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -186,8 +286,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      heart_UI_fail_0: 3366357605749543601
-      heart_UI_fail_1: 628006153489596888
+      Slide_chara_background_scroll_0: 8708827542292640679
+      Slide_chara_background_scroll_1: -1668221700833164964
+      Slide_chara_background_scroll_2: -3140195318942278072
+      Slide_chara_background_scroll_3: -5278049056192238766
+      Slide_chara_background_scroll_4: -4822986389495893604
+      Slide_chara_background_scroll_5: 107671832195586114
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

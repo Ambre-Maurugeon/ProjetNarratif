@@ -47,6 +47,11 @@ public class GameManager : MonoBehaviour
     private Coroutine sequenceCoroutine;
     private ImageAnimation sceneImageAnim;
 
+    //Chara
+    private GameObject _speaker;
+    private GameObject _player;
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -72,6 +77,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         RestoreSavedData();
+
+        InitCharacters();
     }
 
     private void OnEnable()
@@ -93,6 +100,12 @@ public class GameManager : MonoBehaviour
             SaveData();
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
+    }
+
+    private void InitCharacters()
+    {
+        _speaker = GameObject.FindGameObjectWithTag("Speaker");
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void SaveData()
@@ -167,7 +180,10 @@ public class GameManager : MonoBehaviour
     {
         if (bugsDatabase == null || bugsDatabase.entries == null) return;
         CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == id);
-        if (entry == null || entry.isCompleted) return;
+        if (AreAllEntriesCompleted() != true)
+        {
+            if (entry == null || entry.isCompleted) return;
+        }
         currentInsectId = id;
         StartCoroutine(StartInsectCoroutine());
     }
@@ -186,8 +202,14 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (transition != null)
-            yield return StartCoroutine(transition.FadeIn());
+        if (AreAllEntriesCompleted() != true)
+        {
+            if (transition != null) yield return StartCoroutine(transition.FadeIn());
+        }
+
+        var AudioManager = FindFirstObjectByType<AudioManager>();
+        AudioManager.PlayAudio(0);
+        
 
 #if UNITY_EDITOR
         SceneManager.LoadScene(SceneToLoad.name);
@@ -200,7 +222,6 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         RestoreSavedData();
-        AreAllEntriesCompleted();
         if (sceneImageAnim != null)
             sceneImageAnim.GetImage();
 
@@ -249,7 +270,7 @@ public class GameManager : MonoBehaviour
             StopAllCoroutines();
         }
     }
-
+    
     private ImageAnimation FindSceneImageAnimation()
     {
         if (SequenceCanvas != null)
@@ -288,7 +309,21 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToHub()
     {
-        var transition = FindFirstObjectByType<TransitionScene>();
+        CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
+        if (entry != null) entry.isCompleted = true;
+        
+        if (AreAllEntriesCompleted() == true)
+        {
+            OnStartInsect(4);
+#if UNITY_EDITOR
+            SceneManager.LoadScene(SceneToLoad != null ? SceneToLoad.name : "MainScene");
+#else
+            SceneManager.LoadScene("MainScene");
+#endif
+        }
+        else
+        {
+            var transition = FindFirstObjectByType<TransitionScene>();
 
         if (transition == null && transitionPrefab != null)
         {
@@ -302,15 +337,15 @@ public class GameManager : MonoBehaviour
 
         if (transition != null)
             StartCoroutine(transition.FadeIn());
-
-        CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
-        if (entry != null) entry.isCompleted = true;
-
-#if UNITY_EDITOR
-        SceneManager.LoadScene(SceneHub.name);
-#else
-        SceneManager.LoadScene("Hub_Scene");
-#endif
+        
+        #if UNITY_EDITOR
+                SceneManager.LoadScene(SceneHub.name);
+        #else
+                SceneManager.LoadScene("Hub_Scene");
+        #endif
+            
+        }
+        
     }
 
     public void LaunchRythmGame()
@@ -331,21 +366,15 @@ public class GameManager : MonoBehaviour
     {
         if (bugsDatabase == null || bugsDatabase.entries == null || bugsDatabase.entries.Count == 0) return;
 
-        int nextId = int.MaxValue;
-        bool found = false;
-
-        foreach (var e in bugsDatabase.entries)
+        int nextId = currentInsectId + 1;
+        if (nextId > 3)
         {
-            if (e == null) continue;
-            if (e.id > currentInsectId && e.id < nextId)
-            {
-                nextId = e.id;
-                found = true;
-            }
+            nextId = 0;
         }
-
-        if (!found) return;
-
+        
+        var AudioManager = FindFirstObjectByType<AudioManager>();
+        AudioManager.PlayAudio(2);
+        
         currentInsectId = nextId;
         UpdateBug();
     }
@@ -354,21 +383,15 @@ public class GameManager : MonoBehaviour
     {
         if (bugsDatabase == null || bugsDatabase.entries == null || bugsDatabase.entries.Count == 0) return;
 
-        int prevId = int.MinValue;
-        bool found = false;
-
-        foreach (var e in bugsDatabase.entries)
+        int prevId = currentInsectId - 1;
+        if (prevId < 0)
         {
-            if (e == null) continue;
-            if (e.id < currentInsectId && e.id > prevId)
-            {
-                prevId = e.id;
-                found = true;
-            }
+            prevId = 3;
         }
 
-        if (!found) return;
-
+        var AudioManager = FindFirstObjectByType<AudioManager>();
+        AudioManager.PlayAudio(2);
+        
         currentInsectId = prevId;
         UpdateBug();
     }
@@ -388,6 +411,31 @@ public class GameManager : MonoBehaviour
         {
             DateBtn.onClick.RemoveAllListeners();
             DateBtn?.onClick.AddListener(() => OnStartInsect(currentInsectId));
+            
+            if (entry.isCompleted)
+            {
+                ColorBlock colors = DateBtn.colors;
+                colors.normalColor = new Color(0.30588236f, 1, 0, 1f);
+                DateBtn.colors = colors;
+                
+                Image btnImage = DateBtn.GetComponent<Image>();
+                if (btnImage != null)
+                {
+                    btnImage.color = new Color(0.30588236f, 1, 0, 1f);
+                }
+            }
+            else
+            {
+                ColorBlock colors = DateBtn.colors;
+                colors.normalColor = new Color(1, 1, 1, 1f);
+                DateBtn.colors = colors;
+                
+                Image btnImage = DateBtn.GetComponent<Image>();
+                if (btnImage != null)
+                {
+                    btnImage.color = new Color(1, 1, 1, 1f);
+                }
+            }
         }
 
         if (NextButton == null)
@@ -421,6 +469,7 @@ public class GameManager : MonoBehaviour
         {
             Date1Btn.onClick.RemoveAllListeners();
             Date1Btn?.onClick.AddListener(() => SetCurrentInsectId(0));
+            UpdateDateButtonColor(Date1Btn, 0);
         }
         
         if (Date2Btn == null)
@@ -431,6 +480,7 @@ public class GameManager : MonoBehaviour
         if (Date2Btn != null)        {
             Date2Btn.onClick.RemoveAllListeners();
             Date2Btn?.onClick.AddListener(() => SetCurrentInsectId(1));
+            UpdateDateButtonColor(Date2Btn, 1);
         }
         
         if (Date3Btn == null)
@@ -441,6 +491,7 @@ public class GameManager : MonoBehaviour
         if (Date3Btn != null)        {
             Date3Btn.onClick.RemoveAllListeners();
             Date3Btn?.onClick.AddListener(() => SetCurrentInsectId(2));
+            UpdateDateButtonColor(Date3Btn, 2);
         }
         
         if (Date4Btn == null)
@@ -451,6 +502,7 @@ public class GameManager : MonoBehaviour
         if (Date4Btn != null)        {
             Date4Btn.onClick.RemoveAllListeners();
             Date4Btn?.onClick.AddListener(() => SetCurrentInsectId(3));
+            UpdateDateButtonColor(Date4Btn, 3);
         }
 
         if (UiCanva != null)
@@ -495,10 +547,48 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void UpdateDateButtonColor(Button dateBtn, int insectId)
+    {
+        if (dateBtn == null || bugsDatabase == null || bugsDatabase.entries == null) return;
+        
+        CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == insectId);
+        if (entry == null) return;
+        
+        if (entry.isCompleted)
+        {
+            ColorBlock colors = dateBtn.colors;
+            colors.normalColor = new Color(100f/255f, 240f/255f, 0f, 1f);
+            dateBtn.colors = colors;
+            
+            Image btnImage = dateBtn.GetComponent<Image>();
+            if (btnImage != null)
+            {
+                btnImage.color = new Color(100f/255f, 240f/255f, 0f, 1f);
+            }
+        }
+        else
+        {
+            ColorBlock colors = dateBtn.colors;
+            colors.normalColor = new Color(1, 1, 1, 1f);
+            dateBtn.colors = colors;
+            
+            Image btnImage = dateBtn.GetComponent<Image>();
+            if (btnImage != null)
+            {
+                btnImage.color = new Color(1, 1, 1, 1f);
+            }
+        }
+    }
+
     public void SetCurrentInsectId(int id)
     {
+        
+        var AudioManager = FindFirstObjectByType<AudioManager>();
+        AudioManager.PlayAudio(2);
+        
         currentInsectId = id;
-    }
+        UpdateBug();
+    }       
 
     private bool FindValidSequenceData(CharacterEntry entry, int startIdx, out int foundIdx, out Sequence seq)
     {
@@ -547,6 +637,27 @@ public class GameManager : MonoBehaviour
 
         sequenceCoroutine = StartCoroutine(InternalPlaySequence(entry, playIndex));
     }
+    public void PlayEndSequenceNow(int sequenceIndex)
+    {
+        var DManager = FindFirstObjectByType<DialogueManager>();
+        if (DManager != null) DManager.CanInteract = false;
+        var entry = bugsDatabase?.entries?.Find(e => e != null && e.id == currentInsectId);
+        if (entry == null) return;
+        if (entry.Sequences == null || entry.Sequences.Length == 0) ReturnToHub();
+
+        entry.hasMatched = true;
+
+        if (sequenceCoroutine != null)
+            StopCoroutine(sequenceCoroutine);
+
+        int playIndex = sequenceIndex;
+
+        sequenceCoroutine = StartCoroutine(InternalPlayEndSequence(entry, playIndex));
+
+        //Anims
+        Animator Anim = MatchCanvas.GetComponent<Animator>();
+        Anim?.SetTrigger("launchEnd");
+    }
     public void PlayCurrentGlitchedSequenceNow(Sprite firstSprite)
     {
         var DManager = FindFirstObjectByType<DialogueManager>();
@@ -582,10 +693,14 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-        sequenceCoroutine = StartCoroutine(InternalPlaySequence(entry, playIndex));
+        
+        var AudioManager = FindFirstObjectByType<AudioManager>();
+        AudioManager.PlayAudio(1);
+        
+        sequenceCoroutine = StartCoroutine(InternalPlayGlitchSequence(entry, playIndex));
     }
 
-    private IEnumerator InternalPlaySequence(CharacterEntry entry, int playIndex)
+    private IEnumerator InternalPlayGlitchSequence(CharacterEntry entry, int playIndex)
     {
         if (entry == null)
         {
@@ -636,6 +751,151 @@ public class GameManager : MonoBehaviour
                 entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
                 Destroy(sceneImageAnim.gameObject);
                 Destroy(glitchEffectInstance.gameObject);
+                var DManager = FindFirstObjectByType<DialogueManager>();
+                if (DManager != null) DManager.CanInteract = true;
+            };
+            sceneImageAnim.AnimationEnded += handler;
+
+            sceneImageAnim.Play(true);
+
+            yield return new WaitUntil(() => animEnded);
+
+            sceneImageAnim.AnimationEnded -= handler;
+
+            sceneImageAnim.Stop(true);
+
+            sequenceCoroutine = null;
+            entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+            yield break;
+        }
+
+        sequenceCoroutine = null;
+        yield break;
+    }
+    private IEnumerator InternalPlaySequence(CharacterEntry entry, int playIndex)
+    {
+        if (entry == null)
+        {
+            sequenceCoroutine = null;
+            yield break;
+        }
+
+        if (entry.Sequences != null && entry.Sequences.Length > 0)
+        {
+            int foundIdx = -1;
+            Sequence seq = default;
+
+            int clamped = Mathf.Clamp(playIndex, 0, entry.Sequences.Length - 1);
+            seq = entry.Sequences[clamped];
+
+            if (seq.sprites == null || seq.sprites.Length == 0)
+            {
+                if (!FindValidSequenceData(entry, playIndex, out foundIdx, out seq))
+                {
+                    entry.sequenceIndex = (entry.sequenceIndex + 1) % entry.Sequences.Length;
+                    sequenceCoroutine = null;
+                    yield break;
+                }
+            }
+            else
+            {
+                foundIdx = clamped;
+            }
+
+            if (sceneImageAnim == null)
+                sceneImageAnim = FindSceneImageAnimation();
+
+            if (sceneImageAnim == null)
+            {
+                entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+                sequenceCoroutine = null;
+                yield break;
+            }
+
+            sceneImageAnim.Stop(true);
+            sceneImageAnim.ApplySequence(seq);
+            sceneImageAnim.GetImage();
+
+            bool animEnded = false;
+            System.Action handler = () =>
+            {
+                animEnded = true;
+                entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+                Destroy(sceneImageAnim.gameObject);
+                var DManager = FindFirstObjectByType<DialogueManager>();
+                if (DManager != null) DManager.CanInteract = true;
+            };
+            sceneImageAnim.AnimationEnded += handler;
+
+            sceneImageAnim.Play(true);
+
+            yield return new WaitUntil(() => animEnded);
+
+            sceneImageAnim.AnimationEnded -= handler;
+
+            sceneImageAnim.Stop(true);
+
+            sequenceCoroutine = null;
+            entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+            yield break;
+        }
+
+        sequenceCoroutine = null;
+        yield break;
+    }
+    private IEnumerator InternalPlayEndSequence(CharacterEntry entry, int playIndex)
+    {
+        if (entry == null)
+        {
+            sequenceCoroutine = null;
+            yield break;
+        }
+
+        if (entry.Sequences != null && entry.Sequences.Length > 0)
+        {
+            int foundIdx = -1;
+            Sequence seq = default;
+
+            int clamped = Mathf.Clamp(playIndex, 0, entry.Sequences.Length - 1);
+            seq = entry.Sequences[clamped];
+
+            if (seq.sprites == null || seq.sprites.Length == 0)
+            {
+                if (!FindValidSequenceData(entry, playIndex, out foundIdx, out seq))
+                {
+                    entry.sequenceIndex = (entry.sequenceIndex + 1) % entry.Sequences.Length;
+                    sequenceCoroutine = null;
+                    yield break;
+                }
+            }
+            else
+            {
+                foundIdx = clamped;
+            }
+
+            if (sceneImageAnim == null)
+                sceneImageAnim = FindSceneImageAnimation();
+
+            if (sceneImageAnim == null)
+            {
+                entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+                sequenceCoroutine = null;
+                yield break;
+            }
+
+            sceneImageAnim.Stop(true);
+            sceneImageAnim.ApplySequence(seq);
+            sceneImageAnim.GetImage();
+
+            bool animEnded = false;
+            System.Action handler = () =>
+            {
+                animEnded = true;
+                entry.sequenceIndex = (foundIdx + 1) % entry.Sequences.Length;
+                Destroy(sceneImageAnim.gameObject);
+                var DManager = FindFirstObjectByType<DialogueManager>();
+                if (DManager != null) DManager.CanInteract = true;
+                ReturnToHub();
             };
             sceneImageAnim.AnimationEnded += handler;
 
@@ -659,6 +919,28 @@ public class GameManager : MonoBehaviour
     private void MatchLaunch()
     {
         MatchCanvas.gameObject.SetActive(true);
+
+        // Anims
+        if(_speaker != null)
+        {
+            Animator anim = _speaker.GetComponent<Animator>();
+            if (anim != null)
+            {
+                if (!anim.GetBool("Offset"))
+                    anim.SetBool("Offset",true);
+
+            }
+        }
+
+        if(_player != null)
+        {
+            Animator anim = _player.GetComponent<Animator>();
+            if (anim != null)
+            {
+                anim.SetTrigger("Remove");
+            }
+        }
+
     }
 
     private void OnApplicationQuit()
@@ -684,13 +966,29 @@ public class GameManager : MonoBehaviour
 
     public bool AreAllEntriesCompleted()
     {
-        foreach (var entry in bugsDatabase.entries)
+        for (int id = 0; id <= 3; id++)
         {
-            if (entry == null) continue;
-            if (!entry.isCompleted) return false;
+            var entry = bugsDatabase.entries.Find(e => e != null && e.id == id);
+            if (entry == null || !entry.isCompleted) return false;
         }
         return true;
     }
+
+    // Conditions
+
+    public bool HasMatchedBourdon() => CharacterHasMatched(0);
+    public bool HasMatchedCloporte() => CharacterHasMatched(1);
+    public bool HasMatchedPapillon() => CharacterHasMatched(2);
+
+    private bool CharacterHasMatched(int id)
+    {
+        CharacterEntry c = bugsDatabase.entries.Find(e => e != null && e.id == id);
+        if (c != null && c.hasMatched)
+            return true;
+        else
+            return false;
+    }
+
 
     //Menu
     public void QuitGame() 

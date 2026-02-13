@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a9fac95a9ec5ff14494cdf918b043d58
+guid: 1f82c4ea00feb5940a3f54850310721d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 54953394287308791
-    second: heart_UI_success_0
+      213: -4685888933927700562
+    second: Escargot_icone_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: heart_UI_success_0
+      name: Escargot_icone_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 1
-        width: 158
-        height: 143
+        x: 32
+        y: 29
+        width: 317
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ff62b922db33c000800000000000000
-      internalID: 54953394287308791
+      spriteID: ea73e4c67d068feb0800000000000000
+      internalID: -4685888933927700562
       vertices: []
       indices: 
       edges: []
@@ -161,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      heart_UI_success_0: 54953394287308791
+      Escargot_icone_0: -4685888933927700562
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using Unity.VisualScripting;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.UI;
 public class VisualPulse : MonoBehaviour
@@ -22,13 +24,7 @@ public class VisualPulse : MonoBehaviour
     private Sprite baseSprite;
     private Sprite newSprite;
 
-    private void Awake()
-    {
-        if (image == Circle)
-        {
-            gameObject.SetActive(false);
-        }
-    }
+
     void Start()
     {
         baseScale = transform.localScale;
@@ -46,7 +42,7 @@ public class VisualPulse : MonoBehaviour
         else
         {
             circle = true;
-            /*gameObject.SetActive(false);*/
+            gameObject.SetActive(false);
             Debug.LogWarning($"Image: {image}");
         }
 
@@ -57,18 +53,29 @@ public class VisualPulse : MonoBehaviour
     {
         Pulse.OnTiming += SwitchImage;
         Pulse.OnEndRythm += DisabledCircle;
+
+        MainEvents e = FindAnyObjectByType<MainEvents>();
+        if (e != null)
+            e.OnDarkLevel += SetDarkAssets;
     }
 
     void OnDisable()
     {
         Pulse.OnTiming -= SwitchImage;
         Pulse.OnEndRythm -= DisabledCircle;
+
+        MainEvents e = FindAnyObjectByType<MainEvents>();
+        if (e != null)
+            e.OnDarkLevel -= SetDarkAssets;
     }
 
     public void Pulsing()
     {
         pulsing = true;
-        gameObject.SetActive(true);
+        if (circle)
+        {
+            gameObject.SetActive(true);
+        }
 
     }
 
@@ -86,11 +93,17 @@ public class VisualPulse : MonoBehaviour
         
             if (b)
             {
-                return "Assets/GA/UI/heart_UI_success.png";
+                if (MainEvents.IsDarkLevel)
+                    return "GA/UI/ui_test_sérieux_success"; 
+                else
+                    return "GA/UI/heart_UI_success";
             }
             else 
             {
-                return "Assets/GA/UI/heart_UI_fail.png";
+                if (MainEvents.IsDarkLevel)
+                    return "GA/UI/ui_test_sérieux_fail"; 
+                else
+                    return "GA/UI/heart_UI_fail";
             }
         
     }
@@ -108,11 +121,7 @@ public class VisualPulse : MonoBehaviour
 
         float elapsedTime = 0f;
 
-#if UNITY_EDITOR
-        newSprite = (Sprite)AssetDatabase.LoadAssetAtPath(ImagePath(state), typeof(Sprite));
-#else
         newSprite = (Sprite)Resources.Load(ImagePath(state), typeof(Sprite));
-#endif
         image.sprite = newSprite;
 
         while (elapsedTime <= durationOfSwitchedFeedback)
@@ -123,7 +132,10 @@ public class VisualPulse : MonoBehaviour
 
         }
 
-        image.sprite = baseSprite;
+        if(MainEvents.IsDarkLevel)
+            image.sprite = (Sprite)Resources.Load("GA/UI/heart_ui_sérieux", typeof(Sprite));
+        else
+            image.sprite = baseSprite;
         /*yield return null;*/
     }
 
@@ -156,28 +168,37 @@ public class VisualPulse : MonoBehaviour
     }
 
     public void DisabledCircle()
-    {
-
-    }
-/*
- * Pour une précision Diabolique |
- *                               |
- *                               V
-    public float CalculatePulseProgress()
-    {
-        if (pulsing)
+    { 
+        if (circle) 
         {
-            return Mathf.Clamp01(Time.time % pulseSpeed / pulseSpeed);
+            gameObject.SetActive(false);
+        }
+    }
+    /*
+     * Pour une précision Diabolique |
+     *                               |
+     *                               V
+        public float CalculatePulseProgress()
+        {
+            if (pulsing)
+            {
+                return Mathf.Clamp01(Time.time % pulseSpeed / pulseSpeed);
+            }
+
+            return 0f;
         }
 
-        return 0f;
-    }
+        public bool IsPerfectTiming()
+        {
+            Handheld.Vibrate();
+            Perfect?.Invoke();
+            return Mathf.Approximately(pulseProgress, 1f);
+        }*/
 
-    public bool IsPerfectTiming()
+    private void SetDarkAssets()
     {
-        Handheld.Vibrate();
-        Perfect?.Invoke();
-        return Mathf.Approximately(pulseProgress, 1f);
-    }*/
+        image.sprite = (Sprite)Resources.Load("GA/UI/heart_ui_sérieux", typeof(Sprite));
+        Circle.sprite = (Sprite)Resources.Load("GA/UI/Dark/ui_cercle_sérieux",typeof(Sprite));
+    }
 
 }

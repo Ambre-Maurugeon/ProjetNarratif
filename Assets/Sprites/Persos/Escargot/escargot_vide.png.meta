@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d65e185e4a0e28c4c85f410a5a5f5055
+guid: fd9d189075e253c45bc7e19a120b8342
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6526465874865167943
-    second: "ui_cercle_s\xE9rieux_0"
+      213: -930457321511723088
+    second: escargot_vide_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "ui_cercle_s\xE9rieux_0"
+      name: escargot_vide_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 228
-        height: 228
+        width: 945
+        height: 1259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 74e1c0e622aa29a50800000000000000
-      internalID: 6526465874865167943
+      spriteID: 0bfd1a0fef95613f0800000000000000
+      internalID: -930457321511723088
       vertices: []
       indices: 
       edges: []
@@ -161,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "ui_cercle_s\xE9rieux_0": 6526465874865167943
+      escargot_vide_0: -930457321511723088
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

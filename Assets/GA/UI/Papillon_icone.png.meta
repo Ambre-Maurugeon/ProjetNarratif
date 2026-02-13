@@ -1,31 +1,28 @@
 fileFormatVersion: 2
-guid: 656c6017fa198914698bbac80c10d1c2
+guid: 493b1f50d13eb824ebb51180c269b5c4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -140137716879490512
-    second: "ui_test_s\xE9rieux_success_0"
+      213: 7912419986245226983
+    second: Papillon_icone_0
   - first:
-      213: -4856799019152813076
-    second: "ui_test_s\xE9rieux_success_1"
+      213: 578951818446738688
+    second: Papillon_icone_1
   - first:
-      213: -538272799227357781
-    second: "ui_test_s\xE9rieux_success_2"
+      213: -6112058292459292347
+    second: Papillon_icone_2
   - first:
-      213: -7090515615033153265
-    second: "ui_test_s\xE9rieux_success_3"
+      213: -891041126490092813
+    second: Papillon_icone_3
   - first:
-      213: 7753559122487366498
-    second: "ui_test_s\xE9rieux_success_4"
+      213: 7554653960673227656
+    second: Papillon_icone_4
   - first:
-      213: -4780092529565058037
-    second: "ui_test_s\xE9rieux_success_5"
+      213: -4996465788970238767
+    second: Papillon_icone_5
   - first:
-      213: -6282652665812220859
-    second: "ui_test_s\xE9rieux_success_6"
-  - first:
-      213: -2950992465273987550
-    second: "ui_test_s\xE9rieux_success_7"
+      213: -5144904528427392920
+    second: Papillon_icone_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -67,7 +64,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -117,43 +114,39 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "ui_test_s\xE9rieux_success_0"
+      name: Papillon_icone_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 231
+        x: 112
+        y: 182
+        width: 52
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e119d14e009ecd60800000000000000
+      internalID: 7912419986245226983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papillon_icone_1
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 182
         width: 51
-        height: 33
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 03283cd2d712e0ef0800000000000000
-      internalID: -140137716879490512
+      spriteID: 00595988c99d80800800000000000000
+      internalID: 578951818446738688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ui_test_s\xE9rieux_success_1"
+      name: Papillon_icone_2
       rect:
         serializedVersion: 2
-        x: 30
-        y: 261
-        width: 24
-        height: 32
+        x: 231
+        y: 205
+        width: 8
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ce35ee5460f299cb0800000000000000
-      internalID: -4856799019152813076
+      spriteID: 549bb77bd5b9d2ba0800000000000000
+      internalID: -6112058292459292347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ui_test_s\xE9rieux_success_2"
+      name: Papillon_icone_3
       rect:
         serializedVersion: 2
-        x: 36
-        y: 92
-        width: 146
-        height: 188
+        x: 0
+        y: 34
+        width: 165
+        height: 148
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,64 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ba55cc1bdbba788f0800000000000000
-      internalID: -538272799227357781
+      spriteID: 3fa4b4ff0d262a3f0800000000000000
+      internalID: -891041126490092813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ui_test_s\xE9rieux_success_3"
+      name: Papillon_icone_4
       rect:
         serializedVersion: 2
-        x: 2
-        y: 188
-        width: 37
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f09a6938d9d699d90800000000000000
-      internalID: -7090515615033153265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "ui_test_s\xE9rieux_success_4"
-      rect:
-        serializedVersion: 2
-        x: 172
-        y: 169
-        width: 67
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 26359d811fc2a9b60800000000000000
-      internalID: 7753559122487366498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "ui_test_s\xE9rieux_success_5"
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 130
+        x: 161
+        y: 153
         width: 29
-        height: 21
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b0cb6cd9b23b9adb0800000000000000
-      internalID: -4780092529565058037
+      spriteID: 883fcee30c587d860800000000000000
+      internalID: 7554653960673227656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ui_test_s\xE9rieux_success_6"
+      name: Papillon_icone_5
       rect:
         serializedVersion: 2
-        x: 159
-        y: 106
-        width: 34
-        height: 29
+        x: 186
+        y: 34
+        width: 165
+        height: 148
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5440a17ffa88fc8a0800000000000000
-      internalID: -6282652665812220859
+      spriteID: 1dc790c56dcf8aab0800000000000000
+      internalID: -4996465788970238767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ui_test_s\xE9rieux_success_7"
+      name: Papillon_icone_6
       rect:
         serializedVersion: 2
-        x: 48
-        y: 74
-        width: 26
-        height: 25
+        x: 156
+        y: 23
+        width: 39
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,8 +265,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22e5d74ecf7fb07d0800000000000000
-      internalID: -2950992465273987550
+      spriteID: 86069cb1790a998b0800000000000000
+      internalID: -5144904528427392920
       vertices: []
       indices: 
       edges: []
@@ -326,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -336,14 +285,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "ui_test_s\xE9rieux_success_0": -140137716879490512
-      "ui_test_s\xE9rieux_success_1": -4856799019152813076
-      "ui_test_s\xE9rieux_success_2": -538272799227357781
-      "ui_test_s\xE9rieux_success_3": -7090515615033153265
-      "ui_test_s\xE9rieux_success_4": 7753559122487366498
-      "ui_test_s\xE9rieux_success_5": -4780092529565058037
-      "ui_test_s\xE9rieux_success_6": -6282652665812220859
-      "ui_test_s\xE9rieux_success_7": -2950992465273987550
+      Papillon_icone_0: 7912419986245226983
+      Papillon_icone_1: 578951818446738688
+      Papillon_icone_2: -6112058292459292347
+      Papillon_icone_3: -891041126490092813
+      Papillon_icone_4: 7554653960673227656
+      Papillon_icone_5: -4996465788970238767
+      Papillon_icone_6: -5144904528427392920
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
