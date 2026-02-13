@@ -57,3 +57,9 @@ MonoBehaviour:
     DisplayName: Narrator
     speakEnum: 8
     SpritesHumeur: []
+  - Name: Escargot
+    DisplayName: Maurice
+    speakEnum: 8
+    SpritesHumeur:
+    - sprite: {fileID: -930457321511723088, guid: fd9d189075e253c45bc7e19a120b8342, type: 3}
+      humeur: 2
