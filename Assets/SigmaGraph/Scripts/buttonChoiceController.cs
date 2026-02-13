@@ -66,10 +66,13 @@ public class buttonChoiceController : MonoBehaviour
     }
 
     private void SetDarkAssets()
-    {
+    { 
         //img
+        if (_btnSprites.darkBtn)
         _button.gameObject.GetComponent<Image>().sprite = _btnSprites.darkBtn;
+
         //chains
+        if(_rawLock && _btnSprites.darkLock)
         _rawLock.texture = _btnSprites.darkLock.texture;
     }
 
