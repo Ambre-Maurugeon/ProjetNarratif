@@ -53,6 +53,9 @@ public class DialogueManager : MonoBehaviour
 
     private SpeakerInfo _currentSpeaker;
 
+    [Header("Textes")]
+    [SerializeField] private GameObject _prefabCensor;
+
     //node
     private Dictionary<string, DSNodeSaveData> _nodeLookup = new Dictionary<string, DSNodeSaveData>();
     private static DSNodeSaveData _currentNode;
@@ -522,7 +525,8 @@ public class DialogueManager : MonoBehaviour
 #if UNITY_EDITOR
         UnityEngine.Object prefab = AssetDatabase.LoadAssetAtPath("Assets/SigmaGraph/OPTIONNAL/Prefabs/CensorshipPrefab.prefab", typeof(GameObject));
 #else
-        UnityEngine.Object prefab = Resources.Load("Assets/SigmaGraph/OPTIONNAL/Prefabs/CensorshipPrefab.prefab", typeof(GameObject));
+        //UnityEngine.Object prefab = Resources.Load("Assets/SigmaGraph/OPTIONNAL/Prefabs/CensorshipPrefab.prefab", typeof(GameObject));
+        UnityEngine.Object prefab = _prefabCensor;
 #endif
         if (prefab == null)  {
             Debug.LogError("Censorship prefab wasn't found by path.");
