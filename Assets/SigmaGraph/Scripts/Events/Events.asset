@@ -278,3 +278,10 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
+  - label: ComeBackGendarme
+    Key: EV_ComeBackGen
+    caption: Fait apparaitre le sprite du gendarme.
+    isPrefab: 0
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
