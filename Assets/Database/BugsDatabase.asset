@@ -52,7 +52,7 @@ MonoBehaviour:
     Sequences:
     - sprites:
       - {fileID: 801792754700709961, guid: c7e8d7196b238be4f8f13ab423d7f014, type: 3}
-      framesPerSprite: 40
+      framesPerSprite: 120
       loop: 0
       destroyOnEnd: 1
     - sprites:
@@ -76,7 +76,7 @@ MonoBehaviour:
     Sequences:
     - sprites:
       - {fileID: -6412503319465311156, guid: 88a7d1b8aad4051479990a5b3956ddb3, type: 3}
-      framesPerSprite: 40
+      framesPerSprite: 120
       loop: 0
       destroyOnEnd: 1
     - sprites:
