@@ -942,6 +942,15 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    
+    public void SkipDialogue()
+    {
+        CharacterEntry entry = bugsDatabase.entries.Find(e => e != null && e.id == currentInsectId);
+        if (entry == null) return;
+        entry.isCompleted = true;
+        entry.hasMatched = true;
+        UpdateBug();
+    }
 
     private void OnApplicationQuit()
     {
@@ -955,7 +964,10 @@ public class GameManager : MonoBehaviour
         foreach (var entry in bugsDatabase.entries)
         {
             if (entry != null)
+            {
                 entry.isCompleted = false;
+                entry.hasMatched = false;
+            }
         }
 
 #if UNITY_EDITOR
