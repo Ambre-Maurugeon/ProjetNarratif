@@ -1976,34 +1976,6 @@ MonoBehaviour:
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 27380.8, y: -846.4}
-  - <ID>k__BackingField: 0ee6dbab-9d42-4d9b-80ef-ee5a620c3c97
-    <Name>k__BackingField: DialogueName_37
-    <Speaker>k__BackingField: 5
-    BubleType: 0
-    Humeur: 2
-    _dropDownKeyDialogue: Papillon_D56
-    isMultipleChoice: 1
-    _dropDownKeyEventList: []
-    <OnlyOneConditionNeeded>k__BackingField: 0
-    <ChoicesInNode>k__BackingField:
-    - NodeID: ec7df9c1-2a14-4532-a09b-dd6082b3c9e7
-      _dropDownKeyChoice: Mantis_DP15_C1
-      <ConditionsSc>k__BackingField: []
-      <ConditionsKey>k__BackingField: []
-      _directionPort: 0
-    - NodeID: 
-      _dropDownKeyChoice: Mantis_DP15_C2
-      <ConditionsSc>k__BackingField: []
-      <ConditionsKey>k__BackingField: []
-      _directionPort: 0
-    - NodeID: 
-      _dropDownKeyChoice: Mantis_DP15_C3
-      <ConditionsSc>k__BackingField: []
-      <ConditionsKey>k__BackingField: []
-      _directionPort: 0
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 31073.6, y: -570.4}
   - <ID>k__BackingField: 15c21045-922f-444f-8b23-2f95f3d2b718
     <Name>k__BackingField: DialogueName_108
     <Speaker>k__BackingField: 5
@@ -2783,6 +2755,34 @@ MonoBehaviour:
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 28299.2, y: -423.19998}
+  - <ID>k__BackingField: 0ee6dbab-9d42-4d9b-80ef-ee5a620c3c97
+    <Name>k__BackingField: DialogueName_37
+    <Speaker>k__BackingField: 5
+    BubleType: 0
+    Humeur: 2
+    _dropDownKeyDialogue: Papillon_D56
+    isMultipleChoice: 1
+    _dropDownKeyEventList: []
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: ec7df9c1-2a14-4532-a09b-dd6082b3c9e7
+      _dropDownKeyChoice: Mantis_DP15_C1
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 
+      _dropDownKeyChoice: Mantis_DP15_C2OG
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    - NodeID: 
+      _dropDownKeyChoice: Mantis_DP15_C3OG
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 31073.6, y: -570.4}
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
   - DialogueName_1
@@ -2889,7 +2889,6 @@ MonoBehaviour:
   - DialogueName_33
   - DialogueName_32
   - DialogueName_107
-  - DialogueName_37
   - DialogueName_108
   - DialogueName_109
   - DialogueName_110
@@ -2933,5 +2932,6 @@ MonoBehaviour:
   - DialogueName_145
   - DialogueName_144
   - DialogueName_146
+  - DialogueName_37
   <OldGroupedNodeNames>k__BackingField:
     list: []
