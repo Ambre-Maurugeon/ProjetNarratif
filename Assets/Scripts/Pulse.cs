@@ -144,6 +144,5 @@ public class Pulse : MonoBehaviour
     public bool Perfect() => perfect;
     public bool Good() => good;
     public bool Bad() => bad;
-
 }
 
