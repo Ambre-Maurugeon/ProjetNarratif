@@ -36,7 +36,7 @@ public class Pulse : MonoBehaviour
         void Start()
         {           
             beatInterval = 60f / bpm;
-        StartSequence();
+        /*StartSequence();*/
     }
 
     void Update()
@@ -115,7 +115,6 @@ public class Pulse : MonoBehaviour
             this.bpm = bpm;
         }
 
-
     public void StartSequence()
     {
         StartCoroutine(StartSequenceCoroutine());
@@ -126,14 +125,17 @@ public class Pulse : MonoBehaviour
         // Lancer l'animation et attendre qu'elle finisse
         yield return StartCoroutine(circlePulse.FadeAndFillThenPulse());
 
+        // Attendre 1 seconde avant de lancer le rythme
         yield return new WaitForSeconds(1f);
 
+        // Maintenant, on active la séquence
         sequenceActive = true;
         nextBeatTime = Time.time + beatInterval;
         sequenceEndTime = Time.time + sequenceDuration;
 
         Debug.Log($"▶ Séquence commencée pour {sequenceDuration} secondes !");
     }
+
 
 
     //Version simplifié

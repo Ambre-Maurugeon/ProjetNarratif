@@ -13,7 +13,7 @@ public class VisualPulse : MonoBehaviour
     [SerializeField]private float pulseSpeed = 8f;
     [SerializeField]private float durationOfSwitchedFeedback;
     [SerializeField]private Image Circle;
-    [SerializeField] private float fillDuration = 2f;
+    [SerializeField]private float fillDuration = 2f;
 
 
     public static event Action Perfect;
@@ -28,6 +28,17 @@ public class VisualPulse : MonoBehaviour
     private Sprite newSprite;
     private CanvasGroup canvasGroup;
 
+
+    public void Awake()
+    {
+
+            if (canvasGroup == null)
+            {
+                canvasGroup = gameObject.AddComponent<CanvasGroup>();
+            }
+        
+
+    }
 
     void Start()
     {
@@ -142,15 +153,12 @@ public class VisualPulse : MonoBehaviour
 
         }
 
-<<<<<<< HEAD
         image.sprite = baseSprite;
-=======
         if(MainEvents.IsDarkLevel)
             image.sprite = (Sprite)Resources.Load("GA/UI/heart_ui_sérieux", typeof(Sprite));
         else
             image.sprite = baseSprite;
         /*yield return null;*/
->>>>>>> 31e5005082346a114d92dc4e71f9997c89480ffa
     }
 
     IEnumerator Fade(float start, float end, float duration)
