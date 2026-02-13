@@ -125,18 +125,22 @@ public class Pulse : MonoBehaviour
     {
         if (perfectCount == nextBeatTime - 1) 
         {
-            bool Perfect() => perfect;
+            perfect = true;
         }
 
         if (failCount <= 3)
         {
-            bool Good() => good;
+            good = true;
         }
         else 
         {
-            bool Bad() => bad;
+            bad = true;
         }
     }
+
+    public bool Perfect() => perfect;
+    public bool Good() => good;
+    public bool Bad() => bad;
 
 }
 
