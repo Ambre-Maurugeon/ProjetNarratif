@@ -5724,6 +5724,7 @@ MonoBehaviour:
   SpeakersScriptable: {fileID: 11400000, guid: 82e282dbd1d6b8c4d845bae0b97efb89, type: 2}
   _speakerAnimator: {fileID: 1662151852}
   _characterAnimator: {fileID: 22770149}
+  _prefabCensor: {fileID: 996117732308523747, guid: d406485f7c29a4c4c92d6dfefc8a64cf, type: 3}
   currentDialogueContainer: {fileID: 504661613}
 --- !u!1 &1320186408
 GameObject:
