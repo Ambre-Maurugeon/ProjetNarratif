@@ -286,7 +286,14 @@ public class DialogueManager : MonoBehaviour
         }
 
         // -- CONTAINERS --
-        if (_bubleContainers.TryGetValue(_currentNode.GetBubleType(), out var container))
+        //Narrator
+        if (_currentNode.Speaker == Espeaker.Narrator) 
+        {
+            if(_bubleContainers.TryGetValue(bubleType.THINK, out var container)) 
+                currentDialogueContainer = container;
+        }
+        //Default = Normal
+        else if (_bubleContainers.TryGetValue(bubleType.NORMAL, out var container)) //_currentNode.GetBubleType() to avoid GD errors
         {
             currentDialogueContainer = container;
         }

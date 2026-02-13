@@ -57,3 +57,7 @@ MonoBehaviour:
     DisplayName: Narrator
     speakEnum: 8
     SpritesHumeur: []
+  - Name: Mantis
+    DisplayName: "Philom\xE8ne"
+    speakEnum: 7
+    SpritesHumeur: []

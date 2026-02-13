@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using NUnit.Framework;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TestEvent : MonoBehaviour
@@ -9,7 +10,8 @@ public class TestEvent : MonoBehaviour
     [Header("Anims")]
     [SerializeField] Animator _mantisAnimator;
     [SerializeField] Animator _speakerAnimator;
-    
+
+
 
     public static void testPrefab()
     {
@@ -35,6 +37,14 @@ public class TestEvent : MonoBehaviour
     public void HideMantis()
     {
         _mantisAnimator.SetTrigger("Remove");
+
+    }
+
+    public bool RandomBool()
+    {
+        var b = UnityEngine.Random.Range(-3, 5);
+        Debug.Log(b);
+        return b <0;
 
     }
 

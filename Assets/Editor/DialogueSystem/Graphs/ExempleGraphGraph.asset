@@ -163,7 +163,7 @@ MonoBehaviour:
     _dropDownKeyDialogue: Bourdon_D68
     isMultipleChoice: 1
     _dropDownKeyEventList:
-    - EV_CodeLyoko
+    - EV_Sequencebourdead
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 74f640d2-3b9d-4c3f-b494-4bfc35394985

@@ -138,5 +138,19 @@ public class MainEvents : MonoBehaviour
     }
 
     #endregion
-     
+
+    // Dark Level
+    #region DarkLevel
+
+    public static bool IsDarkLevel;
+
+    public void CallDarkLevel()
+    {
+        IsDarkLevel = true;
+        OnDarkLevel?.Invoke();
+    }
+
+    public event Action OnDarkLevel;
+    #endregion
+
 }

@@ -27,11 +27,16 @@ MonoBehaviour:
     BgSprite: {fileID: -9074006278687196050, guid: 7869c92813eb54a4bb0f261ce9643bb0, type: 3}
     Sequences:
     - sprites:
-      - {fileID: -481098791475936692, guid: bf93afe2146c4f9479f02bcd1b7600bd, type: 3}
-      framesPerSprite: 80
+      - {fileID: -9005384760819418135, guid: aa2955ec0aef9ec4a9e0d86a2b2df599, type: 3}
+      framesPerSprite: 120
       loop: 0
       destroyOnEnd: 1
-    sequenceIndex: 0
+    - sprites:
+      - {fileID: -481098791475936692, guid: bf93afe2146c4f9479f02bcd1b7600bd, type: 3}
+      framesPerSprite: 120
+      loop: 0
+      destroyOnEnd: 1
+    sequenceIndex: 1
   - perso: "Fr\xE9d\xE9rique (25ans)"
     id: 1
     isCompleted: 0
@@ -45,6 +50,11 @@ MonoBehaviour:
     - "On l\u2019appelle \u201Cle boulet\u201D."
     BgSprite: {fileID: -2818449658216415420, guid: ca6b1ba428649c544a36c3cc2a3e1633, type: 3}
     Sequences:
+    - sprites:
+      - {fileID: 801792754700709961, guid: c7e8d7196b238be4f8f13ab423d7f014, type: 3}
+      framesPerSprite: 40
+      loop: 0
+      destroyOnEnd: 1
     - sprites:
       - {fileID: 853352966259622118, guid: a406ebeb0fe908d44827b69688c814f5, type: 3}
       framesPerSprite: 40
@@ -64,6 +74,11 @@ MonoBehaviour:
     - "Est extr\xEAment souple."
     BgSprite: {fileID: -7176216987877333843, guid: 2514be1ce4009e748a7fc27a5c26fa02, type: 3}
     Sequences:
+    - sprites:
+      - {fileID: -6412503319465311156, guid: 88a7d1b8aad4051479990a5b3956ddb3, type: 3}
+      framesPerSprite: 40
+      loop: 0
+      destroyOnEnd: 1
     - sprites:
       - {fileID: 235601465247075377, guid: cbca531f1d6740d4aa4a08d166425b45, type: 3}
       framesPerSprite: 40

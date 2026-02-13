@@ -129,12 +129,12 @@ TextureImporter:
       name: UI_cadenas_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 8
         y: 0
-        width: 77
-        height: 104
+        width: 74
+        height: 103
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a7a50754ab5135b4f84997ab0b75fb26
     internalID: 0
     vertices: []
     indices: 

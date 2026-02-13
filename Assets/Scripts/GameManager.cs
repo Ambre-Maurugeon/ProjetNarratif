@@ -47,6 +47,11 @@ public class GameManager : MonoBehaviour
     private Coroutine sequenceCoroutine;
     private ImageAnimation sceneImageAnim;
 
+    //Chara
+    private GameObject _speaker;
+    private GameObject _player;
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -72,6 +77,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         RestoreSavedData();
+
+        InitCharacters();
     }
 
     private void OnEnable()
@@ -93,6 +100,12 @@ public class GameManager : MonoBehaviour
             SaveData();
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
+    }
+
+    private void InitCharacters()
+    {
+        _speaker = GameObject.FindGameObjectWithTag("Speaker");
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void SaveData()
@@ -625,7 +638,7 @@ public class GameManager : MonoBehaviour
 
         sequenceCoroutine = StartCoroutine(InternalPlaySequence(entry, playIndex));
     }
-    public void PlayEndSequenceNow(Sprite firstSprite)
+    public void PlayEndSequenceNow(int sequenceIndex)
     {
         var DManager = FindFirstObjectByType<DialogueManager>();
         if (DManager != null) DManager.CanInteract = false;
@@ -637,22 +650,13 @@ public class GameManager : MonoBehaviour
         if (sequenceCoroutine != null)
             StopCoroutine(sequenceCoroutine);
 
-        int playIndex = entry.sequenceIndex;
-
-        if (firstSprite != null && entry.Sequences != null && entry.Sequences.Length > 0)
-        {
-            for (int i = 0; i < entry.Sequences.Length; i++)
-            {
-                var seq = entry.Sequences[i];
-                if (seq.sprites != null && seq.sprites.Length > 0 && seq.sprites[0] == firstSprite)
-                {
-                    playIndex = i;
-                    break;
-                }
-            }
-        }
+        int playIndex = sequenceIndex;
 
         sequenceCoroutine = StartCoroutine(InternalPlayEndSequence(entry, playIndex));
+
+        //Anims
+        Animator Anim = MatchCanvas.GetComponent<Animator>();
+        Anim?.SetTrigger("launchEnd");
     }
     public void PlayCurrentGlitchedSequenceNow(Sprite firstSprite)
     {
@@ -915,6 +919,28 @@ public class GameManager : MonoBehaviour
     private void MatchLaunch()
     {
         MatchCanvas.gameObject.SetActive(true);
+
+        // Anims
+        if(_speaker != null)
+        {
+            Animator anim = _speaker.GetComponent<Animator>();
+            if (anim != null)
+            {
+                if (!anim.GetBool("Offset"))
+                    anim.SetBool("Offset",true);
+
+            }
+        }
+
+        if(_player != null)
+        {
+            Animator anim = _player.GetComponent<Animator>();
+            if (anim != null)
+            {
+                anim.SetTrigger("Remove");
+            }
+        }
+
     }
 
     private void OnApplicationQuit()
@@ -947,6 +973,22 @@ public class GameManager : MonoBehaviour
         }
         return true;
     }
+
+    // Conditions
+
+    public bool HasMatchedBourdon() => CharacterHasMatched(0);
+    public bool HasMatchedCloporte() => CharacterHasMatched(1);
+    public bool HasMatchedPapillon() => CharacterHasMatched(2);
+
+    private bool CharacterHasMatched(int id)
+    {
+        CharacterEntry c = bugsDatabase.entries.Find(e => e != null && e.id == id);
+        if (c != null && c.hasMatched)
+            return true;
+        else
+            return false;
+    }
+
 
     //Menu
     public void QuitGame() 

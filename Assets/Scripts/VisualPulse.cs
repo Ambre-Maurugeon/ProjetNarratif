@@ -64,12 +64,20 @@ public class VisualPulse : MonoBehaviour
     {
         Pulse.OnTiming += SwitchImage;
         Pulse.OnEndRythm += DisabledCircle;
+
+        MainEvents e = FindAnyObjectByType<MainEvents>();
+        if (e != null)
+            e.OnDarkLevel += SetDarkAssets;
     }
 
     void OnDisable()
     {
         Pulse.OnTiming -= SwitchImage;
         Pulse.OnEndRythm -= DisabledCircle;
+
+        MainEvents e = FindAnyObjectByType<MainEvents>();
+        if (e != null)
+            e.OnDarkLevel -= SetDarkAssets;
     }
 
     public void Pulsing()
@@ -96,11 +104,17 @@ public class VisualPulse : MonoBehaviour
         
             if (b)
             {
-                return "GA/UI/heart_UI_success";
+                if (MainEvents.IsDarkLevel)
+                    return "GA/UI/ui_test_sérieux_success"; 
+                else
+                    return "GA/UI/heart_UI_success";
             }
             else 
             {
-                return "GA/UI/heart_UI_fail";
+                if (MainEvents.IsDarkLevel)
+                    return "GA/UI/ui_test_sérieux_fail"; 
+                else
+                    return "GA/UI/heart_UI_fail";
             }
         
     }
@@ -128,7 +142,15 @@ public class VisualPulse : MonoBehaviour
 
         }
 
+<<<<<<< HEAD
         image.sprite = baseSprite;
+=======
+        if(MainEvents.IsDarkLevel)
+            image.sprite = (Sprite)Resources.Load("GA/UI/heart_ui_sérieux", typeof(Sprite));
+        else
+            image.sprite = baseSprite;
+        /*yield return null;*/
+>>>>>>> 31e5005082346a114d92dc4e71f9997c89480ffa
     }
 
     IEnumerator Fade(float start, float end, float duration)
@@ -240,5 +262,11 @@ public class VisualPulse : MonoBehaviour
             Perfect?.Invoke();
             return Mathf.Approximately(pulseProgress, 1f);
         }*/
+
+    private void SetDarkAssets()
+    {
+        image.sprite = (Sprite)Resources.Load("GA/UI/heart_ui_sérieux", typeof(Sprite));
+        Circle.sprite = (Sprite)Resources.Load("GA/UI/Dark/ui_cercle_sérieux",typeof(Sprite));
+    }
 
 }
