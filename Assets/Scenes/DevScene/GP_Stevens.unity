@@ -280,7 +280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6526465874865167943, guid: d65e185e4a0e28c4c85f410a5a5f5055, type: 3}
+  m_Sprite: {fileID: 5925791111551093789, guid: bdcb4108c200da54e93bf3e95c28c34a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -543,7 +543,7 @@ MonoBehaviour:
   circlePulse: {fileID: 237452045}
   bpm: 60
   tolerance: 0.33
-  sequenceDuration: 5
+  sequenceDuration: 30
 --- !u!1 &1778709666
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +597,7 @@ MonoBehaviour:
   pulseScale: 1.2
   pulseSpeed: 10
   durationOfSwitchedFeedback: 0.5
-  Circle: {fileID: 237452043}
+  Circle: {fileID: 0}
 --- !u!114 &1778709669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6905295638383124226, guid: 83c1c9a693cab9b4cb2670194cefd0f3, type: 3}
+  m_Sprite: {fileID: -6905295638383124226, guid: 29bdd9b8544a9d14da7c8e9556858fc7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
