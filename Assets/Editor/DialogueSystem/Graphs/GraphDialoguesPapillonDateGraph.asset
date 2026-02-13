@@ -151,7 +151,7 @@ MonoBehaviour:
     _dropDownKeyEventList: []
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
-    - NodeID: 142d9522-d4db-4dc4-8251-6f69173c14e4
+    - NodeID: ba2dccda-345b-405d-a676-110b92862b0b
       _dropDownKeyChoice: 
       <ConditionsSc>k__BackingField: []
       <ConditionsKey>k__BackingField: []
@@ -2783,6 +2783,24 @@ MonoBehaviour:
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 31073.6, y: -570.4}
+  - <ID>k__BackingField: ba2dccda-345b-405d-a676-110b92862b0b
+    <Name>k__BackingField: DialogueName_105
+    <Speaker>k__BackingField: 5
+    BubleType: 0
+    Humeur: 2
+    _dropDownKeyDialogue: Papillon_D28.2
+    isMultipleChoice: 0
+    _dropDownKeyEventList: []
+    <OnlyOneConditionNeeded>k__BackingField: 0
+    <ChoicesInNode>k__BackingField:
+    - NodeID: 142d9522-d4db-4dc4-8251-6f69173c14e4
+      _dropDownKeyChoice: 
+      <ConditionsSc>k__BackingField: []
+      <ConditionsKey>k__BackingField: []
+      _directionPort: 0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -619.2, y: 543.19995}
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
   - DialogueName_1
@@ -2933,5 +2951,6 @@ MonoBehaviour:
   - DialogueName_144
   - DialogueName_146
   - DialogueName_37
+  - DialogueName_105
   <OldGroupedNodeNames>k__BackingField:
     list: []
