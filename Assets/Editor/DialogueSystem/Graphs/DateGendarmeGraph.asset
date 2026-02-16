@@ -2556,7 +2556,7 @@ MonoBehaviour:
     _dropDownKeyDialogue: Mantis_DG9.5
     isMultipleChoice: 0
     _dropDownKeyEventList:
-    - EV_Sequencebutterfly
+    - EV_Sequencebutterflydeath
     <OnlyOneConditionNeeded>k__BackingField: 0
     <ChoicesInNode>k__BackingField:
     - NodeID: 54c09944-90ba-4cd2-bff0-613666b01290
